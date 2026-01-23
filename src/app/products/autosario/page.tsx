@@ -1,13 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Check, ArrowRight, Monitor, Globe } from "lucide-react";
+import { Check, ArrowRight, Monitor, Globe, Play } from "lucide-react";
 import { Button, Card, CardContent, ImageSlider, YouTubeEmbed } from "@/components/ui";
 import { useLanguage } from "@/lib/i18n";
+import { VFBEditorModal } from "@/components/vfb-editor";
 import Link from "next/link";
 
 export default function AutosarioPage() {
   const { t } = useLanguage();
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
 
   // Image slider data - first set
   const autosarSlides = [
@@ -61,13 +64,30 @@ export default function AutosarioPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-lg text-text-secondary max-w-3xl mx-auto"
+              className="text-lg text-text-secondary max-w-3xl mx-auto mb-8"
             >
               {t.autosario.intro}
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <Button
+                size="lg"
+                onClick={() => setIsDemoOpen(true)}
+                rightIcon={<Play className="w-5 h-5" />}
+                className="bg-accent-cyan hover:bg-accent-cyan/90"
+              >
+                Use Demo
+              </Button>
+            </motion.div>
           </div>
         </div>
       </section>
+
+      {/* VFB Editor Demo Modal */}
+      <VFBEditorModal isOpen={isDemoOpen} onClose={() => setIsDemoOpen(false)} />
 
       {/* Main Image Slider */}
       <section className="section-padding bg-background">
