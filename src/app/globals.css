@@ -1,0 +1,465 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   PRECISION ENGINEERING - Automotive Tech Design System
+   ============================================ */
+
+@layer base {
+  :root {
+    /* Primary palette */
+    --accent-blue: 0 163 255;
+    --accent-cyan: 0 229 255;
+    --accent-purple: 123 97 255;
+
+    /* Background palette */
+    --background: 10 10 15;
+    --background-secondary: 18 18 26;
+    --background-tertiary: 26 26 36;
+
+    /* Surface palette */
+    --surface: 30 30 42;
+    --surface-elevated: 37 37 50;
+
+    /* Text palette - Enhanced for better readability */
+    --text-primary: 255 255 255;
+    --text-secondary: 185 185 200;  /* Brighter for better contrast */
+    --text-tertiary: 140 140 160;   /* Brighter for better readability */
+    --text-muted: 100 100 120;
+
+    /* Border palette */
+    --border: 42 42 56;
+    --border-light: 58 58 72;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    @apply bg-background text-text-primary antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  /* Custom scrollbar - Automotive dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-elevated rounded-full border-2 border-background-secondary;
+    transition: background-color 0.2s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent-blue/50;
+  }
+
+  /* Selection - Electric blue */
+  ::selection {
+    @apply bg-accent-blue/30 text-white;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent-blue/50 ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer components {
+  /* ============================================
+     LAYOUT COMPONENTS
+     ============================================ */
+
+  .container-custom {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+
+  /* ============================================
+     BACKGROUND EFFECTS
+     ============================================ */
+
+  /* Grid pattern background */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(0, 163, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 163, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridFlow 30s linear infinite;
+  }
+
+  /* Circuit pattern */
+  .bg-circuit {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%2300A3FF' stroke-opacity='0.04' stroke-width='1'%3E%3Cpath d='M30 0v60M0 30h60M15 0v30h30M15 30v30M45 0v30M0 15h30v30M30 15h30M0 45h30'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Noise texture overlay */
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+  }
+
+  /* Gradient orbs */
+  .gradient-orb-blue {
+    @apply absolute rounded-full blur-[120px] bg-accent-blue/20 animate-glow-pulse;
+  }
+
+  .gradient-orb-cyan {
+    @apply absolute rounded-full blur-[120px] bg-accent-cyan/15 animate-glow-pulse;
+    animation-delay: 1.5s;
+  }
+
+  /* ============================================
+     CARD COMPONENTS
+     ============================================ */
+
+  .card {
+    @apply relative bg-surface/50 backdrop-blur-sm border border-border rounded-2xl overflow-hidden;
+    @apply transition-all duration-500 ease-out-expo;
+  }
+
+  .card-gradient {
+    @apply card;
+    background: linear-gradient(135deg, rgba(30, 30, 42, 0.8) 0%, rgba(18, 18, 26, 0.9) 100%);
+  }
+
+  .card-interactive {
+    @apply card cursor-pointer;
+  }
+
+  .card-interactive:hover {
+    @apply border-accent-blue/30 shadow-glow-sm;
+    transform: translateY(-4px);
+  }
+
+  .card-interactive::before {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    content: '';
+    background: linear-gradient(135deg, rgba(0, 163, 255, 0.05) 0%, transparent 50%);
+  }
+
+  .card-interactive:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Glow border effect */
+  .card-glow {
+    @apply relative;
+  }
+
+  .card-glow::after {
+    @apply absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500;
+    content: '';
+    background: linear-gradient(135deg, rgba(0, 163, 255, 0.3), rgba(0, 229, 255, 0.1));
+    z-index: -1;
+    filter: blur(8px);
+  }
+
+  .card-glow:hover::after {
+    @apply opacity-100;
+  }
+
+  /* ============================================
+     BUTTON COMPONENTS
+     ============================================ */
+
+  .btn {
+    @apply relative inline-flex items-center justify-center gap-2.5 font-medium;
+    @apply transition-all duration-300 ease-out-expo;
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    @apply disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn px-6 py-3 rounded-xl;
+    @apply bg-gradient-to-r from-accent-blue to-accent-blue/90 text-white;
+    @apply shadow-glow-sm hover:shadow-glow-md;
+    @apply hover:from-accent-blue hover:to-accent-cyan/80;
+  }
+
+  .btn-primary::before {
+    @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300;
+    content: '';
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  }
+
+  .btn-primary:hover::before {
+    @apply opacity-100;
+  }
+
+  .btn-secondary {
+    @apply btn px-6 py-3 rounded-xl;
+    @apply bg-surface border border-border text-text-primary;
+    @apply hover:bg-surface-elevated hover:border-border-light;
+  }
+
+  .btn-outline {
+    @apply btn px-6 py-3 rounded-xl;
+    @apply bg-transparent border border-accent-blue/30 text-accent-blue;
+    @apply hover:bg-accent-blue/10 hover:border-accent-blue/50;
+  }
+
+  .btn-ghost {
+    @apply btn px-4 py-2 rounded-lg;
+    @apply text-text-secondary hover:text-text-primary hover:bg-surface/50;
+  }
+
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #00A3FF 0%, #00E5FF 50%, #00A3FF 100%);
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .gradient-text-purple {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #00A3FF 0%, #7B61FF 100%);
+  }
+
+  /* Monospace accent for tech terms */
+  .tech-term {
+    @apply font-mono text-accent-blue bg-accent-blue/10 px-1.5 py-0.5 rounded;
+  }
+
+  /* ============================================
+     DECORATIVE ELEMENTS
+     ============================================ */
+
+  /* Animated line */
+  .animated-line {
+    @apply h-px bg-gradient-to-r from-transparent via-accent-blue to-transparent;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  /* Glow dot */
+  .glow-dot {
+    @apply w-2 h-2 rounded-full bg-accent-blue shadow-glow-sm;
+  }
+
+  .glow-dot-cyan {
+    @apply w-2 h-2 rounded-full bg-accent-cyan shadow-glow-cyan;
+  }
+
+  /* Tech badge */
+  .tech-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+    @apply bg-accent-blue/10 text-accent-blue border border-accent-blue/20;
+  }
+
+  /* Status indicator */
+  .status-dot {
+    @apply w-2 h-2 rounded-full bg-emerald-500 animate-pulse;
+  }
+
+  /* ============================================
+     HOVER EFFECTS
+     ============================================ */
+
+  .hover-lift {
+    @apply transition-transform duration-300 ease-out-expo;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+  }
+
+  .hover-glow {
+    @apply transition-shadow duration-300;
+  }
+
+  .hover-glow:hover {
+    @apply shadow-glow-md;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-300 ease-out-expo;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+
+  /* Link with animated underline */
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    @apply absolute bottom-0 left-0 w-0 h-px bg-accent-blue transition-all duration-300;
+    content: '';
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* ============================================
+     SPECIAL EFFECTS
+     ============================================ */
+
+  /* Glass morphism */
+  .glass {
+    @apply bg-surface/30 backdrop-blur-xl border border-white/5;
+  }
+
+  /* Shimmer loading effect */
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer::after {
+    @apply absolute inset-0;
+    content: '';
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  /* Rotating border gradient */
+  .border-gradient {
+    @apply relative rounded-2xl p-px;
+    background: linear-gradient(135deg, rgba(0, 163, 255, 0.3), rgba(0, 229, 255, 0.1), rgba(123, 97, 255, 0.2));
+  }
+
+  .border-gradient > * {
+    @apply relative bg-background rounded-2xl;
+  }
+
+  /* Automotive dashboard style indicator */
+  .dashboard-indicator {
+    @apply flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface/80 border border-border;
+    @apply font-mono text-sm;
+  }
+
+  .dashboard-indicator .value {
+    @apply text-accent-cyan font-semibold;
+  }
+
+  .dashboard-indicator .label {
+    @apply text-text-tertiary;
+  }
+}
+
+@layer utilities {
+  /* Animation delays */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-700 { animation-delay: 700ms; }
+  .animation-delay-1000 { animation-delay: 1000ms; }
+
+  /* Perspective for 3D effects */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  /* Text shadow for glow effect */
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 163, 255, 0.5);
+  }
+
+  .text-glow-sm {
+    text-shadow: 0 0 10px rgba(0, 163, 255, 0.3);
+  }
+
+  /* Mask gradients */
+  .mask-gradient-b {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .mask-gradient-t {
+    mask-image: linear-gradient(to top, black 60%, transparent 100%);
+  }
+
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+
+@keyframes gridFlow {
+  0% { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 163, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 163, 255, 0.5);
+  }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .section-padding {
+    @apply py-16;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
+    @apply px-5 py-2.5 text-sm;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
