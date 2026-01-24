@@ -3,6 +3,7 @@
 import { ReactNode } from "react";
 import { LanguageProvider } from "@/lib/i18n";
 import { PageTransition } from "@/components/animations";
+import { ChatbotProvider } from "@/components/chatbot";
 
 interface ProvidersProps {
   children: ReactNode;
@@ -11,7 +12,9 @@ interface ProvidersProps {
 export function Providers({ children }: ProvidersProps) {
   return (
     <LanguageProvider>
-      <PageTransition>{children}</PageTransition>
+      <ChatbotProvider>
+        <PageTransition>{children}</PageTransition>
+      </ChatbotProvider>
     </LanguageProvider>
   );
 }

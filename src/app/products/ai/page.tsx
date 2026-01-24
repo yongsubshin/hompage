@@ -2,207 +2,556 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import {
+  CheckCircle,
+  FileText,
+  Code2,
+  TestTube,
+  ArrowRight,
+  Sparkles,
+  Zap,
+  Shield,
+  TrendingUp,
+  Cpu,
+  GitBranch,
+  FileCode,
+} from "lucide-react";
+
 export default function ParvisPage() {
+  const metrics = [
+    { before: "40%", after: "94%", label: "MISRA-C 준수율", improvement: "+54%" },
+    { before: "5%", after: "100%", label: "문서화 커버리지", improvement: "+95%" },
+    { before: "0%", after: "86.4%", label: "테스트 커버리지", improvement: "+86%" },
+  ];
+
+  const benefits = [
+    { icon: Shield, title: "오류 감소", desc: "AI 기반 자동화로 휴먼 에러를 최소화하고 코드 품질을 향상" },
+    { icon: Zap, title: "호출 효율화", desc: "최적화된 API 호출 구조로 처리 속도 향상" },
+    { icon: TrendingUp, title: "토큰 절감", desc: "효율적인 데이터 처리로 운영 비용 절감" },
+    { icon: Sparkles, title: "더 나은 사용성", desc: "직관적인 인터페이스와 워크플로우로 생산성 극대화" },
+  ];
 
   return (
-    <div className="pt-20 bg-background min-h-screen">
-      {/* Hero Section */}
-      <section
-        className="relative h-[300px] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/contents/sub_visual02.png')" }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative z-10 text-center text-white"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold">PARVIS</h1>
-        </motion.div>
-      </section>
+    <div className="pt-20 bg-background min-h-screen overflow-hidden">
+      {/* Hero Section - Split Layout */}
+      <section className="relative min-h-[90vh] flex items-center">
+        {/* Background Effects */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-accent-cyan/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 -right-32 w-[600px] h-[600px] bg-accent-blue/15 rounded-full blur-[150px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-purple/10 rounded-full blur-[200px]" />
+        </div>
 
-      {/* Breadcrumb */}
-      <nav className="bg-surface border-b border-border py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-text-text-secondary hover:text-accent-cyan">Home</Link>
-            <span className="text-text-tertiary">/</span>
-            <Link href="/products" className="text-text-text-secondary hover:text-accent-cyan">PRODUCTS</Link>
-            <span className="text-text-tertiary">/</span>
-            <span className="text-accent-cyan">PARVIS</span>
+        <div className="container-custom relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left: Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 mb-6">
+                <Cpu className="w-4 h-4 text-accent-cyan" />
+                <span className="text-sm text-accent-cyan font-medium">AI-Powered Automation</span>
+              </div>
+
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
+                PARVIS
+              </h1>
+
+              <p className="text-xl lg:text-2xl text-text-secondary mb-4 leading-relaxed">
+                AI 기반 차량 소프트웨어
+                <br />
+                <span className="text-accent-cyan">개발 산출물 자동화</span>
+              </p>
+
+              <p className="text-text-tertiary mb-8 max-w-lg leading-relaxed">
+                설계, 개발, 검증의 전 과정을 하나의 데이터 흐름으로 연결하여
+                ASPICE 프로세스에 부합하는 산출물을 자동 생성합니다.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/support/qna"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent-cyan text-background font-semibold rounded-xl hover:bg-accent-cyan/90 transition-all hover:shadow-lg hover:shadow-accent-cyan/25"
+                >
+                  <span>문의하기</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="#features"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-surface border border-border text-white font-semibold rounded-xl hover:bg-surface-elevated hover:border-accent-cyan/30 transition-all"
+                >
+                  자세히 보기
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right: Visual */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              {/* Floating Cards Visual */}
+              <div className="relative w-full aspect-square max-w-lg mx-auto">
+                {/* Central Glow */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-48 h-48 bg-accent-cyan/30 rounded-full blur-[80px] animate-pulse" />
+                </div>
+
+                {/* Spec Card */}
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute top-8 left-4 bg-surface/80 backdrop-blur-xl border border-border rounded-2xl p-5 shadow-2xl"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center">
+                      <FileText className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="font-semibold text-white">PARVIS-Spec</span>
+                  </div>
+                  <p className="text-xs text-text-tertiary">요구사항 자동 분석</p>
+                </motion.div>
+
+                {/* Coder Card */}
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="absolute top-1/2 -translate-y-1/2 right-0 bg-surface/80 backdrop-blur-xl border border-border rounded-2xl p-5 shadow-2xl"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-purple-500 rounded-xl flex items-center justify-center">
+                      <Code2 className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="font-semibold text-white">PARVIS-Coder</span>
+                  </div>
+                  <p className="text-xs text-text-tertiary">Code Safety 자동화</p>
+                </motion.div>
+
+                {/* Verify Card */}
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="absolute bottom-12 left-12 bg-surface/80 backdrop-blur-xl border border-border rounded-2xl p-5 shadow-2xl"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center">
+                      <TestTube className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="font-semibold text-white">PARVIS-Verify</span>
+                  </div>
+                  <p className="text-xs text-text-tertiary">테스트 자동 생성</p>
+                </motion.div>
+
+                {/* Connection Lines (SVG) */}
+                <svg className="absolute inset-0 w-full h-full" style={{ zIndex: -1 }}>
+                  <defs>
+                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="rgba(0, 229, 255, 0.3)" />
+                      <stop offset="100%" stopColor="rgba(123, 97, 255, 0.3)" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M 120 100 Q 200 200 300 180 Q 400 160 350 300 Q 300 400 180 350"
+                    fill="none"
+                    stroke="url(#lineGradient)"
+                    strokeWidth="2"
+                    strokeDasharray="8 4"
+                    className="opacity-50"
+                  />
+                </svg>
+              </div>
+            </motion.div>
           </div>
         </div>
-      </nav>
+      </section>
 
-      {/* Content */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
+      {/* Metrics Section - Bento Grid */}
+      <section className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background-secondary to-background" />
+
+        <div className="container-custom relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
           >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                PARVIS <span className="text-lg font-normal text-text-text-secondary">(PopcornSAR Adaptive & Classic Runtime Vehicle Intelligence System)</span>
-              </h2>
-              <p className="text-xl text-accent-cyan">AI 기반 차량 소프트웨어 개발 산출물 자동화</p>
-            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              검증된 성과
+            </h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">
+              실제 프로젝트에서 측정된 PARVIS의 성능 지표
+            </p>
+          </motion.div>
 
-            <div className="max-w-4xl mx-auto mb-16">
-              <p className="text-text-text-secondary leading-relaxed mb-6">
-                ASPICE는 자동차 소프트웨어 개발 과정의 품질과 안전성을 체계적으로 관리하기 위한 평가 모델로, 최근 차량 제조사와 주요 협력사에서 프로젝트 품질 확보의 핵심 기준으로 활용되고 있습니다. 하지만 방대한 문서 작성과 검증 단계로 인해 개발 기간이 길고 인력 의존도가 높다는 한계가 있습니다.
-              </p>
-              <p className="text-text-text-secondary leading-relaxed">
-                PopcornSAR는 이러한 비효율을 개선하기 위해 AI 기반 차량 소프트웨어 개발 산출물 자동화 제품을 개발했습니다. 설계, 개발, 검증의 전 과정을 하나의 데이터 흐름으로 연결하여 반복 작업을 최소화하고, ASPICE 프로세스에 부합하는 문서·코드·테스트 산출물을 자동으로 생성함으로써 품질과 생산성을 동시에 향상시킬 수 있습니다.
-              </p>
-            </div>
-
-            {/* PARVIS Modules */}
-            <div className="mb-16">
-              <h3 className="text-2xl font-bold mb-8 text-center text-white">
-                AI를 활용한 차량 소프트웨어 개발의 설계, 개발, 검증까지 전 과정에서 활용 가능한 ASPICE 산출물 자동 생성
-              </h3>
-              <p className="text-text-text-secondary text-center mb-12 max-w-3xl mx-auto">
-                본 제품은 설계(PARVIS-Spec), 개발(PARVIS-Coder), 검증(PARVIS-Verify)의 3단계를 하나로 연결하여, 사람의 의사결정은 유지하면서 반복적이고 정형화된 작업을 AI가 자동 처리하도록 설계되었습니다.
-              </p>
-
-              <div className="grid md:grid-cols-3 gap-8">
-                {/* PARVIS-Spec */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="bg-surface rounded-2xl border border-border p-8 hover:border-accent-cyan/50 transition-colors"
-                >
-                  <div className="w-16 h-16 bg-accent-cyan/10 rounded-full flex items-center justify-center mb-6">
-                    <span className="text-2xl font-bold text-accent-cyan">1</span>
-                  </div>
-                  <h4 className="text-xl font-bold text-accent-cyan mb-4">PARVIS-Spec</h4>
-                  <p className="text-text-text-secondary text-sm">
-                    사양서를 자동 분석하여 요구사항을 구조화하고, 요구사항-코드-테스트 간 추적성 매트릭스를 자동 생성합니다. AI 기반의 자연어 해석 엔진이 문서의 의미를 분석해 기술적 요구사항을 자동 추출하며, 반복적인 문서 분석 작업을 최소화합니다.
-                  </p>
-                </motion.div>
-
-                {/* PARVIS-Coder */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="bg-surface rounded-2xl border border-border p-8 hover:border-accent-cyan/50 transition-colors"
-                >
-                  <div className="w-16 h-16 bg-accent-cyan/10 rounded-full flex items-center justify-center mb-6">
-                    <span className="text-2xl font-bold text-accent-cyan">2</span>
-                  </div>
-                  <h4 className="text-xl font-bold text-accent-cyan mb-4">PARVIS-Coder</h4>
-                  <p className="text-text-text-secondary text-sm">
-                    Code Safety 자동화와 API 문서 자동 생성을 통해 개발 산출물의 품질과 일관성을 보장합니다. AI 리팩토링 알고리즘이 MISRA-C 및 내부 코딩 규칙을 자동 적용하고, 주석 기반의 API 문서를 동시 생성합니다.
-                  </p>
-                </motion.div>
-
-                {/* PARVIS-Verify */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  className="bg-surface rounded-2xl border border-border p-8 hover:border-accent-cyan/50 transition-colors"
-                >
-                  <div className="w-16 h-16 bg-accent-cyan/10 rounded-full flex items-center justify-center mb-6">
-                    <span className="text-2xl font-bold text-accent-cyan">3</span>
-                  </div>
-                  <h4 className="text-xl font-bold text-accent-cyan mb-4">PARVIS-Verify</h4>
-                  <p className="text-text-text-secondary text-sm">
-                    테스트 커버리지 분석과 테스트 코드 자동 생성을 수행하여 검증 단계를 체계적으로 가속화합니다. 테스트 요구사항을 기반으로 시나리오를 자동 생성하고, 코드 변경 이력을 반영하여 커버리지를 지속적으로 업데이트합니다.
-                  </p>
-                </motion.div>
+          {/* Bento Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            {/* Large Card - Efficiency */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="md:col-span-2 lg:row-span-2 bg-gradient-to-br from-accent-cyan/20 via-surface to-surface border border-accent-cyan/20 rounded-3xl p-8 lg:p-10 relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-accent-cyan/10 rounded-full blur-[80px] group-hover:bg-accent-cyan/20 transition-all duration-500" />
+              <div className="relative z-10">
+                <div className="text-6xl lg:text-8xl font-bold text-white mb-4">
+                  3~4<span className="text-accent-cyan">x</span>
+                </div>
+                <h3 className="text-2xl font-semibold text-white mb-2">업무 효율성 상승</h3>
+                <p className="text-text-secondary">
+                  기존 수작업 대비 개발 생산성이 3~4배 향상됩니다.
+                  반복적인 문서 작업과 코드 검증 시간을 대폭 절감합니다.
+                </p>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Performance Metrics */}
-            <div className="bg-surface rounded-2xl border border-border p-8 mb-16">
-              <h3 className="text-2xl font-bold mb-8 text-center text-white">성과 지표 (PERFORMANCE)</h3>
-              <div className="grid md:grid-cols-4 gap-8 text-center">
-                <div>
-                  <p className="text-3xl md:text-4xl font-bold text-accent-cyan mb-2">40% → 94%</p>
-                  <p className="text-text-text-secondary">MISRA-C 준수율</p>
-                  <p className="text-sm text-green-400">+54%</p>
-                </div>
-                <div>
-                  <p className="text-3xl md:text-4xl font-bold text-accent-cyan mb-2">5% → 100%</p>
-                  <p className="text-text-text-secondary">문서화 커버리지</p>
-                  <p className="text-sm text-green-400">+95%</p>
-                </div>
-                <div>
-                  <p className="text-3xl md:text-4xl font-bold text-accent-cyan mb-2">0% → 86.4%</p>
-                  <p className="text-text-text-secondary">테스트 커버리지</p>
-                  <p className="text-sm text-green-400">+86%</p>
-                </div>
-                <div>
-                  <p className="text-3xl md:text-4xl font-bold text-accent-cyan mb-2">3~4배</p>
-                  <p className="text-text-text-secondary">업무 효율성 상승</p>
-                  <p className="text-sm text-green-400">기존 대비</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Benefits */}
-            <div className="mb-16">
-              <h3 className="text-2xl font-bold mb-8 text-white">핵심 가치</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="flex items-start gap-4 bg-surface rounded-xl p-6 border border-border">
-                  <CheckCircle className="w-6 h-6 text-accent-cyan flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-semibold mb-2 text-white">오류 감소</h4>
-                    <p className="text-text-text-secondary text-sm">AI 기반 자동화로 휴먼 에러를 최소화하고 코드 품질을 향상시킵니다.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4 bg-surface rounded-xl p-6 border border-border">
-                  <CheckCircle className="w-6 h-6 text-accent-cyan flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-semibold mb-2 text-white">호출 효율화</h4>
-                    <p className="text-text-text-secondary text-sm">최적화된 API 호출 구조로 처리 속도를 향상시킵니다.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4 bg-surface rounded-xl p-6 border border-border">
-                  <CheckCircle className="w-6 h-6 text-accent-cyan flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-semibold mb-2 text-white">토큰 절감</h4>
-                    <p className="text-text-text-secondary text-sm">효율적인 데이터 처리로 운영 비용을 절감합니다.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4 bg-surface rounded-xl p-6 border border-border">
-                  <CheckCircle className="w-6 h-6 text-accent-cyan flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-semibold mb-2 text-white">더 나은 사용성</h4>
-                    <p className="text-text-text-secondary text-sm">직관적인 인터페이스와 워크플로우로 개발 생산성을 극대화합니다.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Integration */}
-            <div className="bg-surface rounded-2xl border border-border p-8 mb-16">
-              <h3 className="text-2xl font-bold mb-6 text-white">AutoSAR.io 및 PARA와의 연계</h3>
-              <p className="text-text-text-secondary leading-relaxed">
-                AutoSAR.io 및 PARA와의 연계를 통해 Adaptive AUTOSAR 환경에 최적화된 설계-코드-검증 자동화를 제공합니다. PARVIS 명령형 도구를 통해 세부 모듈별 자동 생성 기능을 실행할 수 있으며, 기존 DevOps 및 CI/CD 환경과도 손쉽게 통합됩니다. 이를 통해 기존 수작업 중심의 개발 방식에서 완전한 AI-Driven 개발 Pipeline으로 전환이 가능합니다.
-              </p>
-            </div>
-
-            {/* CTA */}
-            <div className="text-center">
-              <Link
-                href="/support/qna"
-                className="inline-block px-8 py-4 bg-accent-cyan text-background font-semibold rounded-lg hover:bg-accent-cyan/90 transition-colors"
+            {/* Metric Cards */}
+            {metrics.map((metric, index) => (
+              <motion.div
+                key={metric.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 + index * 0.1 }}
+                className="bg-surface border border-border rounded-3xl p-6 hover:border-accent-cyan/30 transition-all group"
               >
-                문의하기
-              </Link>
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-text-tertiary text-sm line-through">{metric.before}</span>
+                  <ArrowRight className="w-3 h-3 text-text-tertiary" />
+                  <span className="text-3xl font-bold text-white">{metric.after}</span>
+                </div>
+                <p className="text-text-secondary text-sm mb-2">{metric.label}</p>
+                <span className="inline-block px-2 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-medium rounded-full">
+                  {metric.improvement}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section - Alternating Layout */}
+      <section id="features" className="py-24 relative">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <span className="text-accent-cyan text-sm font-medium tracking-wider uppercase">
+              3-Step Process
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mt-4 mb-4">
+              설계부터 검증까지, 완전 자동화
+            </h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">
+              ASPICE 프로세스에 부합하는 문서, 코드, 테스트 산출물을 자동 생성합니다
+            </p>
+          </motion.div>
+
+          {/* Feature 1: PARVIS-Spec */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-32">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-2 lg:order-1"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-4">
+                <span className="w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center text-xs font-bold text-white">1</span>
+                <span className="text-sm text-cyan-400 font-medium">PARVIS-Spec</span>
+              </div>
+              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+                요구사항 자동 분석 및<br />추적성 매트릭스 생성
+              </h3>
+              <p className="text-text-secondary mb-6 leading-relaxed">
+                사양서를 자동 분석하여 요구사항을 구조화하고, 요구사항-코드-테스트 간
+                추적성 매트릭스를 자동 생성합니다. AI 기반의 자연어 해석 엔진이 문서의
+                의미를 분석해 기술적 요구사항을 자동 추출합니다.
+              </p>
+              <ul className="space-y-3">
+                {["사양서 자동 분석", "요구사항 구조화", "추적성 매트릭스 자동 생성"].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-text-secondary">
+                    <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-1 lg:order-2"
+            >
+              <div className="relative bg-gradient-to-br from-cyan-500/10 to-transparent border border-cyan-500/20 rounded-3xl p-8 lg:p-12">
+                <div className="absolute top-4 right-4 w-32 h-32 bg-cyan-500/20 rounded-full blur-[60px]" />
+                <div className="relative space-y-4">
+                  <div className="flex items-center gap-4 bg-surface/50 backdrop-blur rounded-xl p-4 border border-border">
+                    <FileText className="w-8 h-8 text-cyan-400" />
+                    <div>
+                      <p className="text-white font-medium">Requirements.docx</p>
+                      <p className="text-xs text-text-tertiary">분석 완료 · 47개 요구사항 추출</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 bg-surface/50 backdrop-blur rounded-xl p-4 border border-border">
+                    <GitBranch className="w-8 h-8 text-cyan-400" />
+                    <div>
+                      <p className="text-white font-medium">Traceability Matrix</p>
+                      <p className="text-xs text-text-tertiary">자동 생성 · 100% 커버리지</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Feature 2: PARVIS-Coder */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-32">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/20 rounded-3xl p-8 lg:p-12">
+                <div className="absolute top-4 left-4 w-32 h-32 bg-violet-500/20 rounded-full blur-[60px]" />
+                <div className="relative">
+                  <div className="bg-surface/80 backdrop-blur rounded-xl border border-border overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-surface border-b border-border">
+                      <div className="flex gap-1.5">
+                        <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                        <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                        <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                      </div>
+                      <span className="text-xs text-text-tertiary ml-2">main.c</span>
+                    </div>
+                    <div className="p-4 font-mono text-sm">
+                      <div className="text-text-tertiary">// MISRA-C Compliant</div>
+                      <div><span className="text-violet-400">void</span> <span className="text-cyan-400">SafetyCheck</span>() {"{"}</div>
+                      <div className="text-emerald-400 pl-4">✓ Rule 8.4 compliant</div>
+                      <div className="text-emerald-400 pl-4">✓ Rule 10.1 compliant</div>
+                      <div>{"}"}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 mb-4">
+                <span className="w-6 h-6 bg-violet-500 rounded-full flex items-center justify-center text-xs font-bold text-white">2</span>
+                <span className="text-sm text-violet-400 font-medium">PARVIS-Coder</span>
+              </div>
+              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+                Code Safety 자동화 및<br />API 문서 자동 생성
+              </h3>
+              <p className="text-text-secondary mb-6 leading-relaxed">
+                AI 리팩토링 알고리즘이 MISRA-C 및 내부 코딩 규칙을 자동 적용하고,
+                주석 기반의 API 문서를 동시 생성합니다. 개발 산출물의 품질과
+                일관성을 보장합니다.
+              </p>
+              <ul className="space-y-3">
+                {["MISRA-C 자동 적용", "코딩 규칙 검사", "API 문서 자동 생성"].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-text-secondary">
+                    <CheckCircle className="w-5 h-5 text-violet-400 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Feature 3: PARVIS-Verify */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-2 lg:order-1"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-4">
+                <span className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center text-xs font-bold text-white">3</span>
+                <span className="text-sm text-emerald-400 font-medium">PARVIS-Verify</span>
+              </div>
+              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+                테스트 커버리지 분석 및<br />테스트 코드 자동 생성
+              </h3>
+              <p className="text-text-secondary mb-6 leading-relaxed">
+                테스트 요구사항을 기반으로 시나리오를 자동 생성하고, 코드 변경 이력을
+                반영하여 커버리지를 지속적으로 업데이트합니다. 검증 단계를 체계적으로
+                가속화합니다.
+              </p>
+              <ul className="space-y-3">
+                {["테스트 시나리오 자동 생성", "커버리지 실시간 분석", "변경 이력 자동 반영"].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-text-secondary">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-1 lg:order-2"
+            >
+              <div className="relative bg-gradient-to-br from-emerald-500/10 to-transparent border border-emerald-500/20 rounded-3xl p-8 lg:p-12">
+                <div className="absolute bottom-4 right-4 w-32 h-32 bg-emerald-500/20 rounded-full blur-[60px]" />
+                <div className="relative space-y-4">
+                  {/* Coverage Bar */}
+                  <div className="bg-surface/50 backdrop-blur rounded-xl p-4 border border-border">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-white font-medium">Test Coverage</span>
+                      <span className="text-emerald-400 font-bold">86.4%</span>
+                    </div>
+                    <div className="h-3 bg-surface rounded-full overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "86.4%" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-surface/50 backdrop-blur rounded-xl p-4 border border-border text-center">
+                      <p className="text-2xl font-bold text-white">247</p>
+                      <p className="text-xs text-text-tertiary">Test Cases</p>
+                    </div>
+                    <div className="bg-surface/50 backdrop-blur rounded-xl p-4 border border-border text-center">
+                      <p className="text-2xl font-bold text-emerald-400">100%</p>
+                      <p className="text-xs text-text-tertiary">Pass Rate</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-background-secondary" />
+
+        <div className="container-custom relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              핵심 가치
+            </h2>
+            <p className="text-text-secondary">
+              PARVIS가 제공하는 차별화된 가치
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group bg-surface border border-border rounded-2xl p-6 hover:border-accent-cyan/30 hover:shadow-lg hover:shadow-accent-cyan/5 transition-all duration-300"
+              >
+                <div className="w-12 h-12 bg-accent-cyan/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent-cyan/20 transition-colors">
+                  <benefit.icon className="w-6 h-6 text-accent-cyan" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
+                <p className="text-text-secondary text-sm">{benefit.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Integration Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-blue/10 rounded-full blur-[150px]" />
+        </div>
+
+        <div className="container-custom relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-border mb-6">
+              <FileCode className="w-4 h-4 text-accent-blue" />
+              <span className="text-sm text-text-secondary">Seamless Integration</span>
             </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+              AutoSAR.io 및 PARA와의<br />완벽한 연계
+            </h2>
+            <p className="text-text-secondary text-lg leading-relaxed mb-8">
+              Adaptive AUTOSAR 환경에 최적화된 설계-코드-검증 자동화를 제공합니다.
+              기존 DevOps 및 CI/CD 환경과도 손쉽게 통합되어 완전한 AI-Driven 개발
+              Pipeline으로 전환이 가능합니다.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="px-6 py-3 bg-surface border border-border rounded-xl">
+                <span className="text-white font-medium">AutoSAR.io</span>
+              </div>
+              <div className="px-6 py-3 bg-surface border border-border rounded-xl">
+                <span className="text-white font-medium">PARA</span>
+              </div>
+              <div className="px-6 py-3 bg-surface border border-border rounded-xl">
+                <span className="text-white font-medium">CI/CD Pipeline</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/10 via-background to-accent-blue/10" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent-cyan/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-blue/20 rounded-full blur-[120px]" />
+
+        <div className="container-custom relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
+              AI로 개발 생산성을<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-blue">
+                3~4배 향상시키세요
+              </span>
+            </h2>
+            <p className="text-text-secondary text-lg mb-10">
+              PARVIS와 함께 ASPICE 프로세스를 자동화하고<br />
+              품질과 생산성을 동시에 확보하세요.
+            </p>
+            <Link
+              href="/support/qna"
+              className="inline-flex items-center gap-2 px-10 py-5 bg-accent-cyan text-background font-semibold rounded-xl hover:bg-accent-cyan/90 transition-all hover:shadow-xl hover:shadow-accent-cyan/25 text-lg"
+            >
+              <span>문의하기</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </motion.div>
         </div>
       </section>
