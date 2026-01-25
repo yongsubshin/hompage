@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Send, User, Mail, Building, Phone, MessageSquare } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
@@ -30,35 +29,29 @@ export default function QnaPage() {
   };
 
   return (
-    <div className="pt-20 bg-background min-h-screen">
-      {/* Hero Section */}
-      <section
-        className="relative h-[300px] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/contents/sub_visual04.png')" }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
+    <div className="pt-20 bg-background min-h-screen overflow-hidden">
+      {/* Hero Section - Stripe Style */}
+      <section className="relative min-h-[40vh] flex items-center justify-center py-20">
+        {/* Background Effects */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-accent-cyan/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 -right-32 w-[500px] h-[500px] bg-accent-blue/15 rounded-full blur-[150px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-cyan/5 rounded-full blur-[200px]" />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative z-10 text-center text-white"
+          className="relative z-10 text-center"
         >
-          <h1 className="text-4xl md:text-5xl font-bold">{t.support.qna.title}</h1>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 mb-6">
+            <MessageSquare className="w-4 h-4 text-accent-cyan" />
+            <span className="text-sm text-accent-cyan font-medium">Support</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">{t.support.qna.title}</h1>
         </motion.div>
       </section>
-
-      {/* Breadcrumb */}
-      <nav className="bg-surface border-b border-border py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-text-secondary hover:text-accent-cyan transition-colors">{t.common.home}</Link>
-            <span className="text-text-tertiary">/</span>
-            <Link href="/support" className="text-text-secondary hover:text-accent-cyan transition-colors">{t.nav.support}</Link>
-            <span className="text-text-tertiary">/</span>
-            <span className="text-accent-cyan">{t.support.qna.title}</span>
-          </div>
-        </div>
-      </nav>
 
       {/* Content */}
       <section className="py-16">

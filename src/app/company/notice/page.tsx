@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, ChevronRight, X } from "lucide-react";
+import { Calendar, X, Bell, ArrowRight, Tag } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const notices = [
@@ -74,6 +73,29 @@ const notices = [
   },
 ];
 
+const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
+  product: {
+    bg: "bg-cyan-500/10",
+    text: "text-cyan-400",
+    border: "border-cyan-500/20",
+  },
+  update: {
+    bg: "bg-blue-500/10",
+    text: "text-blue-400",
+    border: "border-blue-500/20",
+  },
+  event: {
+    bg: "bg-violet-500/10",
+    text: "text-violet-400",
+    border: "border-violet-500/20",
+  },
+  recruitment: {
+    bg: "bg-emerald-500/10",
+    text: "text-emerald-400",
+    border: "border-emerald-500/20",
+  },
+};
+
 export default function NoticePage() {
   const { t, language } = useLanguage();
   const [selectedNotice, setSelectedNotice] = useState<typeof notices[0] | null>(null);
@@ -120,87 +142,112 @@ export default function NoticePage() {
   };
 
   return (
-    <div className="pt-20 bg-background min-h-screen">
-      {/* Hero Section */}
-      <section
-        className="relative h-[300px] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/contents/sub_visual01.png')" }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative z-10 text-center text-white"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold">{t.company.notice.title}</h1>
-        </motion.div>
+    <div className="pt-20 bg-background min-h-screen overflow-hidden">
+      {/* Hero Section - Stripe Style */}
+      <section className="relative min-h-[50vh] flex items-center">
+        {/* Background Effects */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-accent-cyan/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-accent-blue/15 rounded-full blur-[150px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-purple/10 rounded-full blur-[200px]" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 mb-6"
+            >
+              <Bell className="w-4 h-4 text-accent-cyan" />
+              <span className="text-sm text-accent-cyan font-medium">{t.company.notice.badge}</span>
+            </motion.div>
+
+            {/* Title */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              {t.company.notice.title}
+            </h1>
+
+            {/* Subtitle */}
+            <p className="text-xl text-text-secondary mb-8">
+              {t.company.notice.subtitle}
+            </p>
+          </motion.div>
+        </div>
       </section>
 
-      {/* Breadcrumb */}
-      <nav className="bg-surface border-b border-border py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-text-secondary hover:text-accent-cyan transition-colors">{t.common.home}</Link>
-            <span className="text-text-tertiary">/</span>
-            <Link href="/company" className="text-text-secondary hover:text-accent-cyan transition-colors">{t.nav.company}</Link>
-            <span className="text-text-tertiary">/</span>
-            <span className="text-accent-cyan">{t.company.notice.title}</span>
-          </div>
-        </div>
-      </nav>
+      {/* Notice List Section */}
+      <section className="py-16 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background-secondary/50 to-background" />
 
-      {/* Content */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto"
           >
-            {/* Notice List */}
-            <div className="bg-surface rounded-2xl border border-border overflow-hidden">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-surface border-b border-border">
-                    <th className="py-4 px-6 text-left font-semibold text-white w-24">{t.company.notice.number}</th>
-                    <th className="py-4 px-6 text-left font-semibold text-white">{t.company.notice.titleColumn}</th>
-                    <th className="py-4 px-6 text-left font-semibold text-white w-32">{t.company.notice.category}</th>
-                    <th className="py-4 px-6 text-left font-semibold text-white w-40">{t.company.notice.date}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {notices.map((notice, index) => (
-                    <tr
-                      key={notice.id}
-                      onClick={() => setSelectedNotice(notice)}
-                      className="border-b border-border hover:bg-surface/50 transition-colors cursor-pointer"
-                    >
-                      <td className="py-4 px-6 text-tertiary">{notices.length - index}</td>
-                      <td className="py-4 px-6">
-                        <div className="flex items-center gap-2">
-                          <span className="text-text-secondary hover:text-accent-cyan">
-                            {getNoticeTitle(notice)}
+            {/* Notice Cards */}
+            <div className="space-y-4">
+              {notices.map((notice, index) => {
+                const colors = categoryColors[notice.category] || categoryColors.product;
+
+                return (
+                  <motion.div
+                    key={notice.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    onClick={() => setSelectedNotice(notice)}
+                    className="group relative bg-[#0a0a0f] border border-white/[0.08] rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:border-accent-cyan/30 hover:shadow-lg hover:shadow-accent-cyan/5"
+                  >
+                    {/* Hover Glow Effect */}
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-accent-cyan/5 to-accent-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                    <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-4">
+                      {/* Left: Content */}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-3 mb-3">
+                          {/* Category Badge */}
+                          <span
+                            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium ${colors.bg} ${colors.text} border ${colors.border}`}
+                          >
+                            <Tag className="w-3 h-3" />
+                            {getCategoryLabel(notice.category)}
                           </span>
-                          <ChevronRight className="w-4 h-4 text-tertiary" />
+
+                          {/* Date */}
+                          <span className="flex items-center gap-1.5 text-sm text-text-tertiary">
+                            <Calendar className="w-3.5 h-3.5" />
+                            {notice.date}
+                          </span>
                         </div>
-                      </td>
-                      <td className="py-4 px-6">
-                        <span className="px-3 py-1 bg-accent-cyan/10 text-accent-cyan text-sm rounded-full">
-                          {getCategoryLabel(notice.category)}
-                        </span>
-                      </td>
-                      <td className="py-4 px-6 text-tertiary">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4" />
-                          {notice.date}
+
+                        {/* Title */}
+                        <h3 className="text-lg font-semibold text-white group-hover:text-accent-cyan transition-colors line-clamp-2">
+                          {getNoticeTitle(notice)}
+                        </h3>
+                      </div>
+
+                      {/* Right: Arrow */}
+                      <div className="flex-shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center group-hover:bg-accent-cyan/10 group-hover:border-accent-cyan/30 transition-all duration-300">
+                          <ArrowRight className="w-4 h-4 text-text-tertiary group-hover:text-accent-cyan transition-colors" />
                         </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.div>
         </div>
@@ -213,53 +260,65 @@ export default function NoticePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
             onClick={() => setSelectedNotice(null)}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", duration: 0.3 }}
-              className="bg-surface rounded-2xl border border-border max-w-2xl w-full max-h-[80vh] overflow-hidden"
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ type: "spring", duration: 0.4 }}
+              className="bg-[#0a0a0f] rounded-2xl border border-white/[0.1] max-w-2xl w-full max-h-[80vh] overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="flex items-center justify-between p-6 border-b border-border">
-                <div className="flex items-center gap-3">
-                  <span className="px-3 py-1 bg-accent-cyan/10 text-accent-cyan text-sm rounded-full">
+              <div className="flex items-center justify-between p-6 border-b border-white/[0.08]">
+                <div className="flex flex-wrap items-center gap-3">
+                  {/* Category Badge */}
+                  <span
+                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium ${
+                      categoryColors[selectedNotice.category]?.bg
+                    } ${categoryColors[selectedNotice.category]?.text} border ${
+                      categoryColors[selectedNotice.category]?.border
+                    }`}
+                  >
+                    <Tag className="w-3 h-3" />
                     {getCategoryLabel(selectedNotice.category)}
                   </span>
-                  <span className="text-text-tertiary text-sm flex items-center gap-1">
-                    <Calendar className="w-4 h-4" />
+
+                  {/* Date */}
+                  <span className="flex items-center gap-1.5 text-sm text-text-tertiary">
+                    <Calendar className="w-3.5 h-3.5" />
                     {selectedNotice.date}
                   </span>
                 </div>
+
+                {/* Close Button */}
                 <button
                   onClick={() => setSelectedNotice(null)}
-                  className="p-2 rounded-lg hover:bg-background transition-colors"
+                  className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center hover:bg-surface-elevated hover:border-accent-cyan/30 transition-all"
                 >
                   <X className="w-5 h-5 text-text-secondary" />
                 </button>
               </div>
 
               {/* Modal Content */}
-              <div className="p-6">
-                <h2 className="text-xl font-bold text-white mb-4">
+              <div className="p-6 overflow-y-auto max-h-[50vh]">
+                <h2 className="text-xl md:text-2xl font-bold text-white mb-6 leading-tight">
                   {getNoticeTitle(selectedNotice)}
                 </h2>
-                <p className="text-text-secondary leading-relaxed">
+                <p className="text-text-secondary leading-relaxed whitespace-pre-line">
                   {getNoticeContent(selectedNotice)}
                 </p>
               </div>
 
               {/* Modal Footer */}
-              <div className="flex justify-end p-6 border-t border-border">
+              <div className="flex justify-end p-6 border-t border-white/[0.08]">
                 <button
                   onClick={() => setSelectedNotice(null)}
-                  className="px-6 py-2 bg-accent-cyan text-white rounded-lg hover:bg-accent-cyan/80 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent-cyan text-background font-semibold rounded-xl hover:bg-accent-cyan/90 transition-all hover:shadow-lg hover:shadow-accent-cyan/25"
                 >
-{language === "kr" ? "닫기" : language === "jp" ? "閉じる" : language === "cn" ? "关闭" : "Close"}
+                  {language === "kr" ? "닫기" : language === "jp" ? "閉じる" : language === "cn" ? "关闭" : "Close"}
                 </button>
               </div>
             </motion.div>

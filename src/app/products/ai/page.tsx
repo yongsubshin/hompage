@@ -16,19 +16,23 @@ import {
   GitBranch,
   FileCode,
 } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 export default function ParvisPage() {
+  const { t } = useLanguage();
+  const content = t.parvis;
+
   const metrics = [
-    { before: "40%", after: "94%", label: "MISRA-C 준수율", improvement: "+54%" },
-    { before: "5%", after: "100%", label: "문서화 커버리지", improvement: "+95%" },
-    { before: "0%", after: "86.4%", label: "테스트 커버리지", improvement: "+86%" },
+    { before: "40%", after: "94%", label: content.metricMisra, improvement: "+54%" },
+    { before: "5%", after: "100%", label: content.metricDocs, improvement: "+95%" },
+    { before: "0%", after: "86.4%", label: content.metricTest, improvement: "+86%" },
   ];
 
   const benefits = [
-    { icon: Shield, title: "오류 감소", desc: "AI 기반 자동화로 휴먼 에러를 최소화하고 코드 품질을 향상" },
-    { icon: Zap, title: "호출 효율화", desc: "최적화된 API 호출 구조로 처리 속도 향상" },
-    { icon: TrendingUp, title: "토큰 절감", desc: "효율적인 데이터 처리로 운영 비용 절감" },
-    { icon: Sparkles, title: "더 나은 사용성", desc: "직관적인 인터페이스와 워크플로우로 생산성 극대화" },
+    { icon: Shield, title: content.benefit1Title, desc: content.benefit1Desc },
+    { icon: Zap, title: content.benefit2Title, desc: content.benefit2Desc },
+    { icon: TrendingUp, title: content.benefit3Title, desc: content.benefit3Desc },
+    { icon: Sparkles, title: content.benefit4Title, desc: content.benefit4Desc },
   ];
 
   return (
@@ -52,22 +56,21 @@ export default function ParvisPage() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 mb-6">
                 <Cpu className="w-4 h-4 text-accent-cyan" />
-                <span className="text-sm text-accent-cyan font-medium">AI-Powered Automation</span>
+                <span className="text-sm text-accent-cyan font-medium">{content.badge}</span>
               </div>
 
               <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
-                PARVIS
+                {content.title}
               </h1>
 
               <p className="text-xl lg:text-2xl text-text-secondary mb-4 leading-relaxed">
-                AI 기반 차량 소프트웨어
+                {content.subtitle1}
                 <br />
-                <span className="text-accent-cyan">개발 산출물 자동화</span>
+                <span className="text-accent-cyan">{content.subtitle2}</span>
               </p>
 
               <p className="text-text-tertiary mb-8 max-w-lg leading-relaxed">
-                설계, 개발, 검증의 전 과정을 하나의 데이터 흐름으로 연결하여
-                ASPICE 프로세스에 부합하는 산출물을 자동 생성합니다.
+                {content.heroDesc}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -75,14 +78,14 @@ export default function ParvisPage() {
                   href="/support/qna"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent-cyan text-background font-semibold rounded-xl hover:bg-accent-cyan/90 transition-all hover:shadow-lg hover:shadow-accent-cyan/25"
                 >
-                  <span>문의하기</span>
+                  <span>{content.cta1}</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="#features"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-surface border border-border text-white font-semibold rounded-xl hover:bg-surface-elevated hover:border-accent-cyan/30 transition-all"
                 >
-                  자세히 보기
+                  {content.cta2}
                 </Link>
               </div>
             </motion.div>
@@ -111,9 +114,9 @@ export default function ParvisPage() {
                     <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center">
                       <FileText className="w-5 h-5 text-white" />
                     </div>
-                    <span className="font-semibold text-white">PARVIS-Spec</span>
+                    <span className="font-semibold text-white">{content.specCard}</span>
                   </div>
-                  <p className="text-xs text-text-tertiary">요구사항 자동 분석</p>
+                  <p className="text-xs text-text-tertiary">{content.specCardDesc}</p>
                 </motion.div>
 
                 {/* Coder Card */}
@@ -126,9 +129,9 @@ export default function ParvisPage() {
                     <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-purple-500 rounded-xl flex items-center justify-center">
                       <Code2 className="w-5 h-5 text-white" />
                     </div>
-                    <span className="font-semibold text-white">PARVIS-Coder</span>
+                    <span className="font-semibold text-white">{content.coderCard}</span>
                   </div>
-                  <p className="text-xs text-text-tertiary">Code Safety 자동화</p>
+                  <p className="text-xs text-text-tertiary">{content.coderCardDesc}</p>
                 </motion.div>
 
                 {/* Verify Card */}
@@ -141,9 +144,9 @@ export default function ParvisPage() {
                     <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center">
                       <TestTube className="w-5 h-5 text-white" />
                     </div>
-                    <span className="font-semibold text-white">PARVIS-Verify</span>
+                    <span className="font-semibold text-white">{content.verifyCard}</span>
                   </div>
-                  <p className="text-xs text-text-tertiary">테스트 자동 생성</p>
+                  <p className="text-xs text-text-tertiary">{content.verifyCardDesc}</p>
                 </motion.div>
 
                 {/* Connection Lines (SVG) */}
@@ -181,10 +184,10 @@ export default function ParvisPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              검증된 성과
+              {content.metricsTitle}
             </h2>
             <p className="text-text-secondary max-w-2xl mx-auto">
-              실제 프로젝트에서 측정된 PARVIS의 성능 지표
+              {content.metricsSubtitle}
             </p>
           </motion.div>
 
@@ -201,12 +204,11 @@ export default function ParvisPage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-accent-cyan/10 rounded-full blur-[80px] group-hover:bg-accent-cyan/20 transition-all duration-500" />
               <div className="relative z-10">
                 <div className="text-6xl lg:text-8xl font-bold text-white mb-4">
-                  3~4<span className="text-accent-cyan">x</span>
+                  {content.efficiencyValue}<span className="text-accent-cyan">{content.efficiencyUnit}</span>
                 </div>
-                <h3 className="text-2xl font-semibold text-white mb-2">업무 효율성 상승</h3>
+                <h3 className="text-2xl font-semibold text-white mb-2">{content.efficiencyLabel}</h3>
                 <p className="text-text-secondary">
-                  기존 수작업 대비 개발 생산성이 3~4배 향상됩니다.
-                  반복적인 문서 작업과 코드 검증 시간을 대폭 절감합니다.
+                  {content.efficiencyDesc}
                 </p>
               </div>
             </motion.div>
@@ -246,13 +248,13 @@ export default function ParvisPage() {
             className="text-center mb-20"
           >
             <span className="text-accent-cyan text-sm font-medium tracking-wider uppercase">
-              3-Step Process
+              {content.featuresLabel}
             </span>
             <h2 className="text-3xl lg:text-4xl font-bold text-white mt-4 mb-4">
-              설계부터 검증까지, 완전 자동화
+              {content.featuresTitle}
             </h2>
             <p className="text-text-secondary max-w-2xl mx-auto">
-              ASPICE 프로세스에 부합하는 문서, 코드, 테스트 산출물을 자동 생성합니다
+              {content.featuresSubtitle}
             </p>
           </motion.div>
 
@@ -266,18 +268,16 @@ export default function ParvisPage() {
             >
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-4">
                 <span className="w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center text-xs font-bold text-white">1</span>
-                <span className="text-sm text-cyan-400 font-medium">PARVIS-Spec</span>
+                <span className="text-sm text-cyan-400 font-medium">{content.specCard}</span>
               </div>
               <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                요구사항 자동 분석 및<br />추적성 매트릭스 생성
+                {content.specTitle}<br />{content.specTitle2}
               </h3>
               <p className="text-text-secondary mb-6 leading-relaxed">
-                사양서를 자동 분석하여 요구사항을 구조화하고, 요구사항-코드-테스트 간
-                추적성 매트릭스를 자동 생성합니다. AI 기반의 자연어 해석 엔진이 문서의
-                의미를 분석해 기술적 요구사항을 자동 추출합니다.
+                {content.specDesc}
               </p>
               <ul className="space-y-3">
-                {["사양서 자동 분석", "요구사항 구조화", "추적성 매트릭스 자동 생성"].map((item) => (
+                {[content.specFeature1, content.specFeature2, content.specFeature3].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-text-secondary">
                     <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
                     <span>{item}</span>
@@ -297,15 +297,15 @@ export default function ParvisPage() {
                   <div className="flex items-center gap-4 bg-surface/50 backdrop-blur rounded-xl p-4 border border-border">
                     <FileText className="w-8 h-8 text-cyan-400" />
                     <div>
-                      <p className="text-white font-medium">Requirements.docx</p>
-                      <p className="text-xs text-text-tertiary">분석 완료 · 47개 요구사항 추출</p>
+                      <p className="text-white font-medium">{content.specFile}</p>
+                      <p className="text-xs text-text-tertiary">{content.specFileStatus} · {content.specFileCount}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 bg-surface/50 backdrop-blur rounded-xl p-4 border border-border">
                     <GitBranch className="w-8 h-8 text-cyan-400" />
                     <div>
-                      <p className="text-white font-medium">Traceability Matrix</p>
-                      <p className="text-xs text-text-tertiary">자동 생성 · 100% 커버리지</p>
+                      <p className="text-white font-medium">{content.specMatrix}</p>
+                      <p className="text-xs text-text-tertiary">{content.specMatrixStatus} · {content.specMatrixCoverage}</p>
                     </div>
                   </div>
                 </div>
@@ -333,10 +333,10 @@ export default function ParvisPage() {
                       <span className="text-xs text-text-tertiary ml-2">main.c</span>
                     </div>
                     <div className="p-4 font-mono text-sm">
-                      <div className="text-text-tertiary">// MISRA-C Compliant</div>
+                      <div className="text-text-tertiary">{content.coderComment}</div>
                       <div><span className="text-violet-400">void</span> <span className="text-cyan-400">SafetyCheck</span>() {"{"}</div>
-                      <div className="text-emerald-400 pl-4">✓ Rule 8.4 compliant</div>
-                      <div className="text-emerald-400 pl-4">✓ Rule 10.1 compliant</div>
+                      <div className="text-emerald-400 pl-4">✓ {content.coderRule1}</div>
+                      <div className="text-emerald-400 pl-4">✓ {content.coderRule2}</div>
                       <div>{"}"}</div>
                     </div>
                   </div>
@@ -350,18 +350,16 @@ export default function ParvisPage() {
             >
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 mb-4">
                 <span className="w-6 h-6 bg-violet-500 rounded-full flex items-center justify-center text-xs font-bold text-white">2</span>
-                <span className="text-sm text-violet-400 font-medium">PARVIS-Coder</span>
+                <span className="text-sm text-violet-400 font-medium">{content.coderCard}</span>
               </div>
               <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                Code Safety 자동화 및<br />API 문서 자동 생성
+                {content.coderTitle}<br />{content.coderTitle2}
               </h3>
               <p className="text-text-secondary mb-6 leading-relaxed">
-                AI 리팩토링 알고리즘이 MISRA-C 및 내부 코딩 규칙을 자동 적용하고,
-                주석 기반의 API 문서를 동시 생성합니다. 개발 산출물의 품질과
-                일관성을 보장합니다.
+                {content.coderDesc}
               </p>
               <ul className="space-y-3">
-                {["MISRA-C 자동 적용", "코딩 규칙 검사", "API 문서 자동 생성"].map((item) => (
+                {[content.coderFeature1, content.coderFeature2, content.coderFeature3].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-text-secondary">
                     <CheckCircle className="w-5 h-5 text-violet-400 flex-shrink-0" />
                     <span>{item}</span>
@@ -381,18 +379,16 @@ export default function ParvisPage() {
             >
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-4">
                 <span className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center text-xs font-bold text-white">3</span>
-                <span className="text-sm text-emerald-400 font-medium">PARVIS-Verify</span>
+                <span className="text-sm text-emerald-400 font-medium">{content.verifyCard}</span>
               </div>
               <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                테스트 커버리지 분석 및<br />테스트 코드 자동 생성
+                {content.verifyTitle}<br />{content.verifyTitle2}
               </h3>
               <p className="text-text-secondary mb-6 leading-relaxed">
-                테스트 요구사항을 기반으로 시나리오를 자동 생성하고, 코드 변경 이력을
-                반영하여 커버리지를 지속적으로 업데이트합니다. 검증 단계를 체계적으로
-                가속화합니다.
+                {content.verifyDesc}
               </p>
               <ul className="space-y-3">
-                {["테스트 시나리오 자동 생성", "커버리지 실시간 분석", "변경 이력 자동 반영"].map((item) => (
+                {[content.verifyFeature1, content.verifyFeature2, content.verifyFeature3].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-text-secondary">
                     <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                     <span>{item}</span>
@@ -412,7 +408,7 @@ export default function ParvisPage() {
                   {/* Coverage Bar */}
                   <div className="bg-surface/50 backdrop-blur rounded-xl p-4 border border-border">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-white font-medium">Test Coverage</span>
+                      <span className="text-white font-medium">{content.verifyCoverage}</span>
                       <span className="text-emerald-400 font-bold">86.4%</span>
                     </div>
                     <div className="h-3 bg-surface rounded-full overflow-hidden">
@@ -428,11 +424,11 @@ export default function ParvisPage() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-surface/50 backdrop-blur rounded-xl p-4 border border-border text-center">
                       <p className="text-2xl font-bold text-white">247</p>
-                      <p className="text-xs text-text-tertiary">Test Cases</p>
+                      <p className="text-xs text-text-tertiary">{content.verifyTestCases}</p>
                     </div>
                     <div className="bg-surface/50 backdrop-blur rounded-xl p-4 border border-border text-center">
                       <p className="text-2xl font-bold text-emerald-400">100%</p>
-                      <p className="text-xs text-text-tertiary">Pass Rate</p>
+                      <p className="text-xs text-text-tertiary">{content.verifyPassRate}</p>
                     </div>
                   </div>
                 </div>
@@ -454,10 +450,10 @@ export default function ParvisPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              핵심 가치
+              {content.benefitsTitle}
             </h2>
             <p className="text-text-secondary">
-              PARVIS가 제공하는 차별화된 가치
+              {content.benefitsSubtitle}
             </p>
           </motion.div>
 
@@ -497,15 +493,13 @@ export default function ParvisPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-border mb-6">
               <FileCode className="w-4 h-4 text-accent-blue" />
-              <span className="text-sm text-text-secondary">Seamless Integration</span>
+              <span className="text-sm text-text-secondary">{content.integrationBadge}</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-              AutoSAR.io 및 PARA와의<br />완벽한 연계
+              {content.integrationTitle}<br />{content.integrationTitle2}
             </h2>
             <p className="text-text-secondary text-lg leading-relaxed mb-8">
-              Adaptive AUTOSAR 환경에 최적화된 설계-코드-검증 자동화를 제공합니다.
-              기존 DevOps 및 CI/CD 환경과도 손쉽게 통합되어 완전한 AI-Driven 개발
-              Pipeline으로 전환이 가능합니다.
+              {content.integrationDesc}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="px-6 py-3 bg-surface border border-border rounded-xl">
@@ -536,20 +530,20 @@ export default function ParvisPage() {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              AI로 개발 생산성을<br />
+              {content.ctaTitle1}<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-blue">
-                3~4배 향상시키세요
+                {content.ctaTitle2}
               </span>
             </h2>
             <p className="text-text-secondary text-lg mb-10">
-              PARVIS와 함께 ASPICE 프로세스를 자동화하고<br />
-              품질과 생산성을 동시에 확보하세요.
+              {content.ctaDesc}<br />
+              {content.ctaDesc2}
             </p>
             <Link
               href="/support/qna"
               className="inline-flex items-center gap-2 px-10 py-5 bg-accent-cyan text-background font-semibold rounded-xl hover:bg-accent-cyan/90 transition-all hover:shadow-xl hover:shadow-accent-cyan/25 text-lg"
             >
-              <span>문의하기</span>
+              <span>{content.ctaButton}</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
