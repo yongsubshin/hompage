@@ -3,7 +3,13 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import { Inter } from "next/font/google";
 import VFBCanvas from "./VFBCanvas";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 interface VFBEditorModalProps {
   isOpen: boolean;
@@ -54,7 +60,7 @@ export default function VFBEditorModal({ isOpen, onClose }: VFBEditorModalProps)
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-[95vw] h-[90vh] max-w-7xl rounded-2xl shadow-2xl overflow-hidden"
+            className={`relative w-[95vw] h-[90vh] max-w-7xl rounded-2xl shadow-2xl overflow-hidden ${inter.className}`}
             style={{
               backgroundColor: "#0a0a0f",
               border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -75,7 +81,7 @@ export default function VFBEditorModal({ isOpen, onClose }: VFBEditorModalProps)
                   <div className="w-3 h-3 rounded-full bg-[#28c840]" />
                 </div>
                 <span className="text-sm font-medium text-white">
-                  AutoSAR.io VFB Editor
+                  AutoSAR.io VFB Viewer
                 </span>
                 <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-cyan-500/20 text-cyan-400">
                   Demo

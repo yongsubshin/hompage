@@ -100,10 +100,10 @@
     }
   },
   "main": {
-    "intro": "<h3>팝콘사는 AUTOSAR Tool vendor로 AP에 특화되어<span class=\"m_view\"><br></span> 있습니다.<span class=\"pc_view\"><br></span>고객이 AP기반의 프로젝트 진행시  <span class=\"m_view\"><br></span>AUTOSAR와 관련된 부분들을 Tool과 컨설팅, <br>E/S를 제공을 통해 고객의 성공을 지원합니다.</h3>",
-    "autosarIntro": "<h3>AutoSAR.io는 AUTOSAR 기반의 시스템 및 소프트웨어 <span class=\"m_view\"><br></span>모델링을 위한<span class=\"pc_view\"><br></span>설계 소프트웨어입니다. <span class=\"m_view\"><br></span>OEM, ECU Supplier(Tier1), Automotive Application Vendor을<br>아우르는 다양한 관점에서, AUTOSAR Adaptive Platform을 통해 <span class=\"m_view\"><br></span><span class=\"pc_view\"><br></span>AUTOSAR 소프트웨어 요구사항을 해결할 수 있습니다.</h3>",
-    "paraIntro": "<h3>PARA는 Adaptive AUTOSAR Machine 구현을 위해, AUTOSAR 표준을 기반으로 <br>팝콘사에서 독자적으로 개발한 플랫폼 소프트웨어입니다.<br><br>PARA는 AUTOSAR Standard Functional Cluster API, C++ Generator, <br>Manifest Generator, 그리고, Basic Platform Level Application으로 구성되어 있으며,<br>Adaptive Platform의 기본기능을 라이브러리 형태로 제공하고 있습니다.<br><br>PARA는 팝콘사의 Adaptive Application 전용 개발환경인<br>PACON IDE를 통해 사용할 수 있습니다.</h3>",
-    "ideIntro": "<h3>PACON IDE는 Adaptive Application 개발에 필요한 <br>다양한 확장 기능을 갖춘 Adaptive AUTOSAR 전용 개발환경입니다.<br><br>Vscode상에서 Docker Container와 연동하며, ARA API와 Open Source API의<br>자동완성, 실시간 Coding Rule 체크, Debug와 같은 개발 편의 기능을 제공합니다.<br><br>특히, Docker Container를 기반으로 한 가상 ECU를 생성할 수 있기 때문에<br>효율적으로 Adaptive Application을 구현 및 테스트를 수행할 수 있습니다.</h3>",
+    "intro": "<h3>팝콘사는 AUTOSAR Classic 및 Adaptive Platform 전문 Tool vendor입니다.<span class=\"pc_view\"><br></span>고객이 CP/AP 기반의 프로젝트 진행시  <span class=\"m_view\"><br></span>AUTOSAR와 관련된 부분들을 Tool과 컨설팅, <br>E/S를 제공을 통해 고객의 성공을 지원합니다.</h3>",
+    "autosarIntro": "<h3>AutoSAR.io는 AUTOSAR 기반의 시스템 및 소프트웨어 <span class=\"m_view\"><br></span>모델링을 위한<span class=\"pc_view\"><br></span>설계 소프트웨어입니다. <span class=\"m_view\"><br></span>OEM, ECU Supplier(Tier1), Automotive Application Vendor을<br>아우르는 다양한 관점에서, Classic 및 Adaptive Platform의 <span class=\"m_view\"><br></span><span class=\"pc_view\"><br></span>AUTOSAR 소프트웨어 요구사항을 해결할 수 있습니다.</h3>",
+    "paraIntro": "<h3>PARA는 AUTOSAR Classic 및 Adaptive Platform 구현을 위해, AUTOSAR 표준을 기반으로 <br>팝콘사에서 독자적으로 개발한 플랫폼 소프트웨어입니다.<br><br>PARA는 AUTOSAR Standard Functional Cluster API, C++ Generator, <br>Manifest Generator, 그리고, Basic Platform Level Application으로 구성되어 있으며,<br>Classic 및 Adaptive Platform의 기본기능을 라이브러리 형태로 제공하고 있습니다.<br><br>PARA는 팝콘사의 AUTOSAR Application 전용 개발환경인<br>PACON IDE를 통해 사용할 수 있습니다.</h3>",
+    "ideIntro": "<h3>PACON IDE는 AUTOSAR Application 개발에 필요한 <br>다양한 확장 기능을 갖춘 Classic 및 Adaptive Platform 전용 개발환경입니다.<br><br>Vscode상에서 Docker Container와 연동하며, ARA API와 Open Source API의<br>자동완성, 실시간 Coding Rule 체크, Debug와 같은 개발 편의 기능을 제공합니다.<br><br>특히, Docker Container를 기반으로 한 가상 ECU를 생성할 수 있기 때문에<br>효율적으로 AUTOSAR Application을 구현 및 테스트를 수행할 수 있습니다.</h3>",
     "serviceIntro": "<h3>팝콘사는 고객의 AUTOSAR 프로젝트 성공을 위한 전문적인 컨설팅, <br>주문 제작형 Tool 제작, AUTOSAR 구현, 체계적인 교육 지원 등 다양한 기술지원을 제공합니다.</h3>"
   },
   "products": {
@@ -132,8 +132,8 @@
     },
     "autosario": {
       "title": "The Complete Solution for AUTOSAR ARXML Design",
-      "topContent": "AutoSAR.io는 AUTOSAR 기반의 시스템 및 소프트웨어 모델링을 위한 설계 소프트웨어입니다. OEM, ECU Supplier(Tier1), Automotive Application Vendor을 아우르는 다양한 관점에서, Adaptive Platform에 AUTOSAR 소프트웨어 요구사항을 해결할 수 있습니다.<br><br> AutoSAR.io를 통해 사용자는 AP에서 더 빠르고 정확한 ARXML 설계를 할 수 있습니다.",
-      "flow": "ARXML 설계 플로우 (Adaptive Platform)",
+      "topContent": "AutoSAR.io는 AUTOSAR 기반의 시스템 및 소프트웨어 모델링을 위한 설계 소프트웨어입니다. OEM, ECU Supplier(Tier1), Automotive Application Vendor을 아우르는 다양한 관점에서, Classic 및 Adaptive Platform의 AUTOSAR 소프트웨어 요구사항을 해결할 수 있습니다.<br><br> AutoSAR.io를 통해 사용자는 CP/AP에서 더 빠르고 정확한 ARXML 설계를 할 수 있습니다.",
+      "flow": "ARXML 설계 플로우 (Classic & Adaptive Platform)",
       "tableTitle1": "AUTOSAR 개발방법론",
       "tableTitle2": "AutoSAR.io에서 지원되는 범위",
       "middleTitle1": "AutoSAR.io에서 지원하는 설계 범위",
@@ -144,8 +144,8 @@
       "contact": "문의하기"
     },
     "para": {
-      "title": "Adaptive AUTOSAR Functional Clusters - Realize your idea for future car",
-      "description1": "PARA는 Adaptive AUTOSAR Machine 구현을 위해, AUTOSAR 표준을 기반으로 팝콘사에서 독자적으로 개발한 플랫폼 소프트웨어입니다.",
+      "title": "AUTOSAR Classic & Adaptive Functional Clusters - Realize your idea for future car",
+      "description1": "PARA는 AUTOSAR Classic 및 Adaptive Platform 구현을 위해, AUTOSAR 표준을 기반으로 팝콘사에서 독자적으로 개발한 플랫폼 소프트웨어입니다.",
       "description2": "PARA는 AUTOSAR Standard Functional Cluster API, C++ Generator, Manifest Generator, 그리고, Basic Platform Level Application으로 구성되어 있으며,Adaptive Platform의 기본기능을 라이브러리 형태로 제공하고 있습니다.",
       "flowTitle": "Adaptive Application의 구현 Flow",
       "flowDescription": "사용자는 AutoSAR.io로 설계한 ARXML을 통해 Adaptive Application을 구현할 수 있습니다. ※ PARA Generator는 AutoSAR.io에서 기본적인 설계를 마치고, 마지막 단계에서 실행할 수 있습니다.",

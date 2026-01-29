@@ -2,9 +2,54 @@
 
 import { memo, useState, useCallback, useRef } from "react";
 import { Handle, Position } from "@xyflow/react";
-import type { ExecutableData, PortData } from "../types";
+import type { ExecutableData, PortData, Platform, CpPortKind } from "../types";
 
 type ResizeDirection = "nw" | "ne" | "sw" | "se";
+
+// Classic AUTOSAR port icons (SVG)
+function CpPortIcon({ kind }: { kind?: CpPortKind }) {
+  const size = 10;
+  const common = { width: size, height: size, viewBox: "0 0 12 12", className: "pointer-events-none" };
+
+  switch (kind) {
+    case "server":
+      // Target/bullseye: circle with inner dot
+      return (
+        <svg {...common}>
+          <circle cx="6" cy="6" r="4.5" fill="none" stroke="#000" strokeWidth="1.5" />
+          <circle cx="6" cy="6" r="1.5" fill="#000" />
+        </svg>
+      );
+    case "client":
+      // Half-circle arc facing right
+      return (
+        <svg {...common}>
+          <path d="M 5 2 A 4.5 4.5 0 0 1 5 10" fill="none" stroke="#000" strokeWidth="1.5" />
+        </svg>
+      );
+    case "sender":
+      // Filled right-pointing triangle
+      return (
+        <svg {...common}>
+          <polygon points="3,2 10,6 3,10" fill="#000" />
+        </svg>
+      );
+    case "receiver":
+      // Filled left-pointing triangle
+      return (
+        <svg {...common}>
+          <polygon points="9,2 2,6 9,10" fill="#000" />
+        </svg>
+      );
+    default:
+      // Fallback: filled diamond
+      return (
+        <svg {...common}>
+          <polygon points="6,1 11,6 6,11 1,6" fill="#000" />
+        </svg>
+      );
+  }
+}
 
 interface ExecutableNodeProps {
   data: ExecutableData & {
@@ -26,6 +71,7 @@ function ExecutableNode({ data, selected = false, id }: ExecutableNodeProps) {
     width,
     height,
     ports,
+    platform,
     onLabelChange,
     onPortClick,
     onNodeContextMenu,
@@ -34,7 +80,17 @@ function ExecutableNode({ data, selected = false, id }: ExecutableNodeProps) {
     onPortNameChange,
     onResize,
     selectedPortId,
-  } = data;
+  } = data as ExecutableData & {
+    platform?: Platform;
+    onPortClick?: (nodeId: string, portId: string, portType: "provider" | "required") => void;
+    onNodeContextMenu?: (e: React.MouseEvent, nodeId: string) => void;
+    onPortContextMenu?: (e: React.MouseEvent, nodeId: string, portId: string) => void;
+    onPortDrag?: (nodeId: string, portId: string, side: "top" | "right" | "bottom" | "left", position: number) => void;
+    onPortNameChange?: (nodeId: string, portId: string, newName: string) => void;
+    onResize?: (nodeId: string, width: number, height: number, deltaX?: number, deltaY?: number) => void;
+    selectedPortId?: string | null;
+  };
+  const isClassic = platform === "cp";
   const [isEditing, setIsEditing] = useState(false);
   const [editValue, setEditValue] = useState(label);
   const [editingPortId, setEditingPortId] = useState<string | null>(null);
@@ -222,26 +278,68 @@ function ExecutableNode({ data, selected = false, id }: ExecutableNodeProps) {
     }
   };
 
+  // Invisible handle style - only serves as edge connection point
+  // Position at the outer face of the visual port (8px outside node edge)
   const getHandleStyle = (port: PortData): React.CSSProperties => {
-    const isSelected = port.id === selectedPortId;
+    const base: React.CSSProperties = {
+      width: 1,
+      height: 1,
+      minWidth: 0,
+      minHeight: 0,
+      background: "transparent",
+      border: "none",
+      padding: 0,
+      opacity: 0,
+    };
 
+    if (port.side === "right") {
+      return { ...base, right: -8, top: `${port.position}%`, transform: "translateY(-50%)" };
+    }
+    if (port.side === "left") {
+      return { ...base, left: -8, top: `${port.position}%`, transform: "translateY(-50%)" };
+    }
+    if (port.side === "top") {
+      return { ...base, top: -8, left: `${port.position}%`, transform: "translateX(-50%)" };
+    }
+    // bottom
+    return { ...base, bottom: -8, left: `${port.position}%`, transform: "translateX(-50%)" };
+  };
+
+  // Visual port style - AP: green square, CP: white square
+  const getVisualPortStyle = (port: PortData): React.CSSProperties => {
+    const isSelected = port.id === selectedPortId;
     const style: React.CSSProperties = {
+      position: "absolute",
       width: 16,
       height: 16,
-      backgroundColor: "#99cc00",
+      backgroundColor: isClassic ? "#ffffff" : "#99cc00",
       border: isSelected ? "2px solid #ff0000" : "1px solid #000000",
-      borderRadius: 0,
+      borderRadius: isClassic ? 0 : 2,
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      cursor: "pointer",
-      boxShadow: isSelected ? "0 0 6px rgba(255,0,0,0.5)" : "none",
+      cursor: draggingPort === port.id ? "grabbing" : "grab",
+      boxShadow: isSelected ? "0 0 8px rgba(255,0,0,0.4)" : "0 1px 2px rgba(0,0,0,0.2)",
+      transition: "box-shadow 0.2s ease, border-color 0.2s ease, transform 0.15s ease",
+      zIndex: 10,
     };
 
-    if (port.side === "left" || port.side === "right") {
+    if (port.side === "right") {
+      style.right = -8;
       style.top = `${port.position}%`;
-    } else {
+      style.transform = "translateY(-50%)";
+    } else if (port.side === "left") {
+      style.left = -8;
+      style.top = `${port.position}%`;
+      style.transform = "translateY(-50%)";
+    } else if (port.side === "top") {
+      style.top = -8;
       style.left = `${port.position}%`;
+      style.transform = "translateX(-50%)";
+    } else {
+      style.bottom = -8;
+      style.left = `${port.position}%`;
+      style.transform = "translateX(-50%)";
     }
 
     return style;
@@ -344,25 +442,29 @@ function ExecutableNode({ data, selected = false, id }: ExecutableNodeProps) {
         height: height || 80,
         minWidth: 80,
         minHeight: 60,
-        backgroundColor: "#f0c040",
-        border: "1px solid #000000",
-        borderRadius: 0,
+        backgroundColor: isClassic ? "#d0d0d0" : "#f0c040",
+        border: selected ? "2px solid #3b82f6" : "1px solid #000000",
+        borderRadius: isClassic ? 0 : 2,
+        boxShadow: selected ? "0 2px 8px rgba(59, 130, 246, 0.3)" : isClassic ? "none" : "0 1px 3px rgba(0,0,0,0.15)",
+        transition: "box-shadow 0.2s ease, border 0.2s ease",
       }}
       onContextMenu={handleContextMenu}
     >
-      {/* Header */}
-      <div
-        className="text-[10px] text-black px-1.5 pt-1 select-none"
-        style={{ fontFamily: "Arial, sans-serif" }}
-      >
-        [Executable]
-      </div>
+      {/* Header - AP only */}
+      {!isClassic && (
+        <div
+          className="text-[10px] text-black px-1.5 pt-1 select-none"
+          style={{ fontFamily: "inherit" }}
+        >
+          [SWC]
+        </div>
+      )}
 
       {/* Name */}
       <div
-        className="text-xs font-bold text-black px-1.5 select-none cursor-text"
+        className={`text-xs font-bold text-black px-1.5 select-none cursor-text ${isClassic ? "pt-1.5" : ""}`}
         onDoubleClick={handleDoubleClick}
-        style={{ fontFamily: "Arial, sans-serif" }}
+        style={{ fontFamily: "inherit" }}
       >
         {isEditing ? (
           <input
@@ -380,7 +482,7 @@ function ExecutableNode({ data, selected = false, id }: ExecutableNodeProps) {
         )}
       </div>
 
-      {/* Ports */}
+      {/* Invisible Handles for edge connection points */}
       {ports.map((port) => (
         <Handle
           key={port.id}
@@ -388,23 +490,35 @@ function ExecutableNode({ data, selected = false, id }: ExecutableNodeProps) {
           position={getHandlePosition(port.side)}
           id={port.id}
           isConnectable={true}
-          style={{
-            ...getHandleStyle(port),
-            cursor: draggingPort === port.id ? "grabbing" : "grab",
-          }}
+          style={getHandleStyle(port)}
+        />
+      ))}
+
+      {/* Visual port elements */}
+      {ports.map((port) => (
+        <div
+          key={`visual-${port.id}`}
+          className="nodrag"
+          style={getVisualPortStyle(port)}
           onClick={(e) => handlePortClick(e, port)}
           onContextMenu={(e) => handlePortContextMenu(e, port.id)}
           onMouseDown={(e) => handlePortMouseDown(e, port.id)}
         >
-          <span
-            className="text-[9px] font-bold pointer-events-none select-none"
-            style={{
-              color: "#000000",
-              lineHeight: 1,
-            }}
-          >
-            {port.type === "provider" ? "P" : "R"}
-          </span>
+          {isClassic ? (
+            <CpPortIcon kind={port.cpPortKind} />
+          ) : (
+            <span
+              className="pointer-events-none select-none"
+              style={{
+                color: "#000000",
+                lineHeight: 1,
+                fontSize: 9,
+                fontWeight: "bold",
+              }}
+            >
+              {port.type === "provider" ? "P" : "R"}
+            </span>
+          )}
 
           {editingPortId === port.id ? (
             <input
@@ -422,7 +536,7 @@ function ExecutableNode({ data, selected = false, id }: ExecutableNodeProps) {
                 left: "50%",
                 transform: "translateX(-50%)",
                 marginTop: 1,
-                fontFamily: "Arial, sans-serif",
+                fontFamily: "inherit",
                 width: 50,
               }}
             />
@@ -434,7 +548,7 @@ function ExecutableNode({ data, selected = false, id }: ExecutableNodeProps) {
                 left: "50%",
                 transform: "translateX(-50%)",
                 marginTop: 1,
-                fontFamily: "Arial, sans-serif",
+                fontFamily: "inherit",
               }}
               onDoubleClick={(e) => handlePortNameDoubleClick(e, port)}
               onMouseDown={(e) => e.stopPropagation()}
@@ -442,7 +556,7 @@ function ExecutableNode({ data, selected = false, id }: ExecutableNodeProps) {
               {port.name}
             </div>
           )}
-        </Handle>
+        </div>
       ))}
 
       {/* Resize handles - positioned outside node to avoid port overlap */}

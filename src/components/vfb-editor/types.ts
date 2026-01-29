@@ -1,26 +1,25 @@
 // VFB Editor Types
 
+export type CpPortKind = 'server' | 'client' | 'sender' | 'receiver';
+
 export interface PortData {
   id: string;
   type: 'provider' | 'required';
   name: string;
   side: 'top' | 'right' | 'bottom' | 'left';
   position: number;
+  cpPortKind?: CpPortKind;
 }
+
+export type Platform = 'ap' | 'cp';
 
 export interface ExecutableData extends Record<string, unknown> {
   label: string;
   width: number;
   height: number;
   ports: PortData[];
+  platform?: Platform;
   onLabelChange?: (nodeId: string, newLabel: string) => void;
-}
-
-// For click-to-connect
-export interface SelectedPort {
-  nodeId: string;
-  portId: string;
-  portType: 'provider' | 'required';
 }
 
 // Context menu
@@ -31,5 +30,4 @@ export interface ContextMenuState {
   type: 'node' | 'port' | null;
   nodeId?: string;
   portId?: string;
-  clickPosition?: { x: number; y: number; side: 'top' | 'right' | 'bottom' | 'left'; position: number };
 }

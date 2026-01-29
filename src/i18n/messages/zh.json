@@ -100,10 +100,10 @@
     }
   },
   "main": {
-    "intro": "<h3>PopcornSAR作为AUTOSAR工具供应商，为客户提供自主研发的AUTOSAR工具，以及AUTOSAR项目<br />开发必需的咨询与技术工程服务，为客户成功达成AUTOSAR目标保驾护航。PopcornSAR的产品专门<br />应对智能驾驶软件平台AUTOSAR Adaptive Platform，是OEM与Tier1优秀的合作伙伴。</h3>",
-    "autosarIntro": "<h3>AutoSAR.io是以AUTOSAR为标准的系统及建模设计软件。<br>为开发AUTOSAR项目的OEM、ECU Supplier(Tier1)、<br>Automotive Application Vendor提供 AUTOSAR Adaptive Platform的必要功能。</h3>",
-    "paraIntro": "<h3>PARA是PopcornSAR根据AUTOSAR标准独自研发的平台软件，专门应对Adaptive AUTOSAR Machine的实现。PARA由AUTOSAR Standard Functional Cluster API、C++ Generator、Manifest Generator及Basic Platform Level Application组成，以代码库的形式提供Adaptive Platform的基本功能。开发人员可通过专门用于自适应应用开发的PACON IDE使用PARA。</h3>",
-    "ideIntro": "PACON IDE是专门面向Adaptive AUTOSAR的集成开发环境，具备极高的扩张性。<br><br>PACON IDE在Vscode的基础上与docker container连接，提供多方面的开发功能，包括自动完成<br> ARA API与开源API、实时检测编码规则、debug等。<br><br>同时，PACON IDE提供以docker container为基础的虚拟ECU环境，开发人员可在该环境下进行<br>高效率的Adaptive Application的实现与测试。<br />",
+    "intro": "<h3>PopcornSAR作为AUTOSAR工具供应商，为客户提供自主研发的AUTOSAR工具，以及AUTOSAR项目<br />开发必需的咨询与技术工程服务，为客户成功达成AUTOSAR目标保驾护航。PopcornSAR的产品专注于<br />AUTOSAR Classic和Adaptive Platform，是OEM与Tier1优秀的合作伙伴。</h3>",
+    "autosarIntro": "<h3>AutoSAR.io是以AUTOSAR为标准的系统及建模设计软件。<br>为开发AUTOSAR项目的OEM、ECU Supplier(Tier1)、<br>Automotive Application Vendor提供AUTOSAR Classic和Adaptive Platform的必要功能。</h3>",
+    "paraIntro": "<h3>PARA是PopcornSAR根据AUTOSAR标准独自研发的平台软件，面向AUTOSAR Classic和Adaptive Platform的实现。PARA由AUTOSAR Standard Functional Cluster API、C++ Generator、Manifest Generator及Basic Platform Level Application组成，以代码库的形式提供Classic和Adaptive Platform的基本功能。开发人员可通过专门用于AUTOSAR应用开发的PACON IDE使用PARA。</h3>",
+    "ideIntro": "PACON IDE是面向AUTOSAR Classic和Adaptive Platform的集成开发环境，具备极高的扩张性。<br><br>PACON IDE在Vscode的基础上与docker container连接，提供多方面的开发功能，包括自动完成<br> ARA API与开源API、实时检测编码规则、debug等。<br><br>同时，PACON IDE提供以docker container为基础的虚拟ECU环境，开发人员可在该环境下进行<br>高效率的AUTOSAR Application的实现与测试。<br />",
     "serviceIntro": "<h3>PopcornSAR提供专业咨询、自定义工具开发、实现AUTOSAR、体系化的教育支援等多项技术服务，使客户取得圆满成功。</h3>"
   },
   "products": {
@@ -133,7 +133,7 @@
     "autosario": {
       "title": "The Complete Solution for AUTOSAR ARXML Design",
       "topContent": "AutoSAR.io是专门用来设计以AUTOSAR为标准的系统及软件建模的设计软件。<br> AutoSAR.io可满足AUTOSAR Adaptive Platform的AUTOSAR软件需求，并为OEM, ECU Supplier(Tier1), Automotive Application Vendor提供相对应的功能。AutoSAR.io能够在AP/CP不同平台进行快捷、精准的ARXML设计。",
-      "flow": "ARXML 设计流程 (Adaptive Platform)",
+      "flow": "ARXML 设计流程 (Classic & Adaptive Platform)",
       "tableTitle1": "AUTOSAR 开发方法论",
       "tableTitle2": "AutoSAR.io所提供的范围",
       "middleTitle1": "AutoSAR.io支持的设计范围",
@@ -144,8 +144,8 @@
       "contact": "了解更多"
     },
     "para": {
-      "title": "Adaptive AUTOSAR Functional Clusters <br>Realize your idea for future car ",
-      "description1": "PARA是PopcornSAR在AUTOSAR标准下自主研发而成的平台软件，专门应对Adaptive AUTOSAR Machine的实现。",
+      "title": "AUTOSAR Classic & Adaptive Functional Clusters <br>Realize your idea for future car ",
+      "description1": "PARA是PopcornSAR在AUTOSAR标准下自主研发而成的平台软件，面向AUTOSAR Classic和Adaptive Platform的实现。",
       "description2": "PARA由AUTOSAR Standard Functional Cluster API、C++ Generator、Manifest Generator及Basic Platform Level Application组成，Adaptive Platform的基本功能以代码库的形式提供给客户。",
       "flowTitle": "自适应应用的实现流程",
       "flowDescription": "开发人员可运用通过AutoSAR.io设计而得到的ARXML进行自适应应用的设计。<br>※ 在完成AutoSAR.io的基本设计流程后，PARA生成器会进行最后的生成流程。",

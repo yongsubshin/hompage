@@ -100,10 +100,10 @@
     }
   },
   "main": {
-    "intro": "<h3>PopcornSAR is an AUTOSAR Tool Vendor who provides its own AUTOSAR Tool and consulting &<br />engineering services for customers' successful AUTOSAR Project completions.<br />As an AUTOSAR partner of OEMs and Tier1s,  PopcornSAR is specialized in AUTOSAR Adaptive Platform<br />(A software platform for the autonomous driving era).</h3>",
-    "autosarIntro": "<h3>AutoSAR.io is a design software tool for AUTOSAR-based system and software modelling. <span class=\"pc_view\"><br></span>AutoSAR.io supports AUTOSAR Adaptive Platform. <span class=\"pc_view\"><br></span>Also, it covers large scope of functions that OEM, ECU Supplier(Tier1) <span class=\"pc_view\"><br></span>and Automotive Application Vendors need to conduct AUTOSAR project.</h3>",
-    "paraIntro": "<h3>PARA is a PopcornSAR's own platform software based on AUTOSAR standards, to implement Adaptive AUTOSAR machine. <br /><br />PARA consists of the AUTOSAR Standard Functional Cluster API, C ++ Generator, Manifest Generator, and Basic Platform Level Application.<br /><br />It provides the basic functions of the Adaptive Platform in the form of a library.<br />PARA can be utilized through PACON IDE, the integrated development environment specially for Adaptive Application.</h3>",
-    "ideIntro": "PACON IDE is an integrated development environment specialized in  <br>Adaptive AUTOSAR, supporting Adaptive application development with<br> various extensible features. <br><br>It connects to docker container through Vscode, and it contains various<br> convenience features including auto-completion of ARA API & open-source<br> API, coding-rule check in real-time and debugging. <br><br>PACON IDE also provides virtual ECUs based on docker container,<br> where users can implement and test their Adaptive Applications.",
+    "intro": "<h3>PopcornSAR is an AUTOSAR Tool Vendor who provides its own AUTOSAR Tool and consulting &<br />engineering services for customers' successful AUTOSAR Project completions.<br />As an AUTOSAR partner of OEMs and Tier1s,  PopcornSAR is specialized in both AUTOSAR Classic and Adaptive Platform<br />(Software platforms for the autonomous driving era).</h3>",
+    "autosarIntro": "<h3>AutoSAR.io is a design software tool for AUTOSAR-based system and software modelling. <span class=\"pc_view\"><br></span>AutoSAR.io supports both AUTOSAR Classic and Adaptive Platform. <span class=\"pc_view\"><br></span>Also, it covers large scope of functions that OEM, ECU Supplier(Tier1) <span class=\"pc_view\"><br></span>and Automotive Application Vendors need to conduct AUTOSAR project.</h3>",
+    "paraIntro": "<h3>PARA is a PopcornSAR's own platform software based on AUTOSAR standards, to implement AUTOSAR Classic and Adaptive Platform. <br /><br />PARA consists of the AUTOSAR Standard Functional Cluster API, C ++ Generator, Manifest Generator, and Basic Platform Level Application.<br /><br />It provides the basic functions of the Classic and Adaptive Platform in the form of a library.<br />PARA can be utilized through PACON IDE, the integrated development environment specially for AUTOSAR Application.</h3>",
+    "ideIntro": "PACON IDE is an integrated development environment specialized in  <br>AUTOSAR Classic & Adaptive Platform, supporting application development with<br> various extensible features. <br><br>It connects to docker container through Vscode, and it contains various<br> convenience features including auto-completion of ARA API & open-source<br> API, coding-rule check in real-time and debugging. <br><br>PACON IDE also provides virtual ECUs based on docker container,<br> where users can implement and test their AUTOSAR Applications.",
     "serviceIntro": "<h3>POPCORNSAR is dedicated to supporting customers succeed in their AUTOSAR projects.\nWe provide various Engineering Service such as professional consulting, custom development tools, <br />\nimplementation of AUTOSAR and AUTOSAR training</h3>"
   },
   "products": {
@@ -132,8 +132,8 @@
     },
     "autosario": {
       "title": "The Complete Solution for AUTOSAR ARXML Design",
-      "topContent": "AutoSAR.io is a design tool for AUTOSAR-based system and software modellings. AutoSAR.io can fulfill software requirements of AUTOSAR Adaptive Platform for many different parties'(OEM, ECU Supplier(Tier1) and Automotive Application Vendor). AutoSAR.io users will be able to design ARXML faster and more accurately in AUTOSAR Adaptive Platform.",
-      "flow": "ARXML Design Flow (Adaptive Platform)",
+      "topContent": "AutoSAR.io is a design tool for AUTOSAR-based system and software modellings. AutoSAR.io can fulfill software requirements of both AUTOSAR Classic and Adaptive Platform for many different parties'(OEM, ECU Supplier(Tier1) and Automotive Application Vendor). AutoSAR.io users will be able to design ARXML faster and more accurately in AUTOSAR CP/AP.",
+      "flow": "ARXML Design Flow (Classic & Adaptive Platform)",
       "tableTitle1": "AUTOSAR Methodology",
       "tableTitle2": "Scope of AutoSAR.io",
       "middleTitle1": "Supporting scope of AutoSAR.io",
@@ -144,8 +144,8 @@
       "contact": "Send an email"
     },
     "para": {
-      "title": "Adaptive AUTOSAR Functional Clusters <br>Realize your idea for future car",
-      "description1": "PARA, which is based on AUTOSAR standards and developed by PopcornSAR, is a platform software for Adaptive AUTOSAR Machine implementation.",
+      "title": "AUTOSAR Classic & Adaptive Functional Clusters <br>Realize your idea for future car",
+      "description1": "PARA, which is based on AUTOSAR standards and developed by PopcornSAR, is a platform software for AUTOSAR Classic and Adaptive Platform implementation.",
       "description2": "PARA is composed of AUTOSAR Standard Functional Cluster API, C++ Generator, Manifest Generator and Basic Platform Level Application. Basic functions of Adaptive Platform is provided as a form of library.",
       "flowTitle": "Implementation process of Adaptive Application",
       "flowDescription": "Users can implement Adaptive applications with the ARXML designed through AutoSAR.io. <br>\n* PARA generators will conduct generation after the modeling process in AutoSAR.io.",

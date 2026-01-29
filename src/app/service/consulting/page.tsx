@@ -1,104 +1,254 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { Users, Target, CheckCircle, ArrowRight, Building2, Factory } from "lucide-react";
 
 export default function ConsultingPage() {
   const { t } = useLanguage();
+  const content = t.service.consulting;
+  const cp = t.consultingPage;
 
   return (
     <div className="pt-20 bg-background min-h-screen">
       {/* Hero Section */}
-      <section
-        className="relative h-[300px] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/contents/sub_visual03.png')" }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative z-10 text-center text-white"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold">{t.service.consulting.title}</h1>
-        </motion.div>
-      </section>
+      <section className="relative min-h-[600px] flex items-center overflow-hidden">
+        {/* Background Blur Orbs */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px]" />
+          <div className="absolute top-1/2 right-1/3 w-[300px] h-[300px] bg-cyan-400/10 rounded-full blur-[80px]" />
+        </div>
 
-      {/* Breadcrumb */}
-      <nav className="bg-surface border-b border-border py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-text-secondary hover:text-accent-cyan transition-colors">{t.common.home}</Link>
-            <span className="text-text-tertiary">/</span>
-            <Link href="/service" className="text-text-secondary hover:text-accent-cyan transition-colors">{t.nav.service}</Link>
-            <span className="text-text-tertiary">/</span>
-            <span className="text-accent-cyan">{t.service.consulting.title}</span>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
+                <Users className="w-4 h-4 text-cyan-400" />
+                <span className="text-cyan-400 text-sm font-medium">{cp.badge}</span>
+              </div>
+
+              {/* Title */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                {content.title}
+              </h1>
+
+              {/* Description */}
+              <p className="text-lg text-gray-400 mb-8 leading-relaxed max-w-xl">
+                {content.description}
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/support/qna"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 shadow-lg shadow-cyan-500/25"
+                >
+                  {content.contact}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/service"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/5 transition-all duration-300"
+                >
+                  {t.common.allServices}
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right: Floating Icon Cards */}
+            <div className="relative h-[400px] hidden lg:block">
+              {/* Card 1 - Partnership */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="absolute top-0 right-0 w-48"
+              >
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="bg-[#12121a] border border-white/10 rounded-2xl p-6 backdrop-blur-sm"
+                >
+                  <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
+                    <Users className="w-6 h-6 text-cyan-400" />
+                  </div>
+                  <h3 className="text-white font-semibold mb-1">{cp.partnership}</h3>
+                  <p className="text-gray-400 text-sm">{cp.partnershipDesc}</p>
+                </motion.div>
+              </motion.div>
+
+              {/* Card 2 - Customized */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="absolute top-1/3 left-0 w-48"
+              >
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  className="bg-[#12121a] border border-white/10 rounded-2xl p-6 backdrop-blur-sm"
+                >
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                    <Target className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <h3 className="text-white font-semibold mb-1">{cp.customized}</h3>
+                  <p className="text-gray-400 text-sm">{cp.customizedDesc}</p>
+                </motion.div>
+              </motion.div>
+
+              {/* Card 3 - Verified */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="absolute bottom-0 right-1/4 w-48"
+              >
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="bg-[#12121a] border border-white/10 rounded-2xl p-6 backdrop-blur-sm"
+                >
+                  <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                    <CheckCircle className="w-6 h-6 text-emerald-400" />
+                  </div>
+                  <h3 className="text-white font-semibold mb-1">{cp.verified}</h3>
+                  <p className="text-gray-400 text-sm">{cp.verifiedDesc}</p>
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
-      </nav>
+      </section>
 
-      {/* Content */}
-      <section className="py-16">
+      {/* Target Section - OEM & Tier1 */}
+      <section className="py-24 relative">
         <div className="container mx-auto px-4">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {cp.targetTitle}
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              {content.description}
+            </p>
+          </motion.div>
+
+          {/* Two Column Cards */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* For OEM Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="group"
+            >
+              <div className="h-full bg-[#12121a] border border-cyan-500/20 rounded-2xl p-8 hover:border-cyan-500/40 transition-all duration-300">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center">
+                    <Building2 className="w-7 h-7 text-cyan-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">{content.forOem}</h3>
+                    <p className="text-cyan-400 text-sm">{cp.oemSubtitle}</p>
+                  </div>
+                </div>
+
+                {/* List */}
+                <ul className="space-y-3">
+                  {content.forOemList.map((item: string, index: number) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-300">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* For Tier1 Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="group"
+            >
+              <div className="h-full bg-[#12121a] border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500/40 transition-all duration-300">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                    <Factory className="w-7 h-7 text-blue-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">{content.forTier1}</h3>
+                    <p className="text-blue-400 text-sm">{cp.tier1Subtitle}</p>
+                  </div>
+                </div>
+
+                {/* List */}
+                <ul className="space-y-3">
+                  {content.forTier1List.map((item: string, index: number) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-300">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 relative overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10" />
+        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-cyan-500/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-blue-500/20 rounded-full blur-[100px]" />
+
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="text-center max-w-3xl mx-auto"
           >
-            <div className="grid md:grid-cols-2 gap-12 items-start">
-              <div>
-                <h2 className="text-3xl font-bold mb-6 text-white">{t.service.consulting.pageTitle}</h2>
-                <p className="text-text-secondary leading-relaxed mb-8">
-                  {t.service.consulting.description}
-                </p>
-
-                {/* For OEM */}
-                <div className="mb-8">
-                  <h3 className="text-xl font-bold text-accent-cyan mb-4">{t.service.consulting.forOem}</h3>
-                  <ul className="space-y-2 text-text-secondary">
-                    {t.service.consulting.forOemList.map((item, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <span className="text-accent-cyan">-</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* For ECU Supplier */}
-                <div className="mb-8">
-                  <h3 className="text-xl font-bold text-accent-cyan mb-4">{t.service.consulting.forTier1}</h3>
-                  <ul className="space-y-2 text-text-secondary">
-                    {t.service.consulting.forTier1List.map((item, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <span className="text-accent-cyan">-</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <Link
-                  href="/support/qna"
-                  className="inline-block px-8 py-4 bg-accent-cyan text-white font-semibold rounded-lg hover:bg-accent-cyan/90 transition-colors"
-                >
-                  {t.service.consulting.contact}
-                </Link>
-              </div>
-
-              <div className="bg-surface rounded-2xl border border-border p-8">
-                <Image
-                  src="/images/contents/consulting.png"
-                  alt="Consulting Service"
-                  width={600}
-                  height={400}
-                  className="w-full rounded-lg"
-                />
-              </div>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              {cp.ctaTitle1}
+              <br />
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                {cp.ctaTitle2}
+              </span>
+            </h2>
+            <p className="text-gray-400 text-lg mb-8">
+              {content.description}
+            </p>
+            <Link
+              href="/support/qna"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 shadow-lg shadow-cyan-500/25"
+            >
+              {content.contact}
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </motion.div>
         </div>
       </section>

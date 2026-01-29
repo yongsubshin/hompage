@@ -12,6 +12,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { Button, Card, CardContent } from "@/components/ui";
+import { useLanguage } from "@/lib/i18n";
 
 const offices = [
   {
@@ -37,28 +38,31 @@ const offices = [
   },
 ];
 
-const contactMethods = [
-  {
-    icon: MessageSquare,
-    title: "Sales Inquiry",
-    description: "Talk to our sales team about solutions",
-    action: "sales@popcornsar.com",
-  },
-  {
-    icon: Building2,
-    title: "Partnership",
-    description: "Explore partnership opportunities",
-    action: "partners@popcornsar.com",
-  },
-  {
-    icon: Clock,
-    title: "Support",
-    description: "Get help from our support team",
-    action: "support@popcornsar.com",
-  },
-];
-
 export default function ContactPage() {
+  const { t } = useLanguage();
+  const ct = t.contactPage;
+
+  const contactMethods = [
+    {
+      icon: MessageSquare,
+      title: ct.salesInquiry,
+      description: ct.salesDesc,
+      action: "sales@popcornsar.com",
+    },
+    {
+      icon: Building2,
+      title: ct.partnershipTitle,
+      description: ct.partnershipDesc,
+      action: "partners@popcornsar.com",
+    },
+    {
+      icon: Clock,
+      title: ct.supportTitle,
+      description: ct.supportDesc,
+      action: "support@popcornsar.com",
+    },
+  ];
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -71,10 +75,8 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setIsSubmitting(false);
-    // Reset form
     setFormData({
       name: "",
       email: "",
@@ -82,7 +84,7 @@ export default function ContactPage() {
       subject: "",
       message: "",
     });
-    alert("Message sent successfully!");
+    alert(ct.successMessage);
   };
 
   const handleChange = (
@@ -108,7 +110,7 @@ export default function ContactPage() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-block text-accent-blue text-sm font-semibold uppercase tracking-wider mb-4"
             >
-              Contact Us
+              {ct.badge}
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -116,8 +118,8 @@ export default function ContactPage() {
               transition={{ delay: 0.1 }}
               className="text-4xl sm:text-5xl lg:text-display font-bold text-white mb-6"
             >
-              Let&apos;s Start a{" "}
-              <span className="gradient-text">Conversation</span>
+              {ct.heroTitle1}{" "}
+              <span className="gradient-text">{ct.heroTitle2}</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -125,8 +127,7 @@ export default function ContactPage() {
               transition={{ delay: 0.2 }}
               className="text-lg text-text-secondary max-w-2xl mx-auto"
             >
-              Have questions about our solutions? Want to discuss a project?
-              We&apos;re here to help.
+              {ct.heroDesc}
             </motion.p>
           </div>
         </div>
@@ -138,7 +139,7 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {contactMethods.map((method, index) => (
               <motion.div
-                key={method.title}
+                key={method.action}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -180,7 +181,7 @@ export default function ContactPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl font-bold text-white mb-6">
-                Send us a message
+                {ct.formTitle}
               </h2>
               <Card variant="gradient">
                 <CardContent className="p-8">
@@ -191,7 +192,7 @@ export default function ContactPage() {
                           htmlFor="name"
                           className="block text-sm font-medium text-text-secondary mb-2"
                         >
-                          Name *
+                          {ct.nameLabel}
                         </label>
                         <input
                           type="text"
@@ -201,7 +202,7 @@ export default function ContactPage() {
                           onChange={handleChange}
                           required
                           className="w-full px-4 py-3 bg-white/5 border border-border rounded-lg text-white placeholder-text-muted focus:outline-none focus:border-accent-blue transition-colors"
-                          placeholder="Your name"
+                          placeholder={ct.namePlaceholder}
                         />
                       </div>
                       <div>
@@ -209,7 +210,7 @@ export default function ContactPage() {
                           htmlFor="email"
                           className="block text-sm font-medium text-text-secondary mb-2"
                         >
-                          Email *
+                          {ct.emailLabel}
                         </label>
                         <input
                           type="email"
@@ -219,7 +220,7 @@ export default function ContactPage() {
                           onChange={handleChange}
                           required
                           className="w-full px-4 py-3 bg-white/5 border border-border rounded-lg text-white placeholder-text-muted focus:outline-none focus:border-accent-blue transition-colors"
-                          placeholder="your@email.com"
+                          placeholder={ct.emailPlaceholder}
                         />
                       </div>
                     </div>
@@ -230,7 +231,7 @@ export default function ContactPage() {
                           htmlFor="company"
                           className="block text-sm font-medium text-text-secondary mb-2"
                         >
-                          Company
+                          {ct.companyLabel}
                         </label>
                         <input
                           type="text"
@@ -239,7 +240,7 @@ export default function ContactPage() {
                           value={formData.company}
                           onChange={handleChange}
                           className="w-full px-4 py-3 bg-white/5 border border-border rounded-lg text-white placeholder-text-muted focus:outline-none focus:border-accent-blue transition-colors"
-                          placeholder="Your company"
+                          placeholder={ct.companyPlaceholder}
                         />
                       </div>
                       <div>
@@ -247,7 +248,7 @@ export default function ContactPage() {
                           htmlFor="subject"
                           className="block text-sm font-medium text-text-secondary mb-2"
                         >
-                          Subject *
+                          {ct.subjectLabel}
                         </label>
                         <select
                           id="subject"
@@ -258,19 +259,19 @@ export default function ContactPage() {
                           className="w-full px-4 py-3 bg-white/5 border border-border rounded-lg text-white focus:outline-none focus:border-accent-blue transition-colors"
                         >
                           <option value="" className="bg-background">
-                            Select a topic
+                            {ct.selectTopic}
                           </option>
                           <option value="sales" className="bg-background">
-                            Sales Inquiry
+                            {ct.topicSales}
                           </option>
                           <option value="support" className="bg-background">
-                            Technical Support
+                            {ct.topicSupport}
                           </option>
                           <option value="partnership" className="bg-background">
-                            Partnership
+                            {ct.topicPartnership}
                           </option>
                           <option value="other" className="bg-background">
-                            Other
+                            {ct.topicOther}
                           </option>
                         </select>
                       </div>
@@ -281,7 +282,7 @@ export default function ContactPage() {
                         htmlFor="message"
                         className="block text-sm font-medium text-text-secondary mb-2"
                       >
-                        Message *
+                        {ct.messageLabel}
                       </label>
                       <textarea
                         id="message"
@@ -291,7 +292,7 @@ export default function ContactPage() {
                         required
                         rows={5}
                         className="w-full px-4 py-3 bg-white/5 border border-border rounded-lg text-white placeholder-text-muted focus:outline-none focus:border-accent-blue transition-colors resize-none"
-                        placeholder="Tell us about your project..."
+                        placeholder={ct.messagePlaceholder}
                       />
                     </div>
 
@@ -302,7 +303,7 @@ export default function ContactPage() {
                       rightIcon={<Send className="w-5 h-5" />}
                       className="w-full sm:w-auto"
                     >
-                      Send Message
+                      {ct.sendButton}
                     </Button>
                   </form>
                 </CardContent>
@@ -316,7 +317,7 @@ export default function ContactPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl font-bold text-white mb-6">
-                Our Offices
+                {ct.officesTitle}
               </h2>
               <div className="space-y-6">
                 {offices.map((office) => (
@@ -368,10 +369,9 @@ export default function ContactPage() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <MapPin className="w-12 h-12 text-accent-blue/50 mx-auto mb-4" />
-            <p className="text-text-muted">Interactive map would be here</p>
+            <p className="text-text-muted">{ct.mapPlaceholder}</p>
           </div>
         </div>
-        {/* In production, this would be an actual map component */}
       </section>
     </div>
   );

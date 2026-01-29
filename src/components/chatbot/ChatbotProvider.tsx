@@ -1,6 +1,7 @@
 'use client';
 
-import { createContext, useContext, useState, useCallback, ReactNode } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect, ReactNode, useMemo } from 'react';
+import { useLanguage } from '@/lib/i18n';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -20,23 +21,30 @@ interface ChatbotContextType {
 
 const ChatbotContext = createContext<ChatbotContextType | null>(null);
 
-const INITIAL_MESSAGE: Message = {
-  role: 'assistant',
-  content: '안녕하세요! PopcornSAR 제품 및 서비스에 대해 궁금한 점이 있으시면 편하게 질문해 주세요.',
-};
-
 export function ChatbotProvider({ children }: { children: ReactNode }) {
+  const { t, language } = useLanguage();
+
+  const initialMessage: Message = useMemo(() => ({
+    role: 'assistant',
+    content: t.chatbot.initialMessage,
+  }), [t.chatbot.initialMessage]);
+
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE]);
+  const [messages, setMessages] = useState<Message[]>([initialMessage]);
+
+  // Reset messages when language changes
+  useEffect(() => {
+    setMessages([{ role: 'assistant', content: t.chatbot.initialMessage }]);
+  }, [language, t.chatbot.initialMessage]);
 
   const openChat = useCallback(() => setIsOpen(true), []);
   const closeChat = useCallback(() => setIsOpen(false), []);
   const toggleChat = useCallback(() => setIsOpen((prev) => !prev), []);
 
   const resetChat = useCallback(() => {
-    setMessages([INITIAL_MESSAGE]);
+    setMessages([{ role: 'assistant', content: t.chatbot.initialMessage }]);
     setIsOpen(false);
-  }, []);
+  }, [t.chatbot.initialMessage]);
 
   const addMessage = useCallback((message: Message) => {
     setMessages((prev) => [...prev, message]);

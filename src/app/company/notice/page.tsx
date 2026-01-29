@@ -318,7 +318,7 @@ export default function NoticePage() {
                   onClick={() => setSelectedNotice(null)}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent-cyan text-background font-semibold rounded-xl hover:bg-accent-cyan/90 transition-all hover:shadow-lg hover:shadow-accent-cyan/25"
                 >
-                  {language === "kr" ? "닫기" : language === "jp" ? "閉じる" : language === "cn" ? "关闭" : "Close"}
+                  {t.common.close}
                 </button>
               </div>
             </motion.div>

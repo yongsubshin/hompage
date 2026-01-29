@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useChatbot } from './ChatbotProvider';
+import { useLanguage } from '@/lib/i18n';
 
 export default function ChatbotModal() {
   const {
@@ -12,14 +13,18 @@ export default function ChatbotModal() {
     addMessage,
     updateLastMessage,
   } = useChatbot();
+  const { t, language } = useLanguage();
 
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const container = messagesContainerRef.current;
+    if (container) {
+      container.scrollTop = container.scrollHeight;
+    }
   };
 
   useEffect(() => {
@@ -43,7 +48,7 @@ export default function ChatbotModal() {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userMessage }),
+        body: JSON.stringify({ message: userMessage, language }),
       });
 
       if (!response.ok) {
@@ -70,11 +75,11 @@ export default function ChatbotModal() {
         fullContent += chunk;
         updateLastMessage(fullContent);
       }
-    } catch (error) {
-      console.error('Chat error:', error);
+    } catch {
+      // Error handled by showing user-friendly message below
       addMessage({
         role: 'assistant',
-        content: '죄송합니다. 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.',
+        content: t.chatbot.errorMessage,
       });
     } finally {
       setIsLoading(false);
@@ -118,8 +123,8 @@ export default function ChatbotModal() {
               </svg>
             </div>
             <div>
-              <h3 className="text-white font-semibold text-sm">PopcornSAR Assistant</h3>
-              <p className="text-gray-400 text-xs">AI 제품/서비스 안내</p>
+              <h3 className="text-white font-semibold text-sm">{t.chatbot.title}</h3>
+              <p className="text-gray-400 text-xs">{t.chatbot.subtitle}</p>
             </div>
           </div>
           <div className="flex items-center gap-1">
@@ -127,7 +132,7 @@ export default function ChatbotModal() {
             <button
               onClick={closeChat}
               className="text-gray-400 hover:text-white transition-colors p-1.5 hover:bg-white/5 rounded-lg"
-              title="최소화"
+              title={t.chatbot.minimize}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -144,7 +149,7 @@ export default function ChatbotModal() {
             <button
               onClick={resetChat}
               className="text-gray-400 hover:text-red-400 transition-colors p-1.5 hover:bg-white/5 rounded-lg"
-              title="대화 초기화"
+              title={t.chatbot.reset}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -161,7 +166,7 @@ export default function ChatbotModal() {
         </div>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div ref={messagesContainerRef} className="flex-1 overflow-y-auto p-4 space-y-4">
           {messages.map((message, index) => (
             <div
               key={index}
@@ -189,7 +194,7 @@ export default function ChatbotModal() {
               </div>
             </div>
           )}
-          <div ref={messagesEndRef} />
+          <div />
         </div>
 
         {/* Input */}
@@ -200,7 +205,8 @@ export default function ChatbotModal() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="메시지를 입력하세요..."
+              placeholder={t.chatbot.placeholder}
+              aria-label="Chat message input"
               disabled={isLoading}
               className="flex-1 bg-[#1a1a2e] text-white placeholder-gray-500 px-4 py-2.5 rounded-xl border border-white/10 focus:border-cyan-500/50 focus:outline-none focus:ring-1 focus:ring-cyan-500/50 text-sm disabled:opacity-50"
             />

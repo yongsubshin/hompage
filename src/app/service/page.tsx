@@ -68,7 +68,7 @@ export default function ServicePage() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-block text-accent-blue text-sm font-semibold uppercase tracking-wider mb-4"
             >
-              Services
+              {t.common.services}
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}

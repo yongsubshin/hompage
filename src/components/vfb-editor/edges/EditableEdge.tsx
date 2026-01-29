@@ -32,9 +32,15 @@ function EditableEdge({
   const defaultMidX = (sourceX + targetX) / 2;
   const midX = customMidX !== undefined ? customMidX : defaultMidX;
 
-  // Path: source → horizontal to midX → vertical to targetY → horizontal to target
-  // This keeps the line naturally connected to both ports
-  const pathData = `M ${sourceX} ${offsetSourceY} L ${midX} ${offsetSourceY} L ${midX} ${offsetTargetY} L ${targetX} ${offsetTargetY}`;
+  // Smooth step path with rounded corners
+  const r = Math.min(8, Math.abs(midX - sourceX) / 2, Math.abs(midX - targetX) / 2, Math.abs(offsetTargetY - offsetSourceY) / 2);
+  const dy = offsetTargetY > offsetSourceY ? 1 : -1;
+  const dxSource = midX > sourceX ? 1 : -1;
+  const dxTarget = targetX > midX ? 1 : -1;
+
+  const pathData = r > 1
+    ? `M ${sourceX} ${offsetSourceY} L ${midX - r * dxSource} ${offsetSourceY} Q ${midX} ${offsetSourceY}, ${midX} ${offsetSourceY + r * dy} L ${midX} ${offsetTargetY - r * dy} Q ${midX} ${offsetTargetY}, ${midX + r * dxTarget} ${offsetTargetY} L ${targetX} ${offsetTargetY}`
+    : `M ${sourceX} ${offsetSourceY} L ${midX} ${offsetSourceY} L ${midX} ${offsetTargetY} L ${targetX} ${offsetTargetY}`;
 
   // Global drag handlers - only adjust midX (horizontal position of vertical segment)
   useEffect(() => {
@@ -122,11 +128,11 @@ function EditableEdge({
       <path
         d={pathData}
         fill="none"
-        stroke={isDragging || isHovered ? "#0066cc" : "#000000"}
-        strokeWidth={2}
-        strokeDasharray="8 4"
+        stroke={isDragging || isHovered ? "#0066cc" : "#333333"}
+        strokeWidth={isDragging || isHovered ? 2.5 : 1.5}
+        strokeDasharray="6 3"
         markerEnd={markerEnd}
-        style={{ pointerEvents: "none", transition: "stroke 0.15s" }}
+        style={{ pointerEvents: "none", transition: "stroke 0.2s ease, stroke-width 0.2s ease" }}
       />
     </>
   );

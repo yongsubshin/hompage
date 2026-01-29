@@ -45,23 +45,23 @@ export default function Home() {
   const aiProducts = [
     {
       icon: Brain,
-      title: "PARVIS",
-      subtitle: "AI-Powered V-Model Automation",
-      description: "AUTOSAR V-Model 전 과정을 AI로 자동화. 요구사항 분석부터 테스트 검증까지 지원합니다.",
+      title: t.main.parvisTitle,
+      subtitle: t.main.parvisSubtitle,
+      description: t.main.parvisDesc,
       href: "/products/ai",
     },
     {
       icon: Sparkles,
-      title: "PARVIS ADK",
-      subtitle: "AI Development Kit for SDV",
-      description: "차량 데이터 기반 UX 시나리오 자동 생성, 경쟁사 분석, 수익성 예측을 제공합니다.",
+      title: t.main.parvisAdkTitle,
+      subtitle: t.main.parvisAdkSubtitle,
+      description: t.main.parvisAdkDesc,
       href: "/products/parvisadk",
     },
     {
       icon: Bot,
-      title: "AUTOSAR AI Agent",
-      subtitle: "Autonomous Development Agent",
-      description: "AUTOSAR 프로젝트의 자동화된 개발, 테스트, 문서화를 수행하는 AI 에이전트입니다.",
+      title: t.main.aiAgentTitle,
+      subtitle: t.main.aiAgentSubtitle,
+      description: t.main.aiAgentDesc,
       href: "/products/aiagent",
     },
   ];
@@ -151,13 +151,13 @@ export default function Home() {
           >
             <Link href="/products">
               <RippleButton className="btn-primary group inline-flex items-center gap-2">
-                <span>Explore Products</span>
+                <span>{t.common.exploreProducts}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </RippleButton>
             </Link>
             <Link href="/company/contact">
               <RippleButton className="btn-outline" rippleColor="rgba(59, 130, 246, 0.3)">
-                Contact Us
+                {t.common.contactUs}
               </RippleButton>
             </Link>
           </motion.div>
@@ -174,7 +174,7 @@ export default function Home() {
               transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
               className="flex flex-col items-center gap-2 text-text-tertiary"
             >
-              <span className="text-xs uppercase tracking-wider">Scroll</span>
+              <span className="text-xs uppercase tracking-wider">{t.common.scroll}</span>
               <ChevronDown className="w-5 h-5" />
             </motion.div>
           </motion.div>
@@ -187,13 +187,13 @@ export default function Home() {
           {/* Section Header */}
           <ScrollReveal className="text-center mb-16">
             <p className="text-accent-blue text-sm font-medium mb-3 tracking-wider uppercase">
-              Products & Solutions
+              {t.main.productsLabel}
             </p>
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              Adaptive AUTOSAR Tool Kit
+              {t.main.productsHeading}
             </h2>
             <p className="text-text-secondary max-w-xl mx-auto">
-              Complete software solutions for next-generation automotive development
+              {t.main.productsDesc}
             </p>
           </ScrollReveal>
 
@@ -248,13 +248,13 @@ export default function Home() {
           {/* Section Header */}
           <ScrollReveal className="text-center mb-16">
             <p className="text-accent-cyan text-sm font-medium mb-3 tracking-wider uppercase">
-              AI-Powered Solutions
+              {t.main.aiLabel}
             </p>
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              AI for Automotive
+              {t.main.aiHeading}
             </h2>
             <p className="text-text-secondary max-w-xl mx-auto">
-              AI 기술로 AUTOSAR 개발의 새로운 패러다임을 경험하세요
+              {t.main.aiDesc}
             </p>
           </ScrollReveal>
 
@@ -307,7 +307,7 @@ export default function Home() {
         <div className="container-custom relative">
           <ScrollReveal className="text-center mb-16">
             <p className="text-accent-blue text-sm font-medium mb-3 tracking-wider uppercase">
-              Engineering Services
+              {t.main.serviceSubtitle}
             </p>
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
               {t.main.serviceTitle}
@@ -320,7 +320,7 @@ export default function Home() {
           <ScrollReveal className="text-center mt-8" delay={0.3}>
             <Link href="/service">
               <RippleButton className="btn-primary inline-flex items-center gap-2">
-                <span>Learn More</span>
+                <span>{t.common.learnMore}</span>
                 <ArrowRight className="w-4 h-4" />
               </RippleButton>
             </Link>

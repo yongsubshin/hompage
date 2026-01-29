@@ -12,50 +12,32 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui";
-
-const values = [
-  {
-    icon: Target,
-    title: "Innovation",
-    description:
-      "Pushing the boundaries of automotive software technology to drive the future of mobility.",
-  },
-  {
-    icon: Eye,
-    title: "Quality",
-    description:
-      "Delivering excellence through rigorous testing and industry-leading development practices.",
-  },
-  {
-    icon: Award,
-    title: "Integrity",
-    description:
-      "Building trust through transparent communication and ethical business practices.",
-  },
-  {
-    icon: Users,
-    title: "Collaboration",
-    description:
-      "Working closely with partners and clients to achieve shared success.",
-  },
-];
-
-const milestones = [
-  { year: "2008", event: "Company Founded", description: "Started with a vision to revolutionize automotive software" },
-  { year: "2012", event: "AUTOSAR Partnership", description: "Became official AUTOSAR development partner" },
-  { year: "2016", event: "Global Expansion", description: "Opened offices in Europe and North America" },
-  { year: "2020", event: "100+ Customers", description: "Reached milestone of 100+ global automotive clients" },
-  { year: "2024", event: "Adaptive Platform", description: "Launched next-gen AUTOSAR Adaptive solutions" },
-];
-
-const stats = [
-  { icon: Building2, value: "5", label: "Global Offices" },
-  { icon: Users, value: "200+", label: "Team Members" },
-  { icon: Globe, value: "30+", label: "Countries Served" },
-  { icon: TrendingUp, value: "500%", label: "Growth Since 2018" },
-];
+import { useLanguage } from "@/lib/i18n";
 
 export default function AboutPage() {
+  const { t } = useLanguage();
+
+  const values = [
+    { icon: Target, title: t.about.innovationTitle, description: t.about.innovationDesc },
+    { icon: Eye, title: t.about.qualityTitle, description: t.about.qualityDesc },
+    { icon: Award, title: t.about.integrityTitle, description: t.about.integrityDesc },
+    { icon: Users, title: t.about.collaborationTitle, description: t.about.collaborationDesc },
+  ];
+
+  const milestones = [
+    { year: "2008", event: t.about.milestone2008, description: t.about.milestone2008Desc },
+    { year: "2012", event: t.about.milestone2012, description: t.about.milestone2012Desc },
+    { year: "2016", event: t.about.milestone2016, description: t.about.milestone2016Desc },
+    { year: "2020", event: t.about.milestone2020, description: t.about.milestone2020Desc },
+    { year: "2024", event: t.about.milestone2024, description: t.about.milestone2024Desc },
+  ];
+
+  const stats = [
+    { icon: Building2, value: "5", label: t.about.statOffices },
+    { icon: Users, value: "200+", label: t.about.statTeam },
+    { icon: Globe, value: "30+", label: t.about.statCountries },
+    { icon: TrendingUp, value: "500%", label: t.about.statGrowth },
+  ];
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -70,7 +52,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-block text-accent-blue text-sm font-semibold uppercase tracking-wider mb-4"
             >
-              About Us
+              {t.about.badge}
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -78,8 +60,8 @@ export default function AboutPage() {
               transition={{ delay: 0.1 }}
               className="text-4xl sm:text-5xl lg:text-display font-bold text-white mb-6"
             >
-              Driving the Future of{" "}
-              <span className="gradient-text">Automotive Software</span>
+              {t.about.heroTitle1}{" "}
+              <span className="gradient-text">{t.about.heroTitle2}</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -87,9 +69,7 @@ export default function AboutPage() {
               transition={{ delay: 0.2 }}
               className="text-lg text-text-secondary max-w-2xl mx-auto"
             >
-              Since 2008, PopcornSAR has been at the forefront of automotive
-              software innovation, helping OEMs and suppliers build the vehicles
-              of tomorrow.
+              {t.about.heroDesc}
             </motion.p>
           </div>
         </div>
@@ -134,13 +114,10 @@ export default function AboutPage() {
                     <Target className="w-7 h-7 text-accent-blue" />
                   </div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Our Mission
+                    {t.about.missionTitle}
                   </h2>
                   <p className="text-text-secondary leading-relaxed">
-                    To accelerate the automotive industry&apos;s software
-                    transformation by providing innovative, reliable, and
-                    scalable AUTOSAR solutions that empower our clients to build
-                    safer and smarter vehicles.
+                    {t.about.missionDesc}
                   </p>
                 </CardContent>
               </Card>
@@ -157,12 +134,10 @@ export default function AboutPage() {
                     <Eye className="w-7 h-7 text-accent-cyan" />
                   </div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Our Vision
+                    {t.about.visionTitle}
                   </h2>
                   <p className="text-text-secondary leading-relaxed">
-                    To be the global leader in automotive software solutions,
-                    recognized for our technical excellence, innovation, and
-                    commitment to driving the future of mobility.
+                    {t.about.visionDesc}
                   </p>
                 </CardContent>
               </Card>
@@ -181,7 +156,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="text-3xl sm:text-4xl font-bold text-white mb-4"
             >
-              Our Core Values
+              {t.about.valuesTitle}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -190,7 +165,7 @@ export default function AboutPage() {
               transition={{ delay: 0.1 }}
               className="text-text-secondary max-w-2xl mx-auto"
             >
-              The principles that guide everything we do
+              {t.about.valuesSubtitle}
             </motion.p>
           </div>
 
@@ -232,7 +207,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="text-3xl sm:text-4xl font-bold text-white mb-4"
             >
-              Our Journey
+              {t.about.journeyTitle}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -241,7 +216,7 @@ export default function AboutPage() {
               transition={{ delay: 0.1 }}
               className="text-text-secondary max-w-2xl mx-auto"
             >
-              Key milestones in our company history
+              {t.about.journeySubtitle}
             </motion.p>
           </div>
 

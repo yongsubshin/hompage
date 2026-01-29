@@ -76,14 +76,14 @@ export default function AutosarioPage() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 mb-6">
                 <FileCode className="w-4 h-4 text-accent-cyan" />
-                <span className="text-sm text-accent-cyan font-medium">ARXML Design Tool</span>
+                <span className="text-sm text-accent-cyan font-medium">{content.badge}</span>
               </div>
 
               <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
                 AutoSAR.io
               </h1>
 
-              <p className="text-xl lg:text-2xl text-text-secondary mb-4 leading-relaxed">
+              <p className="text-xl lg:text-2xl text-text-secondary mb-4 leading-relaxed text-balance">
                 {content.title}
               </p>
 
@@ -97,7 +97,7 @@ export default function AutosarioPage() {
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent-cyan text-background font-semibold rounded-xl hover:bg-accent-cyan/90 transition-all hover:shadow-lg hover:shadow-accent-cyan/25"
                 >
                   <Play className="w-5 h-5" />
-                  <span>Try Demo</span>
+                  <span>{content.tryDemo}</span>
                 </button>
                 <Link
                   href="/support/qna"
@@ -127,8 +127,8 @@ export default function AutosarioPage() {
                     <FileCode className="w-5 h-5 text-accent-cyan" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold">ARXML Editor</h3>
-                    <p className="text-text-tertiary text-sm">Visual Design Tool</p>
+                    <h3 className="text-white font-semibold">{content.arxmlEditor}</h3>
+                    <p className="text-text-tertiary text-sm">{content.visualDesignTool}</p>
                   </div>
                 </div>
                 <div className="space-y-2">
@@ -146,7 +146,7 @@ export default function AutosarioPage() {
               >
                 <div className="flex items-center gap-2">
                   <Layers className="w-5 h-5 text-accent-blue" />
-                  <span className="text-white text-sm font-medium">Adaptive Platform</span>
+                  <span className="text-white text-sm font-medium">{content.adaptivePlatform}</span>
                 </div>
               </motion.div>
 
@@ -158,7 +158,7 @@ export default function AutosarioPage() {
               >
                 <div className="flex items-center gap-2">
                   <Globe className="w-5 h-5 text-accent-cyan" />
-                  <span className="text-white text-sm font-medium">Web-based</span>
+                  <span className="text-white text-sm font-medium">{content.webBased}</span>
                 </div>
               </motion.div>
 
@@ -189,10 +189,10 @@ export default function AutosarioPage() {
             className="text-center mb-12"
           >
             <span className="inline-block px-4 py-1.5 bg-accent-cyan/10 border border-accent-cyan/20 rounded-full text-accent-cyan text-sm font-medium mb-4">
-              Product Screenshots
+              {content.productScreenshots}
             </span>
             <h2 className="text-3xl lg:text-4xl font-bold text-white">
-              Powerful ARXML Design Interface
+              {content.screenshotsTitle}
             </h2>
           </motion.div>
           <motion.div
@@ -224,7 +224,7 @@ export default function AutosarioPage() {
             >
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-blue/10 border border-accent-blue/20 rounded-full mb-6">
                 <Monitor className="w-4 h-4 text-accent-blue" />
-                <span className="text-sm text-accent-blue font-medium">Design Scope</span>
+                <span className="text-sm text-accent-blue font-medium">{content.designScope}</span>
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
                 {content.supportScopeTitle}
@@ -259,7 +259,7 @@ export default function AutosarioPage() {
             >
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-cyan/10 border border-accent-cyan/20 rounded-full mb-6">
                 <Zap className="w-4 h-4 text-accent-cyan" />
-                <span className="text-sm text-accent-cyan font-medium">Benefits</span>
+                <span className="text-sm text-accent-cyan font-medium">{content.benefitsBadge}</span>
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
                 {content.benefitsTitle}
@@ -349,7 +349,7 @@ export default function AutosarioPage() {
             >
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-cyan/10 border border-accent-cyan/20 rounded-full mb-6">
                 <Globe className="w-4 h-4 text-accent-cyan" />
-                <span className="text-sm text-accent-cyan font-medium">Web Platform</span>
+                <span className="text-sm text-accent-cyan font-medium">{content.webPlatform}</span>
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
                 {content.webBasedTitle}
@@ -391,10 +391,10 @@ export default function AutosarioPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-red-500/10 border border-red-500/20 rounded-full mb-4">
               <Youtube className="w-4 h-4 text-red-500" />
-              <span className="text-sm text-red-400 font-medium">Demo Videos</span>
+              <span className="text-sm text-red-400 font-medium">{content.demoVideos}</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-white">
-              Watch AutoSAR.io in Action
+              {content.watchDemo}
             </h2>
           </motion.div>
 

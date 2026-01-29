@@ -5,7 +5,7 @@
 PopcornSAR(팝콘사)는 AUTOSAR 전문 기업으로, AI 기반 개발 도구와 엔지니어링 서비스를 제공합니다.
 
 **핵심 역량:**
-- AUTOSAR Adaptive Platform 독자 개발 기술
+- AUTOSAR Classic 및 Adaptive Platform 개발 기술
 - 10년 이상의 AUTOSAR 개발 경험
 - 기획 → 분석 → 개발 → 배포의 End-to-End 자동화 실현
 - V-model / ASPICE 프로세스 전 과정 자동화
@@ -24,8 +24,8 @@ PopcornSAR(팝콘사)는 AUTOSAR 전문 기업으로, AI 기반 개발 도구와
 
 ## 제품 (Products) - 7개
 
-### 1. Adaptive AUTOSAR Tool kit
-**Adaptive Application 개발을 위한 통합 솔루션**
+### 1. AUTOSAR Tool kit
+**Classic 및 Adaptive Application 개발을 위한 통합 솔루션**
 
 3가지 도구의 연계 솔루션:
 - 모델링 Tool: AutoSAR.io
@@ -39,7 +39,7 @@ PopcornSAR(팝콘사)는 AUTOSAR 전문 기업으로, AI 기반 개발 도구와
 ### 2. AutoSAR.io
 **The Complete Solution for AUTOSAR ARXML Design**
 
-AUTOSAR 기반 시스템 및 소프트웨어 모델링을 위한 설계 도구입니다. OEM, Tier1, Automotive Application Vendor 등 다양한 관점에서 ARXML 설계가 가능합니다.
+AUTOSAR 기반 시스템 및 소프트웨어 모델링을 위한 설계 도구입니다. Classic 및 Adaptive Platform 모두 지원하며, OEM, Tier1, Automotive Application Vendor 등 다양한 관점에서 ARXML 설계가 가능합니다.
 
 **설계 범위:**
 - Adaptive Application
@@ -51,6 +51,7 @@ AUTOSAR 기반 시스템 및 소프트웨어 모델링을 위한 설계 도구�
 - ECU Configuration
 
 **지원 버전:**
+- Classic Platform R4.4.0, R4.3.1 등
 - Adaptive Platform R20-11 (2021.06)
 - Adaptive Platform R19-11 (2020.06)
 - Adaptive Platform R19-03 (2019.05)
@@ -60,10 +61,10 @@ AUTOSAR 기반 시스템 및 소프트웨어 모델링을 위한 설계 도구�
 ---
 
 ### 3. PARA
-**Adaptive AUTOSAR Functional Clusters**
+**AUTOSAR Classic & Adaptive Functional Clusters**
 슬로건: "Realize your idea for future car"
 
-AUTOSAR 표준을 기반으로 팝콘사에서 독자적으로 개발한 플랫폼 소프트웨어입니다.
+AUTOSAR 표준을 기반으로 팝콘사에서 독자적으로 개발한 플랫폼 소프트웨어입니다. Classic 및 Adaptive Platform 모두 지원합니다.
 
 **구성요소:**
 - AUTOSAR Standard Functional Cluster API
@@ -83,15 +84,15 @@ AUTOSAR 표준을 기반으로 팝콘사에서 독자적으로 개발한 플랫�
 - Adaptive Platform Applications
 - Safety mechanism(Libpara): ISO 26262에 따른 실행 레벨 오류 감지
 
-**지원 버전:** Adaptive Platform R20-11
+**지원 버전:** Classic Platform R4.x 및 Adaptive Platform R20-11
 
 ---
 
 ### 4. PACON IDE
 **PopcornSAR Automotive CONtainer**
-**One-stop IDE for Adaptive Application development and test**
+**One-stop IDE for AUTOSAR Application development and test**
 
-Docker Container 기반 VSCode 통합 개발 환경입니다. 코딩, 디버그, 컴파일, 배포 등 Adaptive Application 개발 전 과정을 하나의 프로그램에서 처리합니다.
+Docker Container 기반 VSCode 통합 개발 환경입니다. 코딩, 디버그, 컴파일, 배포 등 AUTOSAR Classic 및 Adaptive Application 개발 전 과정을 하나의 프로그램에서 처리합니다.
 
 **Key Features:**
 - ARA API 및 Open Source API 자동완성
@@ -396,7 +397,7 @@ A: 네, AUTOSAR 프로젝트를 준비하는 고객사(OEM, Tier1)를 위해 일
 A: 고객사를 방문하여 진행하는 출장 교육을 주로 제공합니다. sales@popcornsar.com으로 문의해 주세요.
 
 **Q: 지원하는 AUTOSAR 버전은?**
-A: 주로 Adaptive Platform R20-11을 지원하며, 일부 제품은 R19-11, R19-03도 지원합니다. AUTOSAR AI Agent는 R24-11까지 지원합니다.
+A: Classic Platform R4.x와 Adaptive Platform R20-11을 주로 지원하며, 일부 제품은 AP R19-11, R19-03도 지원합니다. AUTOSAR AI Agent는 R24-11까지 지원합니다.
 
 **Q: ASPICE 인증 준비를 도와주나요?**
 A: 네, PARVIS ADK는 V-model/ASPICE 프로세스 전 과정을 자동화하여 ASPICE 인증 준비를 지원합니다. 기획→분석→개발→배포의 End-to-End 자동화로 ASPICE 표준을 자동 준수합니다.

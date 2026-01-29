@@ -21,8 +21,8 @@ export default function ProductsPage() {
   const products = [
     {
       id: "toolkit",
-      name: "Adaptive AUTOSAR Tool kit",
-      description: "Adaptive AUTOSAR 개발을 위한 통합 도구 모음",
+      name: "AUTOSAR Tool Kit",
+      description: t.productsOverview.toolkit,
       icon: Layers,
       color: "cyan",
       href: "/products/adaptive",
@@ -30,7 +30,7 @@ export default function ProductsPage() {
     {
       id: "autosario",
       name: "AutoSAR.io",
-      description: "AUTOSAR Adaptive Platform을 위한 설계 및 코드 생성 도구",
+      description: t.productsOverview.autosario,
       icon: Cpu,
       color: "blue",
       href: "/products/autosario",
@@ -38,7 +38,7 @@ export default function ProductsPage() {
     {
       id: "para",
       name: "PARA",
-      description: "AUTOSAR Adaptive Platform을 위한 Functional Clusters",
+      description: t.productsOverview.para,
       icon: Settings,
       color: "cyan",
       href: "/products/para",
@@ -46,7 +46,7 @@ export default function ProductsPage() {
     {
       id: "pacon",
       name: "PACON IDE",
-      description: "Adaptive AUTOSAR 개발을 위한 통합 개발 환경",
+      description: t.productsOverview.pacon,
       icon: Code2,
       color: "blue",
       href: "/products/pacon",
@@ -54,7 +54,7 @@ export default function ProductsPage() {
     {
       id: "parvis",
       name: "PARVIS",
-      description: "AI 기반 차량 소프트웨어 개발 자동화 솔루션",
+      description: t.productsOverview.parvis,
       icon: Zap,
       color: "cyan",
       href: "/products/ai",
@@ -62,7 +62,7 @@ export default function ProductsPage() {
     {
       id: "parvisadk",
       name: "PARVIS ADK",
-      description: "AI 기반 소프트웨어 정의 차량 개발 키트",
+      description: t.productsOverview.parvisadk,
       icon: Shield,
       color: "blue",
       href: "/products/parvisadk",
@@ -70,7 +70,7 @@ export default function ProductsPage() {
     {
       id: "aiagent",
       name: "AUTOSAR AI Agent",
-      description: "AI 기반 AUTOSAR 개발 지원 도구",
+      description: t.productsOverview.aiagent,
       icon: Cpu,
       color: "cyan",
       href: "/products/aiagent",
@@ -147,7 +147,7 @@ export default function ProductsPage() {
                       <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-accent-blue transition-colors">
                         {product.name}
                       </h3>
-                      <p className="text-text-secondary text-sm mb-4">
+                      <p className="text-text-secondary text-sm mb-4 text-balance">
                         {product.description}
                       </p>
                       <div className="flex items-center gap-2 text-sm text-accent-blue">
@@ -195,7 +195,7 @@ export default function ProductsPage() {
             >
               <Link href="/support/qna">
                 <Button size="lg" rightIcon={<ArrowRight className="w-5 h-5" />}>
-                  상담 신청
+                  {t.common.consultation}
                 </Button>
               </Link>
             </motion.div>

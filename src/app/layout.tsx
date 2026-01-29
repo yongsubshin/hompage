@@ -5,16 +5,9 @@ import { Header, Footer } from "@/components/layout";
 import { Providers } from "@/components/Providers";
 import { ChatbotButton } from "@/components/chatbot";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-  display: "swap",
-});
-
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+const pretendard = localFont({
+  src: "./fonts/PretendardVariable.woff2",
+  variable: "--font-pretendard",
   weight: "100 900",
   display: "swap",
 });
@@ -85,7 +78,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${pretendard.variable} antialiased min-h-screen flex flex-col`}
       >
         <Providers>
           <Header />

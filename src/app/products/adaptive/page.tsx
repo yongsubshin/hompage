@@ -429,14 +429,14 @@ export default function AdaptivePage() {
                 href="/support/qna"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-background font-semibold rounded-xl hover:bg-white/90 transition-all hover:shadow-lg hover:shadow-white/25"
               >
-                Contact Us
+                {t.common.contactUs}
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/products"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all"
               >
-                View All Products
+                {t.common.allProducts}
               </Link>
             </div>
           </motion.div>

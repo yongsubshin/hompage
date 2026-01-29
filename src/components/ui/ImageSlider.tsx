@@ -44,7 +44,7 @@ export function ImageSlider({
   return (
     <div className={`relative w-full overflow-hidden rounded-xl ${className}`}>
       {/* Slides */}
-      <div className="relative aspect-video bg-surface">
+      <div className="relative aspect-video bg-white">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}

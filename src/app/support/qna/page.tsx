@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, User, Mail, Building, Phone, MessageSquare } from "lucide-react";
+import { Send, User, Mail, Building, Phone, MessageSquare, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+
+type FormStatus = "idle" | "sending" | "success" | "error";
 
 export default function QnaPage() {
   const { t } = useLanguage();
@@ -15,10 +17,41 @@ export default function QnaPage() {
     category: "product",
     message: "",
   });
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(t.support.qna.submitSuccess);
+    setStatus("sending");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || "Failed to send");
+      }
+
+      setStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        phone: "",
+        category: "product",
+        message: "",
+      });
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error ? error.message : "An unexpected error occurred"
+      );
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -26,7 +59,12 @@ export default function QnaPage() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+    if (status === "error") {
+      setStatus("idle");
+    }
   };
+
+  const isSending = status === "sending";
 
   return (
     <div className="pt-20 bg-background min-h-screen overflow-hidden">
@@ -47,7 +85,7 @@ export default function QnaPage() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 mb-6">
             <MessageSquare className="w-4 h-4 text-accent-cyan" />
-            <span className="text-sm text-accent-cyan font-medium">Support</span>
+            <span className="text-sm text-accent-cyan font-medium">{t.common.support}</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">{t.support.qna.title}</h1>
         </motion.div>
@@ -70,6 +108,32 @@ export default function QnaPage() {
               </p>
             </div>
 
+            {/* Success Message */}
+            {status === "success" && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-8 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl flex items-center gap-3"
+              >
+                <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                <p className="text-emerald-300">{t.support.qna.submitSuccess}</p>
+              </motion.div>
+            )}
+
+            {/* Error Message */}
+            {status === "error" && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-8 p-4 bg-red-500/10 border border-red-500/30 rounded-xl flex items-center gap-3"
+              >
+                <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
+                <p className="text-red-300">
+                  {t.support.qna.submitError || errorMessage}
+                </p>
+              </motion.div>
+            )}
+
             <form onSubmit={handleSubmit} className="bg-surface rounded-2xl border border-border p-8">
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 {/* Name */}
@@ -84,7 +148,8 @@ export default function QnaPage() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-accent-cyan focus:border-transparent outline-none transition-all text-white placeholder-tertiary"
+                    disabled={isSending}
+                    className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-accent-cyan focus:border-transparent outline-none transition-all text-white placeholder-tertiary disabled:opacity-50"
                     placeholder={t.support.qna.namePlaceholder}
                   />
                 </div>
@@ -101,7 +166,8 @@ export default function QnaPage() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-accent-cyan focus:border-transparent outline-none transition-all text-white placeholder-tertiary"
+                    disabled={isSending}
+                    className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-accent-cyan focus:border-transparent outline-none transition-all text-white placeholder-tertiary disabled:opacity-50"
                     placeholder={t.support.qna.emailPlaceholder}
                   />
                 </div>
@@ -117,7 +183,8 @@ export default function QnaPage() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-accent-cyan focus:border-transparent outline-none transition-all text-white placeholder-tertiary"
+                    disabled={isSending}
+                    className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-accent-cyan focus:border-transparent outline-none transition-all text-white placeholder-tertiary disabled:opacity-50"
                     placeholder={t.support.qna.companyPlaceholder}
                   />
                 </div>
@@ -133,7 +200,8 @@ export default function QnaPage() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-accent-cyan focus:border-transparent outline-none transition-all text-white placeholder-tertiary"
+                    disabled={isSending}
+                    className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-accent-cyan focus:border-transparent outline-none transition-all text-white placeholder-tertiary disabled:opacity-50"
                     placeholder={t.support.qna.phonePlaceholder}
                   />
                 </div>
@@ -149,7 +217,8 @@ export default function QnaPage() {
                   value={formData.category}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-accent-cyan focus:border-transparent outline-none transition-all text-white"
+                  disabled={isSending}
+                  className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-accent-cyan focus:border-transparent outline-none transition-all text-white disabled:opacity-50"
                 >
                   <option value="product">{t.support.qna.inquiryTypes.product}</option>
                   <option value="service">{t.support.qna.inquiryTypes.service}</option>
@@ -169,8 +238,9 @@ export default function QnaPage() {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={isSending}
                   rows={6}
-                  className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-accent-cyan focus:border-transparent outline-none transition-all resize-none text-white placeholder-tertiary"
+                  className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-accent-cyan focus:border-transparent outline-none transition-all resize-none text-white placeholder-tertiary disabled:opacity-50"
                   placeholder={t.support.qna.messagePlaceholder}
                 />
               </div>
@@ -178,10 +248,20 @@ export default function QnaPage() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-accent-cyan text-white font-semibold rounded-lg hover:bg-accent-cyan/80 transition-colors"
+                disabled={isSending}
+                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-accent-cyan text-white font-semibold rounded-lg hover:bg-accent-cyan/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <Send className="w-5 h-5" />
-                {t.support.qna.submit}
+                {isSending ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    {t.support.qna.sending || "Sending..."}
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    {t.support.qna.submit}
+                  </>
+                )}
               </button>
             </form>
 

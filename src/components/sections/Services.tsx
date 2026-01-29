@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import {
   Code2,
@@ -22,6 +23,7 @@ const services = [
       "Complete AUTOSAR Classic and Adaptive platform development services tailored to your vehicle architecture needs.",
     features: ["Classic Platform", "Adaptive Platform", "BSW Configuration"],
     color: "blue",
+    href: "/service/autosar",
   },
   {
     icon: Layers,
@@ -30,6 +32,7 @@ const services = [
       "Seamless integration of software components across ECUs and domains with comprehensive testing.",
     features: ["ECU Integration", "Domain Controllers", "Gateway Solutions"],
     color: "cyan",
+    href: "/service/consulting",
   },
   {
     icon: Shield,
@@ -38,6 +41,7 @@ const services = [
       "ISO 26262 compliant development processes ensuring the highest safety standards for automotive software.",
     features: ["ASIL D Capable", "Safety Analysis", "Certification Support"],
     color: "blue",
+    href: "/service/consulting",
   },
   {
     icon: Zap,
@@ -46,6 +50,7 @@ const services = [
       "Optimize your automotive software for maximum performance, efficiency, and minimal resource usage.",
     features: ["Memory Optimization", "CPU Efficiency", "Real-time Tuning"],
     color: "cyan",
+    href: "/service/tool",
   },
   {
     icon: Wrench,
@@ -54,6 +59,7 @@ const services = [
       "Custom tooling solutions for AUTOSAR development, testing, and deployment workflows.",
     features: ["Config Tools", "Testing Framework", "CI/CD Integration"],
     color: "blue",
+    href: "/service/tool",
   },
   {
     icon: GraduationCap,
@@ -62,6 +68,7 @@ const services = [
       "Comprehensive training programs and ongoing support to empower your development teams.",
     features: ["On-site Training", "Online Courses", "24/7 Support"],
     color: "cyan",
+    href: "/service/education",
   },
 ];
 
@@ -188,8 +195,8 @@ export function Services() {
                   </ul>
 
                   {/* Link */}
-                  <a
-                    href="#"
+                  <Link
+                    href={service.href}
                     className={cn(
                       "inline-flex items-center gap-1 text-sm font-medium transition-colors",
                       service.color === "blue"
@@ -199,7 +206,7 @@ export function Services() {
                   >
                     Learn more
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </Link>
                 </CardContent>
               </Card>
             </motion.div>

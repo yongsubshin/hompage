@@ -119,7 +119,7 @@ export function InteractiveImageMap({
           >
             <img
               src={overlayImage}
-              alt="Overlay"
+              alt="Detailed view of selected area"
               className="max-w-[80%] max-h-[80%] object-contain shadow-2xl rounded-lg border border-white/20"
             />
           </motion.div>

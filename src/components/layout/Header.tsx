@@ -21,66 +21,67 @@ const languages: { code: Language; label: string }[] = [
   { code: "jp", label: "日本語" },
 ];
 
+const CAREERS_URL = process.env.NEXT_PUBLIC_CAREERS_URL ?? "https://popcornsar.recruiter.co.kr/app/jobnotice/list";
+
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
-  // Navigation - Keep in English for all languages
   const navigation: NavItem[] = [
     {
-      label: "COMPANY",
+      label: t.nav.company,
       href: "/company",
       children: [
-        { label: "About Us", href: "/company" },
-        { label: "Notice", href: "/company/notice" },
-        { label: "Careers", href: "https://popcornsar.recruiter.co.kr/app/jobnotice/list" },
-        { label: "Contact Us", href: "/company/contact" },
+        { label: t.nav.companyAbout, href: "/company" },
+        { label: t.nav.companyNotice, href: "/company/notice" },
+        { label: t.nav.companyCareers, href: CAREERS_URL },
+        { label: t.nav.companyContact, href: "/company/contact" },
       ],
     },
     {
-      label: "PRODUCTS",
+      label: t.nav.products,
       href: "/products",
       children: [
-        { label: "Adaptive AUTOSAR Tool kit", href: "/products/adaptive" },
-        { label: "AutoSAR.io", href: "/products/autosario" },
-        { label: "PARA", href: "/products/para" },
-        { label: "PACON IDE", href: "/products/pacon" },
-        { label: "PARVIS", href: "/products/ai" },
-        { label: "PARVIS ADK", href: "/products/parvisadk" },
-        { label: "AUTOSAR AI Agent", href: "/products/aiagent" },
+        { label: t.nav.productsToolkit, href: "/products/adaptive" },
+        { label: t.nav.productsAutosar, href: "/products/autosario" },
+        { label: t.nav.productsPara, href: "/products/para" },
+        { label: t.nav.productsPacon, href: "/products/pacon" },
+        { label: t.nav.productsParvis, href: "/products/ai" },
+        { label: t.nav.productsParvisAdk, href: "/products/parvisadk" },
+        { label: t.nav.productsAiAgent, href: "/products/aiagent" },
       ],
     },
     {
-      label: "SOLUTION",
+      label: t.nav.solution,
       href: "/solution",
       children: [
-        { label: "Cloud Native", href: "/solution/cloudnative" },
-        { label: "Digital Twin", href: "/solution/digital" },
-        { label: "AI for Adaptive Platforms", href: "/solution/ai" },
-        { label: "MATLAB & Simulink", href: "/solution/matlab" },
-        { label: "PARVIS Agent", href: "/solution/aiagent" },
+        { label: t.nav.solutionCloud, href: "/solution/cloudnative" },
+        { label: t.nav.solutionDigital, href: "/solution/digital" },
+        { label: t.nav.solutionAi, href: "/solution/ai" },
+        { label: t.nav.solutionMatlab, href: "/solution/matlab" },
+        { label: t.nav.solutionAgent, href: "/solution/aiagent" },
       ],
     },
     {
-      label: "SERVICE",
+      label: t.nav.service,
       href: "/service",
       children: [
-        { label: "Consulting Service", href: "/service/consulting" },
-        { label: "AUTOSAR Implementation", href: "/service/autosar" },
-        { label: "AUTOSAR Training", href: "/service/education" },
-        { label: "Custom Development", href: "/service/tool" },
-        { label: "AI Agent Core Training", href: "/service/ai" },
+        { label: t.nav.serviceConsulting, href: "/service/consulting" },
+        { label: t.nav.serviceAutosar, href: "/service/autosar" },
+        { label: t.nav.serviceTraining, href: "/service/education" },
+        { label: t.nav.serviceCustom, href: "/service/tool" },
+        { label: t.nav.serviceAiTraining, href: "/service/ai" },
       ],
     },
     {
-      label: "SUPPORT",
+      label: t.nav.support,
       href: "/support",
       children: [
-        { label: "DOWNLOAD", href: "/support" },
-        { label: "Q&A", href: "/support/qna" },
+        { label: t.nav.supportDownload, href: "/support" },
+        { label: t.nav.supportQna, href: "/support/qna" },
       ],
     },
   ];
@@ -103,15 +104,17 @@ export function Header() {
   };
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border"
-          : "bg-transparent"
-      )}
-    >
-      <div className="container-custom">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Backdrop blur wrapper - separated to prevent CSS containing block issue */}
+      <div
+        className={cn(
+          "transition-all duration-300",
+          isScrolled
+            ? "bg-background/95 backdrop-blur-md border-b border-border"
+            : "bg-transparent"
+        )}
+      >
+        <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -200,17 +203,19 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             className="lg:hidden p-2 text-text-secondary hover:text-white hover:bg-surface/50 rounded-lg transition-colors"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
+      </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - outside backdrop-blur div to fix position issue */}
       <div
         className={cn(
-          "lg:hidden fixed inset-x-0 top-20 bottom-0 bg-background border-t border-border transition-all duration-300 overflow-y-auto",
+          "lg:hidden fixed inset-x-0 top-20 bottom-0 z-40 bg-background border-t border-border transition-all duration-300 overflow-y-auto",
           isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         )}
       >
@@ -237,6 +242,7 @@ export function Header() {
                         key={child.href}
                         href={child.href}
                         target={child.href.startsWith("http") ? "_blank" : undefined}
+                        rel={child.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="block px-4 py-2.5 text-sm text-text-secondary hover:text-accent-blue rounded-lg"
                       >
                         {child.label}

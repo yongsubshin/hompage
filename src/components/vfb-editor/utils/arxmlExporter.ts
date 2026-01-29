@@ -1,190 +1,317 @@
-import type { Node, Edge } from "@xyflow/react";
-import type { ExecutableData } from "../types";
+// ARXML Exporter - Generates ARXML from VFB nodes
 
+import type { Node } from "@xyflow/react";
+import type { ExecutableData, PortData, Platform, CpPortKind } from "../types";
+
+interface ExportOptions {
+  platform: Platform;
+  nodes: Node[];
+  originalArxml: string;
+  addedNodeIds: Set<string>;
+  addedPortIds: Set<string>;
+}
+
+// Generate UUID for ARXML elements
 function generateUUID(): string {
-  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
     const r = (Math.random() * 16) | 0;
     const v = c === "x" ? r : (r & 0x3) | 0x8;
     return v.toString(16);
   });
 }
 
-function escapeXml(str: string): string {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
+// Get interface type based on cpPortKind
+function getInterfaceType(cpPortKind?: CpPortKind): string {
+  if (!cpPortKind) return "SERVICE-INTERFACE";
+  if (cpPortKind === "server" || cpPortKind === "client") {
+    return "CLIENT-SERVER-INTERFACE";
+  }
+  return "SENDER-RECEIVER-INTERFACE";
 }
 
-export function exportToARXML(nodes: Node[], edges: Edge[]): string {
-  const timestamp = new Date().toISOString();
 
-  // Collect unique service interface names from ports
-  const serviceInterfaceNames = new Set<string>();
-  nodes.forEach((node) => {
+// Insert new ports into existing SWC in ARXML
+function insertPortsIntoArxml(
+  arxml: string,
+  nodeLabel: string,
+  ports: PortData[],
+  platform: Platform
+): string {
+  if (ports.length === 0) return arxml;
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(arxml, "text/xml");
+
+  // Find the SWC by SHORT-NAME
+  const shortNames = doc.getElementsByTagName("SHORT-NAME");
+  let targetSwc: Element | null = null;
+
+  for (let i = 0; i < shortNames.length; i++) {
+    if (shortNames[i].textContent === nodeLabel) {
+      const parent = shortNames[i].parentElement;
+      if (parent && (
+        parent.tagName === "APPLICATION-SW-COMPONENT-TYPE" ||
+        parent.tagName === "ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE" ||
+        parent.tagName === "SENSOR-ACTUATOR-SW-COMPONENT-TYPE" ||
+        parent.tagName === "SW-COMPONENT-PROTOTYPE"
+      )) {
+        // For SW-COMPONENT-PROTOTYPE, we need to find the actual type
+        if (parent.tagName === "SW-COMPONENT-PROTOTYPE") {
+          const typeRef = parent.getElementsByTagName("TYPE-TREF")[0];
+          if (typeRef) {
+            const typePath = typeRef.textContent || "";
+            const typeName = typePath.split("/").pop();
+            // Find the actual type definition
+            for (let j = 0; j < shortNames.length; j++) {
+              if (shortNames[j].textContent === typeName) {
+                const typeParent = shortNames[j].parentElement;
+                if (typeParent && (
+                  typeParent.tagName === "APPLICATION-SW-COMPONENT-TYPE" ||
+                  typeParent.tagName === "ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE" ||
+                  typeParent.tagName === "SENSOR-ACTUATOR-SW-COMPONENT-TYPE"
+                )) {
+                  targetSwc = typeParent;
+                  break;
+                }
+              }
+            }
+          }
+        } else {
+          targetSwc = parent;
+        }
+        break;
+      }
+    }
+  }
+
+  if (!targetSwc) return arxml;
+
+  // Find or create PORTS element
+  let portsElement = targetSwc.getElementsByTagName("PORTS")[0];
+  if (!portsElement) {
+    portsElement = doc.createElement("PORTS");
+    const shortNameEl = targetSwc.getElementsByTagName("SHORT-NAME")[0];
+    if (shortNameEl.nextSibling) {
+      targetSwc.insertBefore(portsElement, shortNameEl.nextSibling);
+    } else {
+      targetSwc.appendChild(portsElement);
+    }
+  }
+
+  // Add new ports
+  for (const port of ports) {
+    const portEl = doc.createElement(port.type === "provider" ? "P-PORT-PROTOTYPE" : "R-PORT-PROTOTYPE");
+    portEl.setAttribute("UUID", generateUUID());
+
+    const shortName = doc.createElement("SHORT-NAME");
+    shortName.textContent = port.name;
+    portEl.appendChild(shortName);
+
+    const interfaceRef = doc.createElement(
+      port.type === "provider" ? "PROVIDED-INTERFACE-TREF" : "REQUIRED-INTERFACE-TREF"
+    );
+
+    if (platform === "cp") {
+      const interfaceType = getInterfaceType(port.cpPortKind);
+      interfaceRef.setAttribute("DEST", interfaceType);
+      const interfaceName = (port.cpPortKind === "server" || port.cpPortKind === "client")
+        ? "NewCSInterface"
+        : "NewSRInterface";
+      interfaceRef.textContent = `/PortInterface/${interfaceName}`;
+    } else {
+      interfaceRef.setAttribute("DEST", "SERVICE-INTERFACE");
+      interfaceRef.textContent = "/PortInterface/Service/NewService";
+    }
+
+    portEl.appendChild(interfaceRef);
+    portsElement.appendChild(portEl);
+  }
+
+  // Serialize back to string
+  const serializer = new XMLSerializer();
+  return formatXml(serializer.serializeToString(doc));
+}
+
+// Insert new SWCs into ARXML
+function insertSwcsIntoArxml(
+  arxml: string,
+  nodes: Node[],
+  platform: Platform
+): string {
+  if (nodes.length === 0) return arxml;
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(arxml, "text/xml");
+
+  // Find the ELEMENTS container for SWCs
+  const packages = doc.getElementsByTagName("AR-PACKAGE");
+  let targetElements: Element | null = null;
+
+  for (let i = 0; i < packages.length; i++) {
+    const shortName = packages[i].getElementsByTagName("SHORT-NAME")[0];
+    if (shortName) {
+      const name = shortName.textContent;
+      if (platform === "cp" && name === "AtomicSwComponent") {
+        targetElements = packages[i].getElementsByTagName("ELEMENTS")[0];
+        break;
+      }
+      if (platform === "ap" && name === "AdaptiveApplication") {
+        targetElements = packages[i].getElementsByTagName("ELEMENTS")[0];
+        break;
+      }
+    }
+  }
+
+  if (!targetElements) return arxml;
+
+  // Add new SWCs
+  for (const node of nodes) {
     const data = node.data as ExecutableData;
-    data.ports.forEach((port) => {
-      serviceInterfaceNames.add(`${port.name}_Interface`);
-    });
+    const swcType = platform === "cp"
+      ? "APPLICATION-SW-COMPONENT-TYPE"
+      : "ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE";
+
+    const swcEl = doc.createElement(swcType);
+    swcEl.setAttribute("UUID", generateUUID());
+
+    const shortName = doc.createElement("SHORT-NAME");
+    shortName.textContent = data.label;
+    swcEl.appendChild(shortName);
+
+    if (data.ports.length > 0) {
+      const portsEl = doc.createElement("PORTS");
+      for (const port of data.ports) {
+        const portEl = doc.createElement(
+          port.type === "provider" ? "P-PORT-PROTOTYPE" : "R-PORT-PROTOTYPE"
+        );
+        portEl.setAttribute("UUID", generateUUID());
+
+        const portShortName = doc.createElement("SHORT-NAME");
+        portShortName.textContent = port.name;
+        portEl.appendChild(portShortName);
+
+        const interfaceRef = doc.createElement(
+          port.type === "provider" ? "PROVIDED-INTERFACE-TREF" : "REQUIRED-INTERFACE-TREF"
+        );
+
+        if (platform === "cp") {
+          const interfaceType = getInterfaceType(port.cpPortKind);
+          interfaceRef.setAttribute("DEST", interfaceType);
+          const interfaceName = (port.cpPortKind === "server" || port.cpPortKind === "client")
+            ? "NewCSInterface"
+            : "NewSRInterface";
+          interfaceRef.textContent = `/PortInterface/${interfaceName}`;
+        } else {
+          interfaceRef.setAttribute("DEST", "SERVICE-INTERFACE");
+          interfaceRef.textContent = "/PortInterface/Service/NewService";
+        }
+
+        portEl.appendChild(interfaceRef);
+        portsEl.appendChild(portEl);
+      }
+      swcEl.appendChild(portsEl);
+    }
+
+    // Add internal behavior for CP
+    if (platform === "cp") {
+      const ibContainer = doc.createElement("INTERNAL-BEHAVIORS");
+      const ib = doc.createElement("SWC-INTERNAL-BEHAVIOR");
+      ib.setAttribute("UUID", generateUUID());
+
+      const ibShortName = doc.createElement("SHORT-NAME");
+      ibShortName.textContent = `${data.label}_IB`;
+      ib.appendChild(ibShortName);
+
+      const handleTerm = doc.createElement("HANDLE-TERMINATION-AND-RESTART");
+      handleTerm.textContent = "NO-SUPPORT";
+      ib.appendChild(handleTerm);
+
+      const supportsMulti = doc.createElement("SUPPORTS-MULTIPLE-INSTANTIATION");
+      supportsMulti.textContent = "false";
+      ib.appendChild(supportsMulti);
+
+      ibContainer.appendChild(ib);
+      swcEl.appendChild(ibContainer);
+    }
+
+    targetElements.appendChild(swcEl);
+  }
+
+  const serializer = new XMLSerializer();
+  return formatXml(serializer.serializeToString(doc));
+}
+
+// Simple XML formatter
+function formatXml(xml: string): string {
+  const PADDING = "  ";
+  let formatted = "";
+  let indent = 0;
+
+  xml = xml.replace(/(>)(<)(\/*)/g, "$1\n$2$3");
+
+  xml.split("\n").forEach((node) => {
+    if (node.match(/^<\/\w/)) {
+      indent--;
+    }
+    formatted += PADDING.repeat(Math.max(0, indent)) + node + "\n";
+    if (node.match(/^<\w([^>]*[^\/])?>.*$/) && !node.match(/^<\?/)) {
+      indent++;
+    }
+    if (node.match(/^<\w[^>]*\/>/)) {
+      // Self-closing tag, no indent change
+    }
+    if (node.match(/<\/\w[^>]*>$/)) {
+      indent--;
+    }
   });
 
-  // Generate Service Interfaces
-  const serviceInterfacesXml = Array.from(serviceInterfaceNames)
-    .map((name) => {
-      const uuid = generateUUID();
-      return `        <SERVICE-INTERFACE UUID="${uuid}">
-          <SHORT-NAME>${escapeXml(name)}</SHORT-NAME>
-          <NAMESPACES>
-            <SYMBOL-PROPS>
-              <SHORT-NAME>ns</SHORT-NAME>
-              <SYMBOL>ara::com</SYMBOL>
-            </SYMBOL-PROPS>
-          </NAMESPACES>
-        </SERVICE-INTERFACE>`;
-    })
-    .join("\n");
-
-  // Generate Component Types
-  const componentTypesXml = nodes
-    .map((node) => {
-      const data = node.data as ExecutableData;
-      const uuid = generateUUID();
-
-      const providerPorts = data.ports
-        .filter((p) => p.type === "provider")
-        .map((port) => {
-          const portUuid = generateUUID();
-          return `          <P-PORT-PROTOTYPE UUID="${portUuid}">
-            <SHORT-NAME>${escapeXml(port.name)}</SHORT-NAME>
-            <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/PortInterface/Service/${escapeXml(port.name)}_Interface</PROVIDED-INTERFACE-TREF>
-          </P-PORT-PROTOTYPE>`;
-        })
-        .join("\n");
-
-      const requiredPorts = data.ports
-        .filter((p) => p.type === "required")
-        .map((port) => {
-          const portUuid = generateUUID();
-          return `          <R-PORT-PROTOTYPE UUID="${portUuid}">
-            <SHORT-NAME>${escapeXml(port.name)}</SHORT-NAME>
-            <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/PortInterface/Service/${escapeXml(port.name)}_Interface</REQUIRED-INTERFACE-TREF>
-          </R-PORT-PROTOTYPE>`;
-        })
-        .join("\n");
-
-      const portsSection = [providerPorts, requiredPorts].filter(Boolean).join("\n");
-
-      return `        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="${uuid}">
-          <SHORT-NAME>${escapeXml(data.label)}</SHORT-NAME>
-${portsSection ? `          <PORTS>\n${portsSection}\n          </PORTS>` : ""}
-        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>`;
-    })
-    .join("\n\n");
-
-  // Generate Component Prototypes for Composition
-  const componentPrototypesXml = nodes
-    .map((node) => {
-      const data = node.data as ExecutableData;
-      const prototypeUuid = generateUUID();
-      return `          <SW-COMPONENT-PROTOTYPE UUID="${prototypeUuid}">
-            <SHORT-NAME>${escapeXml(data.label)}</SHORT-NAME>
-            <TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/SwComponent/AdaptiveApplication/${escapeXml(data.label)}</TYPE-TREF>
-          </SW-COMPONENT-PROTOTYPE>`;
-    })
-    .join("\n");
-
-  // Generate Assembly Connectors
-  const connectorsXml = edges
-    .map((edge) => {
-      const uuid = generateUUID();
-      const sourceNode = nodes.find((n) => n.id === edge.source);
-      const targetNode = nodes.find((n) => n.id === edge.target);
-
-      if (!sourceNode || !targetNode) return "";
-
-      const sourceData = sourceNode.data as ExecutableData;
-      const targetData = targetNode.data as ExecutableData;
-      const sourcePort = sourceData.ports.find((p) => p.id === edge.sourceHandle);
-      const targetPort = targetData.ports.find((p) => p.id === edge.targetHandle);
-
-      if (!sourcePort || !targetPort) return "";
-
-      return `          <ASSEMBLY-SW-CONNECTOR UUID="${uuid}">
-            <SHORT-NAME>Conn_${escapeXml(sourceData.label)}_to_${escapeXml(targetData.label)}</SHORT-NAME>
-            <PROVIDER-IREF>
-              <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/SwComponent/Composition/TopLevelComposition/${escapeXml(sourceData.label)}</CONTEXT-COMPONENT-REF>
-              <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/SwComponent/AdaptiveApplication/${escapeXml(sourceData.label)}/${escapeXml(sourcePort.name)}</TARGET-P-PORT-REF>
-            </PROVIDER-IREF>
-            <REQUESTER-IREF>
-              <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/SwComponent/Composition/TopLevelComposition/${escapeXml(targetData.label)}</CONTEXT-COMPONENT-REF>
-              <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/SwComponent/AdaptiveApplication/${escapeXml(targetData.label)}/${escapeXml(targetPort.name)}</TARGET-R-PORT-REF>
-            </REQUESTER-IREF>
-          </ASSEMBLY-SW-CONNECTOR>`;
-    })
-    .filter(Boolean)
-    .join("\n\n");
-
-  const arxml = `<?xml version="1.0" encoding="UTF-8"?>
-<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
-  <!-- Generated by AutoSAR.io VFB Editor -->
-  <!-- Timestamp: ${timestamp} -->
-  <AR-PACKAGES>
-    <!-- PortInterface Package -->
-    <AR-PACKAGE UUID="${generateUUID()}">
-      <SHORT-NAME>PortInterface</SHORT-NAME>
-      <AR-PACKAGES>
-        <AR-PACKAGE UUID="${generateUUID()}">
-          <SHORT-NAME>Service</SHORT-NAME>
-          <ELEMENTS>
-${serviceInterfacesXml || "            <!-- No service interfaces -->"}
-          </ELEMENTS>
-        </AR-PACKAGE>
-      </AR-PACKAGES>
-    </AR-PACKAGE>
-
-    <!-- SwComponent Package -->
-    <AR-PACKAGE UUID="${generateUUID()}">
-      <SHORT-NAME>SwComponent</SHORT-NAME>
-      <AR-PACKAGES>
-        <!-- Component Types -->
-        <AR-PACKAGE UUID="${generateUUID()}">
-          <SHORT-NAME>AdaptiveApplication</SHORT-NAME>
-          <ELEMENTS>
-${componentTypesXml || "            <!-- No components -->"}
-          </ELEMENTS>
-        </AR-PACKAGE>
-
-        <!-- Composition -->
-        <AR-PACKAGE UUID="${generateUUID()}">
-          <SHORT-NAME>Composition</SHORT-NAME>
-          <ELEMENTS>
-            <COMPOSITION-SW-COMPONENT-TYPE UUID="${generateUUID()}">
-              <SHORT-NAME>TopLevelComposition</SHORT-NAME>
-              <COMPONENTS>
-${componentPrototypesXml || "                <!-- No component instances -->"}
-              </COMPONENTS>
-${connectorsXml ? `              <CONNECTORS>\n${connectorsXml}\n              </CONNECTORS>` : ""}
-            </COMPOSITION-SW-COMPONENT-TYPE>
-          </ELEMENTS>
-        </AR-PACKAGE>
-      </AR-PACKAGES>
-    </AR-PACKAGE>
-  </AR-PACKAGES>
-</AUTOSAR>`;
-
-  return arxml;
+  return formatted.trim();
 }
 
-export function downloadARXML(content: string, filename: string = "vfb_design.arxml"): void {
+// Main export function
+export function exportArxml(options: ExportOptions): string {
+  const { platform, nodes, originalArxml, addedNodeIds, addedPortIds } = options;
+
+  // If nothing added, return original
+  if (addedNodeIds.size === 0 && addedPortIds.size === 0) {
+    return originalArxml;
+  }
+
+  let result = originalArxml;
+
+  // Get added nodes
+  const addedNodes = nodes.filter((n) => addedNodeIds.has(n.id));
+
+  // Insert new SWCs
+  if (addedNodes.length > 0) {
+    result = insertSwcsIntoArxml(result, addedNodes, platform);
+  }
+
+  // Find added ports on existing nodes
+  const existingNodesWithNewPorts = nodes.filter((n) => {
+    if (addedNodeIds.has(n.id)) return false;
+    const data = n.data as ExecutableData;
+    return data.ports.some((p) => addedPortIds.has(p.id));
+  });
+
+  for (const node of existingNodesWithNewPorts) {
+    const data = node.data as ExecutableData;
+    const newPorts = data.ports.filter((p) => addedPortIds.has(p.id));
+    result = insertPortsIntoArxml(result, data.label, newPorts, platform);
+  }
+
+  return result;
+}
+
+// Download ARXML file
+export function downloadArxml(content: string, filename: string): void {
   const blob = new Blob([content], { type: "application/xml" });
   const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }

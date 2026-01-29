@@ -10,38 +10,25 @@ export default function SupportPage() {
   // Product & Service Catalog - All 3 language versions always shown
   const catalogFiles = [
     {
-      title: "PopcornSAR Adaptive AUTOSAR (R20-11) 개발 플랫폼 소개",
-      description: "AUTOSAR Adaptive Platform 설계를 위한 AutoSAR.io 평가판 (한국어)",
+      title: "PopcornSAR AUTOSAR (R20-11) 개발 플랫폼 소개",
+      description: "AUTOSAR Classic & Adaptive Platform 설계를 위한 AutoSAR.io 평가판 (한국어)",
       src: "/downloads/PopcornSAR_Adaptive_AUTOSAR_R20-11_KR.pdf",
       lang: "KR",
     },
     {
-      title: "Introduction to PopcornSAR Adaptive AUTOSAR (R20-11) Tool chain",
-      description: "AutoSAR.io trial version for AUTOSAR Adaptive Platform design (English)",
+      title: "Introduction to PopcornSAR AUTOSAR (R20-11) Tool chain",
+      description: "AutoSAR.io trial version for AUTOSAR Classic & Adaptive Platform design (English)",
       src: "/downloads/PopcornSAR_Adaptive_AUTOSAR_R20-11_EN.pdf",
       lang: "EN",
     },
     {
-      title: "PopcornSAR Adaptive AUTOSAR (R20-11) 開発プラットフォームの紹介",
-      description: "AUTOSAR Adaptive Platform設計用AutoSAR.io評価版 (日本語)",
+      title: "PopcornSAR AUTOSAR (R20-11) 開発プラットフォームの紹介",
+      description: "AUTOSAR Classic & Adaptive Platform設計用AutoSAR.io評価版 (日本語)",
       src: "/downloads/PopcornSAR_Adaptive_AUTOSAR_R20-11_JP.pdf",
       lang: "JP",
     },
   ];
 
-  // Technical Documents
-  const technicalFiles = [
-    {
-      title: "AUTOSAR Adaptive Platform Overview",
-      description: t.support.download.files.autosarOverview.description,
-      src: "/downloads/220315164045_4292.pdf",
-    },
-    {
-      title: "PopcornSAR Product Catalog",
-      description: t.support.download.files.productCatalog.description,
-      src: "/downloads/190925172016_7909.pdf",
-    },
-  ];
 
   return (
     <div className="pt-20 bg-background min-h-screen overflow-hidden">
@@ -62,7 +49,7 @@ export default function SupportPage() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 mb-6">
             <Download className="w-4 h-4 text-accent-cyan" />
-            <span className="text-sm text-accent-cyan font-medium">Resources</span>
+            <span className="text-sm text-accent-cyan font-medium">{t.common.resources}</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">{t.support.download.title}</h1>
         </motion.div>
@@ -111,34 +98,6 @@ export default function SupportPage() {
               </div>
             </div>
 
-            {/* Technical Documents */}
-            <div>
-              <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-white">
-                <FileText className="w-6 h-6 text-accent-cyan" />
-                {t.support.download.technicalDocs}
-              </h2>
-              <div className="space-y-4">
-                {technicalFiles.map((file) => (
-                  <div
-                    key={file.src}
-                    className="bg-surface rounded-xl border border-border p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-accent-cyan/30 transition-colors"
-                  >
-                    <div>
-                      <h3 className="font-bold text-lg mb-1 text-white">{file.title}</h3>
-                      <p className="text-text-secondary text-sm">{file.description}</p>
-                    </div>
-                    <a
-                      href={file.src}
-                      download
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-accent-cyan text-background font-medium rounded-lg hover:bg-accent-cyan/90 transition-colors whitespace-nowrap"
-                    >
-                      <Download className="w-4 h-4" />
-                      {t.support.download.downloadBtn}
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>

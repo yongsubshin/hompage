@@ -1,67 +1,100 @@
 "use client";
 
-import { Plus, Download, Trash2 } from "lucide-react";
+import { Cpu, Trash2, Plus, Download } from "lucide-react";
 
 interface ToolbarProps {
-  onAddExecutable: () => void;
-  onExportARXML: () => void;
+  onLoadDemo: (type: "ap" | "cp") => void;
+  onAddSWC: () => void;
+  onExport: () => void;
   onClear: () => void;
-  selectedPortInfo: string | null;
+  activeDemo: "ap" | "cp" | null;
+  hasModifications: boolean;
 }
 
 export default function Toolbar({
-  onAddExecutable,
-  onExportARXML,
+  onLoadDemo,
+  onAddSWC,
+  onExport,
   onClear,
-  selectedPortInfo,
+  activeDemo,
+  hasModifications,
 }: ToolbarProps) {
   return (
-    <div className="flex items-center gap-3 p-3 bg-gray-100 border-b border-gray-300">
-      {/* Add Executable */}
+    <div className="flex items-center gap-3 px-4 py-2.5 bg-gray-50 border-b border-gray-200">
+      {/* AP Button */}
       <button
-        onClick={onAddExecutable}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium bg-yellow-500 text-black hover:bg-yellow-400 border border-yellow-600 transition-colors"
-        title="Add Executable"
+        onClick={() => onLoadDemo("ap")}
+        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium shadow-sm hover:shadow transition-all duration-150 active:scale-95 ${
+          activeDemo === "ap"
+            ? "bg-blue-600 text-white ring-2 ring-blue-300"
+            : "bg-white text-gray-700 border border-gray-200 hover:bg-blue-50 hover:border-blue-200"
+        }`}
       >
-        <Plus className="w-4 h-4" />
-        Executable
+        <Cpu className="w-4 h-4" />
+        AP
       </button>
 
-      <div className="w-px h-6 bg-gray-300" />
+      {/* CP Button */}
+      <button
+        onClick={() => onLoadDemo("cp")}
+        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium shadow-sm hover:shadow transition-all duration-150 active:scale-95 ${
+          activeDemo === "cp"
+            ? "bg-green-600 text-white ring-2 ring-green-300"
+            : "bg-white text-gray-700 border border-gray-200 hover:bg-green-50 hover:border-green-200"
+        }`}
+      >
+        <Cpu className="w-4 h-4" />
+        CP
+      </button>
 
-      {/* Selected port indicator */}
-      {selectedPortInfo && (
-        <>
-          <div className="px-3 py-1 rounded bg-blue-100 border border-blue-300 text-sm text-blue-800">
-            {selectedPortInfo} <span className="text-blue-500">→ Click another port to connect</span>
-          </div>
-          <div className="w-px h-6 bg-gray-300" />
-        </>
-      )}
+      <div className="w-px h-5 bg-gray-300" />
+
+      {/* Add SWC Button */}
+      <button
+        onClick={onAddSWC}
+        disabled={!activeDemo}
+        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium shadow-sm transition-all duration-150 ${
+          activeDemo
+            ? "bg-white text-gray-700 border border-gray-200 hover:bg-purple-50 hover:border-purple-200 active:scale-95 hover:shadow"
+            : "bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed"
+        }`}
+      >
+        <Plus className="w-3.5 h-3.5" />
+        Add SWC
+      </button>
+
+      {/* Export Button */}
+      <button
+        onClick={onExport}
+        disabled={!activeDemo}
+        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium shadow-sm transition-all duration-150 ${
+          activeDemo
+            ? hasModifications
+              ? "bg-orange-500 text-white hover:bg-orange-600 active:scale-95 hover:shadow"
+              : "bg-white text-gray-700 border border-gray-200 hover:bg-cyan-50 hover:border-cyan-200 active:scale-95 hover:shadow"
+            : "bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed"
+        }`}
+      >
+        <Download className="w-3.5 h-3.5" />
+        Export{hasModifications ? "*" : ""}
+      </button>
 
       <div className="flex-1" />
 
       {/* Tips */}
-      <div className="text-xs text-gray-500">
-        Right-click for menu
+      <div className="text-xs text-gray-400">
+        Select AP or CP to load VFB design
       </div>
 
-      <div className="w-px h-6 bg-gray-300" />
+      <div className="w-px h-5 bg-gray-300" />
 
-      {/* Export & Clear */}
+      {/* Clear */}
       <button
         onClick={onClear}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium bg-white text-red-600 hover:bg-red-50 border border-red-300 transition-colors"
+        className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium bg-white text-red-500 hover:bg-red-50 active:scale-95 border border-gray-200 hover:border-red-200 transition-all duration-150"
       >
-        <Trash2 className="w-4 h-4" />
+        <Trash2 className="w-3.5 h-3.5" />
         Clear
-      </button>
-      <button
-        onClick={onExportARXML}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition-colors"
-      >
-        <Download className="w-4 h-4" />
-        Export ARXML
       </button>
     </div>
   );

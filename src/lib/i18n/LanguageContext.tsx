@@ -35,6 +35,14 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     localStorage.setItem("language", lang);
   };
 
+  // Update HTML lang attribute when language changes
+  const langMap: Record<Language, string> = { kr: "ko", en: "en", cn: "zh", jp: "ja" };
+  useEffect(() => {
+    if (mounted) {
+      document.documentElement.lang = langMap[language];
+    }
+  }, [language, mounted]);
+
   const t = translations[language];
 
   // Prevent hydration mismatch by not rendering until mounted

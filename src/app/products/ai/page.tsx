@@ -63,7 +63,7 @@ export default function ParvisPage() {
                 {content.title}
               </h1>
 
-              <p className="text-xl lg:text-2xl text-text-secondary mb-4 leading-relaxed">
+              <p className="text-xl lg:text-2xl text-text-secondary mb-4 leading-relaxed text-balance">
                 {content.subtitle1}
                 <br />
                 <span className="text-accent-cyan">{content.subtitle2}</span>

@@ -5,38 +5,39 @@ import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 
+const CAREERS_URL = process.env.NEXT_PUBLIC_CAREERS_URL ?? "https://popcornsar.recruiter.co.kr/app/jobnotice/list";
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const { t } = useLanguage();
 
-  // Footer links - Keep in English for all languages
   const footerLinks = {
     company: [
-      { label: "About Us", href: "/company" },
-      { label: "Notice", href: "/company/notice" },
-      { label: "Careers", href: "https://popcornsar.recruiter.co.kr/app/jobnotice/list" },
-      { label: "Contact Us", href: "/company/contact" },
+      { label: t.nav.companyAbout, href: "/company" },
+      { label: t.nav.companyNotice, href: "/company/notice" },
+      { label: t.nav.companyCareers, href: CAREERS_URL },
+      { label: t.nav.companyContact, href: "/company/contact" },
     ],
     products: [
-      { label: "Adaptive AUTOSAR Tool kit", href: "/products/adaptive" },
-      { label: "AutoSAR.io", href: "/products/autosario" },
-      { label: "PARA", href: "/products/para" },
-      { label: "PACON IDE", href: "/products/pacon" },
-      { label: "PARVIS", href: "/products/ai" },
-      { label: "PARVIS ADK", href: "/products/parvisadk" },
-      { label: "AUTOSAR AI Agent", href: "/products/aiagent" },
+      { label: t.nav.productsToolkit, href: "/products/adaptive" },
+      { label: t.nav.productsAutosar, href: "/products/autosario" },
+      { label: t.nav.productsPara, href: "/products/para" },
+      { label: t.nav.productsPacon, href: "/products/pacon" },
+      { label: t.nav.productsParvis, href: "/products/ai" },
+      { label: t.nav.productsParvisAdk, href: "/products/parvisadk" },
+      { label: t.nav.productsAiAgent, href: "/products/aiagent" },
     ],
     service: [
-      { label: "Consulting Service", href: "/service/consulting" },
-      { label: "AUTOSAR Implementation", href: "/service/autosar" },
-      { label: "AUTOSAR Training", href: "/service/education" },
-      { label: "Custom Development", href: "/service/tool" },
-      { label: "AI Agent Core Training", href: "/service/ai" },
+      { label: t.nav.serviceConsulting, href: "/service/consulting" },
+      { label: t.nav.serviceAutosar, href: "/service/autosar" },
+      { label: t.nav.serviceTraining, href: "/service/education" },
+      { label: t.nav.serviceCustom, href: "/service/tool" },
+      { label: t.nav.serviceAiTraining, href: "/service/ai" },
     ],
   };
 
   return (
-    <footer className="bg-[#25262a]">
+    <footer className="bg-surface">
       {/* Main Footer */}
       <div className="max-w-[1400px] mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -59,14 +60,14 @@ export function Footer() {
             <div className="space-y-3">
               <a
                 href="mailto:support@popcornsar.com"
-                className="flex items-center gap-3 text-sm text-gray-400 hover:text-[#4180E9] transition-colors"
+                className="flex items-center gap-3 text-sm text-gray-400 hover:text-accent-blue transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 support@popcornsar.com
               </a>
               <a
                 href="tel:+82-2-6953-4556"
-                className="flex items-center gap-3 text-sm text-gray-400 hover:text-[#4180E9] transition-colors"
+                className="flex items-center gap-3 text-sm text-gray-400 hover:text-accent-blue transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 +82-2-6953-4556
@@ -78,15 +79,16 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Links Sections - Keep in English for all languages */}
           <div>
-            <h4 className="text-white font-semibold mb-4">COMPANY</h4>
+            <h4 className="text-white font-semibold mb-4">{t.nav.company}</h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-[#4180E9] transition-colors"
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="text-sm text-gray-400 hover:text-accent-blue transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -96,13 +98,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">PRODUCTS</h4>
+            <h4 className="text-white font-semibold mb-4">{t.nav.products}</h4>
             <ul className="space-y-2">
               {footerLinks.products.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-[#4180E9] transition-colors"
+                    className="text-sm text-gray-400 hover:text-accent-blue transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -112,13 +114,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">SERVICE</h4>
+            <h4 className="text-white font-semibold mb-4">{t.nav.service}</h4>
             <ul className="space-y-2">
               {footerLinks.service.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-[#4180E9] transition-colors"
+                    className="text-sm text-gray-400 hover:text-accent-blue transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -132,7 +134,7 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-gray-700">
         <div className="max-w-[1400px] mx-auto px-4 py-4">
-          <p className="text-sm text-gray-500 text-center">
+          <p className="text-sm text-gray-400 text-center">
             &copy; {currentYear} {t.footer.copyright}
           </p>
         </div>

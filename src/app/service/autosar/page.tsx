@@ -2,119 +2,278 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { Settings, CheckCircle, ArrowRight, FileCode, Cpu, Puzzle } from "lucide-react";
 
 export default function AutosarServicePage() {
   const { t } = useLanguage();
+  const content = t.service.autosar;
+  const sp = t.service.autosarPage;
+
+  const steps = [
+    {
+      number: "01",
+      title: sp.step1Title,
+      desc: sp.step1Desc,
+      icon: FileCode,
+      color: "cyan",
+    },
+    {
+      number: "02",
+      title: sp.step2Title,
+      desc: sp.step2Desc,
+      icon: Cpu,
+      color: "blue",
+    },
+    {
+      number: "03",
+      title: sp.step3Title,
+      desc: sp.step3Desc,
+      icon: Puzzle,
+      color: "emerald",
+    },
+  ];
 
   return (
     <div className="pt-20 bg-background min-h-screen">
       {/* Hero Section */}
-      <section
-        className="relative h-[300px] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/contents/sub_visual03.png')" }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative z-10 text-center text-white"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold">{t.service.autosar.title}</h1>
-        </motion.div>
-      </section>
+      <section className="relative min-h-[600px] flex items-center overflow-hidden">
+        {/* Background Blur Orbs */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px]" />
+          <div className="absolute top-1/2 right-1/3 w-[300px] h-[300px] bg-cyan-400/10 rounded-full blur-[80px]" />
+        </div>
 
-      {/* Breadcrumb */}
-      <nav className="bg-surface border-b border-border py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-text-text-secondary hover:text-accent-cyan transition-colors">{t.common.home}</Link>
-            <span className="text-text-tertiary">/</span>
-            <Link href="/service" className="text-text-text-secondary hover:text-accent-cyan transition-colors">{t.nav.service}</Link>
-            <span className="text-text-tertiary">/</span>
-            <span className="text-accent-cyan">{t.service.autosar.title}</span>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
+                <Settings className="w-4 h-4 text-cyan-400" />
+                <span className="text-cyan-400 text-sm font-medium">{sp.badge}</span>
+              </div>
+
+              {/* Title */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                {content.title}
+              </h1>
+
+              {/* Description */}
+              <p className="text-lg text-gray-400 mb-8 leading-relaxed max-w-xl">
+                {content.description}
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/support/qna"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 shadow-lg shadow-cyan-500/25"
+                >
+                  {t.service.consulting.contact}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/service"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/5 transition-all duration-300"
+                >
+                  {t.common.allServices}
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right: Floating Icon Cards */}
+            <div className="relative h-[400px] hidden lg:block">
+              {/* Card 1 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="absolute top-0 right-0 w-48"
+              >
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="bg-[#12121a] border border-white/10 rounded-2xl p-6 backdrop-blur-sm"
+                >
+                  <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
+                    <FileCode className="w-6 h-6 text-cyan-400" />
+                  </div>
+                  <h3 className="text-white font-semibold mb-1">{sp.card1Title}</h3>
+                  <p className="text-gray-400 text-sm">{sp.card1Desc}</p>
+                </motion.div>
+              </motion.div>
+
+              {/* Card 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="absolute top-1/3 left-0 w-48"
+              >
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  className="bg-[#12121a] border border-white/10 rounded-2xl p-6 backdrop-blur-sm"
+                >
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                    <Cpu className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <h3 className="text-white font-semibold mb-1">{sp.card2Title}</h3>
+                  <p className="text-gray-400 text-sm">{sp.card2Desc}</p>
+                </motion.div>
+              </motion.div>
+
+              {/* Card 3 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="absolute bottom-0 right-1/4 w-48"
+              >
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="bg-[#12121a] border border-white/10 rounded-2xl p-6 backdrop-blur-sm"
+                >
+                  <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                    <Puzzle className="w-6 h-6 text-emerald-400" />
+                  </div>
+                  <h3 className="text-white font-semibold mb-1">{sp.card3Title}</h3>
+                  <p className="text-gray-400 text-sm">{sp.card3Desc}</p>
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
-      </nav>
+      </section>
 
-      {/* Content */}
-      <section className="py-16">
+      {/* Implementation Process Section */}
+      <section className="py-24 relative">
         <div className="container mx-auto px-4">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {sp.processTitle}
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              {sp.processSubtitle}
+            </p>
+          </motion.div>
+
+          {/* Step Flow */}
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            {/* Connection Lines */}
+            <div className="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-cyan-500/50 via-blue-500/50 to-emerald-500/50 -translate-y-1/2" />
+
+            {steps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="relative"
+              >
+                <div className={`h-full bg-[#12121a] border border-${step.color}-500/20 rounded-2xl p-8 hover:border-${step.color}-500/40 transition-all duration-300`}>
+                  {/* Step Number */}
+                  <div className={`absolute -top-4 left-8 px-4 py-1 bg-${step.color}-500 text-white text-sm font-bold rounded-full`}>
+                    Step {step.number}
+                  </div>
+
+                  {/* Icon */}
+                  <div className={`w-14 h-14 bg-${step.color}-500/20 rounded-xl flex items-center justify-center mb-6 mt-4`}>
+                    <step.icon className={`w-7 h-7 text-${step.color}-400`} />
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+                  <p className="text-gray-400">{step.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Scope Section */}
+      <section className="py-24 relative bg-[#0d0d12]">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
+              {sp.scopeTitle}
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {sp.scopeItems.map((item: string, index: number) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="flex items-center gap-4 bg-[#12121a] border border-cyan-500/20 rounded-xl p-5 hover:border-cyan-500/40 transition-all"
+                >
+                  <div className="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-5 h-5 text-cyan-400" />
+                  </div>
+                  <span className="text-gray-300">{item}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 relative overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10" />
+        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-cyan-500/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-blue-500/20 rounded-full blur-[100px]" />
+
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl font-bold text-center mb-8 text-white">{t.service.autosar.pageTitle}</h2>
-            <p className="text-center text-text-secondary max-w-3xl mx-auto mb-12">
-              {t.service.autosar.description}
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              {sp.ctaTitle1}
+              <br />
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                {sp.ctaTitle2}
+              </span>
+            </h2>
+            <p className="text-gray-400 text-lg mb-8">
+              {content.description}
             </p>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              <div className="bg-surface rounded-2xl border border-border p-8 hover:border-accent-cyan/50 transition-colors">
-                <div className="w-12 h-12 bg-accent-cyan/10 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl font-bold text-accent-cyan">1</span>
-                </div>
-                <h4 className="text-lg font-bold mb-3 text-white">ARXML Design</h4>
-                <p className="text-text-secondary text-sm">
-                  AUTOSAR 표준에 맞는 ARXML 설계 및 구현 서비스를 제공합니다.
-                </p>
-              </div>
-
-              <div className="bg-surface rounded-2xl border border-border p-8 hover:border-accent-cyan/50 transition-colors">
-                <div className="w-12 h-12 bg-accent-cyan/10 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl font-bold text-accent-cyan">2</span>
-                </div>
-                <h4 className="text-lg font-bold mb-3 text-white">SW Component Development</h4>
-                <p className="text-text-secondary text-sm">
-                  Adaptive AUTOSAR SW Component 개발 서비스를 제공합니다.
-                </p>
-              </div>
-
-              <div className="bg-surface rounded-2xl border border-border p-8 hover:border-accent-cyan/50 transition-colors">
-                <div className="w-12 h-12 bg-accent-cyan/10 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl font-bold text-accent-cyan">3</span>
-                </div>
-                <h4 className="text-lg font-bold mb-3 text-white">System Integration</h4>
-                <p className="text-text-secondary text-sm">
-                  전체 시스템 통합 및 검증 서비스를 제공합니다.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-accent-cyan/5 border border-accent-cyan/20 rounded-2xl p-8 mb-12">
-              <h3 className="text-xl font-bold mb-6 text-white">Service Scope</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-accent-cyan flex-shrink-0 mt-1" />
-                  <p className="text-text-secondary">Adaptive Platform 기반 ECU SW 개발</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-accent-cyan flex-shrink-0 mt-1" />
-                  <p className="text-text-secondary">SOME/IP 통신 구현</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-accent-cyan flex-shrink-0 mt-1" />
-                  <p className="text-text-secondary">Diagnostic 기능 구현</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-accent-cyan flex-shrink-0 mt-1" />
-                  <p className="text-text-secondary">OTA Update 기능 구현</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <Link
-                href="/support/qna"
-                className="inline-block px-8 py-4 bg-accent-cyan text-white font-semibold rounded-lg hover:bg-accent-cyan/90 transition-colors"
-              >
-                {t.service.consulting.contact}
-              </Link>
-            </div>
+            <Link
+              href="/support/qna"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 shadow-lg shadow-cyan-500/25"
+            >
+              {t.service.consulting.contact}
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </motion.div>
         </div>
       </section>

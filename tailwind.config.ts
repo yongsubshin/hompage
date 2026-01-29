@@ -56,9 +56,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "'Noto Sans KR'", "system-ui", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "JetBrains Mono", "monospace"],
-        display: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        sans: ["var(--font-pretendard)", "system-ui", "-apple-system", "sans-serif"],
+        mono: ["'JetBrains Mono'", "'Fira Code'", "Consolas", "monospace"],
+        display: ["var(--font-pretendard)", "system-ui", "sans-serif"],
       },
       fontSize: {
         "display": ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
