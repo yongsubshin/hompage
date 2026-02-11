@@ -128,7 +128,7 @@ export default function ProductsPage() {
                 key={product.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
                 <Link href={product.href}>
@@ -172,7 +172,7 @@ export default function ProductsPage() {
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0 }}
               className="text-3xl sm:text-4xl font-bold text-white mb-6"
             >
               {t.products.cta.title}
@@ -180,7 +180,7 @@ export default function ProductsPage() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0 }}
               transition={{ delay: 0.1 }}
               className="text-text-secondary text-lg mb-8"
             >
@@ -189,7 +189,7 @@ export default function ProductsPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0 }}
               transition={{ delay: 0.2 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >

@@ -12,9 +12,9 @@ export default function ContactPage() {
     {
       name: t.company.contact.koreaOffice,
       address: t.company.contact.koreaAddress,
-      tel: "TEL: 02-568-3068",
+      tel: "TEL: +82-2-568-3068",
       fax: "FAX: 02-568-3069",
-      email: "contact@popcornsar.com",
+      email: "support@popcornsar.com",
       mapSrc:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d791.2787896595394!2d127.05474662854648!3d37.50520199824616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca411465d84ab%3A0xd7901b99f65023e3!2z7ISc7Jq47Yq567OE7IucIOqwleuCqOq1rCDthYztl6TrnoDroZw3OOq4uCAxNg!5e0!3m2!1sko!2skr!4v1761019884114!5m2!1sko!2skr",
       gradient: "from-cyan-500 to-blue-500",
@@ -78,7 +78,7 @@ export default function ContactPage() {
                 key={office.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0 }}
                 transition={{ duration: 0.6, delay: office.delay }}
                 className="group relative"
               >
@@ -196,7 +196,7 @@ export default function ContactPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0 }}
             transition={{ duration: 0.6 }}
             className="max-w-2xl mx-auto text-center"
           >

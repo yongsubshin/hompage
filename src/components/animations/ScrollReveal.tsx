@@ -53,7 +53,7 @@ export function ScrollReveal({
   duration = 0.6,
   distance = 40,
   once = true,
-  threshold = 0.1,
+  threshold = 0,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once, amount: threshold });
@@ -93,7 +93,7 @@ export function StaggerContainer({
   once = true,
 }: StaggerContainerProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once, amount: 0.1 });
+  const isInView = useInView(ref, { once, amount: 0 });
 
   const containerVariants: Variants = {
     hidden: {},
@@ -195,7 +195,7 @@ export function FadeInWhenVisible({
   duration = 0.6,
 }: FadeInWhenVisibleProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0 });
 
   return (
     <motion.div
@@ -226,7 +226,7 @@ export function ScaleIn({
   delay = 0,
 }: ScaleInProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, { once: true, amount: 0 });
 
   return (
     <motion.div

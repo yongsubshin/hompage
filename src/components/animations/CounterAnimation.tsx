@@ -25,7 +25,7 @@ export function Counter({
   className = "",
 }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, { once: true, amount: 0 });
   const [hasAnimated, setHasAnimated] = useState(false);
 
   const springValue = useSpring(from, {
@@ -77,7 +77,7 @@ export function StatCard({
   className = "",
 }: StatCardProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0 });
 
   return (
     <motion.div
@@ -212,7 +212,7 @@ export function ProgressBar({
   barColor = "bg-gradient-to-r from-accent-blue to-accent-cyan",
 }: ProgressBarProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, { once: true, amount: 0 });
   const percentage = Math.min((value / max) * 100, 100);
 
   return (
