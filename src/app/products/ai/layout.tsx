@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "PARVIS",
+  title: {
+    absolute: "PARVIS | PopcornSAR",
+  },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

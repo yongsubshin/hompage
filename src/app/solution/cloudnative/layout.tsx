@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Cloud Native",
+  title: {
+    absolute: "Cloud Native | PopcornSAR",
+  },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

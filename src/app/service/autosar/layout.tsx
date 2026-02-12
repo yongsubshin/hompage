@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AUTOSAR Implementation",
+  title: {
+    absolute: "AUTOSAR Implementation | PopcornSAR",
+  },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
