@@ -471,7 +471,7 @@
       "contact": "培训教育以访问客户公司的形式进行。有关培训教育请通过\"了解更多\"或PopcornSAR邮箱(sales@popcornsar.com)咨询。"
     },
     "ai": {
-      "description": "基于 PopcornSAR 的自主 AI 技术，我们提供面向汽车软件定义汽车（SDV，Software Defined Vehicle）环境的 AI Agent 设计培训。本课程面向真实的汽车开发场景，培养学员在智能 AI Agent 设计与实现方面的能力，支持学员亲自主导 SDV 定制化 Agent 的设计、开发与应用。",
+      "description": "基于 PopcornSAR 的自主 AI 技术，我们提供面向SDV（Software Defined Vehicle）环境的 AI Agent 设计培训。本课程面向真实的汽车开发场景，培养学员在智能 AI Agent 设计与实现方面的能力，支持学员亲自主导 SDV 定制化 Agent 的设计、开发与应用。",
       "scope": "培训范围",
       "scopeContent": "- 面向汽车软件开发生命周期优化的 AI Agent 设计与开发实操<br>- 基于 AUTOSAR、MISRA 等车规标准的 AI 模型应用<br>- 基于 V-Model 的需求分析、代码生成与验证流程自动化",
       "contact": "PopcornSAR 主要提供上门驻场培训。有关课程的咨询，请使用下方\"咨询\"按钮，或发送邮件至 <a href=\"mailto:sales@popcornsar.com\">sales@popcornsar.com</a>。"

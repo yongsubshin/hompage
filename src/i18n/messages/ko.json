@@ -471,7 +471,7 @@
       "contact": "팝콘사 교육은 고객사를 방문하여 진행하는 출장 교육을 주로 제공하고 있습니다. 교육에 대한 문의는 아래 문의하기 버튼 또는 메일(<a href=\"mailto:sales@popcornsar.com\">sales@popcornsar.com</a>)을 이용해 주시기 바랍니다."
     },
     "ai": {
-      "description": "팝콘사의 독자적인 AI 기술을 기반으로, 자동차 SW 정의 차량(SDV, Software Defined Vehicle) 환경에 특화된 AI Agent 설계 교육을 제공합니다.\n본 과정은 자동차 분야의 실제 개발 환경에서 요구되는 지능형 AI Agent 설계 및 구현 능력을 함양하도록 구성되어 있으며, 참가자가 직접 SDV 맞춤형 Agent를 설계·개발·적용할 수 있도록 지원합니다.",
+      "description": "팝콘사의 독자적인 AI 기술을 기반으로, SDV(Software Defined Vehicle) 환경에 특화된 AI Agent 설계 교육을 제공합니다.\n본 과정은 자동차 분야의 실제 개발 환경에서 요구되는 지능형 AI Agent 설계 및 구현 능력을 함양하도록 구성되어 있으며, 참가자가 직접 SDV 맞춤형 Agent를 설계·개발·적용할 수 있도록 지원합니다.",
       "scope": "교육 범위",
       "scopeContent": "- 자동차 소프트웨어 개발 생명주기에 최적화된 AI Agent 설계 및 개발 실습<br>\n- AUTOSAR, MISRA 등 차량용 표준 기반의 AI 모델 적용<br>\n- VModel 기반 요구사항 분석, 코드 생성, 검증 프로세스 자동화",
       "contact": "팝콘사 교육은 고객사를 방문하여 진행하는 출장 교육을 주로 제공하고 있습니다. 교육에 대한 문의는 아래 문의하기 버튼 또는 메일(<a href=\"mailto:sales@popcornsar.com\">sales@popcornsar.com</a>)을 이용해 주시기 바랍니다."

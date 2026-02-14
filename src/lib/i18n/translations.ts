@@ -646,7 +646,7 @@ export const translations = {
       aiTraining: {
         title: "AI Agent Core Training",
         pageTitle: "AI Agent Core Training",
-        description: "팝콘사의 독자적인 AI 기술을 기반으로, 자동차 SW 정의 차량(SDV, Software Defined Vehicle) 환경에 특화된 AI Agent 설계 교육을 제공합니다. 본 과정은 자동차 분야의 실제 개발 환경에서 요구되는 지능형 AI Agent 설계 및 구현 능력을 함양하도록 구성되어 있으며, 참가자가 직접 SDV 맞춤형 Agent를 설계·개발·적용할 수 있도록 지원합니다.",
+        description: "팝콘사의 독자적인 AI 기술을 기반으로, SDV(Software Defined Vehicle) 환경에 특화된 AI Agent 설계 교육을 제공합니다. 본 과정은 자동차 분야의 실제 개발 환경에서 요구되는 지능형 AI Agent 설계 및 구현 능력을 함양하도록 구성되어 있으며, 참가자가 직접 SDV 맞춤형 Agent를 설계·개발·적용할 수 있도록 지원합니다.",
         scope: "교육 범위",
         scopeList: [
           "자동차 소프트웨어 개발 생명주기에 최적화된 AI Agent 설계 및 개발 실습",
@@ -2716,7 +2716,7 @@ export const translations = {
       aiTraining: {
         title: "AI Agent核心培训",
         pageTitle: "AI Agent核心培训",
-        description: "基于PopcornSAR的专有AI技术，我们提供专门针对汽车软件定义车辆（SDV）环境的AI Agent设计培训。该课程旨在培养在实际汽车开发环境中所需的智能AI代理设计和实施能力，使参与者能够自己设计、开发和应用SDV定制代理。",
+        description: "基于PopcornSAR的专有AI技术，我们提供专门针对SDV（Software Defined Vehicle）环境的AI Agent设计培训。该课程旨在培养在实际汽车开发环境中所需的智能AI代理设计和实施能力，使参与者能够自己设计、开发和应用SDV定制代理。",
         scope: "培训范围",
         scopeList: [
           "针对汽车软件开发生命周期优化的AI代理设计和开发实践",
@@ -3749,7 +3749,7 @@ export const translations = {
       aiTraining: {
         title: "AI Agentコアトレーニング",
         pageTitle: "AI Agentコアトレーニング",
-        description: "PopcornSARの独自AI技術に基づき、自動車Software-Defined Vehicle（SDV）環境に特化したAI Agent設計トレーニングを提供しています。このプログラムは、実際の自動車開発環境で必要とされるインテリジェントなAIエージェントの設計と実装スキルを構築するように構成されており、参加者がSDVに特化したエージェントを自分で設計、開発、適用できるようにします。",
+        description: "PopcornSARの独自AI技術に基づき、SDV（Software Defined Vehicle）環境に特化したAI Agent設計トレーニングを提供しています。このプログラムは、実際の自動車開発環境で必要とされるインテリジェントなAIエージェントの設計と実装スキルを構築するように構成されており、参加者がSDVに特化したエージェントを自分で設計、開発、適用できるようにします。",
         scope: "トレーニング範囲",
         scopeList: [
           "自動車ソフトウェア開発ライフサイクルに最適化されたAIエージェントの設計と開発の実践",

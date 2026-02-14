@@ -490,7 +490,7 @@
       "contact": "基本的にお客様向けの出張トレーニングを実施しています。詳しくは下記のお問い合わせまたはjapan-sales@popcornsar.comまでお願いいたします。"
     },
     "ai": {
-      "description": "PopcornSAR の独自 AI 技術を基盤に、ソフトウェア定義車両（SDV: Software Defined Vehicle）環境に特化した AI Agent 設計トレーニングを提供します。本コースは実際の自動車開発現場で求められる知能型 AI エージェントの設計・実装スキルを育成し、受講者が SDV 向けエージェントを自ら設計・開発・適用できるよう支援します。",
+      "description": "PopcornSAR の独自 AI 技術を基盤に、SDV（Software Defined Vehicle）環境に特化した AI Agent 設計トレーニングを提供します。本コースは実際の自動車開発現場で求められる知能型 AI エージェントの設計・実装スキルを育成し、受講者が SDV 向けエージェントを自ら設計・開発・適用できるよう支援します。",
       "scope": "研修範囲",
       "scopeContent": "- 自動車ソフトウェア開発ライフサイクルに最適化した AI エージェントの設計・開発実習<br>- AUTOSAR・MISRA など車載規格に準拠した AI モデルの適用<br>- V-Model に基づく要件分析・コード生成・検証プロセスの自動化",
       "contact": "PopcornSAR の研修は主にお客様先でのオンサイト（出張）形式で実施しています。研修に関するお問い合わせは、下部の「お問い合わせ」ボタン、または <a href=\"mailto:sales@popcornsar.com\">sales@popcornsar.com</a> までご連絡ください。"
