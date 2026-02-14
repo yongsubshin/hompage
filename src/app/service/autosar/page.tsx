@@ -60,8 +60,8 @@ export default function AutosarServicePage() {
               </div>
 
               {/* Title */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight whitespace-pre-line break-keep">
-                {content.title}
+              <h1 className="text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white mb-6 leading-tight">
+                AUTOSAR<br />Implementation
               </h1>
 
               {/* Description */}

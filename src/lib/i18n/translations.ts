@@ -610,7 +610,7 @@ export const translations = {
         contact: "문의하기",
       },
       autosar: {
-        title: "AUTOSAR\nImplementation",
+        title: "AUTOSAR Implementation",
         pageTitle: "AUTOSAR 구현 서비스",
         description: "고객이 프로젝트 전체에 집중할 수 있도록, ECU 프로젝트의 AUTOSAR 파트 구현 서비스를 제공합니다.",
       },
