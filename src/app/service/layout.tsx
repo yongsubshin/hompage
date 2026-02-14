@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     description:
       "ASPICE consulting, AUTOSAR implementation, training, and AI Agent Core education services.",
     url: "/service",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: {
     canonical: "/service",

@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     description:
       "ASPICE & AUTOSAR Adaptive Platform leader. 50+ global clients, 100+ projects.",
     url: "/company",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: {
     canonical: "/company",

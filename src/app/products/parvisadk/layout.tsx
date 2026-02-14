@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     description:
       "AI-powered SDV End-to-End automation. TDD test case generation, ASPICE V-Model compliance. 70-80% faster development.",
     url: "/products/parvisadk",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: { canonical: "/products/parvisadk" },
 };

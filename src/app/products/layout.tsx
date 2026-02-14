@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     description:
       "ASPICE automation AI tools and AUTOSAR development platform. PARVIS, AutoSAR.io, PARA, PACON IDE.",
     url: "/products",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: {
     canonical: "/products",

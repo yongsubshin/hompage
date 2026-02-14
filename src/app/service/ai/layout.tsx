@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description:
       "SDV-specialized AI Agent design training. Architecture, LLM integration, hands-on curriculum.",
     url: "/service/ai",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: { canonical: "/service/ai" },
 };

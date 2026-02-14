@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description:
       "AWS-based cloud native AUTOSAR development. ARM64 virtual ECU, CI/CD integration.",
     url: "/solution/cloudnative",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: { canonical: "/solution/cloudnative" },
 };

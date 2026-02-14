@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description:
       "AI-powered test case generation (86.4% coverage). ASPICE V-Model automation, ISO 26262 verification, MISRA-C compliance. 3-4x productivity gain.",
     url: "/products/ai",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: { canonical: "/products/ai" },
 };

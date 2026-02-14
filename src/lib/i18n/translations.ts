@@ -41,13 +41,13 @@ export const translations = {
       allProducts: "모든 제품",
       exploreProducts: "제품 살펴보기",
       scroll: "스크롤",
-      solution: "Solution",
-      solutions: "Solutions",
-      service: "Service",
-      services: "Services",
-      products: "Products",
+      solution: "솔루션",
+      solutions: "솔루션",
+      service: "서비스",
+      services: "서비스",
+      products: "제품",
       resources: "리소스",
-      support: "Support",
+      support: "고객지원",
       consultation: "상담 신청",
       close: "닫기",
     },
@@ -657,7 +657,7 @@ export const translations = {
       },
       // Service sub-page UI elements
       autosarPage: {
-        badge: "Implementation",
+        badge: "AUTOSAR 구현",
         processTitle: "구현 프로세스",
         processSubtitle: "End-to-end AUTOSAR 구현 서비스",
         step1Title: "ARXML Design",
@@ -683,7 +683,7 @@ export const translations = {
         card3Desc: "시스템 레벨",
       },
       educationPage: {
-        badge: "Training",
+        badge: "교육",
         methodsTitle: "교육 방식",
         methodsSubtitle: "다양한 방식의 교육 프로그램을 제공합니다",
         theoryTitle: "Theory",
@@ -704,7 +704,7 @@ export const translations = {
         ctaTitle2: "배울 준비가 되셨나요?",
       },
       toolPage: {
-        badge: "Custom Development",
+        badge: "맞춤 개발",
         examplesSubtitle: "프로젝트 효율을 높이는 맞춤형 도구",
         ctaTitle1: "맞춤형 도구가",
         ctaTitle2: "필요하신가요?",
@@ -716,7 +716,7 @@ export const translations = {
         card3Desc: "포맷 변환",
       },
       aiPage: {
-        badge: "AI Training",
+        badge: "AI 교육",
         pillarsTitle: "교육 핵심 영역",
         pillarsSubtitle: "AI Agent 개발을 위한 핵심 교육 영역",
         designTitle: "AI Agent Design",
@@ -990,7 +990,7 @@ export const translations = {
     },
     // Consulting page cards
     consultingPage: {
-      badge: "Consulting",
+      badge: "컨설팅",
       partnership: "Partnership",
       partnershipDesc: "전문가 협업",
       customized: "Customized",

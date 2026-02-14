@@ -77,6 +77,13 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/",
+    languages: {
+      "ko": "https://web.popcornsar.com",
+      "en": "https://web.popcornsar.com",
+      "ja": "https://web.popcornsar.com",
+      "zh": "https://web.popcornsar.com",
+      "x-default": "https://web.popcornsar.com",
+    },
   },
 };
 

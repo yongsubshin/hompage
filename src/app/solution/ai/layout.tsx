@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description:
       "Integrate AI/ML workloads with AUTOSAR Adaptive Platform for intelligent vehicle features.",
     url: "/solution/ai",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: { canonical: "/solution/ai" },
 };

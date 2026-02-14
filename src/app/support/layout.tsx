@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     description:
       "PopcornSAR product downloads and technical support. AutoSAR.io trial available.",
     url: "/support",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: {
     canonical: "/support",

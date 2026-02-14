@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description:
       "MATLAB & Simulink integration with AUTOSAR Adaptive Platform.",
     url: "/solution/matlab",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: { canonical: "/solution/matlab" },
 };

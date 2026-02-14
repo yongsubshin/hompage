@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     description:
       "Frequently asked questions about AUTOSAR development and PopcornSAR products.",
     url: "/support/qna",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: {
     canonical: "/support/qna",

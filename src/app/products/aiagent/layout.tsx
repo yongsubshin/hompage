@@ -17,6 +17,14 @@ export const metadata: Metadata = {
     description:
       "AI-powered AUTOSAR development. Auto-generate ARXML, search APIs/SWS docs. 70%+ time savings.",
     url: "/products/aiagent",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: { canonical: "/products/aiagent" },
 };

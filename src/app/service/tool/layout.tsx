@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     description:
       "Custom AUTOSAR development tools. Automation scripts, plugins, project-specific tools.",
     url: "/service/tool",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: { canonical: "/service/tool" },
 };

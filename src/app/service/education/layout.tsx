@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     description:
       "ASPICE and AUTOSAR Classic & Adaptive professional training. Beginner to advanced curriculum.",
     url: "/service/education",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: { canonical: "/service/education" },
 };

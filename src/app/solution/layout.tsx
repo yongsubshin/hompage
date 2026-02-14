@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     description:
       "Cloud Native, Digital Twin, AI-based AUTOSAR solutions with MATLAB integration.",
     url: "/solution",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: {
     canonical: "/solution",

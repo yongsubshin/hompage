@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     description:
       "ECU project AUTOSAR Classic & Adaptive implementation. Production project experience.",
     url: "/service/autosar",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: { canonical: "/service/autosar" },
 };

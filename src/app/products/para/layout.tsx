@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     description:
       "AUTOSAR Adaptive Functional Clusters with ISO 26262 safety mechanisms. API, C++ Generator, Manifest Generator.",
     url: "/products/para",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: { canonical: "/products/para" },
 };

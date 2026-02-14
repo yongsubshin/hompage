@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description:
       "AI agent-based AUTOSAR automatic migration. Classic to Adaptive, version upgrade.",
     url: "/solution/aiagent",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: { canonical: "/solution/aiagent" },
 };

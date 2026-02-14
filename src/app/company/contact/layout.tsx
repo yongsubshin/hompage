@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     description:
       "Contact PopcornSAR. Seoul HQ and Tokyo office. AUTOSAR product and solution inquiries.",
     url: "/company/contact",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: {
     canonical: "/company/contact",

@@ -18,6 +18,14 @@ export const metadata: Metadata = {
     description:
       "AUTOSAR Classic & Adaptive ARXML design tool. Web-based, R20-11 support.",
     url: "/products/autosario",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PopcornSAR - ASPICE & AUTOSAR Solutions Provider",
+      },
+    ],
   },
   alternates: { canonical: "/products/autosario" },
 };
