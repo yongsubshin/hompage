@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: {
-    absolute: "고객지원 | PopcornSAR",
+  title: "고객지원",
+  description:
+    "PopcornSAR 제품 다운로드 및 기술 지원. AutoSAR.io 평가판, 개발 플랫폼 소개 자료.",
+  openGraph: {
+    title: "고객지원 | PopcornSAR",
+    description:
+      "PopcornSAR product downloads and technical support. AutoSAR.io trial available.",
+    url: "/support",
+  },
+  alternates: {
+    canonical: "/support",
   },
 };
 
