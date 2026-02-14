@@ -323,7 +323,7 @@ export const translations = {
       webPlatform: "웹 플랫폼",
       demoVideos: "데모 영상",
       watchDemo: "AutoSAR.io 데모 영상",
-      title: "The Complete Solution for AUTOSAR ARXML Design",
+      title: "AUTOSAR ARXML 설계를 위한 완벽한 솔루션",
       intro: "AutoSAR.io는 AUTOSAR 기반의 시스템 및 소프트웨어 모델링을 위한 설계 소프트웨어입니다. OEM, ECU Supplier(Tier1), Automotive Application Vendor을 아우르는 다양한 관점에서, Classic 및 Adaptive Platform의 AUTOSAR 소프트웨어 요구사항을 해결할 수 있습니다. AutoSAR.io를 통해 사용자는 CP/AP에서 더 빠르고 정확한 ARXML 설계를 할 수 있습니다.",
       supportScopeTitle: "AutoSAR.io에서 지원하는 설계 범위",
       supportItems: [
@@ -432,7 +432,7 @@ export const translations = {
       title: "회사소개",
       description1: "오늘날 자동차는 수많은 전자장치 부품이 탑재된 모빌리티 디바이스로 변화하였습니다. SW플랫폼과 어플리케이션을 통해 안전성이 향상되었고, 다양한 편의 기능을 제공하고 있습니다. 이러한 변화는 '연결성(C), 자율주행(A), 공유(S), 전동화(E)'라는 자동차 산업의 메가트랜드로 인해 더욱 가속화되고 있으며, 자동차 구조(E/E Architecture)의 변화로 나타나고 있습니다.",
       description2: "자동차SW가 구동되는 ECU(Electronic Control Unit)에 고성능 CPU를 적용하는 것입니다. 이를 통해, 많은 컴퓨팅 자원을 요구하는 자율주행 AI와 같이 어플리케이션을 사용할 수 있으며, 차량 당 130여 개에 이르는 ECU의 수를 획기적으로 줄일 수 있습니다. 이러한 변화에 맞춰 새롭게 등장한 자동차SW플랫폼이 바로 AUTOSAR Adaptive Platform입니다.",
-      description3: "AUTOSAR 표준은 자동차 제어를 담당하는 유일한 국제표준으로, Classic Platform과 Adaptive Platform으로 구성됩니다. Classic Platfrom은 전통적인 관점에서 출발하여 실시간성과 안전성이 강조된 SW플랫폼으로 직접적인 제어를 담당합니다. 반면, Adaptive Platform은 자율주행 AI와 같이 많은 컴퓨터 자원을 사용하는 소프트웨어를 구동할 수 있는 SW플랫폼입니다. AUTOSAR Adaptive Platform은 폭스바겐에 의해 2019년 11월 순수전기차 ID.3 양산에 최초 적용되었으며, 현재 도요타, 현대자동차, BMW, Volvo 등의 글로벌 자동차 기업에서 양산 적용을 서두르고 있습니다.",
+      description3: "AUTOSAR 표준은 자동차 제어를 담당하는 유일한 국제표준으로, Classic Platform과 Adaptive Platform으로 구성됩니다. Classic Platform은 전통적인 관점에서 출발하여 실시간성과 안전성이 강조된 SW플랫폼으로 직접적인 제어를 담당합니다. 반면, Adaptive Platform은 자율주행 AI와 같이 많은 컴퓨터 자원을 사용하는 소프트웨어를 구동할 수 있는 SW플랫폼입니다. AUTOSAR Adaptive Platform은 폭스바겐에 의해 2019년 11월 순수전기차 ID.3 양산에 최초 적용되었으며, 현재 도요타, 현대자동차, BMW, Volvo 등의 글로벌 자동차 기업에서 양산 적용을 서두르고 있습니다.",
       description4: "스마트폰이 새로운 비즈니스와 생태계를 이끌었듯, 자동차도 새로운 모빌리티 서비스를 제공하는 시대가 곧 펼쳐질 것입니다. AUTOSAR Adaptive Platform은 새로운 모빌리티 서비스 시대의 마중물과 같습니다.",
       description5: "팝콘사는 자체 기술로 개발한 AUTOSAR Adaptive Platform을 기반으로, 다양한 분야의 개발자들이 새로운 모빌리티 서비스를 쉽고 빠르게 개발할 수 있는 환경을 제공하고자 합니다. 그러한 의미로, 누구나 쉽게 접근할 수 있는 팝콘(Popcorn)과 시스템 아키텍쳐(System ARchitecture)를 합성한 팝콘사(PopcornSAR)를 사명으로 정하였습니다. 새로운 모빌리티 서비스 시대는 먼 미래가 아니라 곧 구현될 현실로 다가오고 있습니다. 팝콘사는 다가올 시대를 준비하며, 다양한 모빌리티 서비스 개발을 지원하는 글로벌 자동차SW플랫폼 기업으로 성장하겠습니다.",
       customers: "주요고객",
@@ -476,7 +476,7 @@ export const translations = {
       ctaTitle: "자동차 소프트웨어 혁신을 준비하고 계신가요?",
       ctaDesc: "팝콘사와 함께 자동차 소프트웨어 개발을 가속화하세요.",
       contact: {
-        title: "Contact Us",
+        title: "문의하기",
         koreaOffice: "한국 본사",
         japanOffice: "일본 법인",
         koreaAddress: "서울시 강남구 테헤란로78길 16, 노벨빌딩 2층(06194)",
@@ -595,23 +595,23 @@ export const translations = {
         forOem: "For OEM",
         forOemList: [
           "Adaptive Platform 요구사항 정립을 위한 컨설팅",
-          "Functional Requirement",
-          "Functional Architecture",
-          "Data type Design / Port Interface Design / SW Component Design",
-          "Network Design (CAN, Ethernet) for E/E Architecture",
-          "Diagnostic Design for Safety & Maintenance",
+          "기능 요구사항",
+          "기능 아키텍처",
+          "데이터 타입 설계 / 포트 인터페이스 설계 / SW 컴포넌트 설계",
+          "E/E 아키텍처용 네트워크 설계 (CAN, Ethernet)",
+          "안전 및 유지보수를 위한 진단 설계",
         ],
         forTier1: "For ECU Supplier(Tier1)",
         forTier1List: [
           "Adaptive Platform 기반의 ECU 프로젝트 수행을 위한 컨설팅 제공",
-          "Analysis for OEM requirement",
-          "Check list for AUTOSAR project implementation",
+          "OEM 요구사항 분석",
+          "AUTOSAR 프로젝트 구현 체크리스트",
         ],
         contact: "문의하기",
       },
       autosar: {
-        title: "AUTOSAR Implementation",
-        pageTitle: "AUTOSAR Implementation",
+        title: "AUTOSAR\nImplementation",
+        pageTitle: "AUTOSAR 구현 서비스",
         description: "고객이 프로젝트 전체에 집중할 수 있도록, ECU 프로젝트의 AUTOSAR 파트 구현 서비스를 제공합니다.",
       },
       education: {
@@ -738,7 +738,7 @@ export const translations = {
     // PARA page
     para: {
       title: "AUTOSAR Classic & Adaptive Functional Clusters",
-      subtitle: "Realize your idea for future car",
+      subtitle: "미래 자동차를 위한 아이디어를 실현하세요",
       intro1: "PARA는 AUTOSAR Classic 및 Adaptive Platform 구현을 위해, AUTOSAR 표준을 기반으로 팝콘사에서 독자적으로 개발한 플랫폼 소프트웨어입니다.",
       intro2: "PARA는 AUTOSAR Standard Functional Cluster API, C++ Generator, Manifest Generator, 그리고, Basic Platform Level Application으로 구성되어 있으며, Adaptive Platform의 기본기능을 라이브러리 형태로 제공하고 있습니다.",
       araTitle: "AUTOSAR Runtime for Adaptive Application(ARA)",
@@ -844,6 +844,8 @@ export const translations = {
       toolFunctionalName: "Cluster (PARA)",
       toolIde: "통합개발환경",
       toolIdeName: "(PACON IDE)",
+      ctaGetStarted: "시작하기",
+      ctaExploreTools: "도구 살펴보기",
     },
     // PARVIS page
     parvis: {
@@ -1878,6 +1880,8 @@ export const translations = {
       toolFunctionalName: "Cluster (PARA)",
       toolIde: "Integrated development environment",
       toolIdeName: "(PACON IDE)",
+      ctaGetStarted: "Get Started",
+      ctaExploreTools: "Explore Tools",
     },
     // PARVIS page
     parvis: {
@@ -2909,6 +2913,8 @@ export const translations = {
       toolFunctionalName: "Cluster (PARA)",
       toolIde: "集成开发环境",
       toolIdeName: "(PACON IDE)",
+      ctaGetStarted: "开始使用",
+      ctaExploreTools: "浏览工具",
     },
     // PARVIS page
     parvis: {
@@ -3940,6 +3946,8 @@ export const translations = {
       toolFunctionalName: "Cluster (PARA)",
       toolIde: "統合開発環境",
       toolIdeName: "(PACON IDE)",
+      ctaGetStarted: "始める",
+      ctaExploreTools: "ツールを見る",
     },
     // PARVIS page
     parvis: {

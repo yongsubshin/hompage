@@ -88,14 +88,14 @@ export default function AdaptivePage() {
                   href="/support/qna"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent-blue text-white font-semibold rounded-xl hover:bg-accent-blue/90 transition-all hover:shadow-lg hover:shadow-accent-blue/25"
                 >
-                  <span>Get Started</span>
+                  <span>{content.ctaGetStarted}</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="#tools"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-surface border border-border text-white font-semibold rounded-xl hover:bg-surface-elevated hover:border-accent-blue/30 transition-all"
                 >
-                  Explore Tools
+                  {content.ctaExploreTools}
                 </Link>
               </div>
             </motion.div>
