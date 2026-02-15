@@ -471,7 +471,7 @@
       "contact": "Our training services are proceeded in customer's workplace. Please contact us by 'Send an E-mail' below or E-mail(sales@popcornsar.com)."
     },
     "ai": {
-      "description": "Based on PopcornSAR's proprietary AI technology, we provide AI Agent design training specialized for the automotive Software-Defined Vehicle (SDV) environment.\nThis program is structured to build the intelligent AI agent design and implementation skills required in real automotive development settings, enabling participants to design, develop, and apply SDV-tailored agents themselves.",
+      "description": "Based on PopcornSAR's proprietary AI technology, we provide AI Agent design training specialized for the automotive Software-Defined Vehicle (SDV) environment.\nThis program is structured to build the intelligent AI agent design and implementation skills required in real automotive development settings, enabling trainees to design, develop, and apply SDV-tailored agents themselves.",
       "scope": "Training Scope",
       "scopeContent": "- Hands-on design and development of AI agents optimized for the automotive software development lifecycle<br>\n- Application of AI models aligned with automotive standards such as AUTOSAR and MISRA<br>\n- Automation of V-Model-based requirements analysis, code generation, and verification processes",
       "contact": "PopcornSAR primarily offers on-site training delivered at the customer's location. For inquiries, please use the inquiry button below or email us at <a href=\"mailto:sales@popcornsar.com\">sales@popcornsar.com</a>."

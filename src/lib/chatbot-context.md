@@ -383,7 +383,7 @@ AUTOSAR 기반 ECU 양산 프로젝트 수행을 위한 개발자 교육을 제�
 ### AUTOSAR
 **자동차 개방형 시스템 아키텍처 표준**
 - Classic Platform: 전통적인 ECU 개발용 (실시간성, 안전성 강조, 직접 제어)
-- Adaptive Platform: 고성능 컴퓨팅용 (자율주행 AI, 많은 컴퓨터 자원 사용)
+- Adaptive Platform: 고성능 컴퓨팅용 (자율주행 AI, 많은 컴퓨팅 자원 사용)
 - 팝콘사 지원 버전: R24-11, R20-11, R19-11, R19-03
 
 ---

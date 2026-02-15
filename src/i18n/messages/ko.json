@@ -25,8 +25,8 @@
     "contactUs": "문의하기",
     "viewAll": "모두 보기",
     "contact": "문의하기",
-    "keyFeatures": "Key Features",
-    "benefits": "Benefits"
+    "keyFeatures": "주요 기능",
+    "benefits": "주요 장점"
   },
   "footer": {
     "description": "차세대 모빌리티를 위한 AUTOSAR 기반 개발 전문 자동차 소프트웨어 솔루션 기업.",
@@ -101,7 +101,7 @@
   },
   "main": {
     "intro": "<h3>팝콘사는 AUTOSAR Classic 및 Adaptive Platform 전문 Tool vendor입니다.<span class=\"pc_view\"><br></span>고객이 CP/AP 기반의 프로젝트 진행시  <span class=\"m_view\"><br></span>AUTOSAR와 관련된 부분들을 Tool과 컨설팅, <br>E/S를 제공을 통해 고객의 성공을 지원합니다.</h3>",
-    "autosarIntro": "<h3>AutoSAR.io는 AUTOSAR 기반의 시스템 및 소프트웨어 <span class=\"m_view\"><br></span>모델링을 위한<span class=\"pc_view\"><br></span>설계 소프트웨어입니다. <span class=\"m_view\"><br></span>OEM, ECU Supplier(Tier1), Automotive Application Vendor을<br>아우르는 다양한 관점에서, Classic 및 Adaptive Platform의 <span class=\"m_view\"><br></span><span class=\"pc_view\"><br></span>AUTOSAR 소프트웨어 요구사항을 해결할 수 있습니다.</h3>",
+    "autosarIntro": "<h3>AutoSAR.io는 AUTOSAR 기반의 시스템 및 소프트웨어 <span class=\"m_view\"><br></span>모델링을 위한<span class=\"pc_view\"><br></span>설계 소프트웨어입니다. <span class=\"m_view\"><br></span>OEM, ECU Supplier(Tier1), Automotive Application Vendor를<br>아우르는 다양한 관점에서, Classic 및 Adaptive Platform의 <span class=\"m_view\"><br></span><span class=\"pc_view\"><br></span>AUTOSAR 소프트웨어 요구사항을 해결할 수 있습니다.</h3>",
     "paraIntro": "<h3>PARA는 AUTOSAR Classic 및 Adaptive Platform 구현을 위해, AUTOSAR 표준을 기반으로 <br>팝콘사에서 독자적으로 개발한 플랫폼 소프트웨어입니다.<br><br>PARA는 AUTOSAR Standard Functional Cluster API, C++ Generator, <br>Manifest Generator, 그리고, Basic Platform Level Application으로 구성되어 있으며,<br>Classic 및 Adaptive Platform의 기본기능을 라이브러리 형태로 제공하고 있습니다.<br><br>PARA는 팝콘사의 AUTOSAR Application 전용 개발환경인<br>PACON IDE를 통해 사용할 수 있습니다.</h3>",
     "ideIntro": "<h3>PACON IDE는 AUTOSAR Application 개발에 필요한 <br>다양한 확장 기능을 갖춘 Classic 및 Adaptive Platform 전용 개발환경입니다.<br><br>Vscode상에서 Docker Container와 연동하며, ARA API와 Open Source API의<br>자동완성, 실시간 Coding Rule 체크, Debug와 같은 개발 편의 기능을 제공합니다.<br><br>특히, Docker Container를 기반으로 한 가상 ECU를 생성할 수 있기 때문에<br>효율적으로 AUTOSAR Application을 구현 및 테스트를 수행할 수 있습니다.</h3>",
     "serviceIntro": "<h3>팝콘사는 고객의 AUTOSAR 프로젝트 성공을 위한 전문적인 컨설팅, <br>주문 제작형 Tool 제작, AUTOSAR 구현, 체계적인 교육 지원 등 다양한 기술지원을 제공합니다.</h3>"
@@ -132,7 +132,7 @@
     },
     "autosario": {
       "title": "The Complete Solution for AUTOSAR ARXML Design",
-      "topContent": "AutoSAR.io는 AUTOSAR 기반의 시스템 및 소프트웨어 모델링을 위한 설계 소프트웨어입니다. OEM, ECU Supplier(Tier1), Automotive Application Vendor을 아우르는 다양한 관점에서, Classic 및 Adaptive Platform의 AUTOSAR 소프트웨어 요구사항을 해결할 수 있습니다.<br><br> AutoSAR.io를 통해 사용자는 CP/AP에서 더 빠르고 정확한 ARXML 설계를 할 수 있습니다.",
+      "topContent": "AutoSAR.io는 AUTOSAR 기반의 시스템 및 소프트웨어 모델링을 위한 설계 소프트웨어입니다. OEM, ECU Supplier(Tier1), Automotive Application Vendor를 아우르는 다양한 관점에서, Classic 및 Adaptive Platform의 AUTOSAR 소프트웨어 요구사항을 해결할 수 있습니다.<br><br> AutoSAR.io를 통해 사용자는 CP/AP에서 더 빠르고 정확한 ARXML 설계를 할 수 있습니다.",
       "flow": "ARXML 설계 플로우 (Classic & Adaptive Platform)",
       "tableTitle1": "AUTOSAR 개발방법론",
       "tableTitle2": "AutoSAR.io에서 지원되는 범위",
@@ -159,8 +159,8 @@
     "pacon": {
       "title": "Adaptive Application 개발 및 테스트를 위한 One-stop 통합개발환경",
       "description": "PACON IDE(Popcorn Automotive CONtainer Integrated Development Environment)는 코딩, 디버그, 컴파일, 배포 등 Adaptive Application 개발에 관련된 모든 작업을 하나의 프로그램 안에서 처리하는 통합 개발 환경을 의미합니다. <br><br>PACON IDE는 기존의 가상화 기술보다 가볍고, 실행 속도가 빠른 Docker Container 기술을 활용한 쾌적한 개발환경을 제공합니다. PACONE IDE는 사용자가 개별적으로 설치한 Vscode를 실행하여 Docker Container로 만들어진 개발환경에 접속할 수 있습니다.<br><br>이미 Adaptive Application 개발에 필요한 확장 기능들과 개발 효율성을 높이는 다양한 편의 기능들이 설치되어 있기 때문에, 사용자는 개발에 필요한 다양한 확장 기능이나 추가 프로그램을 일일이 설치하거나 매번 업데이트를 관리해야 하는 수고로움을 덜 수 있으므로, 빠르게 Adaptive Application을 개발할 수 있습니다.<br><br>특히, 실제 양산 프로젝트에서 사용하는 ECU와 동일한 기능이 적용된 가상 ECU를 Docker Container로 생성하여 사용할 수 있기 때문에, Adaptive Application의 구현부터 테스트에 이르는 전 과정을 시뮬레이션 할 수 있는 것이 포인트입니다.  <br><br>또한, 많은 개발자들에게 인기있고 대중적으로 사용되고 있는 소스 코드 편집기인 Vscode를 이용하기 때문에 기본적인 사용법이 어렵지 않습니다. Vscode를 사용하기 때문에, 실시간으로 소스 코드의 편집이 가능하고, 나아가 각종 형상관리 프로그램과 외부 저장소와의 연동을 통해 빌드 및 테스트 작업이 용이하며, Adaptive Application 개발 시 C++외에도 다양한 개발언어까지 사용할 수 있다는 장점도 있습니다.<br><br>",
-      "keyFeatures": "Key Features",
-      "benefits": "Benefits",
+      "keyFeatures": "주요 기능",
+      "benefits": "주요 장점",
       "feature1": " ARA API 및 Open Source API 자동완성",
       "feature2": " 실시간 AUTOSAR Coding Rule 체크 ",
       "feature3": " Debug 지원",
@@ -319,12 +319,12 @@
       "title": "Cloud Native 기반의 AA 개발 솔루션",
       "text1": "Cloud Native는 클라우드 컴퓨팅 환경에서 애플리케이션을 개발, 배포 및 관리하는 측면에서 확장성, 유연성을 고려한 방식입니다. <br> \n클라우드 인프라를 활용하여 애플리케이션 개발을 효율적으로 수행할 수 있는 도구와 기술을 지원합니다. <br>\n특히 이러한 Cloud Native 기술은 사용자의 서비스 사용에 미치는 영향 없이 빠르게 다양한 애플리케이션을 적용할 수 있습니다.",
       "text2": "팝콘사는 Cloud Native를 활용한 자사의 개발도구 및 플랫폼을 구축하여 개발자가 어떠한 환경에서 접속하더라도 동일한 경험을 할 수 있도록 제공하고 있습니다. <br>\n이를 Cloud Native Automotive Software 라고 하며, 팝콘사는 Cloud Native Automotive Software에 부합하는 DevOps의 모든 범위에 대응하여 효율적인 AA 개발을 지원합니다.",
-      "text3": "결과적으로 사용자 측면에서는 물리적인 인프라를 구축할 필요없이 필요한 기간동안 유동적으로 사용할 수 있어 운영 비용을 장기적으로 절감할 수 있는 장점이 있으며, <br>\nARM 64 기반의 Virtual ECU를 구성하여 실제 Target ECU와 동일한 환경에서 AA 테스트를 수행할 수 있기에 개발 접근성이 크게 낮아지는 점도 SDV 패러다임 전환의 요구인 <br>\nApp 생태계 구축에 큰 역할을 합니다.",
+      "text3": "결과적으로 사용자 측면에서는 물리적인 인프라를 구축할 필요없이 필요한 기간동안 유동적으로 사용할 수 있어 운영 비용을 장기적으로 절감할 수 있는 장점이 있으며, <br>\nARM 64 기반의 Virtual ECU를 구성하여 실제 Target ECU와 동일한 환경에서 AA 테스트를 수행할 수 있기에 개발 진입 장벽이 크게 낮아지는 점도 SDV 패러다임 전환의 요구인 <br>\nApp 생태계 구축에 큰 역할을 합니다.",
       "text4": "팝콘사의 Cloud Native는 AWS(Amazon Web Services)의 자원을 사용하고 있기 때문에, 안정적으로 서비스를 제공할 수 있으며, 기능 업데이트로 인한 가동 중지나 사용량이 급증하는 경우 추가적인 리소스 확장으로 유연하게 고객 반응에 대응하여 긍정적인 고객 경험을 제공할 수 있습니다."
     },
     "digitalTwin": {
       "title": "Digital Twin 연동 AA 개발 솔루션",
-      "text1": "SDV(Software-defined Vehicle) 시대가 도래함에 따라 앞으로 출시되는 차량들에 적용 되는 다양한 기능을 \n차량 시스템 성능 및 사용 조건에 대한 데이터를 기반으로 한 가상의 공간을 통해 실제 차량에서의 테스트와 동일한 조건으로 테스트를 수행할 수 있는 Digital Twin과 같은 시뮬레이션 환경이 필요합니다.",
+      "text1": "SDV(Software-defined Vehicle) 시대가 도래하면서, 차량에 탑재되는 다양한 기능을 사전에 검증할 필요성이 커지고 있습니다. Digital Twin은 차량 시스템 성능과 사용 조건 데이터를 기반으로 가상 환경을 구축하여, 실제 차량과 동일한 조건에서 테스트를 수행할 수 있는 시뮬레이션 기술입니다.",
       "text2": "그 이유는 SDV를 현실화하기 위해 차량을 실제 양산하기 전에 가장 중요한 항목인 기능 안전에 부정적인 영향을 미치지 않도록 모니터링 하면서 사전 구현 및 점검이 충분히 이루어져야 하기 때문입니다.",
       "text3": "이러한 Digital Twin은 Adaptive AUTOSAR 개발 관점에서도 큰 역할을 합니다. <br>\n가장 큰 이점은 시각화된 Digital Twin의 특성 상, Adaptive AUTOSAR 기반으로 개발된 AA(Adaptive Application)의 기능 검증이 쉬워지므로 개발 및 디버깅, 오류 수정 등에 용이합니다.\n이를 통해 문제를 조기에 감지하여 SW 개발 유지 보수 및 개선 작업을 효율적으로 수행할 수 있습니다.",
       "text4": "팝콘사의 주력 제품인 Adaptive AUTOSAR 기반 솔루션에서 개발한 차량 AA(Adaptive Application)을 파트너사인 MORAI에서 개발한 Digital Twin과 연동하여 차량의 기본적인 제어부터 다양한 자율주행 기술을 구현할 수 있도록 준비하였습니다."
@@ -333,7 +333,7 @@
       "title": "AI 모델을 접목한 AA 개발 솔루션",
       "text1": "팝콘사는 AI 전용 오픈소스 프레임워크인 TensorFlow, PyTorch와의 연계를 고려하여 <br>\nAI모델을 AA(Adaptive Application)으로 Migration할 수 있도록 지원하고 있습니다.",
       "text2": "TensorFlow로 구현한 복잡한 로직이 들어간 AI 모델을 AA로 Migration을 할 때, <br>\n반도체 회사에서 제공하는 PyTorch 모듈이 들어간 AI SDK에서 컴파일러 버전이 낮거나 <br>\nAdaptive AUTOSAR에서 사용해야 할 일부 기능들이 지원되지 않기도 하고, <br>\nAdaptive AUTOSAR를 위한 필수적인 C++ 버전이 맞지 않아서 AA가 컴파일 및 동작되지 않는 문제가 발생합니다.",
-      "text3": "팝콘사는 이를 해결하기 위하여 AI가 사용하는 컴파일러 버전에 맞춰 팝콘사의 Adaptive AUTOSAR Stack을 수정하고,  Python으로 구현된 독자 SOME/IP 모듈을 제공하여 Python으로 구현된 AI와 제어용 AA와 연계가 할 수 있도록 제공하며, AI 모델이 검증이 완료가 되면, Python용 AI를 C++용 Adaptive AUTOSAR AI로 개발할 수 있도록 지원하여 기존 AI SDK에 Adaptive AUTOSAR Stack을 통합하여 제공합니다.",
+      "text3": "팝콘사는 이를 해결하기 위하여 AI가 사용하는 컴파일러 버전에 맞춰 팝콘사의 Adaptive AUTOSAR Stack을 수정하고,  Python으로 구현된 독자 SOME/IP 모듈을 제공하여 Python으로 구현된 AI와 제어용 AA를 연계할 수 있도록 제공하며, AI 모델 검증이 완료되면, Python용 AI를 C++용 Adaptive AUTOSAR AI로 개발할 수 있도록 지원하여 기존 AI SDK에 Adaptive AUTOSAR Stack을 통합하여 제공합니다.",
       "text4": "또한, Python으로 구현된 AI 모델의 로직을 전혀 수정하지 않고, ARM 개발보드 및 개발 PC에서 동작이 가능한 ARM 기반의 Docker Container 가상제어기도 제공합니다.",
       "text5": "※ 팝콘사의 솔루션과 AI 접목 사례 : NXP社의 S32G2와 eIQ-AUTO(AI SDK)"
     },
@@ -346,7 +346,7 @@
       "item1": "- CppImplementationDataType",
       "item2": "- ServiceInterface의 Event",
       "item3": "- AdaptiveApplicationSwComponentType",
-      "text5": "권장 : MATLAB & Simulink 2022b 사용(R20-11지원)"
+      "text5": "권장 : MATLAB & Simulink 2022b 사용(R20-11 지원)"
     },
     "parvisAgent": {
       "title": "AI Agent 기반 자동화 마이그레이션 솔루션",
@@ -471,26 +471,26 @@
       "contact": "팝콘사 교육은 고객사를 방문하여 진행하는 출장 교육을 주로 제공하고 있습니다. 교육에 대한 문의는 아래 문의하기 버튼 또는 메일(<a href=\"mailto:sales@popcornsar.com\">sales@popcornsar.com</a>)을 이용해 주시기 바랍니다."
     },
     "ai": {
-      "description": "팝콘사의 독자적인 AI 기술을 기반으로, SDV(Software Defined Vehicle) 환경에 특화된 AI Agent 설계 교육을 제공합니다.\n본 과정은 자동차 분야의 실제 개발 환경에서 요구되는 지능형 AI Agent 설계 및 구현 능력을 함양하도록 구성되어 있으며, 참가자가 직접 SDV 맞춤형 Agent를 설계·개발·적용할 수 있도록 지원합니다.",
+      "description": "팝콘사의 독자적인 AI 기술을 기반으로, SDV(Software Defined Vehicle) 환경에 특화된 AI Agent 설계 교육을 제공합니다.\n본 과정은 자동차 분야의 실제 개발 환경에서 요구되는 지능형 AI Agent 설계 및 구현 능력을 함양하도록 구성되어 있으며, 교육생이 직접 SDV 맞춤형 Agent를 설계·개발·적용할 수 있도록 지원합니다.",
       "scope": "교육 범위",
       "scopeContent": "- 자동차 소프트웨어 개발 생명주기에 최적화된 AI Agent 설계 및 개발 실습<br>\n- AUTOSAR, MISRA 등 차량용 표준 기반의 AI 모델 적용<br>\n- VModel 기반 요구사항 분석, 코드 생성, 검증 프로세스 자동화",
       "contact": "팝콘사 교육은 고객사를 방문하여 진행하는 출장 교육을 주로 제공하고 있습니다. 교육에 대한 문의는 아래 문의하기 버튼 또는 메일(<a href=\"mailto:sales@popcornsar.com\">sales@popcornsar.com</a>)을 이용해 주시기 바랍니다."
     },
     "customDev": {
-      "description": "팝콘사는 고객의 효율적인 AUTOSAR 프로젝트 수행을 위해, 다양한 맞춤형 도구를 개발하여 제공하고 있습니다. 각종 자동화 테스트 도구, Excel Convertor, OEM Specific이 반영된 진단 format 변화 도구 등을 통해 고객의 성공을 지원합니다.",
+      "description": "팝콘사는 고객의 효율적인 AUTOSAR 프로젝트 수행을 위해, 다양한 맞춤형 도구를 개발하여 제공하고 있습니다. 각종 자동화 테스트 도구, Excel Converter, OEM 요구사항이 반영된 진단 포맷 변환 도구 등을 통해 고객의 성공을 지원합니다.",
       "examplesTitle": "Custom Development 예시",
       "example1": "ㆍODX 개발도구",
       "example2": "ㆍTEST 결과의 ARXML Reporting 도구",
       "example3": "ㆍNetwork Test 자동화 도구",
       "example4": "ㆍ진단 테스트 자동화",
-      "example5": "ㆍ각종 진단 포맷변화 도구"
+      "example5": "ㆍ각종 진단 포맷 변환 도구"
     }
   },
   "company": {
     "intro": "회사소개",
     "about": {
       "title": "<h1></h1>",
-      "content": "오늘날 자동차는 수많은 전자장치 부품이 탑재된 모빌리티 디바이스로 변화하였습니다.\nSW플랫폼과 어플리케이션을 통해 안전성이 향상되었고, 다양한 편의 기능을 제공하고 있습니다.이러한 변화는 '연결성(C), 자율주행(A), 공유(S), 전동화(E)'라는 자동차 산업의 메가트랜드로 인해 더욱 가속화되고 있으며, 자동차 구조(E/E Architecture)의 변화로 나타나고 있습니다. <br>자동차SW가 구동되는 ECU(Electronic Control Unit)에 고성능 CPU를 적용하는 것입니다. 이를 통해, 많은 컴퓨팅 자원을 요구하는 자율주행 AI와 같이 어플리케이션을 사용할 수 있으며,\n차량 당 130여 개에 이르는 ECU의 수를 획기적으로 줄일 수 있습니다. 이러한 변화에 맞춰 새롭게 등장한 자동차SW플랫폼이 바로 AUTOSAR Adaptive Platform입니다. <br><br>\nAUTOSAR 표준은 자동차 제어를 담당하는 유일한 국제표준으로, Classic Platform과 Adaptive Platform으로 구성됩니다. Classic Platfrom은 전통적인 관점에서 출발하여 실시간성과 안전성이 강조된 SW플랫폼으로 직접적인 제어를 담당합니다. 반면, Adaptive Platform은 자율주행 AI와 같이 많은 컴퓨터 자원을 사용하는 소프트웨어를 구동할 수 있는 SW플랫폼입니다.AUTOSAR Adaptive Platform은 폭스바겐에 의해 2019년 11월 순수전기차 ID.3 양산에 최초 적용되었으며,\n현재 도요타, 현대자동차, BMW, Volvo 등의 글로벌 자동차 기업에서 양산 적용을 서두르고 있습니다. <br>스마트폰이 새로운 비즈니스와 생태계를 이끌었듯, 자동차도 새로운 모빌리티 서비스를 제공하는 시대가 곧 펼쳐질 것입니다. AUTOSAR Adaptive Platform은 새로운 모빌리티 서비스 시대의 마중물과 같습니다.<br><br>팝콘사는 자체 기술로 개발한 AUTOSAR Adaptive Platform을 기반으로, 다양한 분야의 개발자들이 새로운 모빌리티 서비스를\n쉽고 빠르게 개발할 수 있는 환경을 제공하고자 합니다. 그러한 의미로, 누구나 쉽게 접근할 수 있는 팝콘(Popcorn)과 시스템 아키텍쳐(System ARchitecture)를 합성한 팝콘사(PopcornSAR)를 사명으로 정하였습니다. <br>새로운 모빌리티 서비스 시대는 먼 미래가 아니라 곧 구현될 현실로 다가오고 있습니다. 팝콘사는 다가올 시대를 준비하며, 다양한 모빌리티 서비스 개발을 지원하는 글로벌 자동차SW플랫폼 기업으로 성장하겠습니다.\n",
+      "content": "오늘날 자동차는 수많은 전자장치 부품이 탑재된 모빌리티 디바이스로 변화하였습니다.\nSW플랫폼과 어플리케이션을 통해 안전성이 향상되었고, 다양한 편의 기능을 제공하고 있습니다.이러한 변화는 '연결성(C), 자율주행(A), 공유(S), 전동화(E)'라는 자동차 산업의 메가트랜드로 인해 더욱 가속화되고 있으며, 자동차 구조(E/E Architecture)의 변화로 나타나고 있습니다. <br>자동차SW가 구동되는 ECU(Electronic Control Unit)에 고성능 CPU를 적용하는 것입니다. 이를 통해, 많은 컴퓨팅 자원을 요구하는 자율주행 AI와 같이 어플리케이션을 사용할 수 있으며,\n차량 당 130여 개에 이르는 ECU의 수를 획기적으로 줄일 수 있습니다. 이러한 변화에 맞춰 새롭게 등장한 자동차SW플랫폼이 바로 AUTOSAR Adaptive Platform입니다. <br><br>\nAUTOSAR 표준은 자동차 제어를 담당하는 유일한 국제표준으로, Classic Platform과 Adaptive Platform으로 구성됩니다. Classic Platfrom은 전통적인 관점에서 출발하여 실시간성과 안전성이 강조된 SW플랫폼으로 직접적인 제어를 담당합니다. 반면, Adaptive Platform은 자율주행 AI와 같이 많은 컴퓨팅 자원을 사용하는 소프트웨어를 구동할 수 있는 SW플랫폼입니다.AUTOSAR Adaptive Platform은 폭스바겐에 의해 2019년 11월 순수전기차 ID.3 양산에 최초 적용되었으며,\n현재 도요타, 현대자동차, BMW, Volvo 등의 글로벌 자동차 기업에서 양산 적용을 서두르고 있습니다. <br>스마트폰이 새로운 비즈니스와 생태계를 이끌었듯, 자동차도 새로운 모빌리티 서비스를 제공하는 시대가 곧 펼쳐질 것입니다. AUTOSAR Adaptive Platform은 새로운 모빌리티 서비스 시대의 마중물과 같습니다.<br><br>팝콘사는 자체 기술로 개발한 AUTOSAR Adaptive Platform을 기반으로, 다양한 분야의 개발자들이 새로운 모빌리티 서비스를\n쉽고 빠르게 개발할 수 있는 환경을 제공하고자 합니다. 그러한 의미로, 누구나 쉽게 접근할 수 있는 팝콘(Popcorn)과 시스템 아키텍처(System ARchitecture)를 합성한 팝콘사(PopcornSAR)를 사명으로 정하였습니다. <br>새로운 모빌리티 서비스 시대는 먼 미래가 아니라 곧 구현될 현실로 다가오고 있습니다. 팝콘사는 다가올 시대를 준비하며, 다양한 모빌리티 서비스 개발을 지원하는 글로벌 자동차SW플랫폼 기업으로 성장하겠습니다.\n",
       "video": "<iframe width=\"100%\" height=\"428\" src=\"https://www.youtube.com/embed/GB_RiYzO-as\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
     },
     "autosar": {

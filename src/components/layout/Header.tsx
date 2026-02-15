@@ -21,7 +21,7 @@ const languages: { code: Language; label: string }[] = [
   { code: "jp", label: "日本語" },
 ];
 
-const CAREERS_URL = process.env.NEXT_PUBLIC_CAREERS_URL ?? "https://popcornsar.recruiter.co.kr/app/jobnotice/list";
+const CAREERS_URL = process.env.NEXT_PUBLIC_CAREERS_URL ?? "/company/notice";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);

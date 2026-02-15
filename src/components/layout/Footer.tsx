@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 
-const CAREERS_URL = process.env.NEXT_PUBLIC_CAREERS_URL ?? "https://popcornsar.recruiter.co.kr/app/jobnotice/list";
+const CAREERS_URL = process.env.NEXT_PUBLIC_CAREERS_URL ?? "/company/notice";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
