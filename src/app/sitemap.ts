@@ -1,167 +1,66 @@
 import { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://web.popcornsar.com";
+const SITE_URL = "https://autosar.io";
+const locales = ["ko", "en", "ja", "zh"];
+const defaultLocale = "ko";
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/company`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/products`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/solution`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/service`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/support`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/company/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/company/notice`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/support/qna`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    // Products
-    {
-      url: `${baseUrl}/products/adaptive`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/products/autosario`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/products/para`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/products/pacon`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/products/ai`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/products/parvisadk`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/products/aiagent`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    // Solutions
-    {
-      url: `${baseUrl}/solution/cloudnative`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/solution/digital`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/solution/ai`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/solution/matlab`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/solution/aiagent`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    // Services
-    {
-      url: `${baseUrl}/service/consulting`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/service/autosar`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/service/education`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/service/tool`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/service/ai`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-  ];
+const pages: { path: string; changeFrequency: MetadataRoute.Sitemap[0]["changeFrequency"]; priority: number }[] = [
+  { path: "/", changeFrequency: "weekly", priority: 1.0 },
+  { path: "/company", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/company/contact", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/company/notice", changeFrequency: "weekly", priority: 0.6 },
+  { path: "/products", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/products/adaptive", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/products/autosario", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/products/para", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/products/pacon", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/products/ai", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/products/parvisadk", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/products/aiagent", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/solution", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/solution/cloudnative", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/solution/digital", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/solution/ai", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/solution/matlab", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/solution/aiagent", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/service", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/service/consulting", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/service/autosar", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/service/education", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/service/tool", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/service/ai", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/support", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/support/qna", changeFrequency: "monthly", priority: 0.6 },
+];
+
+function getLocaleUrl(path: string, locale: string): string {
+  const prefix = locale === defaultLocale ? "" : `/${locale}`;
+  const pagePath = path === "/" ? "" : path;
+  return `${SITE_URL}${prefix}${pagePath}`;
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const entries: MetadataRoute.Sitemap = [];
+
+  for (const page of pages) {
+    for (const locale of locales) {
+      const alternates: Record<string, string> = {};
+      for (const altLocale of locales) {
+        alternates[altLocale] = getLocaleUrl(page.path, altLocale);
+      }
+      alternates["x-default"] = getLocaleUrl(page.path, defaultLocale);
+
+      entries.push({
+        url: getLocaleUrl(page.path, locale),
+        lastModified: new Date(),
+        changeFrequency: page.changeFrequency,
+        priority: page.priority,
+        alternates: {
+          languages: alternates,
+        },
+      });
+    }
+  }
+
+  return entries;
 }

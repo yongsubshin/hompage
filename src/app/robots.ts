@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/", "/admin/"],
       },
     ],
-    sitemap: "https://web.popcornsar.com/sitemap.xml",
+    sitemap: "https://autosar.io/sitemap.xml",
   };
 }

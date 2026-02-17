@@ -3,8 +3,8 @@ export function OrganizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "PopcornSAR",
-    url: "https://web.popcornsar.com",
-    logo: "https://web.popcornsar.com/images/logo.png",
+    url: "https://autosar.io",
+    logo: "https://autosar.io/images/logo.png",
     description:
       "ASPICE V-Model automation and AUTOSAR development specialist. AI-powered test case generation, ISO 26262 verification, and automotive software engineering services.",
     foundingDate: "2015",
@@ -92,7 +92,7 @@ export function ServiceJsonLd() {
     name: "PopcornSAR ASPICE & AUTOSAR Engineering Services",
     description:
       "ASPICE consulting, AUTOSAR implementation, training, and custom development services",
-    url: "https://web.popcornsar.com/service",
+    url: "https://autosar.io/service",
     provider: {
       "@type": "Organization",
       name: "PopcornSAR",
@@ -164,14 +164,14 @@ export function WebSiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "PopcornSAR",
-    url: "https://web.popcornsar.com",
+    url: "https://autosar.io",
     inLanguage: ["ko", "en", "ja", "zh"],
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
         urlTemplate:
-          "https://web.popcornsar.com/support/qna?q={search_term_string}",
+          "https://autosar.io/support/qna?q={search_term_string}",
       },
       "query-input": "required name=search_term_string",
     },

@@ -1,7 +1,35 @@
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
+  },
+  async redirects() {
+    return [
+      {
+        source: '/about',
+        destination: '/company',
+        permanent: true,
+      },
+      {
+        source: '/contact',
+        destination: '/company/contact',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|ja|zh)/about',
+        destination: '/:locale/company',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|ja|zh)/contact',
+        destination: '/:locale/company/contact',
+        permanent: true,
+      },
+    ];
   },
   async headers() {
     return [
@@ -54,4 +82,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

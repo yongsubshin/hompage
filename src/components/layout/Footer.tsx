@@ -1,38 +1,39 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { useLanguage } from "@/lib/i18n";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 const CAREERS_URL = process.env.NEXT_PUBLIC_CAREERS_URL ?? "/company/notice";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  const { t } = useLanguage();
+  const nav = useTranslations("nav");
+  const footer = useTranslations("footer");
 
   const footerLinks = {
     company: [
-      { label: t.nav.companyAbout, href: "/company" },
-      { label: t.nav.companyNotice, href: "/company/notice" },
-      { label: t.nav.companyCareers, href: CAREERS_URL },
-      { label: t.nav.companyContact, href: "/company/contact" },
+      { label: nav("companyAbout"), href: "/company" },
+      { label: nav("companyNotice"), href: "/company/notice" },
+      { label: nav("companyCareers"), href: CAREERS_URL },
+      { label: nav("companyContact"), href: "/company/contact" },
     ],
     products: [
-      { label: t.nav.productsToolkit, href: "/products/adaptive" },
-      { label: t.nav.productsAutosar, href: "/products/autosario" },
-      { label: t.nav.productsPara, href: "/products/para" },
-      { label: t.nav.productsPacon, href: "/products/pacon" },
-      { label: t.nav.productsParvis, href: "/products/ai" },
-      { label: t.nav.productsParvisAdk, href: "/products/parvisadk" },
-      { label: t.nav.productsAiAgent, href: "/products/aiagent" },
+      { label: nav("productsToolkit"), href: "/products/adaptive" },
+      { label: nav("productsAutosar"), href: "/products/autosario" },
+      { label: nav("productsPara"), href: "/products/para" },
+      { label: nav("productsPacon"), href: "/products/pacon" },
+      { label: nav("productsParvis"), href: "/products/ai" },
+      { label: nav("productsParvisAdk"), href: "/products/parvisadk" },
+      { label: nav("productsAiAgent"), href: "/products/aiagent" },
     ],
     service: [
-      { label: t.nav.serviceConsulting, href: "/service/consulting" },
-      { label: t.nav.serviceAutosar, href: "/service/autosar" },
-      { label: t.nav.serviceTraining, href: "/service/education" },
-      { label: t.nav.serviceCustom, href: "/service/tool" },
-      { label: t.nav.serviceAiTraining, href: "/service/ai" },
+      { label: nav("serviceConsulting"), href: "/service/consulting" },
+      { label: nav("serviceAutosar"), href: "/service/autosar" },
+      { label: nav("serviceTraining"), href: "/service/education" },
+      { label: nav("serviceCustom"), href: "/service/tool" },
+      { label: nav("serviceAiTraining"), href: "/service/ai" },
     ],
   };
 
@@ -53,7 +54,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
-              {t.footer.companyDesc}
+              {footer("companyDesc")}
             </p>
 
             {/* Contact Info */}
@@ -74,13 +75,13 @@ export function Footer() {
               </a>
               <div className="flex items-start gap-3 text-sm text-gray-400">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>{t.footer.address}</span>
+                <span>{footer("address")}</span>
               </div>
             </div>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">{t.nav.company}</h4>
+            <h4 className="text-white font-semibold mb-4">{nav("company")}</h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
@@ -98,7 +99,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">{t.nav.products}</h4>
+            <h4 className="text-white font-semibold mb-4">{nav("products")}</h4>
             <ul className="space-y-2">
               {footerLinks.products.map((link) => (
                 <li key={link.href}>
@@ -114,7 +115,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">{t.nav.service}</h4>
+            <h4 className="text-white font-semibold mb-4">{nav("service")}</h4>
             <ul className="space-y-2">
               {footerLinks.service.map((link) => (
                 <li key={link.href}>
@@ -135,7 +136,7 @@ export function Footer() {
       <div className="border-t border-gray-700">
         <div className="max-w-[1400px] mx-auto px-4 py-4">
           <p className="text-sm text-gray-400 text-center">
-            &copy; {currentYear} {t.footer.copyright}
+            &copy; {currentYear} {footer("copyright")}
           </p>
         </div>
       </div>

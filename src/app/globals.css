@@ -407,6 +407,13 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* Prevent orphan lines in hero and section descriptions */
+  p.leading-relaxed,
+  p.max-w-lg,
+  p.max-w-xl {
+    text-wrap: balance;
+  }
 }
 
 /* ============================================

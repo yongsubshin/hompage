@@ -3,7 +3,29 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useChatbot } from './ChatbotProvider';
-import { useLanguage } from '@/lib/i18n';
+import { useTranslations } from 'next-intl';
+
+function renderMarkdown(text: string) {
+  const parts: (string | React.ReactElement)[] = [];
+  const regex = /\*\*(.+?)\*\*/g;
+  let lastIndex = 0;
+  let match;
+  let key = 0;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    parts.push(<strong key={key++} className="font-semibold text-white">{match[1]}</strong>);
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts;
+}
 
 export default function ChatbotModal() {
   const {
@@ -12,8 +34,9 @@ export default function ChatbotModal() {
     resetChat,
     addMessage,
     updateLastMessage,
+    locale,
   } = useChatbot();
-  const { t, language } = useLanguage();
+  const t = useTranslations('chatbot');
 
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -48,7 +71,7 @@ export default function ChatbotModal() {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userMessage, language }),
+        body: JSON.stringify({ message: userMessage, language: locale }),
       });
 
       if (!response.ok) {
@@ -79,7 +102,7 @@ export default function ChatbotModal() {
       // Error handled by showing user-friendly message below
       addMessage({
         role: 'assistant',
-        content: t.chatbot.errorMessage,
+        content: t('errorMessage'),
       });
     } finally {
       setIsLoading(false);
@@ -123,8 +146,8 @@ export default function ChatbotModal() {
               </svg>
             </div>
             <div>
-              <h3 className="text-white font-semibold text-sm">{t.chatbot.title}</h3>
-              <p className="text-gray-400 text-xs">{t.chatbot.subtitle}</p>
+              <h3 className="text-white font-semibold text-sm">{t('title')}</h3>
+              <p className="text-gray-400 text-xs">{t('subtitle')}</p>
             </div>
           </div>
           <div className="flex items-center gap-1">
@@ -132,7 +155,7 @@ export default function ChatbotModal() {
             <button
               onClick={closeChat}
               className="text-gray-400 hover:text-white transition-colors p-1.5 hover:bg-white/5 rounded-lg"
-              title={t.chatbot.minimize}
+              title={t('minimize')}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +172,7 @@ export default function ChatbotModal() {
             <button
               onClick={resetChat}
               className="text-gray-400 hover:text-red-400 transition-colors p-1.5 hover:bg-white/5 rounded-lg"
-              title={t.chatbot.reset}
+              title={t('reset')}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -179,7 +202,7 @@ export default function ChatbotModal() {
                     : 'bg-[#1a1a2e] text-gray-200 rounded-bl-md border border-white/5'
                 }`}
               >
-                <p className="whitespace-pre-wrap">{message.content}</p>
+                <p className="whitespace-pre-wrap">{renderMarkdown(message.content)}</p>
               </div>
             </div>
           ))}
@@ -205,7 +228,7 @@ export default function ChatbotModal() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder={t.chatbot.placeholder}
+              placeholder={t('placeholder')}
               aria-label="Chat message input"
               disabled={isLoading}
               className="flex-1 bg-[#1a1a2e] text-white placeholder-gray-500 px-4 py-2.5 rounded-xl border border-white/10 focus:border-cyan-500/50 focus:outline-none focus:ring-1 focus:ring-cyan-500/50 text-sm disabled:opacity-50"

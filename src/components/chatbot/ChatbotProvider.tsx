@@ -1,7 +1,8 @@
 'use client';
 
 import { createContext, useContext, useState, useCallback, useEffect, ReactNode, useMemo } from 'react';
-import { useLanguage } from '@/lib/i18n';
+import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -11,6 +12,7 @@ interface Message {
 interface ChatbotContextType {
   isOpen: boolean;
   messages: Message[];
+  locale: string;
   openChat: () => void;
   closeChat: () => void;
   toggleChat: () => void;
@@ -22,29 +24,30 @@ interface ChatbotContextType {
 const ChatbotContext = createContext<ChatbotContextType | null>(null);
 
 export function ChatbotProvider({ children }: { children: ReactNode }) {
-  const { t, language } = useLanguage();
+  const t = useTranslations('chatbot');
+  const locale = useLocale();
 
   const initialMessage: Message = useMemo(() => ({
     role: 'assistant',
-    content: t.chatbot.initialMessage,
-  }), [t.chatbot.initialMessage]);
+    content: t('initialMessage'),
+  }), [t]);
 
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([initialMessage]);
 
-  // Reset messages when language changes
+  // Reset messages when locale changes
   useEffect(() => {
-    setMessages([{ role: 'assistant', content: t.chatbot.initialMessage }]);
-  }, [language, t.chatbot.initialMessage]);
+    setMessages([{ role: 'assistant', content: t('initialMessage') }]);
+  }, [locale, t]);
 
   const openChat = useCallback(() => setIsOpen(true), []);
   const closeChat = useCallback(() => setIsOpen(false), []);
   const toggleChat = useCallback(() => setIsOpen((prev) => !prev), []);
 
   const resetChat = useCallback(() => {
-    setMessages([{ role: 'assistant', content: t.chatbot.initialMessage }]);
+    setMessages([{ role: 'assistant', content: t('initialMessage') }]);
     setIsOpen(false);
-  }, [t.chatbot.initialMessage]);
+  }, [t]);
 
   const addMessage = useCallback((message: Message) => {
     setMessages((prev) => [...prev, message]);
@@ -68,6 +71,7 @@ export function ChatbotProvider({ children }: { children: ReactNode }) {
       value={{
         isOpen,
         messages,
+        locale,
         openChat,
         closeChat,
         toggleChat,

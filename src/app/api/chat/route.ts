@@ -28,9 +28,9 @@ function isRateLimited(ip: string): boolean {
 const ALLOWED_ENV_KEYS = ['PATH', 'LANG', 'NODE_ENV'];
 
 // Claude CLI path and user configuration (can be overridden via env vars)
-const CLAUDE_PATH = process.env.CLAUDE_PATH || 'claude';
-const CLAUDE_HOME = process.env.CLAUDE_HOME || process.env.HOME || '/home/kevin';
-const CLAUDE_USER = process.env.CLAUDE_USER || process.env.USER || 'kevin';
+const CLAUDE_PATH = process.env.CLAUDE_PATH || '/home/ubuntu/.local/bin/claude';
+const CLAUDE_HOME = process.env.CLAUDE_HOME || '/home/ubuntu';
+const CLAUDE_USER = process.env.CLAUDE_USER || 'ubuntu';
 
 function getSafeEnv(): NodeJS.ProcessEnv {
   const safeEnv: Record<string, string | undefined> = {};

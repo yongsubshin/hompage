@@ -1,669 +1,1275 @@
 {
-  "metadata": {
-    "title": "PopcornSAR | 次世代 AUTOSAR ソリューション",
-    "description": "次世代モビリティのためのAUTOSAR基盤開発専門自動車ソフトウェアソリューション企業"
-  },
   "nav": {
-    "home": "ホーム",
-    "about": "会社紹介",
+    "company": "会社案内",
+    "companyAbout": "会社紹介",
+    "companyNotice": "お知らせ",
+    "companyContact": "お問い合わせ",
+    "companyCareers": "採用情報",
     "products": "製品",
-    "news": "ニュース",
-    "contact": "お問い合わせ",
-    "company": "COMPANY",
-    "companyIntro": "会社紹介",
-    "notice": "お知らせ",
-    "history": "沿革",
-    "team": "チーム",
-    "autosar": "AUTOSAR",
-    "solutions": "ソリューション",
-    "service": "SERVICE",
-    "support": "SUPPORT",
-    "solution": "SOLUTION"
+    "productsToolkit": "Adaptive AUTOSAR ツールキット",
+    "productsAutosar": "AutoSAR.io",
+    "productsPara": "PARA",
+    "productsPacon": "PACON IDE",
+    "productsParvis": "PARVIS",
+    "productsParvisAdk": "PARVIS ADK",
+    "productsAiAgent": "AUTOSAR AI Agent",
+    "solution": "ソリューション",
+    "solutionCloud": "Cloud Native",
+    "solutionDigital": "Digital Twin",
+    "solutionAi": "AI for Adaptive Platforms",
+    "solutionMatlab": "MATLAB & Simulink",
+    "solutionAgent": "PARVIS Agent",
+    "service": "サービス",
+    "serviceConsulting": "コンサルティングサービス",
+    "serviceAutosar": "AUTOSAR導入",
+    "serviceTraining": "AUTOSARトレーニング",
+    "serviceCustom": "カスタム開発",
+    "serviceAiTraining": "AI Agentコアトレーニング",
+    "support": "サポート",
+    "supportDownload": "ダウンロード",
+    "supportQna": "Q&A"
   },
   "common": {
-    "learnMore": "さらに詳しく",
+    "learnMore": "詳細を見る",
+    "home": "ホーム",
     "contactUs": "お問い合わせ",
-    "viewAll": "すべて見る",
-    "contact": "お問い合わせ",
-    "keyFeatures": "Key Features",
-    "benefits": "Benefits"
-  },
-  "footer": {
-    "description": "次世代モビリティのためのAUTOSAR基盤開発専門自動車ソフトウェアソリューション企業。",
-    "company": "会社",
-    "products": "製品",
-    "resources": "リソース",
-    "legal": "法的情報",
-    "copyright": "PopcornSAR. All rights reserved.",
-    "companyInfo": "株式会社ポップコーンザー・ジャパン ",
-    "address": "〒460-0008 名古屋市中区栄5丁目26-39 GS栄ビル3F",
-    "contact": "TEL : 050-5539-7015 / +81-50-5539-7015 ㅣ  Email : japan-sales@popcornsar.com"
-  },
-  "hero": {
-    "badge": "自動車ソフトウェアの未来を先導します",
-    "title": "現代モビリティのための次世代",
-    "titleHighlight": "AUTOSARソリューション",
-    "description": "開発を加速し、安全基準への準拠を保証する最先端のソフトウェアソリューションで自動車メーカーを支援します。",
-    "cta": {
-      "primary": "ソリューションを見る",
-      "secondary": "デモを見る"
-    },
-    "scrollHint": "スクロールしてさらに見る"
-  },
-  "features": {
-    "autosar": "AUTOSAR専門性",
-    "automotive": "自動車グレード",
-    "safety": "安全認証",
-    "performance": "高性能"
-  },
-  "services": {
-    "title": "サービス",
-    "subtitle": "完璧な自動車ソフトウェアソリューション",
-    "description": "コンセプトから量産まで、すべての段階で品質と規定遵守を保証するエンドツーエンドサービスを提供します。",
-    "viewAll": "すべてのサービスを見る",
-    "learnMore": "詳しく見る",
-    "items": {
-      "development": {
-        "title": "AUTOSAR開発",
-        "description": "車両アーキテクチャにカスタマイズされた完璧なAUTOSAR ClassicおよびAdaptiveプラットフォーム開発サービス。"
-      },
-      "integration": {
-        "title": "システム統合",
-        "description": "ECUおよびドメイン全体にわたるソフトウェアコンポーネントの円滑な統合と総合的なテスト。"
-      },
-      "safety": {
-        "title": "機能安全",
-        "description": "自動車ソフトウェア最高の安全基準を保証するISO 26262準拠の開発プロセス。"
-      },
-      "optimization": {
-        "title": "性能最適化",
-        "description": "最大性能、効率性、最小リソース使用のための自動車ソフトウェア最適化。"
-      },
-      "tools": {
-        "title": "ツール開発",
-        "description": "AUTOSAR開発、テスト、デプロイワークフローのためのカスタムツールソリューション。"
-      },
-      "training": {
-        "title": "教育とサポート",
-        "description": "開発チームの能力強化のための包括的な教育プログラムと継続的なサポート。"
-      }
-    }
-  },
-  "partners": {
-    "title": "業界リーダーからの信頼",
-    "subtitle": "パートナーおよびお客様",
-    "stats": {
-      "partners": "グローバルパートナー",
-      "vehicles": "適用車両",
-      "experience": "経験年数",
-      "uptime": "稼働率保証"
-    }
+    "allSolutions": "すべてのソリューション",
+    "allServices": "すべてのサービス",
+    "allProducts": "すべての製品",
+    "exploreProducts": "製品を探す",
+    "scroll": "スクロール",
+    "solution": "Solution",
+    "solutions": "Solutions",
+    "service": "Service",
+    "services": "Services",
+    "products": "Products",
+    "resources": "Resources",
+    "support": "Support",
+    "consultation": "相談申込",
+    "close": "閉じる"
   },
   "main": {
-    "intro": "<h3>当社はAUTOSAR Classic & Adaptive Platform両方の開発を行っているAUTOSARツールベンダーです。<br />お客様がAUTOSAR CP/APプロジェクトを円滑に進めるために<br />ツール・コンサルティングやエンジニアリングサービスを提供しております。</h3>",
-    "autosarIntro": "<h3>AutoSAR.ioはAUTOSAR準拠のシステムとソフトウェアを設計することできます。<br>自動車メーカー、自動車部品メーカー、車載アプリケーションベンダーにおける <br>Classic/Adaptive AUTOSARへの要求事項を満足します。</h3>",
-    "paraIntro": "<h3>PARAはAUTOSAR Classic & Adaptive Platformを実装するために 自社開発したAUTOSAR準拠のソフトウェアプラットフォームです。<br />PARAはAUTOSAR Standard Functional Cluster API、C++ Generator、Manifest Generator、Basic Platform Level Applicationで構成されていて、Classic & Adaptive Platform の基本的な機能をライブラリーで提供しています。<br />PARAは自社開発のAUTOSAR Application専用の統合開発環境であるPACON IDEからご使用いただけます。</h3>",
-    "ideIntro": "PACON IDEはAUTOSAR Application開発に必要な <br>様々なプラグインを揃ったClassic & Adaptive Platform統合開発環境です。<br><br>Vscode上でDocker Containerと連携し、ARA APIとOpne Source APIの自動補完やリアルタイムでコーディングルールをチェック、デバッグのほか開発の際に役に立つ機能を提供します。<br><br>特に、Docker Containerをベースにした仮想ECUを生成するため、<br>より効果的にAUTOSAR Applicationの実装やテストを行えます。",
-    "studioIntro": "<h3>POPCORNSAR STUDIOはAdaptive Applicationを開発するための Webベースの統合開発環境 (IDE)です。<br />Adaptive Platformに準拠したAutomotive Applicationの開発フローに従い、複雑な開発環境の設定が簡単にできます。<br />Adaptive Platformに準拠したECUを開発する自動車メーカーと 自動車部品メーカーだけではなく、色々なAutomotive Applicationを開発する第三事業者まで使用することができる パワーフルな開発環境を提供します。</h3>",
-    "serviceIntro": "<h3>AUTOSARプロジェクトを遂行するお客様の成功のために 専門的なコンサルティング、 オーダーメイド型ツール、AUTOSAR実装、体系的な教育システムを提供します。</h3>"
+    "heroTitle": "Design your mobility",
+    "heroDesc": "PopcornSARはAUTOSAR専門企業として、AIベースの開発ツールとエンジニアリングサービスを提供しています。",
+    "autosarTitle": "AutoSAR.io",
+    "autosarSubtitle": "AUTOSAR Classic & Adaptive Platform オーサリングツール",
+    "autosarDesc": "AUTOSARシステムモデリングのための設計ツール。Manifest編集とコード生成をサポート、OEMからTier1まで対応。",
+    "paraTitle": "PARA",
+    "paraSubtitle": "AUTOSAR Classic & Adaptive Functional Clusters",
+    "paraDesc": "Functional Cluster API、C++ Generator、Manifest Generatorで構成。コア機能をライブラリ形式で提供します。",
+    "paconTitle": "PACON IDE",
+    "paconSubtitle": "PopcornSAR Automotive CONtainer",
+    "paconDesc": "Docker仮想ECU、ARA API自動補完、Coding Ruleチェック、Debug機能を備えたVSCode開発環境。",
+    "serviceTitle": "エンジニアリングサービス",
+    "serviceSubtitle": "最高のパートナーとともに成功を加速",
+    "serviceDesc": "専門コンサルティング、カスタムツール、AUTOSAR実装、AI開発支援、体系的トレーニングなど包括的な技術サポート。",
+    "ctaTitle1": "自動車開発を",
+    "ctaTitle2": "加速する準備はできましたか？",
+    "ctaDesc": "PopcornSARとパートナーシップを結び、次世代モビリティソリューションを実現しましょう。",
+    "ctaButton1": "今すぐ始める",
+    "ctaButton2": "すべての製品を見る",
+    "productsLabel": "製品とソリューション",
+    "productsHeading": "AUTOSAR Tool Kit",
+    "productsDesc": "次世代自動車開発のための完全なソフトウェアソリューション",
+    "aiLabel": "AI搭載ソリューション",
+    "aiHeading": "AI for Automotive",
+    "aiDesc": "AI技術でAUTOSAR開発の新しいパラダイムを体験してください",
+    "parvisTitle": "PARVIS",
+    "parvisSubtitle": "AI搭載V-Model自動化",
+    "parvisDesc": "AIによるAUTOSAR V-Modelプロセス全体の自動化。要件分析からテスト検証までサポート。",
+    "parvisAdkTitle": "PARVIS ADK",
+    "parvisAdkSubtitle": "SDV向けAI開発キット",
+    "parvisAdkDesc": "車両データに基づくAI駆動UXシナリオ生成、競合分析、収益予測を提供。",
+    "aiAgentTitle": "AUTOSAR AI Agent",
+    "aiAgentSubtitle": "自律開発エージェント",
+    "aiAgentDesc": "AUTOSARプロジェクトの自動開発、テスト、ドキュメント作成を行うAIエージェント。"
+  },
+  "footer": {
+    "companyDesc": "PopcornSARはAUTOSAR専門企業として、AIベースの開発ツールとエンジニアリングサービスを提供しています。",
+    "address": "韓国ソウル市江南区テヘラン路78キル16 ノーベルビル2階",
+    "copyright": "PopcornSAR Co., Ltd. All rights reserved."
   },
   "products": {
-    "title": "製品およびソリューション",
-    "subtitle": "エンタープライズ級AUTOSARソリューション",
-    "description": "ClassicからAdaptiveプラットフォームまで、すべての自動車コンピューティング要求事項のための完璧なソフトウェアソリューションを提供します。",
+    "pageTitle": "製品とソリューション",
+    "pageSubtitle": "エンタープライズグレードのAUTOSARソリューション",
+    "pageDesc": "ClassicからAdaptiveプラットフォームまで、自動車コンピューティングのあらゆるニーズに対応する完全なソフトウェアソリューションを提供します。",
     "classic": {
-      "name": "AUTOSAR Classic プラットフォーム",
-      "tagline": "従来のECU開発用",
-      "description": "リアルタイム要件を持つリソース制約ECUに最適化された包括的なAUTOSAR Classic BSWスタック。"
+      "name": "AUTOSAR Classic Platform",
+      "tagline": "従来のECU開発向け",
+      "description": "リアルタイム要件を持つリソース制約のあるECUに最適化された包括的なAUTOSAR Classic BSWスタック。",
+      "benefits": [
+        "開発時間を40%短縮",
+        "5000万台以上の車両で実証済み",
+        "AUTOSAR 4.x完全準拠"
+      ],
+      "features": [
+        "完全なBSWモジュールスタック",
+        "主要MCU向けMCALサポート",
+        "診断スタック (UDS/OBD)",
+        "通信スタック (CAN/LIN/Ethernet)",
+        "メモリスタック (NvM/Fee/Fls)",
+        "OS & RTEジェネレーター"
+      ]
     },
     "adaptive": {
-      "name": "AUTOSAR Adaptive プラットフォーム",
-      "tagline": "高性能コンピューティング用",
-      "description": "動的動作が必要なドメインコントローラーおよび中央コンピューティングユニットのための次世代適応型プラットフォーム。"
+      "name": "AUTOSAR Adaptive Platform",
+      "tagline": "高性能コンピューティング向け",
+      "description": "動的な動作を必要とするドメインコントローラーとセントラルコンピューティングユニット向けの次世代アダプティブプラットフォーム。",
+      "benefits": [
+        "POSIXベースOSのサポート",
+        "サービス指向アーキテクチャ",
+        "動的デプロイメント機能"
+      ],
+      "features": [
+        "実行管理",
+        "通信管理",
+        "診断管理",
+        "アップデート＆構成管理",
+        "状態管理",
+        "プラットフォームヘルス管理"
+      ]
     },
     "tools": {
       "title": "開発ツール",
-      "subtitle": "包括的なツールチェーンで開発を加速させましょう"
+      "subtitle": "包括的なツールチェーンで開発を加速",
+      "configStudio": {
+        "name": "Config Studio",
+        "desc": "AUTOSARパラメータとモジュールのビジュアル構成ツール"
+      },
+      "integrationSuite": {
+        "name": "Integration Suite",
+        "desc": "ECUソフトウェア統合のための自動テストと検証"
+      },
+      "safetyAnalyzer": {
+        "name": "Safety Analyzer",
+        "desc": "ISO 26262準拠チェックと安全分析ツール"
+      },
+      "performanceProfiler": {
+        "name": "Performance Profiler",
+        "desc": "リアルタイムパフォーマンス監視と最適化ツール"
+      }
     },
     "cta": {
-      "title": "開発革新を始める準備はできていますか？",
-      "description": "PopcornSARソリューションが自動車ソフトウェア開発をどのように加速できるかについて、チームにお問い合わせください。",
-      "demo": "デモ申請",
-      "brochure": "パンフレットダウンロード"
+      "title": "開発を革新する準備はできましたか？",
+      "description": "PopcornSARソリューションが自動車ソフトウェア開発をどのように加速できるか、チームにお問い合わせください。",
+      "requestDemo": "デモをリクエスト",
+      "downloadBrochure": "パンフレットをダウンロード"
     },
-    "autosario": {
-      "title": "AUTOSAR ARXML作成に優れた設計ツール",
-      "topContent": "AutoSAR.ioはAUTOSAR準拠のシステムとソフトウェアを設計することできます。<br>自動車メーカー、自動車部品メーカー、車載アプリケーションベンダーにおける Classic/Adaptive AUTOSARへの要求事項を満足します。<br>ユーザーはAutoSAR.ioを使用してCP/APで素早く正確なARXML設計をすることができます。",
-      "flow": "ARXML設計フロー (Classic & Adaptive Platform)",
-      "tableTitle1": "AUTOSARメソドロジー",
-      "tableTitle2": "AutoSAR.ioに対応する範囲",
-      "middleTitle1": "AutoSAR.ioに対応する設計範囲",
-      "middleContent1": "* R17-10とR18-03に対応するバージョンは要相談となります。",
-      "middleTitle2": "WebベースのAutoSAR.ioも提供します",
-      "middleContent2": "ソフトウェアをインストールする必要はありません。<br />本製品に関するお問い合わせはQ＆Aページでお願いいたします。",
-      "middleContent3": "デモ製品はAUTOSARプロジェクトを準備しているお客様(自動車メーカー、自動車部品メーカー)に限り提供しています。<br />デモ製品の申請は下記のお問い合わせページまたは'japan-sales@popcornsar.com'へご連絡ください。",
-      "contact": "お問い合わせ"
-    },
-    "para": {
-      "title": "AUTOSAR Classic & Adaptiveベースで車載機能を実現するのに不可欠なモジュール",
-      "description1": "PARAはAUTOSAR Classic & Adaptive Platformを実装するために自社開発したAUTOSAR準拠のソフトウェアプラットフォームです。",
-      "description2": "PARAはAUTOSAR Standard Functional Cluster API、C++ Generator、Manifest Generator、Basic Platform Level Applicationで構成されていて、Adaptive Platformの基本的な機能をライブラリーで提供しています。",
-      "flowTitle": "Implementation process of Adaptive Application",
-      "flowDescription": "ユーザーはAutoSAR.ioで設計したARXMLからAdaptive Applicationを実装できます。<br>※ PARA ジェネレータはAutoSAR.ioで設計を行って、最後のステップで起動できます。",
-      "platformApps": "Adaptive Platformで一部のFunctional Clusterの機能はPlatform Level Applicationとして実装するようになっています。PARAは多様なPlatform Level Applicationをサポートします。",
-      "standardDesc1": "- PARA-StandardはAUTOSARプロジェクトでのA sampleの実装に必要な Functional ClusterモジュールとPlatform Level Applicationを提供します。",
-      "standardDesc2": "- A sampleはSample Adaptive Application開発とネットワーク実装及びテストとなります。",
-      "extensionDesc1": "- PARA-Extentionはお客様の要求事項に合わせて提供します。",
-      "extensionDesc2": "- 要求事項により、特定のOS、Compiler、APIsが提供されます。",
-      "extensionDesc3": "- 診断のような自動車メーカーからの要求事項にも対応します。"
-    },
-    "studio": {
-      "description": "POPCORNSAR STUDIOはAdaptive Applicationを開発するための Webベースの統合開発環境 (IDE)です。<br />Adaptive Platformに準拠したAutomotive Applicationの開発に必要なARXML設計ツールとFunctional Clusterだけではなく、Code Editor 、Debugger、Compiler等の複雑な開発環境の設定が簡単にできます。<br />また、Gitlab、Jenkinsにも連携することができるのでプロジェクト管理にも優れています。<br />さらに、自動運転に関するサービス開発に欠かせないTensorflow、Pytorch等のAI開発環境にも対応します。<br /><br />",
-      "onPremise": "サービスサーバを 顧客先の社内ネットワークに設置します。",
-      "pcInstall": "PCインストール",
-      "pcInstallDesc": "VM(仮想マシン)を PCにインストールします。",
-      "devBoard": "開発ボード",
-      "devBoardDesc": "インストールされた開発ボードにネットワーク接続します。",
-      "cloud": "クラウド",
-      "cloudDesc": "どのようなOS環境でも使えるPublic Cloudでのサービス",
-      "sdkSupport": "対応のプログラムと言語SDK",
-      "feature1": "- ユーザーのPCにインストールせず、直接Webブラウザでアクセスして使用できます。",
-      "feature2": "- PC、OSなど、プラットフォームを選ばず、どの環境でも利用可能です。",
-      "feature3": "- 顧客のご要望に合わせてIDEをカスタマイズすることができます。",
-      "feature4": "- マルチユーザー、マルチプロジェクト、マルチワークスペースをサポートしています。",
-      "feature5": "- 提供しているランタイムでリアルタイムデバックが可能です。",
-      "aSampleTest": "A Sample シミュレーションのテスト環境を提供",
-      "aSampleTestDesc": "同時に二つの仮想マシンを使えます。アプリケーション間でのネットワークテストが可能です。"
-    },
-    "pacon": {
-      "title": "Adaptive Application開発やテストを効率よく進められるOne-stop統合開発環境",
-      "description": "PACON IDE(Popcorn Automotive CONtainer Integrated Development Environment)はコーディング、デバッグ、コンパイル、インテグレーションなど、Adaptive Application開発に関するすべてのプロセスが集まっている統合開発環境です。<br><br>PACON IDEは既存の仮想化技術よりパフォーマンスの良いDocker Container技術を用いて快適な開発環境を提供します。 PACONE IDEはユーザーが自らインストールしたVscodeを起動して、Docker Containerで構築された開発環境に接続します。<br><br>Adaptive Application開発に必要な拡張機能や開発効率を高める便利機能がすでにインストールされていますので、ユーザーが一々プログラムを管理する苦労がなくなります。<br><br>特に、量産プロジェクトで使われるECUと同じ機能が適用された仮想ECUをDocker Containerベースで生成して、Adaptive Applicationの実装からテストまでの過程をシミュレーションできることが特徴です。<br><br>さらに、多くのエンジニアに馴染みのソースコード編集プログラムであるVscodeを使用するので、接近性に優れていますリアルタイムでソースコードを編集したり、 バージョン管理システムやレポジトリとの連携ができて、ビルドやテストが容易になります。また、 Adaptive Application開発時、 C++言語ほかにも様々な開発言語まで使えます。<br><br>",
-      "keyFeatures": "主な機能",
-      "benefits": "ベネフィット",
-      "feature1": " ARA API及び、Open Source API自動補完",
-      "feature2": " リアルタイムでAUTOSARコーディングルールのチェック ",
-      "feature3": " デバッグ機能",
-      "feature4": " C++言語ほかに様々な開発言語に対応（Pythonなど）",
-      "feature5": " ネットワーク分析のプログラムとの連携（Wireshark）",
-      "feature6": " 仮想ECU連携によるAdaptive Applicationネットワークテスト",
-      "benefit1": "実際の開発ECUと同じ構成なので、テストのリスクを減らします。",
-      "benefit2": "レポジトリに連携して、履歴を管理することができるので、共同作業が容易になります。",
-      "benefit3": "CI/CD環境と連携して、複数の仮想ECUからAdaptive Applicationテストができます。",
-      "virtualEcuTitle": "仮想ECU生成",
-      "virtualEcuDesc1": "POSIX OSとターゲットECUをVirtual ECU Docker Containerで提供します。",
-      "virtualEcuDesc2": "仮想ECUからAdaptive Applicationのテストを行い、そのままターゲットECUに適用できます。",
-      "virtualEcuDesc3": "ただ、基本的な仮想ECU以外のお客様のご希望によるターゲットECU作業は別途サービス契約で提供されます。",
-      "jenkinsTitle": "Jenkins CI/CDとの連携",
-      "jenkinsDesc1": "様々なPluginを用いたCI/CD Jenkinsパイプラインを使用して, 自動化サーバーを構築してPACON IDEと連携することができます。",
-      "jenkinsDesc2": "CI/CDを用いて複数の仮想ECUを自動生成して、Adaptive Applicationのテストを実行することができます。",
-      "optionTitle": "オプション",
-      "optionDesc": "次の機能は、PACON IDEに該当しません。仮想ECUとJenkins CI/CDはカスタマーからの要求事項により、別途費用でエンジニアリングサービスとして提供します。",
-      "youtubeId": "7sEoz19lAK8"
-    },
-    "adaptive": {
-      "description": "Adaptive Applicationを開発するために、正しく仕様書を分析してツールに反映するスキルが重要です。<br>弊社は長年積み重ねた開発経験や仕様書の分析のノウハウとお客様からの要求事項の分析をもとにツールを進化させてきました。<br>各ツールは連携して、設計・コンフィグレーション・コード生成・ビルド・テストを容易に行えます。<br>Adaptive AUTOSARに関する開発経験のないお客様にはAdaptive Applicationの開発プロセスを理解いただける機会を、<br>量産を目的にするお客様にはエンドユーザーの要求事項を満たす効率の高い開発経験を積めます。",
-      "modelingTool": "設計ツール",
-      "modelingToolName": "(AutoSAR.io)",
-      "functionalCluster": "Functional ",
-      "functionalClusterName": "Cluster (PARA)",
-      "ide": "統合開発環境 ",
-      "ideName": "(PACON IDE)",
-      "subtitle": "Adaptive Application開発に最適なソリューションを提供します。"
-    },
-    "parvisai": {
-      "title": "PARVIS (PopcornSAR Adaptive & Classic Runtime Vehicle Intelligence System) - AIベースの車載ソフトウェア開発成果物自動化",
-      "description": "ASPICEは、自動車ソフトウェア開発プロセスの品質と安全性を体系的に管理するための評価モデルであり、近年では車両メーカーや主要パートナーによってプロジェクト品質確保の重要な基準として活用されています。しかし、膨大なドキュメント作成と検証段階によって開発期間が長引き、人員への依存度が高いという限界があります。<br>PopcornSARは、このような非効率を改善するためにAIベースの車載ソフトウェア開発成果物自動化製品を開発しました。設計、開発、検証の全工程を単一のデータフローでつなぎ、繰り返しの作業を最小化するとともに、ASPICEプロセスに準拠したドキュメント・コード・テスト成果物を自動生成することで、品質と生産性を同時に向上できます。",
-      "subtitle": "AIを活用した車載ソフト開発の設計・開発・検証全工程で利用可能なASPICE成果物の自動生成",
-      "overview": "本製品は、設計（PARVIS-Spec）、開発（PARVIS-Coder）、検証（PARVIS-Verify）の3段階を一つに繋げ、人的な意思決定を維持しながら、反復的で定型的な作業をAIが自動処理するように設計されています。仕様書の解析からコードの安全性確保、テストカバレッジ分析までの全工程を一貫したデータフローでつなぐことで、ASPICE成果物の品質と生産性を同時に高めます。",
-      "specDescription": "PARVIS-Specは仕様書を自動解析して要求を構造化し、要求-コード-テスト間のトレーサビリティマトリックスを自動生成します。AIベースの自然言語解析エンジンが文書の意味を分析して技術要件を自動抽出し、反復的な文書分析作業を最小限に抑えます。これにより、要求変更時にもコードとテスト項目が即座に同期され、プロジェクト全体の一貫性を維持することができます。",
-      "coderDescription": "PARVIS-Coderはコードセーフティの自動化とAPIドキュメントの自動生成によって、開発成果物の品質と一貫性を保証します。AIリファクタリングアルゴリズムがMISRA-Cおよび社内コーディング規則を自動適用し、コメントベースのAPIドキュメントを同時に生成します。開発者はコード品質の確保に集中でき、繰り返しの定型作業から解放されます。",
-      "verifyDescription": "PARVIS-Verifyはテストカバレッジの分析とテストコードの自動生成を行い、検証段階を体系的に加速します。テスト要件に基づいてシナリオを自動生成し、コード変更履歴を反映してカバレッジを継続的に更新します。これにより、検証の品質を高め、テスト時間を大幅に短縮できます。",
-      "performance": "成果指標 (PERFORMANCE)<br>• MISRA-C 準拠率: 40% → 94% (+54%)<br>• ドキュメントカバレッジ: 5% → 100% (+95%)<br>• テストカバレッジ: 0% → 86.4% (+86%)<br>• 業務効率の向上：従来の作業に比べて3～4倍<br><br>これらの成果は、PopcornSARのAIエージェント専門家が設計・開発・検証プロセス全体を自動化することで得られた実際の数値であり、大規模プロジェクトにおいても一貫した品質と効率性を実証しました。",
-      "integration": "AutoSAR.ioおよびPARAとの連携により、Adaptive AUTOSAR環境に最適化された設計-コード-検証の自動化を提供します。PARVISコマンドラインツールを使用して、各モジュールの自動生成機能を実行でき、既存のDevOpsおよびCI/CD環境とも容易に統合できます。これにより、従来の手作業中心の開発方式から完全なAI駆動の開発パイプラインへ移行することが可能になります。",
-      "benefits": "• エラー削減 - AIベースの自動化によりヒューマンエラーを最小化し、コード品質を向上します。<br>• 呼び出し効率化 - 最適化されたAPI呼び出し構造により処理速度を向上します。<br>• トークン削減 - 効率的なデータ処理により運用コストを削減します。<br>• より良い使いやすさ - 直感的なインターフェースとワークフローにより開発生産性を最大化します。",
-      "afterHoursMode": "After Hours Modeは、開発者不在時にも作業を自動的に進め、すべてのセッションの実行履歴を詳細に記録するインテリジェントなセッション追跡システムです。<br>/modeコマンドにより、権限自動承認モード（bypass）、無人作業モード（after-hours）を切り替えることができ、すべてのツール使用履歴とトークン消費量をリアルタイムで追跡します。<br>セッション別の統計、作業タイムライン、プロジェクト全体のサマリーを自動生成し、開発進捗状況を透明に管理できます。これにより24時間連続開発環境を構築し、作業効率性と追跡可能性を最大化します。",
-      "afterHoursFeature1": "Bypass Mode：開発者不在時に権限要求を自動的に承認し、無人作業を進行",
-      "afterHoursFeature2": "No Bypass Mode：すべての権限要求を手動で確認する通常作業モード",
-      "afterHoursFeature3": "Start/Stop Recording：セッション追跡の開始/終了および作業履歴の自動記録"
-    },
-    "aiagent": {
-      "title": "AUTOSAR AI Agent",
-      "subtitle": "AIベースのAUTOSAR開発支援ツール",
-      "intro": "AUTOSAR AI AgentはPopcornSAR独自のAI自然言語処理エンジンに基づき、AUTOSAR標準文書検索およびARXML作成を支援する革新的な開発ツールです。AUTOSARの膨大な仕様書と複雑な構造による開発時間の無駄を画期的に削減します。",
-      "problem": "AUTOSARは世界の自動車産業における標準となっていますが、数千ページにも及ぶ膨大なPDF文書と複雑な構造により、開発者が必要な情報を見つけるのに多くの時間を費やしています。特にどのPDFに目的の内容があるかを把握することから難しい状況です。",
-      "targetTitle": "誰のためのツールか？",
-      "target": "AUTOSAR AI AgentはAUTOSAR初心者からシステムアーキテクト、SW開発者、Technical WriterまでAUTOSARを扱うすべての人が簡単に使用できるよう設計されています。",
-      "featuresTitle": "5つのコア機能",
-      "feature1Title": "ARXML作成",
-      "feature1Desc": "AIベースのスマートテンプレート自動生成により、ARXML作成時間を大幅に短縮します。複雑なAUTOSAR構造を理解していなくても、対話型インターフェースを通じて必要なARXMLを素早く生成できます。",
-      "feature2Title": "ARXML分析",
-      "feature2Desc": "既存のARXMLファイルの構造を可視化し、分析します。複雑な依存関係を一目で把握でき、デバッグ時間を大幅に削減します。",
-      "feature3Title": "AUTOSAR API検索",
-      "feature3Desc": "AUTOSAR APIを自然言語で検索し、使用方法を提供します。膨大なPDF文書からAPIを探す手間なく、即座に必要な情報にアクセスできます。",
-      "feature4Title": "AUTOSAR SWS Number検索",
-      "feature4Desc": "SWS番号だけで関連するspecificationを即座に確認できます。複数のPDFファイルを探し回って該当SWSを見つける時間をなくし、正確な仕様情報に直接アクセスできます。",
-      "feature5Title": "ARXML Tag検索",
-      "feature5Desc": "ARXMLタグの用途、必須属性、使用例を一目で把握できます。タグ間の関係と制約事項まで詳しく案内し、ARXML作成エラーを事前に防止します。",
-      "techTitle": "技術的優位性",
-      "tech1": "PopcornSAR独自AI自然言語処理エンジン",
-      "tech2": "AUTOSAR R20-11、R24-11バージョン対応",
-      "tech3": "4言語対応（韓国語、英語、日本語、中国語）",
-      "compareTitle": "業務効率比較",
-      "compareHeader1": "区分",
-      "compareHeader2": "従来の方法",
-      "compareHeader3": "AUTOSAR AI Agent",
-      "compare1Task": "SWS文書検索",
-      "compare1Before": "5～10分<br><small>複数のPDFのどこにあるか探すのが困難</small>",
-      "compare1After": "30秒～2分<br><small>即座に正確な場所を案内</small>",
-      "compare2Task": "ARXML作成",
-      "compare2Before": "6時間<br><small>マニュアル参照しながら手作業</small>",
-      "compare2After": "30分<br><small>AIテンプレート自動生成</small>",
-      "compare3Task": "API使用法確認",
-      "compare3Before": "3～5分<br><small>PDF探索および検索時間を含む</small>",
-      "compare3After": "30秒～2分<br><small>膨大な情報とともに即座に提供</small>",
-      "valueTitle": "独自の技術",
-      "valueDesc": "PopcornSARのAUTOSAR AI Agentは、10年以上のAUTOSAR開発経験とAI技術を組み合わせて開発されました。単純なキーワード検索ではなく、文脈を理解する自然言語処理技術により、開発者が求める情報を正確に提供します。これによりAUTOSAR開発業務時間を平均70%以上短縮できます。",
-      "supportTitle": "対応範囲",
-      "supportVersion": "AUTOSAR R20-11、R24-11",
-      "supportLang": "韓国語、英語、日本語、中国語"
-    },
-    "parvisadk": {
-      "title": "PARVIS ADK",
-      "subtitle": "AI搭載ソフトウェア定義車両向けアダプティブ開発キット",
-      "intro": "PARVIS ADKは、車両データ（CAN DBC、ARXML）に基づいてAIが自動的にUXシナリオを生成し、競合他社分析と収益性予測を通じて最適な製品開発方向を提示するエンドツーエンド自動化プラットフォームです。<br><br>企画から開発、デプロイまでの全プロセスを自動化し、製品の市場投入時間を70%以上短縮し、AIベースの意思決定により開発リスクを最小化します。",
-      "problem": "<strong>従来の車載ソフトウェア開発の問題点：</strong><br>• 手動UXシナリオ企画：企画者が数ヶ月かけて手動で作成<br>• 競合他社分析の遅延：手動検索と分析により意思決定が遅延<br>• 収益性検証の欠如：開発後に市場の反応でのみ検証可能<br>• 長い開発サイクル：テストケース作成、開発、デプロイに数ヶ月を要する<br>• 高い失敗リスク：専門家の直感に依存した意思決定<br><br>→ 結果として市場投入時間の増加、開発コストの上昇、競争力の低下を招きます。<strong>PARVIS ADK</strong>はこれらの問題を解決する完璧なソリューションです。",
-      "targetTitle": "対象ユーザー",
-      "target": "• 自動車OEMおよびTier1サプライヤー<br>• ソフトウェア定義車両（SDV）開発企業<br>• AUTOSARベースの製品開発企業",
-      "featuresTitle": "5つのコア機能",
-      "feature1Title": "車両データ統合分析",
-      "feature1Desc": "CAN DBC、ARXML、SDV APIデータを自動的に収集・分析します。外部市場データ（高級車/エコノミー車のトレンド）を統合し、リアルタイムのデータドリブンな洞察を導出します。",
-      "feature2Title": "AIベースのUXシナリオ自動生成",
-      "feature2Desc": "車両データに基づいて実現可能なサービスシナリオをAIが自動生成します。これまでになかった新しいサービスアイデアを発見し、ユーザーシナリオ、API仕様、データフローを自動生成します。",
-      "feature3Title": "競合他社状況の自動調査",
-      "feature3Desc": "生成されたUXシナリオに基づいてA社/B社の製品リリース状況を自動検索します。市場トレンドと競争状況をリアルタイムで分析し、差別化ポイントを自動抽出します。",
-      "feature4Title": "収益性自動分析",
-      "feature4Desc": "AIベースのROI（投資収益率）を自動予測します。「何が収益になるか？」という意思決定を支援し、OTA展開可能な機能を自動選定し、優先順位ベースの開発ロードマップを提示します。",
-      "feature5Title": "AI DevOps自動化開発",
-      "feature5Desc": "TDD（テスト駆動開発）ベースのテストケースを自動生成します。V-model/ASPICEプロセスを自動遵守し、CI/CDパイプラインを自動構成し、ビルド、テスト、デプロイの全プロセスを自動化します。",
-      "tddTitle": "TDD（テスト駆動開発）とは？",
-      "tddDesc": "TDDは、テストを先に作成し、そのテストを通過するコードを作成する開発手法です。<br>PARVIS ADKはこのTDDサイクルを自動化し、開発品質を保証し、バグを事前に防止し、リファクタリングを安全に実行できるようサポートします。",
-      "afterHoursTitle": "PARVISのAfter Hours Mode",
-      "techTitle": "技術スタック",
-      "tech1": "<strong>AI/MLエンジン：</strong>LLMベースのシナリオ生成と収益性予測",
-      "tech2": "<strong>データ処理：</strong>CAN DBC/ARXMLパーサー、SDV API統合、外部データクローラー",
-      "tech3": "<strong>開発自動化：</strong>TDDフレームワーク、V-model/ASPICE自動化、AI DevOpsパイプライン",
-      "tech4": "<strong>統合プラットフォーム：</strong>Webベースのダッシュボード、RESTful API、クラウド/オンプレミスサポート",
-      "compareTitle": "従来の方法 vs PARVIS ADK",
-      "compareHeader1": "タスク",
-      "compareHeader2": "従来の方法",
-      "compareHeader3": "PARVIS ADK",
-      "compare1Task": "UXシナリオ企画",
-      "compare1Before": "企画者が手動作成<br><small>（数週間～数ヶ月）</small>",
-      "compare1After": "AI自動生成<br><small>（数時間）</small>",
-      "compare2Task": "競合他社分析",
-      "compare2Before": "手動検索と分析<br><small>（数週間～数ヶ月）</small>",
-      "compare2After": "AI自動調査<br><small>（数分～数時間）</small>",
-      "compare3Task": "収益性分析",
-      "compare3Before": "専門家判断と手動計算<br><small>（数週間）</small>",
-      "compare3After": "AIベースのROI予測<br><small>（数分）</small>",
-      "compare4Task": "テストケース作成",
-      "compare4Before": "開発者が手動作成<br><small>（数ヶ月）</small>",
-      "compare4After": "TDDベースの自動生成<br><small>（数時間）</small>",
-      "compare5Task": "開発とデプロイ",
-      "compare5Before": "手動開発とデプロイ<br><small>（数ヶ月）</small>",
-      "compare5After": "AI DevOps自動化<br><small>（数日～数週間）</small>",
-      "valueTitle": "価値提案",
-      "valueBusinessTitle": "ビジネス価値",
-      "valueBusiness1": "市場投入時間70-80%短縮",
-      "valueBusiness2": "人件費50-60%削減",
-      "valueBusiness3": "AIベースの意思決定により失敗リスクを最小化",
-      "valueBusiness4": "新サービスの自動発見",
-      "valueBusiness5": "TDDとASPICE準拠の自動化により品質向上",
-      "valueTechTitle": "技術的価値",
-      "valueTech1": "実際の車両データに基づく現実的なシナリオ",
-      "valueTech2": "AUTOSARとASPICE標準の自動準拠",
-      "valueTech3": "クラウドとオンプレミスの両方をサポート",
-      "valueTech4": "既存の開発プロセスとのシームレスな統合",
-      "valueDiffTitle": "差別化ポイント",
-      "valueDiff1": "業界初のAIベースUXシナリオ自動生成プラットフォーム",
-      "valueDiff2": "エンドツーエンド自動化：企画 → 分析 → 開発 → デプロイ",
-      "supportTitle": "サポート情報",
-      "supportVersion": "PARVIS ADK 1.0（MOAI-ADK 0.24ベース）",
-      "supportPlatform": "Webベースのダッシュボード、クラウド/オンプレミス",
-      "supportLang": "韓国語、英語"
+    "keyFeatures": "主な機能"
+  },
+  "parvisAdk": {
+    "title": "PARVIS ADK",
+    "subtitle": "ソフトウェア定義車両向けAI駆動型アダプティブ開発キット",
+    "badge": "AI駆動SDVプラットフォーム",
+    "intro": "PARVIS ADKは、車両データ（CAN DBC、ARXML）に基づいてAIが自動的にUXシナリオを生成し、競合分析と収益性予測を通じて最適な製品開発方向を提案するエンドツーエンド自動化プラットフォームです。",
+    "heroSubtitle1": "ソフトウェア定義車両向け",
+    "heroSubtitle2": "エンドツーエンド自動化",
+    "learnMore": "詳細を見る",
+    "problemTitle": "従来の車載ソフトウェア開発の問題点",
+    "problemList": [
+      "手動のUXシナリオ企画",
+      "競合分析の遅延",
+      "収益性検証の欠如",
+      "長い開発サイクル",
+      "高い失敗リスク"
+    ],
+    "problemConclusion": "これにより、市場投入の遅延、開発コストの増加、競争力の低下を招きます。",
+    "problemSolution": "はこれらの問題を解決する完璧なソリューションです。",
+    "targetTitle": "対象ユーザー",
+    "targetList": [
+      "自動車OEMおよびTier1サプライヤー",
+      "ソフトウェア定義車両（SDV）開発企業",
+      "AUTOSARベースの製品開発企業"
+    ],
+    "metricsSubtitle": "従来の開発方式と比較した革新的な成果",
+    "timeReduction": "70-80",
+    "timeReductionUnit": "%",
+    "timeReductionLabel": "開発時間短縮",
+    "timeReductionDesc": "企画からデプロイまでのエンドツーエンド自動化で、市場投入時間を大幅に短縮します。",
+    "automated": "自動化",
+    "featuresTitle": "5つのコア機能",
+    "featuresLabel": "コア機能",
+    "featuresSubtitle": "車両データ分析からAI駆動の開発自動化まで",
+    "feature1Title": "車両データ統合分析",
+    "feature1Desc": "CAN DBC、ARXML、SDV APIデータを自動的に収集・分析します。外部市場データを統合してリアルタイムのデータ駆動型インサイトを導出します。",
+    "feature1Subtitle": "CAN DBC、ARXML、SDV APIデータ統合分析",
+    "feature1Items": [
+      "CAN DBCシグナル自動パース",
+      "ARXML構造分析",
+      "外部市場データ統合"
+    ],
+    "feature2Title": "AI駆動UXシナリオ自動生成",
+    "feature2Desc": "車両データに基づいてAIが実現可能なサービスシナリオを自動生成します。UXフロー、API仕様、データフロー図を同時に提案します。",
+    "feature2Subtitle": "AIが自動生成する実現可能なサービスシナリオ",
+    "feature2Items": [
+      "自動UXフロー設計",
+      "自動API仕様生成",
+      "データフロー可視化"
+    ],
+    "feature3Title": "競合分析の自動化",
+    "feature3Desc": "生成されたUXシナリオに基づいて競合他社のリリース状況を自動検索します。市場トレンドと競争状況をリアルタイムで分析します。",
+    "feature4Title": "AI駆動収益性予測",
+    "feature4Desc": "AIベースのROI（投資収益率）を自動予測します。意思決定を支援し、優先度ベースの開発ロードマップを提示します。",
+    "feature34Subtitle": "市場分析と収益性予測によるデータ駆動の意思決定",
+    "feature34Items": [
+      "競合他社リリース状況の自動検索",
+      "リアルタイム市場トレンド分析",
+      "AI駆動ROI予測"
+    ],
+    "feature5Title": "AI DevOps自動化開発",
+    "feature5Desc": "TDDベースのテストケースを自動生成します。V-model/ASPICEプロセスに自動準拠し、CI/CDを自動構成します。",
+    "feature5Subtitle": "TDDテスト自動生成、V-model/ASPICE自動準拠",
+    "feature5Items": [
+      "TDDテストケース自動生成",
+      "V-modelプロセス自動化",
+      "CI/CDパイプライン自動構成"
+    ],
+    "tddTitle": "TDD（テスト駆動開発）とは？",
+    "tddDesc": "TDDは、テストを先に書いてからそのテストに合格するコードを書く開発手法です。PARVIS ADKはこのTDDサイクルを自動化して開発品質を保証します。",
+    "tddBadge": "テスト駆動開発",
+    "tddRed": "失敗テスト作成",
+    "tddGreen": "テスト合格",
+    "tddRefactor": "コード改善",
+    "afterHoursTitle": "After Hours Mode",
+    "afterHoursDesc": "開発者不在時でも自動的に作業を進め、すべてのセッション実行履歴を詳細に記録するインテリジェントセッション追跡システムです。",
+    "afterHoursBadge": "夜間自動化モード",
+    "afterHoursFeatures": [
+      "Bypass Mode：開発者不在時に権限要求を自動承認",
+      "No Bypass Mode：すべての権限要求を手動確認",
+      "Start/Stop Recording：セッション追跡と作業履歴の自動記録"
+    ],
+    "afterHoursActive": "After Hours有効",
+    "afterHoursTasksCompleted": "完了タスク",
+    "afterHoursTestsPassed": "合格テスト",
+    "afterHoursSessionDuration": "セッション時間",
+    "techStackTitle": "技術スタック",
+    "techStackBadge": "技術スタック",
+    "techStack": [
+      "AI/MLエンジン：LLMベースのシナリオ生成",
+      "データ処理：CAN DBC/ARXMLパーサー、SDV API統合",
+      "開発自動化：TDDフレームワーク、V-model/ASPICE自動化",
+      "統合プラットフォーム：Webダッシュボード、RESTful API"
+    ],
+    "compareTitle": "従来方式 vs PARVIS ADK",
+    "compareHeaders": [
+      "タスク",
+      "従来方式",
+      "PARVIS ADK"
+    ],
+    "compareRows": [
+      {
+        "task": "UXシナリオ企画",
+        "before": "企画者が手動作成（数週間～数ヶ月）",
+        "after": "AI自動生成（数時間）"
+      },
+      {
+        "task": "競合調査",
+        "before": "手動検索・分析（数週間～数ヶ月）",
+        "after": "AI自動調査（数分～数時間）"
+      },
+      {
+        "task": "収益性分析",
+        "before": "専門家判断・手動計算（数週間）",
+        "after": "AIベースROI自動予測（数分）"
+      },
+      {
+        "task": "テストケース作成",
+        "before": "開発者が手動作成（数ヶ月）",
+        "after": "TDDベース自動生成（数時間）"
+      },
+      {
+        "task": "開発・デプロイ",
+        "before": "手動開発・デプロイ（数ヶ月）",
+        "after": "AI DevOps自動化（数日～数週間）"
+      }
+    ],
+    "businessValueTitle": "ビジネス価値",
+    "benefitsSubtitle": "PARVIS ADKが提供するビジネス価値",
+    "businessValues": [
+      "市場投入時間70-80%短縮",
+      "人件費50-60%削減",
+      "AI意思決定で失敗リスク最小化",
+      "新規サービスの自動発掘",
+      "TDDとASPICEプロセス自動準拠で品質向上"
+    ],
+    "benefitDescs": [
+      "市場投入時間を大幅短縮",
+      "運用効率を最大化",
+      "AI駆動の意思決定",
+      "新規ビジネス機会の発掘"
+    ],
+    "techValueTitle": "技術的価値",
+    "techValues": [
+      "実車データに基づく現実的シナリオ",
+      "AUTOSAR、ASPICE標準に自動準拠",
+      "クラウド/オンプレミス両対応",
+      "既存開発プロセスとシームレス統合"
+    ],
+    "diffTitle": "差別化ポイント",
+    "diffValues": [
+      "業界初のAI駆動UXシナリオ自動生成プラットフォーム",
+      "企画→分析→開発→デプロイのエンドツーエンド自動化実現"
+    ],
+    "supportTitle": "サポート情報",
+    "supportVersion": "PARVIS ADK 1.0",
+    "supportPlatform": "Webダッシュボード、クラウド/オンプレミス",
+    "supportLang": "韓国語、英語",
+    "ctaTitle1": "SDV開発の新基準を",
+    "ctaTitle2": "体験する準備はできましたか？",
+    "ctaDesc1": "PARVIS ADKと一緒に次世代SDV開発の新基準を体験してください。",
+    "ctaDesc2": "企画からデプロイまで、エンドツーエンド自動化の力を感じてください。",
+    "contact": "お問い合わせ"
+  },
+  "aiAgent": {
+    "title": "AUTOSAR AI Agent",
+    "subtitle": "AI基盤AUTOSAR開発支援ツール",
+    "badge": "AI駆動開発",
+    "heroSubtitle1": "AUTOSAR開発の新しいパラダイム",
+    "heroSubtitle2": "AIが答えを見つけます",
+    "intro": "AUTOSAR AI Agentは、PopcornSAR独自のAI自然言語処理エンジンを基盤に、AUTOSAR標準文書検索およびARXML作成を支援する革新的な開発ツールです。",
+    "learnMore": "詳細を見る",
+    "chatOnline": "オンライン",
+    "chatPlaceholder": "AUTOSARについて質問してください...",
+    "chatDemo1User": "ara::comインターフェースの使い方を教えて",
+    "chatDemo1AI": "ara::comはサービス指向通信のためのインターフェースです。FindService()でサービスを検索し...",
+    "chatDemo2User": "ARXMLの例を見せて",
+    "chatDemo2AI": "はい、Service Interface ARXMLの例です。",
+    "targetTitle": "対象ユーザー",
+    "targetSubtitle": "すべてのAUTOSAR開発者のためのツール",
+    "targetDesc": "AUTOSAR初心者からシステムアーキテクト、SW開発者、テクニカルライターまで、AUTOSARを扱うすべての人が簡単に使用できるよう設計されています。",
+    "featuresTitle": "5つのコア機能",
+    "featuresSubtitle": "強力なAIベースのAUTOSAR開発支援機能を提供します。",
+    "feature1Title": "ARXML作成",
+    "feature1Desc": "AIベースのスマートテンプレート自動生成でARXML作成時間を大幅に短縮します。",
+    "feature2Title": "ARXML分析",
+    "feature2Desc": "既存のARXMLファイルの構造を可視化・分析し、デバッグ時間を大幅に削減します。",
+    "feature3Title": "AUTOSAR API検索",
+    "feature3Desc": "自然言語でAUTOSAR APIを検索し、使用方法を即座に取得できます。",
+    "feature4Title": "SWS番号検索",
+    "feature4Desc": "SWS番号だけで関連仕様を即座に確認できます。",
+    "feature5Title": "ARXMLタグ検索",
+    "feature5Desc": "ARXMLタグの用途、必須属性、使用例を一目で把握できます。",
+    "compareTitle": "業務効率比較",
+    "metricsSubtitle": "AI Agent導入前後の開発時間を比較してください。",
+    "compareHeaders": [
+      "タスク",
+      "従来方式",
+      "AI Agent"
+    ],
+    "compareRows": [
+      {
+        "task": "SWS文書検索",
+        "before": "5-10分",
+        "after": "30秒〜2分"
+      },
+      {
+        "task": "ARXML作成",
+        "before": "6時間",
+        "after": "30分"
+      },
+      {
+        "task": "API使用法確認",
+        "before": "3-5分",
+        "after": "30秒〜2分"
+      }
+    ],
+    "timeReduction": "時間短縮",
+    "timeReductionLabel": "開発時間短縮",
+    "timeReductionDesc": "AUTOSAR開発関連の繰り返し作業時間を大幅に削減します。",
+    "demoBadge": "ライブデモ",
+    "demoTitle": "自然言語で会話してください",
+    "demoDesc": "複雑なAUTOSAR文書を探す必要なく、自然な会話で必要な情報を即座に取得できます。",
+    "demoQuestion": "Service Interface ARXMLの書き方を教えて",
+    "demoAnswer": "Service Interface ARXMLの書き方をご案内します。基本構造は次のとおりです：",
+    "demoCode": "<SERVICE-INTERFACE>...</SERVICE-INTERFACE>",
+    "demoFeatures": [
+      "自然言語の質問に即座に回答",
+      "ARXMLコードスニペットを自動生成",
+      "関連SWS文書を自動参照",
+      "多言語対応（韓/英/日/中）"
+    ],
+    "techTitle": "技術的優位性",
+    "techList": [
+      "PopcornSAR独自AI自然言語処理エンジン",
+      "AUTOSAR R20-11、R24-11対応",
+      "4言語対応（韓国語、英語、日本語、中国語）"
+    ],
+    "valueTitle": "私たちだけの独自技術",
+    "valueDesc": "10年以上のAUTOSAR開発経験とAI技術を組み合わせ、開発作業時間を平均70%以上短縮できます。",
+    "benefitsTitle": "導入効果",
+    "benefitsSubtitle": "AUTOSAR AI Agentで開発生産性を革新してください。",
+    "benefit1Title": "開発速度向上",
+    "benefit1Desc": "文書検索とコード作成時間を大幅に短縮します。",
+    "benefit2Title": "学習曲線緩和",
+    "benefit2Desc": "初心者でも簡単にAUTOSARを始められます。",
+    "benefit3Title": "正確な情報",
+    "benefit3Desc": "公式SWS文書ベースの正確な回答を提供します。",
+    "benefit4Title": "多言語対応",
+    "benefit4Desc": "韓国語、英語、日本語、中国語に対応しています。",
+    "supportTitle": "サポート範囲",
+    "supportVersion": "AUTOSAR R20-11、R24-11",
+    "supportLang": "韓国語、英語、日本語、中国語",
+    "ctaTitle1": "AUTOSAR開発を",
+    "ctaTitle2": "よりスマートに",
+    "ctaDesc": "AI Agentと一緒にAUTOSAR開発生産性を革新してください。",
+    "contact": "お問い合わせ"
+  },
+  "autosario": {
+    "badge": "ARXML Design Tool",
+    "tryDemo": "デモを試す",
+    "arxmlEditor": "ARXML Editor",
+    "visualDesignTool": "Visual Design Tool",
+    "adaptivePlatform": "Classic & Adaptive Platform",
+    "webBased": "Web-based",
+    "productScreenshots": "製品スクリーンショット",
+    "screenshotsTitle": "強力なARXML設計インターフェース",
+    "designScope": "設計範囲",
+    "benefitsBadge": "Benefits",
+    "webPlatform": "Webプラットフォーム",
+    "demoVideos": "デモビデオ",
+    "watchDemo": "AutoSAR.ioのデモを見る",
+    "title": "AUTOSAR ARXML設計の完全ソリューション",
+    "intro": "AutoSAR.ioは、AUTOSARベースのシステムおよびソフトウェアモデリング用の設計ツールです。AutoSAR.ioは、OEM、ECUサプライヤー（Tier1）、自動車アプリケーションベンダーなど、さまざまな関係者のAUTOSAR Adaptive Platformソフトウェア要件を満たすことができます。AutoSAR.ioユーザーは、AUTOSAR Adaptive PlatformでARXMLをより迅速かつ正確に設計できます。",
+    "supportScopeTitle": "AutoSAR.ioでサポートされる設計範囲",
+    "supportItems": [
+      "Adaptive Application",
+      "サービス指向通信",
+      "Adaptive Platformでのデプロイメント",
+      "ソフトウェアコンポーネント",
+      "信号ベース通信",
+      "診断抽出",
+      "ECU設定"
+    ],
+    "benefitsTitle": "メリット",
+    "benefits": [
+      "簡単で直接的な設計",
+      "便利なエディタ、ダイアログ、図による効率的な使用",
+      "便利なエディタ、ダイアログ、図",
+      "検証サポート",
+      "モデリングのための様々なユーティリティ機能"
+    ],
+    "versionsTitle": "AutoSAR.ioサポートバージョン",
+    "versions": [
+      "Adaptive Platform R20-11 (2021.06)",
+      "Adaptive Platform R19-11 (2020.06)",
+      "Adaptive Platform R19-03 (2019.05)"
+    ],
+    "webBasedTitle": "WebベースのAutoSAR.ioも利用可能",
+    "webBasedDesc": "インストール型製品に加え、Webベースで動作するAutoSAR.ioも用意されています。WebベースのAutoSAR.ioに関するお問い合わせは、Q&Aページからご連絡ください。",
+    "demoR2011": "AutoSAR.ioデモ (R20-11)",
+    "demoR1911": "AutoSAR.ioデモ (R19-11)",
+    "demoR1903": "AutoSAR.io (R19-03)",
+    "rentalTitle": "ツールテスト用レンタル申請",
+    "rentalDesc": "テスト版は、AUTOSARプロジェクトを準備しているOEM/Tier1の限定的な製品範囲でのみご利用いただけます。下記の「テスト版申請」または'sales@popcornsar.com'からお問い合わせください。",
+    "contact": "お問い合わせ",
+    "sliderCaptions": {
+      "autosar01": "AutoSAR.io - Adaptive Application設計",
+      "autosar02": "AutoSAR.io - サービス設計",
+      "autosar03": "AutoSAR.io - CP ECU設定",
+      "autosar04": "AutoSAR.io - VFBビューア",
+      "web01": "AutoSAR.io - 実行マニフェスト",
+      "web02": "AutoSAR.io - サービスインスタンスマニフェスト",
+      "web03": "AutoSAR.io - Adaptive Application設計",
+      "web04": "AutoSAR.io - マシンマニフェスト"
     }
   },
   "solution": {
+    "mainTitle": "AUTOSAR & AI Solutions",
+    "mainSubtitle": "AUTOSARの専門知識とAIの革新で自動車ソフトウェアの未来をリードします。",
+    "ctaTitle": "プロジェクトに適したソリューションをお探しですか？",
+    "ctaDesc": "PopcornSARの専門家と相談して、最適なソリューションを見つけましょう。",
+    "ctaButton": "お問い合わせ",
+    "cards": {
+      "cloudnative": "クラウド環境でのスケーラビリティと柔軟性を考慮したAA開発ソリューション",
+      "digital": "仮想シミュレーション環境でのAA機能検証ソリューション",
+      "ai": "AIモデルと統合したAdaptive Application開発ソリューション",
+      "matlab": "MATLAB & Simulinkとの互換性を保証する開発ソリューション",
+      "aiagent": "AIエージェントを活用した自動マイグレーションソリューション"
+    },
     "cloudNative": {
-      "title": "Cloud NativeベースのAA開発ソリューション",
-      "text1": "Cloud Nativeは、クラウドコンピューティング環境でアプリケーションを開発、配布、管理する時に拡張性、柔軟性を考慮した方式です。 <br>クラウドインフラストラクチャを活用してアプリケーション開発を効率的に行うことができるツールと技術を支援します。<br>特に、このようなCloud Native技術は、ユーザーのサービス使用に影響を与えることなく、迅速に様々なアプリケーションを適用することができます。",
-      "text2": "当社はCloud Nativeを活用した自社の開発ツールとプラットフォームを構築し、開発者がどのような環境でアクセスしても同じ経験ができるように提供しています。<br>これをCloud Native Automotive Softwareと呼び、当社はCloud Native Automotive Softwareに適合するDevOpsの全ての範囲に対応し、効率的なAA開発を支援します。",
-      "text3": "その結果、ユーザー側では物理インフラを構築する必要がなく、必要な期間だけ柔軟に使用することができ、<br>運営コストを長期的に削減できるメリットがあり、ARM 64ベースのVirtual ECUを構成して実際のターゲットECUと同じ環境でAAテストを行うことができるため、<br>開発アクセス性が大幅に向上する点もSDVパラダイム転換に伴いAppエコシステム構築に大きな役割を果たします。",
-      "text4": "当社のCloud Native Automotive SoftwareはAWS(Amazon Web Services)のリソースを使用しているため、安定的にサービスを提供することができ、<br>機能アップデートによるダウンタイムや使用量が急増する場合、追加的なリソース拡張で柔軟に顧客の反応に対応し、肯定的な顧客体験を提供することができます。"
+      "title": "Cloud Native",
+      "pageTitle": "Cloud Nativeベースのaa開発ソリューション",
+      "ctaTitle1": "Cloud Native AUTOSAR",
+      "ctaTitle2": "開発を始めましょう",
+      "text1": "Cloud Nativeは、クラウドコンピューティング環境でアプリケーションを開発、デプロイ、管理する際にスケーラビリティと柔軟性を考慮したアプローチです。クラウドインフラを活用して効率的にアプリケーション開発を行うためのツールと技術をサポートしています。特に、Cloud Native技術は、ユーザーのサービス利用に影響を与えることなく、さまざまなアプリケーションを迅速にデプロイすることができます。",
+      "text2": "PopcornSARは、Cloud Nativeを活用した独自の開発ツールとプラットフォームを構築し、開発者がどの環境からアクセスしても同じ体験ができるようにしています。これをCloud Native Automotive Softwareと呼び、PopcornSARはCloud Native Automotive Softwareに準拠したDevOpsのすべての側面をカバーし、効率的なAA開発をサポートしています。",
+      "text3": "結果として、ユーザーの観点からは、物理的なインフラを構築する必要がなく、必要な期間中柔軟にリソースを使用できるため、長期的にコストを削減できるメリットがあります。また、ARM 64ベースのVirtual ECUを構成することで、実際のTarget ECUと同じ環境でAAテストを実行できるため、開発へのアクセスが大幅に改善され、SDVパラダイムシフトの要件であるAppエコシステムの構築に大きな役割を果たしています。",
+      "text4": "PopcornSARのCloud Nativeは、AWS（Amazon Web Services）のリソースを使用しているため、安定したサービスを提供できます。機能アップデートによるサービス中断や使用量の急増の場合にも、リソースを拡張して柔軟に顧客の要求に対応し、ポジティブな顧客体験を提供できます。"
     },
     "digitalTwin": {
-      "title": "Digital Twinと連携するAA開発ソリューション",
-      "text1": "ソフトウェア定義車両(SDV)の時代がやってくると、将来の車両には多くの新しい機能が搭載されます。<br>これらの機能の性能や実際の使用条件を考慮したテストは、実際の車両で行うことが難しいため、デジタルツインと呼ばれる、<br>仮想空間を通じて実施できるシミュレーション環境が不可欠です。",
-      "text2": "その背後にある理由は、SDVを実現する前に、最も重要な要素である機能の安全性を確保する必要があるからです。<br>車両の実際の生産が始まる前に、これらの機能をモニタリングし、必要に応じて調整やテストを行うことが必要です。",
-      "text3": "このデジタルツインは、Adaptive AUTOSARの開発にも大きな役割を果たします。最大の利点は、可視化されたデジタルツインに基づいて、<br>Adaptive AUTOSARで開発されたアダプティブアプリケーション(AA)の機能検証を簡単に行えることです。<br>開発、デバッグ、エラー修正などが容易になり、問題を早期に発見し、ソフトウェアのメンテナンスや改善を効率的に行えます。",
-      "text4": "当社の主力製品であるAdaptive AUTOSAR基盤ソリューションで開発されたアダプティブアプリケーション（AA）は、<br>パートナー企業であるMORAIが開発したデジタルツインと連動し、車両の基本的な制御からさまざまな自動運転技術の実装に備えています。"
+      "title": "Digital Twin",
+      "pageTitle": "Digital Twin連携AA開発ソリューション",
+      "ctaTitle1": "Digital Twinシミュレーションを",
+      "ctaTitle2": "体験しましょう",
+      "text1": "SDV（Software-defined Vehicle）時代の到来に伴い、将来の車両に適用されるさまざまな機能には、車両システムの性能や運用条件に関するデータに基づいて、実際の車両と同じ条件でテストを実行できるDigital Twinなどのシミュレーション環境が必要です。",
+      "text2": "その理由は、SDVを実現するために、実際の車両を量産する前に、機能安全という最も重要な側面に悪影響を与えないよう監視しながら、十分な事前実装とチェックを行う必要があるからです。",
+      "text3": "Digital TwinはAdaptive AUTOSAR開発の観点からも大きな役割を果たしています。最大のメリットは、Digital Twinの視覚化特性により、Adaptive AUTOSARベースで開発されたAA（Adaptive Application）の機能検証が容易になることです。これにより、開発、デバッグ、エラー修正などが容易になります。早期の問題検出により、SW開発のメンテナンスと改善作業を効率的に行うことができます。",
+      "text4": "PopcornSARの主力製品であるAdaptive AUTOSARベースのソリューションで開発した車両AA（Adaptive Application）を、パートナー企業MORAIが開発したDigital Twinと連携し、車両の基本制御から先進的な自動運転技術まで、さまざまな機能を実装できるように準備しました。"
     },
     "ai": {
-      "title": "AIモデルと連携する開発ソリューション",
-      "text1": "当社は、AI専用のオープンソースフレームワークであるTensorFlowとPyTorchとの連携を検討し、<br>AIモデルをAA（Adaptive Application）に移行できるように支援しています。",
-      "text2": "TensorFlowで実装された複雑なロジックを含むAIモデルをAAに移行する際、半導体会社が提供するPyTorchモジュールが低いコンパイラバージョンを使用している場合や、<br>Adaptive AUTOSARで必要な一部の機能がサポートされていない場合があります。<br>また、AAのために必要なC++のバージョンが一致しないと、AAのコンパイルおよび動作に問題が発生します。",
-      "text3": "この問題を解決するために、当社はAIが使用するコンパイラバージョンに合わせて、自社のAdaptive AUTOSAR Stackを調整し、<br>Pythonで実装された独自のSOME/IPモジュールを提供します。これにより、Pythonで実装されたAIと制御用のAAが連携でき、AIモデルが検証を完了すると、<br>Python用のAIをC++用のAdaptive AUTOSAR AIに移行できるサポートが提供され、既存のAI SDKにAdaptive AUTOSAR Stackを統合します。",
-      "text4": "さらに、Pythonで実装されたAIモデルのロジックを修正せずに、ARM開発ボードおよび開発PCで動作可能な <br>ARMベースのDocker Container仮想ECUも提供します。",
-      "text5": "※ 当社のソリューションとAI統合事例：NXP社のS32G2とeIQ-AUTO（AI SDK）"
+      "title": "AI for Adaptive Platforms",
+      "pageTitle": "AIモデルを活用したAA開発ソリューション",
+      "ctaTitle1": "AIをAdaptive AUTOSARに",
+      "ctaTitle2": "統合しましょう",
+      "text1": "PopcornSARは、TensorFlowやPyTorchなどのAI専用オープンソースフレームワークとの連携を考慮し、AIモデルをAdaptive Application（AA）に移行できるようサポートしています。",
+      "text2": "TensorFlowで実装した複雑なロジックを含むAIモデルをAAに移行する際、問題が発生することがあります。半導体会社が提供するPyTorchモジュールを含むAI SDKでコンパイラバージョンが低い、Adaptive AUTOSARに必要な一部の機能がサポートされていない、Adaptive AUTOSARに必須のC++バージョンが合わないなどの問題により、AAのコンパイルと動作に問題が発生することがあります。",
+      "text3": "これらの課題を解決するため、PopcornSARはAIが使用するコンパイラバージョンに合わせてAdaptive AUTOSAR Stackを修正しています。Pythonで実装された独自のSOME/IPモジュールを提供し、Pythonで実装されたAIと制御用AAを連携できるようにしています。また、AIモデルの検証が完了したら、Python用AIをC++用Adaptive AUTOSAR AIに開発できるようサポートし、既存のAI SDKにAdaptive AUTOSAR Stackを統合して提供しています。",
+      "text4": "さらに、Pythonで実装されたAIモデルのロジックを全く修正せずに、ARM開発ボードや開発PCで動作可能なARMベースのDockerコンテナ仮想ECUも提供しています。",
+      "note": "※ PopcornSARのソリューションとAI連携事例：NXPのS32G2とeIQ-AUTO（AI SDK）"
     },
     "matlab": {
-      "title": "MATLAB & Simulinkとの互換性を保証する開発ソリューション",
-      "text1": "当社のAdaptive AUTOSARソリューションは、MATLAB & SimulinkのAUTOSAR Blocksetとの互換性を確保しています。<br>これまでMATLAB & Simulinkでアルゴリズムを開発していたお客様が、Adaptive AUTOSARの要件に適合させる必要がある場合、<br>既存の成果物にどの程度影響を与えるかを把握することができません。",
-      "text2": "通常、MATLAB & SimulinkのAUTOSAR Blocksetには、以下のような主要な制約事項が存在します。",
-      "text3": "これらのMATLAB & Simulinkの制約事項に関して、当社のソリューションでは追加設計が可能で、<br>お客様がMATLAB & Simulinkで作成したアルゴリズムをAdaptive Platformに移行し、正常に動作するようにツールチェーンをサポートしています。",
-      "text4": "1&#41; SOME/IPをサポートしない。<br>2&#41; DataTypeのVector型をサポートしない（Arrayには対応）。<br>3&#41; ARXML（Application Design）内でCppImplementationDataType、ServiceInterfaceのEvent、<br>AdaptiveApplicationSwComponentTypeの3つの情報しか認識せず、ARXMLは他の情報を解釈しない。<br>",
-      "item1": "- CppImplementationDataType",
-      "item2": "- ServiceInterfaceのEvent",
-      "item3": "- AdaptiveApplicationSwComponentType",
-      "text5": " 推奨 : MATLAB & Simulink 2022b 使用（R20-11対応）"
+      "title": "MATLAB & Simulink",
+      "pageTitle": "MATLAB & Simulinkとの互換性を保証したAA開発ソリューション",
+      "ctaTitle1": "MATLABアルゴリズムを",
+      "ctaTitle2": "Adaptive Platformへ移行しましょう",
+      "text1": "PopcornSARのAdaptive AUTOSARソリューションは、MATLAB & SimulinkのAUTOSAR Blocksetとの互換性を保証しています。これまでMATLAB & Simulinkだけでアルゴリズムを開発してきたお客様にとって、新しいAdaptive AUTOSAR要件を組み込む必要がある場合、これらの要件が既存の作業にどの程度影響するかを判断することが困難です。",
+      "text2": "基本的に、MATLAB & Simulinkが提供するAUTOSAR Blocksetは、以下の主要な分野でARXML設計と機能の制約に遭遇します：",
+      "text3": "PopcornSARのソリューションでは、これらのMATLAB & Simulinkの制限に対応する追加設計が可能です。MATLAB & Simulinkで開発されたアルゴリズムをAdaptive Platformにスムーズに移行し、新しい環境で正常に動作するようにするツールチェーンを提供しています。",
+      "limitations": "1）SOME/IPをサポートしていません。2）Vectorデータ型をサポートしていません（Arrayで対応）。3）ARXML（Application Design）の以下の3つの情報のみを認識し、他の情報は解釈しません：",
+      "limitationItems": [
+        "CppImplementationDataType",
+        "ServiceInterfaceのEvent",
+        "AdaptiveApplicationSwComponentType"
+      ],
+      "recommendation": "推奨：MATLAB & Simulink 2022b使用（R20-11対応）。"
     },
     "parvisAgent": {
-      "title": "AIエージェントを用いた自動マイグレーションソリューション",
-      "text1": "PARVIS(PopcornSAR Adaptive & Classic Runtime Vehicle Intelligence System)は、要件分析からコードリファクタリング、文書化、品質検証まで、マイグレーション全プロセスを自動化するインテリジェント開発支援プラットフォームです。PopcornSARの独自AI技術をもとに、手作業中心の開発プロセスをAI主導型V-Modelに転換し、効率性と正確性を最大化します。<br>各AI Agentは開発段階別に特化した機能を実行し、全体としては「要件 → コード → リファクタリング → 文書化 → 検証」へとつながる循環型自動化体系を構成します。<br>これにより、ユーザーは反復的で非効率的な手作業なしに、分析・改善・検証が可能な高度化された自動化ワークフローを実現できます。",
-      "exampleTitle": "使用例",
-      "exampleStage1": "第1段階：要件抽出および分析",
-      "exampleStage1Sub": "(PARVIS-Specモジュール)",
-      "exampleStage2": "第2段階：MISRA-C準拠分析および改善",
-      "exampleStage2Sub": "(PARVIS-Coderモジュール)",
-      "exampleStage3": "第3段階：自動リファクタリングおよびドキュメント化",
-      "exampleStage3Sub": "(PARVIS-Coder + PARVIS-Verify)",
-      "exampleExcelDesc": "(Excelドキュメント形式の分析)",
-      "examplePdfDesc": "(PDF仕様書の分析)",
-      "exampleCodeDesc": "(ソースコードのトレース分析)",
-      "exampleMisraDesc": "(MISRA-C準拠分析の実行)",
-      "exampleRefactorDesc": "(MISRA違反の自動修正)",
-      "exampleDoxygenAnnotatorDesc": "(コアソースコードへのDoxygenコメント自動挿入)",
-      "exampleDoxygenPublisherDesc": "(APIドキュメントの生成)",
-      "exampleResultTitle": "PopcornSAR AIシステム活用完了サマリー",
-      "exampleResultDesc": "Vモデルに基づくソースコードマイグレーションを見事に完了しました！",
-      "exampleFinalTitle": "最終成果レポート",
-      "exampleFinalStage1": "第1段階：要件抽出完了",
-      "exampleFinalStage1Sub": "(PARVIS-Specモジュール)",
-      "exampleFinalStage1_1": "合計 <strong>78件</strong> の要件を抽出（Excel 52件 + PDF 20件 + コード 20件）",
-      "exampleFinalStage1_2": "固有ID「<strong>REQ-XXX</strong>」形式を付与し完璧なトレーサビリティ確保",
-      "exampleFinalStage1_3": "配置先：<code>v-model/SYS.1-requirements/</code>",
-      "exampleFinalStage2": "第2段階：MISRA-C 品質改善",
-      "exampleFinalStage2Sub": "(PARVIS-Coderモジュール)",
-      "exampleFinalStage2_1": "<strong>MISRA準拠率</strong>：40% → 65% <em>(+25%)</em>",
-      "exampleFinalStage2_2": "<strong>72件</strong> の違反を自動修正（マジックナンバー、初期化、省略されたconstなど）",
-      "exampleFinalStage2_3": "配置先：<code>output/source_code/</code>",
-      "exampleFinalStage3": "第3段階：専門的なドキュメント化",
-      "exampleFinalStage3Sub": "(PARVIS-Coder Doxygen)",
-      "exampleFinalStage3_1": "<strong>4つ</strong> のコアモジュールに対してオートモーティブグレード注釈を完了",
-      "exampleFinalStage3_2": "<strong>HTML/PDF API</strong>ドキュメントを生成（CJK対応）",
-      "exampleFinalStage3_3": "配置先：<code>v-model/SWE.6-qualification/doxygen/</code>",
-      "subtitle1": "PopcornSAR AIエージェント構成",
-      "subtitle2": "AIエージェント主要機能概要",
-      "subtitle3": "導入効果",
-      "subtitle4": "主な成果物",
-      "effect1": "要件・コード・ドキュメント間の完全なエンド-ツー-エンドトレーサビリティを実現",
-      "effect2": "MISRA標準自動遵守によるソフトウェア品質および信頼性の向上",
-      "effect3": "手作業と比べて検証・ドキュメンテーション時間を70%以上短縮",
-      "effect4": "AIを活用した循環型品質管理（Closed-loop Quality）を実現",
-      "tableHeader1": "順序",
-      "tableHeader2": "エージェント名",
-      "tableHeader3": "主な機能",
-      "tableHeader4": "成果物",
-      "agentFunc1": "V-Modelプロセス全体の調整および品質検証",
-      "agentOutput1": "Process Status Dashboard",
-      "agentFunc2": "Excel文書の構造化および要件の自動抽出",
-      "agentOutput2": "Normalized Markdown <br> CSV / JSON",
-      "agentFunc3": "PDF文書分析およびテキスト/表/画像抽出（OCR対応）",
-      "agentOutput3": "Structured Markdown <br> Image Metadata",
-      "agentFunc4": "ソースコードコメントベースの要件および制約事項抽出",
-      "agentOutput4": "Requirement Trace Report",
-      "agentFunc5": "抽出結果の統合正規化およびMarkdown変換",
-      "agentOutput5": "Unified Requirements Matrix",
-      "agentFunc6": "MISRA-C準拠検査および分析",
-      "agentOutput6": "MISRA Compliance Report",
-      "agentFunc7": "MISRA違反の自動修正およびBefore/After証跡生成",
-      "agentOutput7": "Refactored MISRA Code",
-      "agentFunc8": "ソースコードへのautomotive-grade Doxygenコメント追加",
-      "agentOutput8": "Professionally Commented Code",
-      "agentFunc9": "HTML/PDF形式の専門的なAPIドキュメント生成（CJK対応）",
-      "agentOutput9": "API Documentation (HTML/PDF)",
-      "agentFunc10": "要件ベースの自動テスト生成および実行",
-      "agentOutput10": "Test Results / Coverage Report",
-      "agentFunc11": "文書品質検証およびCLAUDE.mdメンテナンス",
-      "agentOutput11": "Documentation Quality Report",
-      "aispecTitle": "1. PARVIS-Spec（Excel／PDF／Code）",
-      "aispecFeature1": "ドキュメント及びコードからの要件自動抽出",
-      "aispecFeature2": "トレーサビリティの確保",
-      "aispecFeature3": "多様なファイル形式（Excel、PDF、ソース）間の統合分析",
-      "aicoderTitle": "2. PARVIS-Coder（MISRA／Doxygen）",
-      "aicoderFeature1": "MISRA規則に基づくコードの整備・自動修正",
-      "aicoderFeature2": "マジックナンバー、const処理、初期化省略などのリファクタリング",
-      "aicoderFeature3": "コメント自動追加およびDoxygenドキュメント自動生成",
-      "aiverifyTitle": "3. PARVIS-Verify",
-      "aiverifyFeature1": "生成されたコードとドキュメントの品質検証",
-      "aiverifyFeature2": "Vモデル各段階の結果を自動評価",
-      "aiverifyFeature3": "HTMLレポート形式による視覚的な検証結果提供",
-      "outputHeader1": "区分",
-      "outputHeader2": "成果物例",
-      "outputHeader3": "説明",
-      "outputCat1": "要件",
-      "outputExample1": "要件追跡ドキュメント",
-      "outputDesc1": "文書に基づく要件の自動抽出",
-      "outputCat2": "コード品質",
-      "outputExample2": "MISRAリファクタリング済みコード",
-      "outputDesc2": "MISRA-Cリファクタリングの結果",
-      "outputCat3": "ドキュメンテーション",
-      "outputExample3": "APIドキュメント（HTML）",
-      "outputDesc3": "Doxygenによる自動生成ドキュメントの成果",
-      "outputCat4": "検証",
-      "outputExample4": "品質検証レポート",
-      "outputDesc4": "品質チェックおよび自動レポート生成"
-    },
-    "images": {
-      "solution01": "/assets/images/contents/solution_01_jp.png",
-      "solution02": "/assets/images/contents/solution_02_jp.png",
-      "solution03": "/assets/images/contents/solution_03_jp.png",
-      "solution04": "/assets/images/contents/solution_04_jp.png",
-      "solution05": "/assets/images/contents/solution_05_jp.png"
-    }
-  },
-  "service": {
-    "consulting": {
-      "description": "当社のノウハウを活かしてお客様に最適なコンサルティングのご提供をお約束します。",
-      "item1": "- Adaptive Platform要求事項の確立",
-      "item2": "- Adaptive Platform準拠のECUプロジェクト遂行",
-      "contact": "お問い合わせ"
-    },
-    "autosar": {
-      "description": "お客様がプロジェクトに集中するために、 ECUプロジェクトの中でAUTOSAR実装をサポートします。"
-    },
-    "education": {
-      "description": "AUTOSAR準拠のECU量産プロジェクトを遂行するエンジニア向けのトレーニングを提供します。<br />トレーニングを通じて開発プロセスをご理解いただけます。",
-      "scope": "対応バージョン",
-      "tools": "提供ツール",
-      "toolsDesc": "- 自社開発ツールを提供します。",
-      "contact": "基本的にお客様向けの出張トレーニングを実施しています。詳しくは下記のお問い合わせまたはjapan-sales@popcornsar.comまでお願いいたします。"
-    },
-    "ai": {
-      "description": "PopcornSAR の独自 AI 技術を基盤に、SDV（Software Defined Vehicle）環境に特化した AI Agent 設計トレーニングを提供します。本コースは実際の自動車開発現場で求められる知能型 AI エージェントの設計・実装スキルを育成し、受講者が SDV 向けエージェントを自ら設計・開発・適用できるよう支援します。",
-      "scope": "研修範囲",
-      "scopeContent": "- 自動車ソフトウェア開発ライフサイクルに最適化した AI エージェントの設計・開発実習<br>- AUTOSAR・MISRA など車載規格に準拠した AI モデルの適用<br>- V-Model に基づく要件分析・コード生成・検証プロセスの自動化",
-      "contact": "PopcornSAR の研修は主にお客様先でのオンサイト（出張）形式で実施しています。研修に関するお問い合わせは、下部の「お問い合わせ」ボタン、または <a href=\"mailto:sales@popcornsar.com\">sales@popcornsar.com</a> までご連絡ください。"
-    },
-    "customDev": {
-      "description": "お客様のプロジェクト遂行において、効率を高めるためにカスタム開発ツールを提供します。<br />自動化テスト、自動車メーカーの要求事項に対応する診断機能、エクセルへの変換などの お役に立てる様々な機能が追加されます。",
-      "examplesTitle": "Custom Developmentの事例",
-      "example1": "ㆍODX開発",
-      "example2": "ㆍテスト結果をARXMLとしてレポート",
-      "example3": "ㆍネットワークの自動化",
-      "example4": "ㆍ診断テストの自動化",
-      "example5": "ㆍ診断フォーマットの変換"
+      "title": "PARVIS Agent",
+      "pageTitle": "AI Agentベースの自動化マイグレーションソリューション",
+      "ctaTitle1": "AI AgentでV-Modelを",
+      "ctaTitle2": "自動化しましょう",
+      "specFeatures": [
+        "要件の自動抽出",
+        "完全なトレーサビリティ管理",
+        "マルチフォーマット分析"
+      ],
+      "coderFeatures": [
+        "MISRA準拠リファクタリング",
+        "マジックナンバー処理",
+        "Doxygen文書自動生成"
+      ],
+      "verifyFeatures": [
+        "品質検証",
+        "V-Model評価",
+        "HTMLレポート生成"
+      ],
+      "benefitsTitle": "主なメリット",
+      "benefit1Title": "トレーサビリティ",
+      "benefit1Desc": "エンドツーエンド追跡",
+      "benefit2Title": "MISRA準拠",
+      "benefit2Desc": "自動標準適用",
+      "benefit3Title": "70%+時間削減",
+      "benefit3Desc": "高速検証",
+      "benefit4Title": "品質ループ",
+      "benefit4Desc": "AI駆動管理"
     }
   },
   "company": {
-    "intro": "会社紹介",
-    "about": {
-      "title": "<h1>AUTOSARスペシャリストを中心に2015年に設立した当社は急変する自動車産業の中で グローバルAUTOSAR開発ツールベンダーとしてたゆまぬ努力を重ねてまいりました 。</h1>",
-      "content": "自動車メーカーは製造業からサービス企業への変化を続けていて、その変化は車載ソフトウェアの変化にも影響を与えています。<br />当社はAUTOSAR開発ツール販売と数々のプロジェクト遂行経験、AUTOSAR協会での活動を通じて お客様のニーズを把握して満足度を上げられる自社開発AUTOSARツールを提供しています。<br />特に、急変する自動車産業の中でキーポイントになるAUTOSAR Adaptive Platform仕様を素早く分析し、完成度の高いツールを販売しています。<br />お客様の成功を支援するためにAUTOSARツールではなく、AUTOSAR実装 、コンサルティングやトレーニング ツールのカスタマイズなどのエンジニアリングサービスを提供しています。<br />当社は新しい自動車社会を作っていくパートナーとともに成長していきます。",
-      "video": "<iframe width=\"100%\" height=\"428\" src=\"https://www.youtube.com/embed/GB_RiYzO-as\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
-    },
-    "autosar": {
-      "title1": "AUTOSARの必要性",
-      "content1": "소프트웨어 업계에서는 개발규모가 커질 경우 재사용성 및 개발효율을 향상시키기 위해 소프트웨어 플랫폼을 사용하는 것이 일반적입니다. 하드웨어에 대한 의존도를 없애고 소프트웨어 플랫폼 상에서 동작하는 어플리케이션과 그 라이브러리만을 재사용하도록 합니다. <strong>AUTOSAR</strong> 역시 마찬가지로 이러한 과정을 통해 개발 시간과 비용을 낮추고 있습니다.<br><br> 자동차에 탑재되는 ECU는 온도 및 습도, 진동이라는 특수한 조건 속에서 사용되기 때문에, MCU(Micro Controller Unit)는 내구성과 신뢰성을 향상시켜야 한다는 점에서 일반적인 컴퓨터에 탑재되는 메모리와 처리 능력 등의 성능이 낮습니다. 따라서 소프트웨어 플랫폼을 탑재할 정도의 여유가 없는 경우가 많았습니다. 그러나 최근 자동차의 안전성과 편리성 향상을 위해 ECU가 고도화되며 복잡성이 증가하였고, 그만큼 MCU의 성능도 크게 향상되었습니다. <br><br>이러한 변화에 따라 ECU에 대해서도 소프트웨어 플랫폼 도입이 크게 요구되었으며, 유럽을 중심으로 AUTOSAR가 등장하게 되었고, 자동차 소프트웨어에 대한 표준 플랫폼 사양이 만들어지게 된 것입니다.<br><br><strong>AUTOSAR</strong>(AUTomotive Open System ARchitecture)는 지난 2003년에 발족한 자동차 업계의 글로벌 개발 파트너십이자 표준명이며, 주요 활동 목적은 전자제어장치(ECU, Electronic Control Unit)을 위한 공통 표준 소프트웨어 아키텍처를 책정하고 확립하는 것입니다. 발족 이후 회원사들간의 협업을 통해 다양한 차종 및 플랫폼에 대응할 수 있는 확장성, 소프트웨어의 이식성 및 가용성 안전 요구 대응을 비롯하여 차량 제품 라이프사이클 전반에 걸친 신뢰성 향상을 목표로 하고 있습니다. <br><br>또한, AUTOSAR는 표준화에는 협조하고 구현은 경쟁을 한다는 슬로건을 바탕으로 사양만을 공개하고, 그에 대한 구현은 <strong>AUTOSAR</strong>회원사의 자율에 맡기고 있습니다. 2019년 기준으로 <strong>AUTOSAR</strong> 협회는 9개의 Core partner를 비롯한 270개 회사가 있으며 팝콘사는 Development Partner 소속으로 표준화 작업에도 크게 기여를 하고 있습니다.<br><br>더 이상 자동차는 단순히 이동 수단이 아니라 새로운 삶의 중심이 되어가고 있습니다. OEM은 자동차가 무한대로 고도화 된 정보의 허브가 되고, 수집한 정보를 직접 분석하고 활용함으로써 모든 생활의 중심이 되는 Cat-to-Life시대를 주도적으로 열겠다는 청사진을 그리고 있습니다.<br><br>이렇듯 새로운 시대적 흐름에 편승하여 집, 사무실, 나아가 도시 인프라와 결합된 자동차를 개발하기 위해 OEM은 글로벌 전문 기업은 물론이거니와 스타트업과의 오픈 이노베이션 협업도 꾸준히 진행하고 있습니다.<br><br>미래 기술을 통한 모빌리티 사회를 실현하고자 하는 OEM의 고민은 더욱 깊어지고 있으며, 효율적인 방법으로 대응하기 위한 해결책을 오래전부터 고민해왔습니다. 이러한 미래를 오래전부터 예견한 OEM의 주도로 <strong>AUTOSAR</strong>가 만들어지게 됩니다.",
-      "title2": "Adaptive Platformの登場",
-      "content2": "Classic Platform이나 그 이전에 OSEX/VDX와 같이 정적인 OS기반의 플랫폼은 주로 브레이크, 변속기, 엔진과 같이 실시간성이 강조되는 정확한 기능 수행에 초점을 두고 제어계ECU에 주로 사용되어 왔습니다.  그러나 시간이 흘러 ADAS(Advanced Driver Assistance Systems), IVI(In-Vehicle Infotainment)와 같이 하드웨어에서 소프트웨어로 중심축이 변화함에 따라 POSIX, QNX계열의 동적인 OS기반 플랫폼이 사용되고 있습니다. <br><br>자동차는 이미 모든 것에 접속하는 디바이스화가 진행되고 있습니다. 이러한 변화에서 <strong>Adaptive Platform</strong>은 빠른 연산과 통신 방법을 구현하며 반응성이 높은 소프트웨어를 구성할 수 있고, Ethernet을 통해 외부망과의 실시간 데이터 처리를 수행하여 차량과 교통신호와 같은 시스템과 상호 작용을 가능케 합니다. 이 과정에서 필연적으로 데이터의 올바른 해석과 판단을 수행하며, 보안, 원격진단, 무선 업데이트와 같은 서비스도 지원할 수 있습니다.<br><br>애플리케이션 개발자의 경우, 애플리케이션을 시스템에 통합하기 위해 표준화 된 인터페이스를 제공하는 ARA(AUTOSAR Runtime for Adaptive Applications)을 사용하여 ECU 내부 통신 및 네트워크 간의 통신을 위한 구조로써 활용하고, 진단 및 네트워크 관리, 암복호화와 같은 기본적인 서비스에 접근할 수 있습니다. <br><br>팝콘사에서는 주요 설계부터 기능 구현을 위한 ARA를 독자 개발하여 판매하고 있습니다. <br>상세한 내용은 상품 페이지에서 확인하실 수 있습니다.",
-      "table": {
-        "category": "区分",
-        "openSource": "オープンソース",
-        "openSourceClassic": "使用しない",
-        "openSourceAdaptive": "多様なオープンソース使用",
-        "release": "配布",
-        "releaseClassic": "仕様書のみ配布",
-        "releaseAdaptive": "仕様書以外に検証用Stack Codeも配布",
-        "devMethod": "開発方法論",
-        "devMethodClassic": "システム設計 ⇒ ECU設定 ⇒ BSW(コード生成)",
-        "devMethodAdaptive": "Manifest(システム設計) ⇒Functional Cluster(コード生成)",
-        "funcSafety": "機能安全",
-        "updateClassic": "サポートしない",
-        "updateAdaptive": "アップデートサポート",
-        "devLang": "開発言語",
-        "devLangClassic": "C言語 (MISRA C標準)",
-        "devLangAdaptive": "C++14 (ISO/IEC 14882:2014)"
-      }
-    },
+    "title": "会社紹介",
+    "description1": "今日、自動車は多数の電子部品を搭載したモビリティデバイスへと変化しました。SWプラットフォームとアプリケーションを通じて安全性が向上し、様々な便利機能が提供されています。この変化は、自動車産業の「コネクティビティ(C)、自動運転(A)、シェアリング(S)、電動化(E)」というメガトレンドによりさらに加速しており、車両アーキテクチャ(E/E Architecture)の変化として現れています。",
+    "description2": "自動車SWを駆動するECU（Electronic Control Unit）に高性能CPUが適用されています。これにより、自動運転AIのような多くのコンピューティングリソースを必要とするアプリケーションの使用が可能になり、車両1台あたり約130個に達するECUの数を劇的に削減できます。これらの変化に対応して新たに登場した自動車SWプラットフォームがAUTOSAR Adaptive Platformです。",
+    "description3": "AUTOSAR標準は車両制御を担当する唯一の国際標準で、Classic PlatformとAdaptive Platformで構成されています。Classic Platformは従来の観点から出発し、リアルタイム性と安全性が強調された直接制御用SWプラットフォームです。一方、Adaptive Platformは自動運転AIのように多くのコンピューティングリソースを使用するソフトウェアを駆動できるSWプラットフォームです。AUTOSAR Adaptive Platformは2019年11月にフォルクスワーゲンによって純電気自動車ID.3の量産に初めて適用され、現在トヨタ、ヒョンデ、BMW、ボルボなどのグローバル自動車企業が採用を加速しています。",
+    "description4": "スマートフォンが新しいビジネスとエコシステムをリードしたように、自動車も新しいモビリティサービスを提供する時代がまもなく訪れます。AUTOSAR Adaptive Platformは、この新しいモビリティサービス時代の触媒のようなものです。",
+    "description5": "PopcornSARは、独自の技術で開発したAUTOSAR Adaptive Platformをベースに、様々な分野の開発者が新しいモビリティサービスを簡単かつ迅速に開発できる環境を提供することを目指しています。そのような意味で、誰でも簡単にアクセスできるPopcornとSystem ARchitectureを組み合わせたPopcornSARを社名としました。新しいモビリティサービス時代は遠い未来ではなく、まもなく実現する現実です。PopcornSARは来たる時代に備え、様々なモビリティサービス開発を支援するグローバル自動車SWプラットフォーム企業として成長します。",
+    "customers": "主要顧客",
+    "partners": "技術パートナー",
+    "investors": "投資家",
+    "sortNote": "※ アルファベット順に並んでいます。",
+    "badge": "About PopcornSAR",
+    "subtitle1": "Leading AUTOSAR Innovation",
+    "subtitle2": "for the Future of Mobility",
+    "ctaContact": "Contact Us",
+    "learnMore": "Learn More",
+    "ourStory": "私たちのストーリー",
+    "ourVision": "私たちのビジョン",
+    "ourJourney": "私たちの歩み",
+    "companyVideo": "会社紹介ビデオ",
+    "videoTitle": "PopcornSAR Company Introduction",
+    "visionMission": "Mission",
+    "visionMissionDesc": "自動車ソフトウェア革新の加速",
+    "visionInnovation": "Innovation",
+    "visionInnovationDesc": "次世代ソリューションの先駆け",
+    "visionCollaboration": "Collaboration",
+    "visionCollaborationDesc": "強力な業界パートナーシップの構築",
+    "visionGrowth": "Growth",
+    "visionGrowthDesc": "グローバル展開の拡大",
+    "statYears": "10+",
+    "statYearsLabel": "年の実績",
+    "statClients": "50+",
+    "statClientsLabel": "グローバル顧客",
+    "statProjects": "100+",
+    "statProjectsLabel": "納品プロジェクト",
+    "storyTitle": "自動車イノベーションを牽引",
+    "storyDesc": "創業以来、PopcornSARはAUTOSAR技術の最前線に立っています",
+    "visionTitle": "私たちを前進させる価値観",
+    "visionDesc": "コアバリューがPopcornSARのすべての活動を導きます",
+    "videoDesc": "PopcornSARが自動車ソフトウェアの未来をどのように形作っているかをご覧ください",
+    "journeyTitle": "共に未来を築く",
+    "networkLabel": "パートナーネットワーク",
+    "networkTitle": "業界リーダーからの信頼",
+    "networkDesc": "世界クラスの企業と協力し、卓越した自動車ソリューションを提供します",
+    "ctaTitle": "自動車ソフトウェアの変革をお考えですか？",
+    "ctaDesc": "私たちと提携して、自動車ソフトウェア開発を加速しましょう。",
     "contact": {
-      "korea": "韓国オフィス",
-      "japan": "日本オフィス",
-      "koreaAddr": "韓国ソウル市江南区テヘラン路4ギル40 シンソエビル4階",
-      "koreaPhone": "(82)2-568-3068",
-      "koreaFax": "(82)2-568-3069",
-      "japanAddr": "〒460-0008 名古屋市中区栄5丁目26-39 GS栄ビル3F",
-      "japanPhone": "052-252-4580 / +81-52-252-4580"
+      "title": "お問い合わせ",
+      "koreaOffice": "韓国本社",
+      "japanOffice": "日本法人",
+      "koreaAddress": "ソウル市江南区テヘラン路78キル16、ノーベルビル2階(06194)",
+      "japanAddress": "GSsakae Bld.3F, 5-26-39, Sakae, Nagoya Shi Naka Ku, Aichi Ken, 460-0008, Japan",
+      "badge": "Get in Touch",
+      "subtitle": "いつでもお問い合わせください。各オフィスにご連絡いただけます。",
+      "addressLabel": "Address",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "ctaTitle": "ご質問がありますか？",
+      "ctaDesc": "Q&Aページで素早く回答を確認するか、直接お問い合わせください。",
+      "ctaButton": "Go to Q&A"
+    },
+    "notice": {
+      "title": "お知らせ",
+      "number": "番号",
+      "titleColumn": "タイトル",
+      "category": "カテゴリー",
+      "date": "日付",
+      "badge": "Latest Updates",
+      "subtitle": "PopcornSARの最新ニュースとお知らせをご確認ください",
+      "categories": {
+        "product": "製品",
+        "update": "アップデート",
+        "event": "イベント",
+        "recruitment": "採用"
+      }
     }
   },
   "support": {
-    "qna": {
-      "title": "お問い合わせ",
-      "content": "お問い合わせの前に必要な情報をご確認の上、お問い合わせをお願いいたします。",
-      "type": "カテゴリー",
-      "name": "お名前",
-      "affiliation": "会社名",
-      "contentLabel": "お問い合わせ内容の入力",
-      "placeholder": "",
-      "submit": "送信",
-      "cancel": "キャンセル",
-      "selectType": "원하시는 문의 유형을 선택하세요",
-      "types": {
-        "testVersion": "デモ申請",
-        "consulting": "コンサルティングについて",
-        "education": "トレーニングについて",
-        "productInfo": "製品",
-        "techSupport": "エンジニアリングサービス"
-      },
-      "completeMessage1": "お問い合わせの内容が登録されました",
-      "completeMessage2": "お問い合わせの状況や内容により、回答までにお時間をいただく 場合があります。",
-      "tableTitle1": "製品について",
-      "tableTitle2": "AUTOSARプロジェクトについて",
-      "tableTitle3": "コンサルティングについて",
-      "tableTitle4": "トレーニングについて",
-      "tableTitle5": "カスタマイズツールについて",
-      "tableTitle6": "その他のお問い合わせ",
-      "tableContent1": "-> 製品名 : \n例) AutoSAR.io / PARA / PACON IDE / 仮想ECU\n\n-> AUTOSAR Adaptive Platformを適用する半導体\n例) NXP、NVIDIA、ルネサスなど\n-> AUTOSAR Adaptive Platformを適用するOS\n例) Linux、QNX、Vxworksなど\n\n\n-> 購入ライセンス数(予定) : \n\n-> 購入時期(予定)  : 0000年 00月\n\n-> テストバージョンを申請された方ですか？ : \n** テストバージョンをお申し込みの方にご回答いたします。\n\n-> ツールへのご質問内容 : ",
-      "tableContent2": "-> 開発するECUの種類 : \n 例) ADAS, Telematics, AVN等 \n\n-> お使いのAUTOSARバージョン : \n 例) CP R4.3.1 / AP R19-03  \n\n-> プロジェクト期間(予定) : 0000年 00月から0000年 00月まで\n\n-> お問い合わせ内容 : ",
-      "tableContent3": "-> コンサルティングが必要とされる分野 : \n\n-> コンサルティングが必要とされる時期 : 0000年 00月\n\n-> 解決したい課題 : \n\n-> その他のお問い合わせ内容 : ",
-      "tableContent4": "-> トレーニング対象範囲 : \n**  例) CP R.4.x or AP R19-03\n\n-> 受講者数(予定) : 00名 \n** 最大受講者数は15名に限られています。\n\n-> トレーニング時期(予定) : 0000年 00月  \n\n-> 地域 : 国・都市\n** オンサイトトレーニングを提供しています。その他の場所でのトレーニングも可能です。\n\n-> お問い合わせ内容 : ",
-      "tableContent5": "-> 要求事項 : \n\n-> ご希望の納品日 : 0000年 00月\n\n-> お問い合わせ内容 : ",
-      "tableContent6": "-> お問い合わせ内容"
-    },
     "download": {
-      "catalog": "製品・サービスのカタログ",
-      "technical": "技術資料"
+      "title": "ダウンロード",
+      "productDownload": "製品ダウンロード",
+      "technicalDocs": "技術文書",
+      "downloadBtn": "ダウンロード",
+      "comingSoon": "準備中",
+      "files": {
+        "autosarIo": {
+          "title": "Adaptive AUTOSAR (R20-11) 開発プラットフォームの紹介",
+          "description": "AUTOSAR Adaptive Platform設計用AutoSAR.io評価版"
+        },
+        "paraDemo": {
+          "title": "PARA デモパッケージ",
+          "description": "AUTOSAR Classic & Adaptive Functional Clustersデモパッケージ"
+        },
+        "paconGuide": {
+          "title": "PACON IDE セットアップガイド",
+          "description": "PACON IDEインストールおよび環境設定ガイド"
+        },
+        "autosarOverview": {
+          "title": "AUTOSAR Adaptive Platform 概要",
+          "description": "AUTOSAR Adaptive Platform技術概要文書"
+        },
+        "productCatalog": {
+          "title": "PopcornSAR 製品カタログ",
+          "description": "PopcornSAR製品カタログ (2024)"
+        }
+      }
+    },
+    "qna": {
+      "title": "Q&A",
+      "formTitle": "お問い合わせ",
+      "formDescription": "製品やサービスに関するお問い合わせを残していただければ、担当者が迅速に回答いたします。",
+      "name": "お名前",
+      "namePlaceholder": "お名前を入力してください",
+      "email": "メールアドレス",
+      "emailPlaceholder": "メールアドレスを入力してください",
+      "company": "会社名",
+      "companyPlaceholder": "会社名を入力してください",
+      "phone": "電話番号",
+      "phonePlaceholder": "電話番号を入力してください",
+      "inquiryType": "お問い合わせ種類",
+      "inquiryTypes": {
+        "general": "一般的なお問い合わせ",
+        "product": "製品に関するお問い合わせ",
+        "service": "サービスに関するお問い合わせ",
+        "education": "トレーニングに関するお問い合わせ",
+        "demo": "デモ申し込み",
+        "partnership": "パートナーシップに関するお問い合わせ"
+      },
+      "message": "お問い合わせ内容",
+      "messagePlaceholder": "お問い合わせ内容を入力してください",
+      "submit": "送信",
+      "submitSuccess": "お問い合わせが送信されました。できるだけ早く回答いたします。",
+      "submitError": "メール送信に失敗しました。しばらくしてからもう一度お試しください。",
+      "sending": "送信中...",
+      "directContact": "直接お問い合わせをご希望の場合は、以下からご連絡ください。"
+    },
+    "qnaPromoTitle": "お困りですか？",
+    "qnaPromoDesc": "製品やサービスに関するご質問がある場合は、Q&Aページをご利用ください。",
+    "qnaPromoButton": "Q&Aへ移動"
+  },
+  "service": {
+    "mainTitle": "Engineering Services",
+    "mainSubtitle": "お客様のAUTOSARプロジェクト成功のための専門エンジニアリングサービスを提供します。",
+    "ctaTitle": "プロジェクトに適したサービスをお探しですか？",
+    "ctaDesc": "PopcornSARの専門家と相談して、最適なサービスを見つけましょう。",
+    "ctaButton": "お問い合わせ",
+    "cards": {
+      "consulting": "AUTOSARプロジェクトのための専門コンサルティングサービス",
+      "autosar": "ECUプロジェクトのAUTOSAR導入サポートサービス",
+      "education": "AUTOSARベースのECU量産プロジェクトのためのトレーニング",
+      "tool": "プロジェクト効率を高めるカスタムツール開発",
+      "ai": "SDV環境に特化したAI Agentデザイン教育"
+    },
+    "consulting": {
+      "title": "コンサルティングサービス",
+      "pageTitle": "コンサルティングサービス",
+      "description": "PopcornSARは、豊富な経験に基づいて、お客様のニーズに最適化されたエンジニアリングサービスを提供しています。",
+      "forOem": "For OEM",
+      "forOemList": [
+        "Adaptive Platform要件確立のためのコンサルティング",
+        "Functional Requirement",
+        "Functional Architecture",
+        "Data type Design / Port Interface Design / SW Component Design",
+        "Network Design (CAN, Ethernet) for E/E Architecture",
+        "Diagnostic Design for Safety & Maintenance"
+      ],
+      "forTier1": "For ECU Supplier(Tier1)",
+      "forTier1List": [
+        "Adaptive PlatformベースのECUプロジェクト実施のためのコンサルティング",
+        "Analysis for OEM requirement",
+        "Check list for AUTOSAR project implementation"
+      ],
+      "contact": "メールを送る"
+    },
+    "autosar": {
+      "title": "AUTOSAR導入",
+      "pageTitle": "AUTOSAR導入",
+      "description": "PopcornSARはAUTOSAR導入サービスを提供しており、お客様はプロジェクトの主流に集中できます。"
+    },
+    "education": {
+      "title": "AUTOSARトレーニング",
+      "pageTitle": "AUTOSARトレーニング",
+      "description": "PopcornSARのトレーニングサービスは、主にAUTOSARベースのECU量産プロジェクトに参加する開発者向けです。開発プロセスの全体的な流れを理解し、AUTOSARツールを使用してプロジェクトを成功させるお手伝いをします。",
+      "scope": "トレーニング内容",
+      "tools": "トレーニングツール",
+      "toolsDesc": "PopcornSARツール",
+      "contactInfo": "当社のトレーニングサービスは、お客様の職場で実施されます。下記の「メールを送る」またはメール（sales@popcornsar.com）でお問い合わせください。"
+    },
+    "tool": {
+      "title": "カスタム開発",
+      "pageTitle": "カスタム開発",
+      "description": "PopcornSARは、効率的なAUTOSARプロジェクト実施のためのカスタムツールを提供しています。自動テストツール、Excelコンバーター、OEM固有の診断フォーマット変換ツールなど、PopcornSARのカスタム開発ツールは、お客様のニーズを満たす準備が常に整っています。",
+      "examples": "カスタム開発の例",
+      "exampleList": [
+        "ODX開発ツール",
+        "テスト結果のARXMLレポートツール",
+        "自動ネットワークテストツール",
+        "診断テストの自動化",
+        "各種診断フォーマット変換ツール"
+      ],
+      "exampleDescList": [
+        "ODX標準に準拠した診断データ管理ツール",
+        "テスト結果をARXML形式に自動変換",
+        "ネットワーク通信テスト自動化ソリューション",
+        "診断機能テスト自動化ツール",
+        "OEM固有の診断フォーマット変換サポート"
+      ]
+    },
+    "aiTraining": {
+      "title": "AI Agentコアトレーニング",
+      "pageTitle": "AI Agentコアトレーニング",
+      "description": "PopcornSARの独自AI技術に基づき、SDV（Software Defined Vehicle）環境に特化したAI Agent設計トレーニングを提供しています。このプログラムは、実際の自動車開発環境で必要とされるインテリジェントなAIエージェントの設計と実装スキルを構築するように構成されており、受講者がSDVに特化したエージェントを自分で設計、開発、適用できるようにします。",
+      "scope": "トレーニング範囲",
+      "scopeList": [
+        "自動車ソフトウェア開発ライフサイクルに最適化されたAIエージェントの設計と開発の実践",
+        "AUTOSARやMISRAなどの自動車標準に準拠したAIモデルの適用",
+        "V-Modelベースの要件分析、コード生成、検証プロセスの自動化"
+      ],
+      "contactInfo": "PopcornSARは主にお客様の場所で実施するオンサイトトレーニングを提供しています。お問い合わせは、下記のお問い合わせボタンまたはsales@popcornsar.comまでメールでご連絡ください。"
+    },
+    "autosarPage": {
+      "badge": "実装",
+      "processTitle": "実装プロセス",
+      "processSubtitle": "エンドツーエンドのAUTOSAR実装サービス",
+      "step1Title": "ARXML設計",
+      "step1Desc": "AUTOSAR標準に準拠したARXML設計と実装",
+      "step2Title": "SWコンポーネント開発",
+      "step2Desc": "Adaptive AUTOSAR SWコンポーネント開発",
+      "step3Title": "システム統合",
+      "step3Desc": "システム全体の統合と検証",
+      "scopeTitle": "サービス範囲",
+      "scopeItems": [
+        "Adaptive PlatformベースのECU SW開発",
+        "SOME/IP通信実装",
+        "診断機能実装",
+        "OTAアップデート機能実装"
+      ],
+      "ctaTitle1": "AUTOSARの",
+      "ctaTitle2": "実装サポートが必要ですか？",
+      "card1Title": "ARXML",
+      "card1Desc": "標準準拠",
+      "card2Title": "SW Component",
+      "card2Desc": "Adaptiveプラットフォーム",
+      "card3Title": "Integration",
+      "card3Desc": "システムレベル"
+    },
+    "educationPage": {
+      "badge": "トレーニング",
+      "methodsTitle": "トレーニング方法",
+      "methodsSubtitle": "さまざまなトレーニングプログラムを提供します",
+      "theoryTitle": "理論",
+      "theoryDesc": "AUTOSAR標準とアーキテクチャの理解",
+      "practiceTitle": "実践",
+      "onSiteTitle": "オンサイト",
+      "onSiteDesc": "カスタマイズされた出張トレーニング",
+      "onlineTitle": "オンライン",
+      "onlineDesc": "リモートトレーニングサポート",
+      "scopeItems": [
+        "AUTOSAR Adaptive Platformの概要とアーキテクチャ",
+        "Functional Clustersの理解と活用",
+        "Manifest設計とコード生成",
+        "Adaptive Applicationの開発実習",
+        "SOME/IP通信実装"
+      ],
+      "ctaTitle1": "AUTOSARを",
+      "ctaTitle2": "学ぶ準備はできましたか？"
+    },
+    "toolPage": {
+      "badge": "カスタム開発",
+      "examplesSubtitle": "プロジェクト効率を高めるカスタムツール",
+      "ctaTitle1": "カスタムツールが",
+      "ctaTitle2": "必要ですか？",
+      "card1Title": "ODX Tool",
+      "card1Desc": "診断データ",
+      "card2Title": "Test Auto",
+      "card2Desc": "自動化ツール",
+      "card3Title": "Converter",
+      "card3Desc": "フォーマットツール"
+    },
+    "aiPage": {
+      "badge": "AIトレーニング",
+      "pillarsTitle": "トレーニングの柱",
+      "pillarsSubtitle": "AI Agent開発のためのコアトレーニング領域",
+      "designTitle": "AI Agent設計",
+      "designDesc": "SDV環境に最適化されたAI Agentアーキテクチャ設計",
+      "practiceTitle": "ハンズオン実践",
+      "practiceDesc": "実際の開発環境での実装実習",
+      "standardsTitle": "標準準拠",
+      "standardsDesc": "AUTOSAR、MISRAなどの車載標準に基づく",
+      "ctaTitle1": "AI Agent開発を",
+      "ctaTitle2": "マスターする準備はできましたか？",
+      "card1Title": "AI Design",
+      "card1Desc": "SDV最適化",
+      "card2Title": "Practice",
+      "card2Desc": "ハンズオン学習",
+      "card3Title": "Standards",
+      "card3Desc": "AUTOSAR & MISRA"
     }
+  },
+  "para": {
+    "title": "Adaptive AUTOSARベースで車載機能を実現するのに不可欠なモジュール",
+    "subtitle": "Realize your idea for future car",
+    "intro1": "PARAはAUTOSAR Classic & Adaptive Platformを実装するために自社開発したAUTOSAR準拠のソフトウェアプラットフォームです。",
+    "intro2": "PARAはAUTOSAR Standard Functional Cluster API、C++ Generator、Manifest Generator、Basic Platform Level Applicationで構成されていて、Adaptive Platformの基本的な機能をライブラリーで提供しています。",
+    "araTitle": "AUTOSAR Runtime for Adaptive Application(ARA)",
+    "flowTitle": "Implementation process of Adaptive Application",
+    "flowDesc": "ユーザーはAutoSAR.ioで設計したARXMLからAdaptive Applicationを実装できます。",
+    "flowNote": "※ PARA ジェネレータはAutoSAR.ioで設計を行って、最後のステップで起動できます。",
+    "platformTitle": "Platform Level Application",
+    "platformDesc": "Adaptive Platformで一部のFunctional Clusterの機能はPlatform Level Applicationとして実装するようになっています。PARAは多様なPlatform Level Applicationをサポートします。",
+    "standardTitle": "PARA-Standard",
+    "standardItems": [
+      "PARA-StandardはAUTOSARプロジェクトでのA sampleの実装に必要な Functional ClusterモジュールとPlatform Level Applicationを提供します。",
+      "A sampleはSample Adaptive Application開発とネットワーク実装及びテストとなります。"
+    ],
+    "extensionTitle": "PARA-Extension",
+    "extensionItems": [
+      "PARA-Extentionはお客様の要求事項に合わせて提供します。",
+      "要求事項により、特定のOS、Compiler、APIsが提供されます。",
+      "診断のような自動車メーカーからの要求事項にも対応します。"
+    ],
+    "keyFeaturesTitle": "主な機能",
+    "keyFeatures": [
+      "Adaptive AUTOSAR Standard APIs",
+      "Various Extended APIs",
+      "C++ Code Generators for Adaptive AUTOSAR",
+      "Manifest Generators for Adaptive AUTOSAR",
+      "Adaptive Platform Applications",
+      "Safety mechanism(Libpara) detecting execution level faults according to ISO26262"
+    ],
+    "supportingTitle": "Supporting AUTOSAR Specification",
+    "supportingVersion": "Adaptive Platform R20-11",
+    "demoTitle": "PARA Demo",
+    "ctaTitle": "PARAで始める準備はできましたか？",
+    "contact": "お問い合わせ"
+  },
+  "pacon": {
+    "title": "Adaptive Application開発やテストを効率よく進められるOne-stop統合開発環境",
+    "subtitle": "PACON IDE",
+    "badge": "統合開発環境",
+    "heroSubtitle1": "Adaptive Application開発の",
+    "heroSubtitle2": "オールインワンソリューション",
+    "intro": "PACON IDEはDocker Container技術を活用して、コーディング、デバッグ、コンパイル、デプロイまでAdaptive Application開発の全過程を一つの環境で処理する統合開発環境です。",
+    "learnMore": "詳細を見る",
+    "keyFeaturesTitle": "主な機能",
+    "featuresSubtitle": "Adaptive Application開発に最適化された機能を提供します。",
+    "feature1Title": "ARA API自動補完",
+    "feature1Desc": "ARA APIとOpen Source APIの自動補完で開発速度を向上させます。",
+    "feature2Title": "コーディングルールチェック",
+    "feature2Desc": "リアルタイムAUTOSARコーディングルール検査でコード品質を保証します。",
+    "feature3Title": "デバッグ対応",
+    "feature3Desc": "強力なデバッグ機能で問題を迅速に解決します。",
+    "feature4Title": "多言語対応",
+    "feature4Desc": "C++以外にもPythonなど様々な開発言語に対応しています。",
+    "feature5Title": "ネットワーク分析",
+    "feature5Desc": "Wireshark連携でネットワーク通信を分析します。",
+    "feature6Title": "仮想ECU連携",
+    "feature6Desc": "仮想ECUを通じてAdaptive Applicationをテストします。",
+    "benefitsTitle": "ベネフィット",
+    "benefitsSubtitle": "PACON IDEで開発効率を最大化してください。",
+    "benefit1Title": "テストリスク低減",
+    "benefit1Desc": "実際のECUと同じ環境でテストしてリスクを最小化します。",
+    "benefit2Title": "チーム協業",
+    "benefit2Desc": "外部Registry連携で履歴管理と共同作業が容易になります。",
+    "benefit3Title": "迅速な開発",
+    "benefit3Desc": "事前構成された環境ですぐに開発を開始できます。",
+    "benefit4Title": "柔軟な拡張性",
+    "benefit4Desc": "VSCodeベースで様々な拡張機能を活用できます。",
+    "virtualEcuBadge": "Docker Container",
+    "virtualEcuTitle": "仮想ECU生成",
+    "virtualEcuDesc": "量産ECUと同じ環境をDocker Containerで提供し、開発からテストまで全過程をシミュレーションします。",
+    "virtualEcuItems": [
+      "お客様のPOSIX OSとTarget ECUをVirtual ECU Docker Containerで提供",
+      "仮想ECUテスト完了後、実際のTarget ECUに直接適用可能",
+      "カスタムTarget ECUは別途エンジニアリングサービスで提供"
+    ],
+    "jenkinsBadge": "CI/CD自動化",
+    "jenkinsTitle": "Jenkins CI/CD連携",
+    "jenkinsDesc": "自動化されたビルド、テスト、デプロイパイプラインを構築して開発生産性を向上させます。",
+    "jenkinsItems": [
+      "様々なプラグインでCI/CD Pipeline構築と自動化サーバー連携",
+      "CI/CDで複数の仮想ECUを自動生成して並列テストが可能"
+    ],
+    "demoBadge": "ビデオデモ",
+    "demoTitle": "PACON IDEデモ",
+    "ctaTitle1": "Adaptive Application開発を",
+    "ctaTitle2": "よりスマートに",
+    "ctaDesc": "PACON IDEと一緒に効率的な開発環境を体験してください。",
+    "contact": "お問い合わせ"
+  },
+  "adaptive": {
+    "title": "AUTOSAR Tool Kit",
+    "subtitle": "Adaptive Application開発に最適なソリューションを提供します。",
+    "intro": "Adaptive Applicationを開発するために、正しく仕様書を分析してツールに反映するスキルが重要です。\n\n弊社は長年積み重ねた開発経験や仕様書の分析のノウハウとお客様からの要求事項の分析をもとにツールを進化させてきました。\n\n各ツールは連携して、設計・コンフィグレーション・コード生成・ビルド・テストを容易に行えます。\n\nAdaptive AUTOSARに関する開発経験のないお客様にはAdaptive Applicationの開発プロセスを理解いただける機会を、量産を目的にするお客様にはエンドユーザーの要求事項を満たす効率の高い開発経験を積めます。",
+    "toolAuthoring": "設計ツール",
+    "toolAuthoringName": "(AutoSAR.io)",
+    "toolFunctional": "Functional",
+    "toolFunctionalName": "Cluster (PARA)",
+    "toolIde": "統合開発環境",
+    "toolIdeName": "(PACON IDE)",
+    "ctaGetStarted": "始める",
+    "ctaExploreTools": "ツールを見る",
+    "toolSuiteTitle": "完全な開発ソリューション",
+    "toolSuiteDesc": "Adaptive Applicationの設計、ビルド、テスト",
+    "workflowTitle": "シームレスな開発フロー",
+    "workflowStep1": "設計",
+    "workflowStep1Desc": "AutoSAR.ioでARXMLモデルを作成",
+    "workflowStep2": "コード生成",
+    "workflowStep2Desc": "PARAプラットフォームAPIでビルド",
+    "workflowStep3": "開発＆テスト",
+    "workflowStep3Desc": "PACON IDEでコーディングとデバッグ",
+    "ctaBadge": "今すぐ始めましょう",
+    "ctaDesc": "完全なAdaptive AUTOSAR開発ワークフローを体験してください"
+  },
+  "parvis": {
+    "badge": "AI-Powered Automation",
+    "title": "PARVIS",
+    "subtitle1": "AIベースの車載ソフトウェア",
+    "subtitle2": "開発成果物の自動化",
+    "heroDesc": "設計、開発、検証の全プロセスを単一のデータフローで接続し、ASPICEプロセスに準拠した成果物を自動生成します。",
+    "cta1": "お問い合わせ",
+    "cta2": "詳細を見る",
+    "specCard": "PARVIS-Spec",
+    "specCardDesc": "要件の自動分析",
+    "coderCard": "PARVIS-Coder",
+    "coderCardDesc": "コード安全性の自動化",
+    "verifyCard": "PARVIS-Verify",
+    "verifyCardDesc": "テストの自動生成",
+    "metricsTitle": "実証された成果",
+    "metricsSubtitle": "実際のプロジェクトで測定されたPARVISのパフォーマンス指標",
+    "efficiencyValue": "3~4",
+    "efficiencyUnit": "x",
+    "efficiencyLabel": "業務効率の向上",
+    "efficiencyDesc": "手作業と比較して開発生産性が3〜4倍向上します。繰り返しのドキュメント作業とコード検証時間を大幅に削減します。",
+    "metricMisra": "MISRA-C準拠率",
+    "metricDocs": "ドキュメントカバレッジ",
+    "metricTest": "テストカバレッジ",
+    "featuresLabel": "3-Step Process",
+    "featuresTitle": "設計から検証まで、完全自動化",
+    "featuresSubtitle": "ASPICEプロセスに準拠したドキュメント、コード、テスト成果物を自動生成します",
+    "specTitle": "要件の自動分析と",
+    "specTitle2": "トレーサビリティマトリクスの生成",
+    "specDesc": "仕様書を自動分析して要件を構造化し、要件-コード-テスト間のトレーサビリティマトリクスを自動生成します。AIベースの自然言語処理エンジンがドキュメントの意味を分析し、技術要件を自動抽出します。",
+    "specFeature1": "仕様書の自動分析",
+    "specFeature2": "要件の構造化",
+    "specFeature3": "トレーサビリティマトリクスの自動生成",
+    "specFile": "Requirements.docx",
+    "specFileStatus": "分析完了",
+    "specFileCount": "47件の要件を抽出",
+    "specMatrix": "Traceability Matrix",
+    "specMatrixStatus": "自動生成",
+    "specMatrixCoverage": "100%カバレッジ",
+    "coderTitle": "コード安全性の自動化と",
+    "coderTitle2": "APIドキュメントの自動生成",
+    "coderDesc": "AIリファクタリングアルゴリズムがMISRA-Cと内部コーディングルールを自動適用し、コメントベースのAPIドキュメントを同時に生成します。開発成果物の品質と一貫性を保証します。",
+    "coderFeature1": "MISRA-Cの自動適用",
+    "coderFeature2": "コーディングルールの検査",
+    "coderFeature3": "APIドキュメントの自動生成",
+    "coderComment": "// MISRA-C Compliant",
+    "coderRule1": "Rule 8.4 compliant",
+    "coderRule2": "Rule 10.1 compliant",
+    "verifyTitle": "テストカバレッジ分析と",
+    "verifyTitle2": "テストコードの自動生成",
+    "verifyDesc": "テスト要件に基づいてシナリオを自動生成し、コード変更履歴を反映してカバレッジを継続的に更新します。検証フェーズを体系的に加速します。",
+    "verifyFeature1": "テストシナリオの自動生成",
+    "verifyFeature2": "リアルタイムカバレッジ分析",
+    "verifyFeature3": "変更履歴の自動反映",
+    "verifyCoverage": "Test Coverage",
+    "verifyTestCases": "Test Cases",
+    "verifyPassRate": "Pass Rate",
+    "benefitsTitle": "コアバリュー",
+    "benefitsSubtitle": "PARVISが提供する差別化された価値",
+    "benefit1Title": "エラー削減",
+    "benefit1Desc": "AIベースの自動化でヒューマンエラーを最小化し、コード品質を向上",
+    "benefit2Title": "呼び出し効率化",
+    "benefit2Desc": "最適化されたAPI呼び出し構造で処理速度を向上",
+    "benefit3Title": "トークン節約",
+    "benefit3Desc": "効率的なデータ処理で運用コストを削減",
+    "benefit4Title": "より良い使いやすさ",
+    "benefit4Desc": "直感的なインターフェースとワークフローで生産性を最大化",
+    "integrationBadge": "Seamless Integration",
+    "integrationTitle": "AutoSAR.ioとPARAとの",
+    "integrationTitle2": "完璧な連携",
+    "integrationDesc": "Adaptive AUTOSAR環境に最適化された設計-コード-検証の自動化を提供します。既存のDevOpsおよびCI/CD環境とも簡単に統合でき、完全なAI駆動開発パイプラインへの移行が可能です。",
+    "ctaTitle1": "AIで開発生産性を",
+    "ctaTitle2": "3〜4倍向上させましょう",
+    "ctaDesc": "PARVISと一緒にASPICEプロセスを自動化し、",
+    "ctaDesc2": "品質と生産性を同時に確保しましょう。",
+    "ctaButton": "お問い合わせ"
   },
   "about": {
-    "title": "会社紹介",
-    "subtitle": "自動車ソフトウェアの未来をリードする",
-    "description": "2008年からPopcornSARは自動車ソフトウェア革新の最前線でOEMと協力会社が未来の車両を開発できるようサポートしてきました。",
-    "mission": {
-      "title": "ミッション",
-      "description": "革新的で安定的かつ拡張可能なAUTOSARソリューションを提供し、自動車産業のソフトウェア転換を加速し、お客様がより安全でスマートな車両を開発できるようサポートします。"
+    "badge": "会社紹介",
+    "heroTitle1": "自動車ソフトウェアの",
+    "heroTitle2": "未来を切り開く",
+    "heroDesc": "2008年以来、PopcornSARは自動車ソフトウェアイノベーションの最前線に立ち、OEMやサプライヤーが未来の車両を作ることを支援してきました。",
+    "missionTitle": "私たちの使命",
+    "missionDesc": "革新的で信頼性が高く、スケーラブルなAUTOSARソリューションを提供し、お客様がより安全でスマートな車両を作ることを可能にすることで、自動車業界のソフトウェア変革を加速させます。",
+    "visionTitle": "私たちのビジョン",
+    "visionDesc": "技術的卓越性、イノベーション、そしてモビリティの未来を推進する取り組みで認められる、グローバルな自動車ソフトウェアソリューションのリーダーになることです。",
+    "valuesTitle": "コアバリュー",
+    "valuesSubtitle": "すべての行動を導く原則",
+    "innovationTitle": "イノベーション",
+    "innovationDesc": "自動車ソフトウェア技術の限界を押し広げ、モビリティの未来を推進します。",
+    "qualityTitle": "品質",
+    "qualityDesc": "厳格なテストと業界をリードする開発プラクティスを通じて卓越性を提供します。",
+    "integrityTitle": "誠実さ",
+    "integrityDesc": "透明なコミュニケーションと倫理的なビジネス慣行を通じて信頼を構築します。",
+    "collaborationTitle": "コラボレーション",
+    "collaborationDesc": "パートナーやクライアントと緊密に連携し、共通の成功を達成します。",
+    "journeyTitle": "私たちの歩み",
+    "journeySubtitle": "会社の歴史における主要なマイルストーン",
+    "milestone2008": "会社設立",
+    "milestone2008Desc": "自動車ソフトウェアを革新するビジョンでスタート",
+    "milestone2012": "AUTOSARパートナーシップ",
+    "milestone2012Desc": "公式AUTOSAR開発パートナーに認定",
+    "milestone2016": "グローバル展開",
+    "milestone2016Desc": "ヨーロッパと北米にオフィスを開設",
+    "milestone2020": "100+顧客",
+    "milestone2020Desc": "100以上のグローバル自動車クライアントを達成",
+    "milestone2024": "Adaptiveプラットフォーム",
+    "milestone2024Desc": "次世代AUTOSAR Adaptiveソリューションを発表",
+    "statOffices": "グローバルオフィス",
+    "statTeam": "チームメンバー",
+    "statCountries": "サービス提供国",
+    "statGrowth": "2018年以降の成長率"
+  },
+  "productsOverview": {
+    "toolkit": "Adaptive AUTOSAR開発のための統合ツールセット",
+    "autosario": "AUTOSAR Adaptive Platform向け設計・コード生成ツール",
+    "para": "AUTOSAR Adaptive Platform向けFunctional Clusters",
+    "pacon": "Adaptive AUTOSAR開発のための統合開発環境",
+    "parvis": "AIベースの車両ソフトウェア開発自動化ソリューション",
+    "parvisadk": "AIベースのソフトウェア定義車両開発キット",
+    "aiagent": "AIベースのAUTOSAR開発支援ツール"
+  },
+  "chatbot": {
+    "title": "PopcornSAR Assistant",
+    "subtitle": "AI製品/サービスガイド",
+    "minimize": "最小化",
+    "reset": "チャットリセット",
+    "placeholder": "メッセージを入力してください...",
+    "initialMessage": "こんにちは！PopcornSARの製品やサービスについてご質問がありましたら、お気軽にどうぞ。",
+    "errorMessage": "申し訳ございません。エラーが発生しました。しばらくしてからもう一度お試しください。"
+  },
+  "consultingPage": {
+    "badge": "コンサルティング",
+    "partnership": "パートナーシップ",
+    "partnershipDesc": "専門家との協業",
+    "customized": "カスタマイズ",
+    "customizedDesc": "オーダーメイドソリューション",
+    "verified": "検証済み",
+    "verifiedDesc": "実績のある専門知識",
+    "targetTitle": "対象顧客",
+    "oemSubtitle": "OEM（自動車メーカー）",
+    "tier1Subtitle": "ECUサプライヤー",
+    "ctaTitle1": "AUTOSARプロジェクトを",
+    "ctaTitle2": "始める準備はできましたか？"
+  },
+  "contactPage": {
+    "badge": "お問い合わせ",
+    "heroTitle1": "対話を",
+    "heroTitle2": "始めましょう",
+    "heroDesc": "ソリューションについてご質問がありますか？プロジェクトについて相談したいですか？お手伝いいたします。",
+    "salesInquiry": "営業お問い合わせ",
+    "salesDesc": "ソリューションについて営業チームにご相談ください",
+    "partnershipTitle": "パートナーシップ",
+    "partnershipDesc": "パートナーシップの機会を探る",
+    "supportTitle": "サポート",
+    "supportDesc": "サポートチームにお問い合わせください",
+    "formTitle": "メッセージを送る",
+    "nameLabel": "お名前 *",
+    "namePlaceholder": "お名前を入力",
+    "emailLabel": "メール *",
+    "emailPlaceholder": "your@email.com",
+    "companyLabel": "会社名",
+    "companyPlaceholder": "会社名を入力",
+    "subjectLabel": "件名 *",
+    "selectTopic": "トピックを選択",
+    "topicSales": "営業お問い合わせ",
+    "topicSupport": "技術サポート",
+    "topicPartnership": "パートナーシップ",
+    "topicOther": "その他",
+    "messageLabel": "メッセージ *",
+    "messagePlaceholder": "プロジェクトについてお聞かせください...",
+    "sendButton": "メッセージを送信",
+    "officesTitle": "オフィス案内",
+    "mapPlaceholder": "ここにインタラクティブマップが表示されます",
+    "successMessage": "メッセージが正常に送信されました！"
+  },
+  "metadata": {
+    "home": {
+      "title": "PopcornSAR | ASPICE V-Model自動化 & AIテストケース生成",
+      "description": "ASPICE V-Model自動化専門企業PopcornSAR。AIテストケース自動生成、ISO 26262検証、AUTOSAR開発ツール提供。"
     },
-    "vision": {
-      "title": "ビジョン",
-      "description": "技術的優秀性、革新、モビリティの未来をリードする献身で認められるグローバル自動車ソフトウェアソリューションリーダーになります。"
+    "products": {
+      "title": "製品",
+      "description": "ASPICE自動化AIツールPARVISとAUTOSAR開発プラットフォーム。AutoSAR.io、PARA、PACON IDE提供。"
     },
-    "values": {
-      "title": "コアバリュー",
-      "subtitle": "私たちのすべての活動を導く原則",
-      "innovation": {
-        "title": "イノベーション",
-        "description": "モビリティの未来のために自動車ソフトウェア技術の限界を広げていきます。"
-      },
-      "quality": {
-        "title": "品質",
-        "description": "徹底したテストと業界最高の開発方式を通じて卓越性を提供します。"
-      },
-      "integrity": {
-        "title": "誠実さ",
-        "description": "透明なコミュニケーションと倫理的なビジネス慣行を通じて信頼を築きます。"
-      },
-      "collaboration": {
-        "title": "協力",
-        "description": "パートナーおよびお客様と緊密に協力し、共同の成功を達成します。"
-      }
+    "products_adaptive": {
+      "title": "AUTOSAR Tool Kit - Adaptive AUTOSAR統合開発ツール",
+      "description": "AutoSAR.io、PARA、PACON IDE統合Adaptive AUTOSAR開発ツール。ARXML設計からビルド・テストまで。"
     },
-    "journey": {
-      "title": "私たちの旅",
-      "subtitle": "会社の歴史における主要なマイルストーン"
+    "products_autosario": {
+      "title": "AutoSAR.io - AUTOSAR ARXML設計ツール",
+      "description": "AUTOSAR Classic/Adaptive ARXML設計ツール。Manifest編集、ソースコード生成、Webベースプラットフォーム。"
+    },
+    "products_para": {
+      "title": "PARA - AUTOSAR Adaptive Functional Clusters",
+      "description": "AUTOSAR Adaptive Functional Cluster API/C++ジェネレーター。ISO 26262安全メカニズム搭載、R20-11対応。"
+    },
+    "products_pacon": {
+      "title": "PACON IDE - VSCodeベースAUTOSAR統合開発環境",
+      "description": "Docker仮想ECU環境でAdaptive Application開発。ARA API自動補完、Jenkins CI/CD統合。"
+    },
+    "products_ai": {
+      "title": "PARVIS - AIテストケース自動生成 & ASPICE V-Model自動化",
+      "description": "ASPICEテストケースAI自動生成（86.4%カバレッジ）。ISO 26262検証、MISRA-C 94%準拠、V-Model全工程自動化。"
+    },
+    "products_parvisadk": {
+      "title": "PARVIS ADK - SDV開発自動化 & TDDテストケース自動生成",
+      "description": "CAN DBC/ARXMLベースSDVエンドツーエンド自動化。TDDテストケースAI生成、ASPICE/V-Model自動準拠。"
+    },
+    "products_aiagent": {
+      "title": "AUTOSAR AI Agent - AIベースAUTOSAR開発支援ツール",
+      "description": "AI自然言語でAUTOSAR開発。ARXML自動生成、API/SWS検索、開発時間70%以上短縮。"
+    },
+    "solution": {
+      "title": "ソリューション",
+      "description": "Cloud Native、Digital Twin、AIベースAUTOSARソリューション。MATLAB連携、PARVIS Agent提供。"
+    },
+    "solution_cloudnative": {
+      "title": "Cloud Native AUTOSAR - クラウドベースAA開発ソリューション",
+      "description": "AWSベースAUTOSAR Adaptive Application開発。ARM64 Docker仮想ECU、CI/CDパイプライン。"
+    },
+    "solution_digital": {
+      "title": "Digital Twin - 仮想シミュレーションAA検証ソリューション",
+      "description": "仮想シミュレーションによるAUTOSAR AA機能検証。実ECUなしで開発初期からテスト可能。"
+    },
+    "solution_ai": {
+      "title": "AI for Adaptive Platforms - AI連携AA開発ソリューション",
+      "description": "AI/MLワークロードをAUTOSAR Adaptive Platformに統合。インテリジェント車両機能実装ソリューション。"
+    },
+    "solution_aiagent": {
+      "title": "PARVIS Agent - AIベースAUTOSAR自動マイグレーション",
+      "description": "AIエージェントによるAUTOSAR自動マイグレーション。ClassicからAdaptiveへの移行、バージョンアップグレード自動実行。"
+    },
+    "solution_matlab": {
+      "title": "MATLAB & Simulink連携 - AUTOSAR互換開発ソリューション",
+      "description": "MATLAB/SimulinkとAUTOSAR互換開発ソリューション。既存モデルをAdaptive環境に統合。"
+    },
+    "service": {
+      "title": "サービス",
+      "description": "ASPICEコンサルティング、AUTOSAR実装支援、教育、AI Agent Coreトレーニング等、専門エンジニアリングサービス。"
+    },
+    "service_consulting": {
+      "title": "コンサルティングサービス - ASPICE/AUTOSARプロジェクト専門コンサルティング",
+      "description": "ASPICE認証コンサルティング、AUTOSARアーキテクチャ設計、プロセス策定。カスタマイズプロジェクトコンサルティング。"
+    },
+    "service_autosar": {
+      "title": "AUTOSAR実装サービス - ECUプロジェクトAUTOSAR適用支援",
+      "description": "ECUプロジェクトAUTOSAR Classic/Adaptive実装支援。量産プロジェクト経験に基づく実践サービス。"
+    },
+    "service_education": {
+      "title": "AUTOSARトレーニング - ECU量産プロジェクト向け専門教育",
+      "description": "ASPICE/AUTOSAR Classic & Adaptive専門教育。ECU量産実務中心、入門〜上級カリキュラム。"
+    },
+    "service_tool": {
+      "title": "カスタム開発サービス - AUTOSARプロジェクト向けカスタムツール開発",
+      "description": "プロジェクト向けカスタムAUTOSAR開発ツール制作。自動化スクリプト、プラグイン、専用ツール。"
+    },
+    "service_ai": {
+      "title": "AI Agent Coreトレーニング - SDV AIエージェント設計教育",
+      "description": "SDV特化AI Agent設計トレーニング。AIエージェントアーキテクチャ、LLM活用実務中心コース。"
+    },
+    "company": {
+      "title": "会社紹介",
+      "description": "ASPICE/AUTOSAR Adaptive Platformリーディングカンパニー。グローバル顧客50社以上、プロジェクト実績100件以上。"
+    },
+    "company_contact": {
+      "title": "お問い合わせ",
+      "description": "PopcornSARお問い合わせ。韓国本社（ソウル）、日本法人（東京）。AUTOSAR製品/ソリューション相談。"
+    },
+    "company_notice": {
+      "title": "お知らせ",
+      "description": "PopcornSAR最新ニュース、製品アップデート、イベント、パートナーシップお知らせ。"
+    },
+    "about": {
+      "title": "会社概要",
+      "description": "PopcornSAR会社概要。ASPICE/AUTOSAR専門、ソウル本社・東京法人。"
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "description": "PopcornSAR AUTOSARソリューション・ASPICEコンサルティングお問い合わせ。"
+    },
+    "support": {
+      "title": "カスタマーサポート",
+      "description": "PopcornSAR製品ダウンロード・技術サポート。AutoSAR.io評価版、開発プラットフォーム紹介資料。"
+    },
+    "support_qna": {
+      "title": "Q&A",
+      "description": "AUTOSAR開発およびPopcornSAR製品に関するよくある質問と回答。"
     }
   },
-  "contact": {
-    "title": "お問い合わせ",
-    "subtitle": "お気軽にお問い合わせください",
-    "description": "ソリューションに関するご質問がありますか？プロジェクトについて相談したいですか？お手伝いいたします。",
-    "methods": {
-      "sales": {
-        "title": "営業お問い合わせ",
-        "description": "ソリューションについて営業チームとご相談ください"
-      },
-      "partnership": {
-        "title": "パートナーシップ",
-        "description": "パートナーシップの機会を探求してください"
-      },
-      "support": {
-        "title": "サポート",
-        "description": "サポートチームの助けを受けてください"
-      }
-    },
-    "form": {
-      "title": "メッセージを送る",
-      "name": "お名前",
-      "email": "メールアドレス",
-      "company": "会社名",
-      "subject": "件名",
-      "message": "メッセージ",
-      "submit": "メッセージを送信",
-      "selectTopic": "件名を選択",
-      "topics": {
-        "sales": "営業お問い合わせ",
-        "support": "技術サポート",
-        "partnership": "パートナーシップ",
-        "other": "その他"
-      },
-      "placeholders": {
-        "name": "お名前を入力してください",
-        "email": "your@email.com",
-        "company": "会社名",
-        "message": "プロジェクトについてお聞かせください..."
-      }
-    },
-    "offices": {
-      "title": "オフィス"
-    }
+  "notFound": {
+    "title": "ページが見つかりません",
+    "description": "お探しのページは存在しないか、移動された可能性があります。",
+    "backHome": "ホームに戻る"
   }
 }

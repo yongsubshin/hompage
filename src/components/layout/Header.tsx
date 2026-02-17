@@ -1,12 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useLanguage, Language } from "@/lib/i18n";
 
 interface NavItem {
   label: string;
@@ -14,11 +13,11 @@ interface NavItem {
   children?: NavItem[];
 }
 
-const languages: { code: Language; label: string }[] = [
-  { code: "kr", label: "한국어" },
+const languages: { code: string; label: string }[] = [
+  { code: "ko", label: "한국어" },
   { code: "en", label: "English" },
-  { code: "cn", label: "中文" },
-  { code: "jp", label: "日本語" },
+  { code: "zh", label: "中文" },
+  { code: "ja", label: "日本語" },
 ];
 
 const CAREERS_URL = process.env.NEXT_PUBLIC_CAREERS_URL ?? "/company/notice";
@@ -28,60 +27,62 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const { language, setLanguage, t } = useLanguage();
+  const router = useRouter();
+  const locale = useLocale();
+  const t = useTranslations("nav");
 
   const navigation: NavItem[] = [
     {
-      label: t.nav.company,
+      label: t("company"),
       href: "/company",
       children: [
-        { label: t.nav.companyAbout, href: "/company" },
-        { label: t.nav.companyNotice, href: "/company/notice" },
-        { label: t.nav.companyCareers, href: CAREERS_URL },
-        { label: t.nav.companyContact, href: "/company/contact" },
+        { label: t("companyAbout"), href: "/company" },
+        { label: t("companyNotice"), href: "/company/notice" },
+        { label: t("companyCareers"), href: CAREERS_URL },
+        { label: t("companyContact"), href: "/company/contact" },
       ],
     },
     {
-      label: t.nav.products,
+      label: t("products"),
       href: "/products",
       children: [
-        { label: t.nav.productsToolkit, href: "/products/adaptive" },
-        { label: t.nav.productsAutosar, href: "/products/autosario" },
-        { label: t.nav.productsPara, href: "/products/para" },
-        { label: t.nav.productsPacon, href: "/products/pacon" },
-        { label: t.nav.productsParvis, href: "/products/ai" },
-        { label: t.nav.productsParvisAdk, href: "/products/parvisadk" },
-        { label: t.nav.productsAiAgent, href: "/products/aiagent" },
+        { label: t("productsToolkit"), href: "/products/adaptive" },
+        { label: t("productsAutosar"), href: "/products/autosario" },
+        { label: t("productsPara"), href: "/products/para" },
+        { label: t("productsPacon"), href: "/products/pacon" },
+        { label: t("productsParvis"), href: "/products/ai" },
+        { label: t("productsParvisAdk"), href: "/products/parvisadk" },
+        { label: t("productsAiAgent"), href: "/products/aiagent" },
       ],
     },
     {
-      label: t.nav.solution,
+      label: t("solution"),
       href: "/solution",
       children: [
-        { label: t.nav.solutionCloud, href: "/solution/cloudnative" },
-        { label: t.nav.solutionDigital, href: "/solution/digital" },
-        { label: t.nav.solutionAi, href: "/solution/ai" },
-        { label: t.nav.solutionMatlab, href: "/solution/matlab" },
-        { label: t.nav.solutionAgent, href: "/solution/aiagent" },
+        { label: t("solutionCloud"), href: "/solution/cloudnative" },
+        { label: t("solutionDigital"), href: "/solution/digital" },
+        { label: t("solutionAi"), href: "/solution/ai" },
+        { label: t("solutionMatlab"), href: "/solution/matlab" },
+        { label: t("solutionAgent"), href: "/solution/aiagent" },
       ],
     },
     {
-      label: t.nav.service,
+      label: t("service"),
       href: "/service",
       children: [
-        { label: t.nav.serviceConsulting, href: "/service/consulting" },
-        { label: t.nav.serviceAutosar, href: "/service/autosar" },
-        { label: t.nav.serviceTraining, href: "/service/education" },
-        { label: t.nav.serviceCustom, href: "/service/tool" },
-        { label: t.nav.serviceAiTraining, href: "/service/ai" },
+        { label: t("serviceConsulting"), href: "/service/consulting" },
+        { label: t("serviceAutosar"), href: "/service/autosar" },
+        { label: t("serviceTraining"), href: "/service/education" },
+        { label: t("serviceCustom"), href: "/service/tool" },
+        { label: t("serviceAiTraining"), href: "/service/ai" },
       ],
     },
     {
-      label: t.nav.support,
+      label: t("support"),
       href: "/support",
       children: [
-        { label: t.nav.supportDownload, href: "/support" },
-        { label: t.nav.supportQna, href: "/support/qna" },
+        { label: t("supportDownload"), href: "/support" },
+        { label: t("supportQna"), href: "/support/qna" },
       ],
     },
   ];
@@ -100,7 +101,8 @@ export function Header() {
   }, [pathname]);
 
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setLanguage(e.target.value as Language);
+    const nextLocale = e.target.value as "ko" | "en" | "ja" | "zh";
+    router.replace(pathname, { locale: nextLocale });
   };
 
   return (
@@ -186,7 +188,7 @@ export function Header() {
               {/* Language Selector */}
               <li className="ml-4">
                 <select
-                  value={language}
+                  value={locale}
                   onChange={handleLanguageChange}
                   className="bg-surface text-text-secondary text-sm border border-border rounded-lg px-3 py-2 focus:outline-none focus:border-accent-blue cursor-pointer"
                 >
@@ -257,7 +259,7 @@ export function Header() {
           {/* Mobile Language Selector */}
           <div className="mt-6 px-4">
             <select
-              value={language}
+              value={locale}
               onChange={handleLanguageChange}
               className="w-full bg-surface text-text-secondary text-sm border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-accent-blue"
             >
