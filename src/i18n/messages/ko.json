@@ -27,7 +27,8 @@
     "serviceAiTraining": "AI Agent Core 교육",
     "support": "고객지원",
     "supportDownload": "다운로드",
-    "supportQna": "Q&A"
+    "supportQna": "Q&A",
+    "insights": "인사이트"
   },
   "common": {
     "learnMore": "자세히 보기",
@@ -1268,7 +1269,23 @@
     "support_qna": {
       "title": "Q&A",
       "description": "AUTOSAR 개발 및 PopcornSAR 제품 관련 자주 묻는 질문과 답변."
+    },
+    "insights": {
+      "title": "인사이트 | PopcornSAR",
+      "description": "AUTOSAR, ASPICE, SDV, AI 기반 자동화 등 자동차 소프트웨어 개발의 최신 기술 트렌드와 인사이트를 공유합니다."
     }
+  },
+  "insights": {
+    "heroTitle": "인사이트",
+    "heroDescription": "자동차 소프트웨어 개발의 최신 기술 트렌드와 인사이트",
+    "readMore": "자세히 보기",
+    "relatedPosts": "관련 글",
+    "backToList": "목록으로 돌아가기",
+    "tags": "태그",
+    "publishedAt": "발행일",
+    "noPosts": "등록된 글이 없습니다.",
+    "ctaProduct": "제품 자세히 보기",
+    "ctaContact": "문의하기"
   },
   "notFound": {
     "title": "페이지를 찾을 수 없습니다",

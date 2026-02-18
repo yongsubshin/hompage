@@ -1,14 +1,21 @@
-export function OrganizationJsonLd() {
+export function OrganizationJsonLd({ locale }: { locale?: string }) {
+  const baseUrl = locale && locale !== 'ko'
+    ? `https://autosar.io/${locale}`
+    : 'https://autosar.io';
+
   const data = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "PopcornSAR",
-    url: "https://autosar.io",
+    url: baseUrl,
     logo: "https://autosar.io/images/logo.png",
     description:
       "ASPICE V-Model automation and AUTOSAR development specialist. AI-powered test case generation, ISO 26262 verification, and automotive software engineering services.",
     foundingDate: "2015",
-    sameAs: [],
+    sameAs: [
+      "https://www.youtube.com/@PopcornSAR",
+      "https://www.youtube.com/@popcornsarkorea692",
+    ],
     address: [
       {
         "@type": "PostalAddress",
@@ -159,12 +166,16 @@ export function ServiceJsonLd() {
   );
 }
 
-export function WebSiteJsonLd() {
+export function WebSiteJsonLd({ locale }: { locale?: string }) {
+  const baseUrl = locale && locale !== 'ko'
+    ? `https://autosar.io/${locale}`
+    : 'https://autosar.io';
+
   const data = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "PopcornSAR",
-    url: "https://autosar.io",
+    url: baseUrl,
     inLanguage: ["ko", "en", "ja", "zh"],
     potentialAction: {
       "@type": "SearchAction",
@@ -174,6 +185,53 @@ export function WebSiteJsonLd() {
           "https://autosar.io/support/qna?q={search_term_string}",
       },
       "query-input": "required name=search_term_string",
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+export function ArticleJsonLd({
+  headline,
+  description,
+  datePublished,
+  url,
+  locale,
+}: {
+  headline: string;
+  description: string;
+  datePublished: string;
+  url: string;
+  locale: string;
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline,
+    description,
+    author: {
+      "@type": "Organization",
+      name: "PopcornSAR",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "PopcornSAR",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://autosar.io/images/layout/logo.png",
+      },
+    },
+    datePublished,
+    url,
+    inLanguage: locale,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
     },
   };
 

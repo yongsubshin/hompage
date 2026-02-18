@@ -27,7 +27,8 @@
     "serviceAiTraining": "AI Agent Core Training",
     "support": "SUPPORT",
     "supportDownload": "DOWNLOAD",
-    "supportQna": "Q&A"
+    "supportQna": "Q&A",
+    "insights": "Insights"
   },
   "common": {
     "learnMore": "Learn More",
@@ -1268,7 +1269,23 @@
     "support_qna": {
       "title": "Q&A",
       "description": "AUTOSAR development and PopcornSAR product frequently asked questions and answers."
+    },
+    "insights": {
+      "title": "Insights | PopcornSAR",
+      "description": "Explore the latest technology trends and insights in automotive software development, including AUTOSAR, ASPICE, SDV, and AI-powered automation."
     }
+  },
+  "insights": {
+    "heroTitle": "Insights",
+    "heroDescription": "Latest technology trends and insights in automotive software development",
+    "readMore": "Read More",
+    "relatedPosts": "Related Posts",
+    "backToList": "Back to List",
+    "tags": "Tags",
+    "publishedAt": "Published",
+    "noPosts": "No posts available.",
+    "ctaProduct": "Explore Products",
+    "ctaContact": "Contact Us"
   },
   "notFound": {
     "title": "Page not found",

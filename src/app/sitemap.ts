@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { getAllSlugs } from "@/lib/insights";
 
 const SITE_URL = "https://autosar.io";
 const locales = ["ko", "en", "ja", "zh"];
@@ -31,6 +32,7 @@ const pages: { path: string; changeFrequency: MetadataRoute.Sitemap[0]["changeFr
   { path: "/service/ai", changeFrequency: "monthly", priority: 0.7 },
   { path: "/support", changeFrequency: "monthly", priority: 0.7 },
   { path: "/support/qna", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/insights", changeFrequency: "weekly", priority: 0.9 },
 ];
 
 function getLocaleUrl(path: string, locale: string): string {
@@ -42,6 +44,7 @@ function getLocaleUrl(path: string, locale: string): string {
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
+  // Static pages
   for (const page of pages) {
     for (const locale of locales) {
       const alternates: Record<string, string> = {};
@@ -55,6 +58,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: page.changeFrequency,
         priority: page.priority,
+        alternates: {
+          languages: alternates,
+        },
+      });
+    }
+  }
+
+  // Dynamic insight post pages
+  const slugs = getAllSlugs();
+  for (const slug of slugs) {
+    const insightPath = `/insights/${slug}`;
+    for (const locale of locales) {
+      const alternates: Record<string, string> = {};
+      for (const altLocale of locales) {
+        alternates[altLocale] = getLocaleUrl(insightPath, altLocale);
+      }
+      alternates["x-default"] = getLocaleUrl(insightPath, defaultLocale);
+
+      entries.push({
+        url: getLocaleUrl(insightPath, locale),
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.8,
         alternates: {
           languages: alternates,
         },

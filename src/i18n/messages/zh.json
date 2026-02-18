@@ -27,7 +27,8 @@
     "serviceAiTraining": "AI Agent核心培训",
     "support": "支持",
     "supportDownload": "下载",
-    "supportQna": "问答"
+    "supportQna": "问答",
+    "insights": "技术洞察"
   },
   "common": {
     "learnMore": "了解更多",
@@ -1265,7 +1266,23 @@
     "support_qna": {
       "title": "Q&A",
       "description": "AUTOSAR开发及PopcornSAR产品常见问题与解答。"
+    },
+    "insights": {
+      "title": "技术洞察 | PopcornSAR",
+      "description": "分享AUTOSAR、ASPICE、SDV、AI自动化等汽车软件开发的最新技术趋势和洞察。"
     }
+  },
+  "insights": {
+    "heroTitle": "技术洞察",
+    "heroDescription": "汽车软件开发的最新技术趋势和洞察",
+    "readMore": "了解更多",
+    "relatedPosts": "相关文章",
+    "backToList": "返回列表",
+    "tags": "标签",
+    "publishedAt": "发布日期",
+    "noPosts": "暂无文章。",
+    "ctaProduct": "查看产品",
+    "ctaContact": "联系我们"
   },
   "notFound": {
     "title": "页面未找到",

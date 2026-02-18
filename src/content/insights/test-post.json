@@ -1,0 +1,26 @@
+{
+  "slug": "test-post",
+  "publishedAt": "2026-02-18",
+  "author": "PopcornSAR",
+  "tags": ["Test"],
+  "ko": {
+    "title": "테스트 포스트",
+    "description": "이것은 테스트 포스트입니다.",
+    "content": "<p>이것은 테스트 포스트입니다.</p>"
+  },
+  "en": {
+    "title": "Test Post",
+    "description": "This is a test post.",
+    "content": "<p>This is a test post.</p>"
+  },
+  "ja": {
+    "title": "テスト投稿",
+    "description": "これはテスト投稿です。",
+    "content": "<p>これはテスト投稿です。</p>"
+  },
+  "zh": {
+    "title": "测试帖子",
+    "description": "这是一个测试帖子。",
+    "content": "<p>这是一个测试帖子。</p>"
+  }
+}

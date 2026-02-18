@@ -85,6 +85,10 @@ export function Header() {
         { label: t("supportQna"), href: "/support/qna" },
       ],
     },
+    {
+      label: t("insights"),
+      href: "/insights",
+    },
   ];
 
   useEffect(() => {
