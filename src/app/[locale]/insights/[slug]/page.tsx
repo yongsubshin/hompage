@@ -5,7 +5,6 @@ import { Link } from "@/i18n/routing";
 import { ArrowLeft, Calendar, User, ArrowRight } from "lucide-react";
 
 import {
-  getAllSlugs,
   getInsightBySlug,
   getRelatedInsights,
 } from "@/lib/insights";
@@ -18,13 +17,6 @@ const ogLocaleMap: Record<string, string> = {
   ja: "ja_JP",
   zh: "zh_CN",
 };
-
-// ---------------------------------------------------------------------------
-// generateStaticParams
-// ---------------------------------------------------------------------------
-export function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
-}
 
 // ---------------------------------------------------------------------------
 // generateMetadata
